@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eshop>
+<objet>
+    <nom>Double Pièce</nom>
+	<description>Doubler le nombre de pièces ramassées pendant une durée de 10 secondes</description>
+	<image>./eshop/Double.png</image>
+	<prix>50</prix>
+	</objet>
+<objet>
+    <nom>Freezer</nom>
+	<description>Immobilise tous les ennemis pendant une durée de 10 secondes</description>
+	<image>./eshop/freezer.png</image>
+	<prix>100</prix>
+	</objet>	
+<objet>
+    <nom>Joker</nom>
+	<description>Permet d'éviter une question(ne fonctionne pas au passage de niveau)</description>
+	<image>./eshop/Joker.jpg</image>
+	<prix>200</prix>
+	</objet>
+	<objet>
+    <nom>Speed</nom>
+	<description>Augmente la vitesse du Pac-man pendant une durée de 10 secondes</description>
+	<image>./eshop/Boost.png</image>
+	<prix>100</prix>
+	</objet>
+		<objet>
+    <nom>Slow</nom>
+	<description>Ralenti les ennemis du Pac-man pendant une durée de 10 secondes</description>
+	<image>./eshop/Ralentisseur.png</image>
+	<prix>100</prix>
+	</objet>
+	<objet>
+	<nom>Invincible</nom>
+	<description>Rend le pac-man invincible pendant une durée 10 secondes</description>
+	<image>./eshop/Etoile.png</image>
+	<prix>100</prix>
+	</objet>
+	<objet>
+	<nom>Red</nom>
+	<description>Change la couleur du pac-man pendant toute la partie</description>
+	<image>./eshop/Rouge.png</image>
+	<prix>25</prix>
+	</objet>
+	<objet>
+	<nom>Blue</nom>
+	<description>Change la couleur du pac-man pendant toute la partie</description>
+	<image>./eshop/Bleu.png</image>
+	<prix>25</prix>
+	</objet>
+	<objet>
+	<nom>Green</nom>
+	<description>Change la couleur du pac-man pendant toute la partie</description>
+	<image>./eshop/Vert.png</image>
+	<prix>25</prix>
+	</objet>
+	<objet>
+	<nom>Pink</nom>
+	<description>Change la couleur du pac-man pendant toute la partie</description>
+	<image>./eshop/Rose.png</image>
+	<prix>25</prix>
+	</objet>
+	<objet>
+	<nom>Hello Kitty</nom>
+	<description>Transforme le pac man en Hello Kitty pendant toute la partie</description>
+	<image>./eshop/hello_kitty.png</image>
+	<prix>500</prix>
+	</objet>
+</eshop>
