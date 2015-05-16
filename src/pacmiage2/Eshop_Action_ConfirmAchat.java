@@ -10,6 +10,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import javax.swing.AbstractAction;
+import javax.swing.ImageIcon;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -44,15 +45,18 @@ String message;
          
           JPanel p=new JPanel();
            p.setBackground(Color.black);
-  f.setBounds(largeur/4, hauteur/4, 2*largeur/5, hauteur/2);
-           JLabel texte = new JLabel();
+  f.setBounds(largeur/3, hauteur/4, 4*largeur/11, hauteur/2);
+    ImageIcon icon = new ImageIcon("./eshop/ghost.png");
+        JLabel image = new JLabel(icon);         
+            JLabel texte = new JLabel();
            texte.setText(message);
          texte.setForeground(Color.white);
         texte.setFont(new Font(null, 30*largeur/1360, 30*hauteur/768));
-        
-        p.setLayout(new BorderLayout());
-        p.add(texte,BorderLayout.CENTER);
-         
+     
+
+ p.setLayout(new BorderLayout());
+        p.add(texte,BorderLayout.NORTH);
+         p.add(image);
          f.add(p);
         f.setVisible(true);
     }
