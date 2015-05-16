@@ -57,16 +57,16 @@ public void render(GameContainer container, Graphics g) throws SlickException {
 @Override
 public void update(GameContainer container, int delta) throws SlickException {
   // [...] test de trigger (leçon 6) 
-//        for (int objectID = 0; objectID < map.getObjectCount(); objectID++) {
-//        if (player.getX() > map.getObjectX(0, objectID)
-//                && player.getX() < map.getObjectX(0, objectID) + map.getObjectWidth(0, objectID)
-//                && player.getY() > map.getObjectY(0, objectID)
-//                && player.getY() < map.getObjectY(0, objectID) + map.getObjectHeight(0, objectID)) {
-//            if ("graine".equals(map.getObjectType(0, objectID))) {
-//
-//            } 
-//        }
-//     }
+        for (int objectID = 0; objectID < map.getObjectCount(); objectID++) {
+        if (player.getX() > map.getObjectX(0, objectID)
+                && player.getX() < map.getObjectX(0, objectID) + map.getObjectWidth(0, objectID)
+                && player.getY() > map.getObjectY(0, objectID)
+                && player.getY() < map.getObjectY(0, objectID) + map.getObjectHeight(0, objectID)) {
+            if ("graine".equals(map.getObjectType(0, objectID))) {
+
+            } 
+        }
+     }
   this.player.update(delta);
   // [...] mise à jour de la camera (leçon 4) 
 }
