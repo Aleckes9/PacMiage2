@@ -10,7 +10,7 @@ import org.newdawn.slick.SlickException;
 
 /**
  *
- * @author Alexandre
+ * @author Maëlle
  */
 public class PacMiage2 {
 
