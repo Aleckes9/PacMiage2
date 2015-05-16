@@ -13,9 +13,9 @@ public class Objet {
  private   String nom;
     private String image;
     private String description;
-    private String prix;
+    private int prix;
 
-    public Objet(String nom, String image, String description, String prix) {
+    public Objet(String nom, String image, String description, int prix) {
         this.nom = nom;
         this.image = image;
         this.description = description;
@@ -34,7 +34,7 @@ public class Objet {
         return description;
     }
 
-    public String getPrix() {
+    public int getPrix() {
         return prix;
     }
    

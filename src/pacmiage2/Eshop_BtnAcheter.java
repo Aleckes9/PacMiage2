@@ -14,8 +14,8 @@ import javax.swing.JButton;
  */
 public class Eshop_BtnAcheter extends JButton{
 
-    public Eshop_BtnAcheter(Objet it)  {
-     this.setAction(new Eshop_AfficheConfirmAcheter(it));
+    public Eshop_BtnAcheter(Objet it,JoueurInfo j)  {
+     this.setAction(new Eshop_AfficheConfirmAcheter(it,j));
      ImageIcon icon = new ImageIcon("./eshop/Caddy.png"); 
      this.setIcon(icon);
       

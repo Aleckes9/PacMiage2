@@ -15,8 +15,8 @@ import javax.swing.JButton;
  */
 public class Eshop_BtnConfirmAchat extends JButton{
 
-    public Eshop_BtnConfirmAchat() {
-    this.setAction(new Eshop_ConfirmAchat());
+    public Eshop_BtnConfirmAchat(JoueurInfo j,Objet it) {
+    this.setAction(new Eshop_Action_ConfirmAchat(j,it));
        this.setText("Oui");
        this.setForeground(Color.white);
        this.setBackground(Color.black);

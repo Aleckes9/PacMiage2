@@ -5,11 +5,9 @@
  */
 package pacmiage2;
 
-import pacmiage2.AfficheBarreInformation;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
-import java.io.IOException;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JDialog;
@@ -27,7 +25,10 @@ public class Eshop_AfficheEshop {
     static int hauteur = (int) tailleEcran.getHeight();
     static int largeur = (int) tailleEcran.getWidth();
 
-    public static void main(String[] args) throws IOException {
+  //  public Eshop_AfficheEshop(JoueurInfo joueur) {
+  
+ public static void main(String[] args){
+  JoueurInfo joueur=new JoueurInfo();
         /**
          * On définit les propriétés de la fenêtre
          */
@@ -49,7 +50,7 @@ public class Eshop_AfficheEshop {
         int bound = 150;
         for (int n = 0; n < objet.length; n++) {
             new Eshop_AfficheObjet(g, objet[n], bound);
-            acheter[n] = new Eshop_BtnAcheter(objet[n]);
+            acheter[n] = new Eshop_BtnAcheter(objet[n],joueur);
             separ[n] = new JLabel(separation);
             g.add(separ[n]);
             g.add(acheter[n]);
@@ -64,7 +65,7 @@ public class Eshop_AfficheEshop {
          */
         g.setPreferredSize(new Dimension(largeur,bound));
     g.setLayout(new BorderLayout());
-        AfficheBarreInformation barre = new AfficheBarreInformation(f);
+        AfficheBarreInformation barre = new AfficheBarreInformation(f,joueur);
           g.add(barre.getBarreDuHaut(), BorderLayout.NORTH);
           JScrollPane scroll=new JScrollPane(g);
    

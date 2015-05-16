@@ -31,7 +31,7 @@ public class Eshop_AfficheObjet {
         /**
          * Paramètres de l'affichage du prix
          */
-        JLabel prix = new JLabel(it.getPrix());
+        JLabel prix = new JLabel(""+it.getPrix());
         prix.setForeground(Color.white);
         prix.setFont(new Font(null, largeur * 40 / 1366, 40 * hauteur / 768));
         /**
