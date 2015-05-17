@@ -58,25 +58,14 @@ public class Joueur {
 
     public void update(int delta) {
         if (this.moving) {
-            boolean collision = false;
             float futurX = getFuturX(delta + vitesse);
             float futurY = getFuturY(delta + vitesse);
             //tout les x pour y = 0
             //tout les y pour x = 0
             //tout les x pour y = max
             //tout les y pour x = max
-            for (int x = 0; x < 65; x++) {
-                for (int j = 0; j < 65; j++) {
-                    collision = this.map.isCollision(futurX + x, futurY + j);
-                    if (collision) {
-                        break;
-                    }
-                }
-                if (collision) {
-                    break;
-                }
-            }
-            if (collision) {
+            
+            if (estEnCollisionMur(futurX, futurY)) {
                 this.moving = false;
             } else {
                 this.x = futurX;
@@ -84,6 +73,39 @@ public class Joueur {
             }
 
         }
+    }
+    
+    public boolean estEnCollisionMur(float xObjet, float yObjet){
+        boolean collision = false;
+        for (int x = 0; x < 65; x++) {
+                if (x == 0 || x == 64) {
+                    for (int j = 0; j < 65; j++) {
+                        collision = this.map.isCollision(xObjet + x, yObjet + j);
+                        if (collision) {
+                            break;
+                        }
+                    }
+                } else {
+                    for (int j = 0; j < 65; j = j + 64) {
+                        collision = this.map.isCollision(xObjet + x, yObjet + j);
+                        if (collision) {
+                            break;
+                        }
+                    }
+                }
+
+                if (collision) {
+                    break;
+                }
+            }
+        return collision;
+
+    }
+    
+        public boolean estEnCollisionObjet(float xObjet, float yObjet){
+
+        return xObjet > this.x && xObjet < this.x+65 && yObjet > this.y && yObjet < this.y+65;
+
     }
 
     private float getFuturX(int delta) {

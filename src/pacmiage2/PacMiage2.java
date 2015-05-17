@@ -19,7 +19,6 @@ public class PacMiage2 {
      */
     public static void main(String[] args) throws SlickException {
         new AppGameContainer(new PartieController(), 640, 480, false).start();
-        
     }
     
     

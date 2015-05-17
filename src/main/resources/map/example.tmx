@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="left-up" width="100" height="100" tilewidth="32" tileheight="32" nextobjectid="40">
+<map version="1.0" orientation="orthogonal" renderorder="left-up" width="100" height="100" tilewidth="32" tileheight="32" nextobjectid="2">
  <tileset firstgid="1" name="tmw_desert_spacing" tilewidth="32" tileheight="32">
   <image source="../../../../../../../../../Program Files (x86)/Tiled/examples/tmw_desert_spacing.png" width="265" height="199"/>
  </tileset>
@@ -19,13 +19,11 @@
    H4sIAAAAAAAAC+3ZQQrEIAwAwP7K//9sr1LMbowKssxAsUjJISFW2/Y8TztwUXMid+pR17qx2gfRyLwduVOPfVZypz/2q+Zu9N5Wj3XWq7vs7I/VmORy14L7fu69T6PmV+7e+R3tc2djEsvUI5obnV0yMYll++PbOXA2JjHfS+5SyV1ljSNHPe5ivbrLzPfdzHN9TObpj7uc+DeoHgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD8mw+w4ELGQJwAAA==
   </data>
  </layer>
- <objectgroup name="trigger">
-  <object id="33" name="graine" gid="38" x="55" y="157"/>
-  <object id="34" name="graine" gid="38" x="401" y="147">
+ <objectgroup name="trigger" width="100" height="100">
+  <object id="1" name="graine1" type="graine" x="72" y="136" width="20" height="20">
    <properties>
     <property name="argent" value="1"/>
    </properties>
   </object>
-  <object id="37" name="graine" gid="38" x="247" y="482"/>
  </objectgroup>
 </map>
