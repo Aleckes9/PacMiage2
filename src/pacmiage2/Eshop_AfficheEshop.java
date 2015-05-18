@@ -28,6 +28,7 @@ public class Eshop_AfficheEshop {
   //  public Eshop_AfficheEshop(JoueurInfo joueur) {
   
  public static void main(String[] args){
+     System.out.println("yo");
   JoueurInfo joueur=new JoueurInfo();
         /**
          * On définit les propriétés de la fenêtre
@@ -45,17 +46,17 @@ public class Eshop_AfficheEshop {
         LecteurObjet lecteur = new LecteurObjet();
         Objet objet[] = lecteur.getObjet();
         JButton acheter[] = new JButton[objet.length];
-        ImageIcon separation = new ImageIcon("./eshop/separation.png");
-        JLabel separ[] = new JLabel[objet.length];
-        int bound = 150;
+       // ImageIcon separation = new ImageIcon("./eshop/separation.png");
+        //JLabel separ[] = new JLabel[objet.length];
+        int bound = 20;
         for (int n = 0; n < objet.length; n++) {
             new Eshop_AfficheObjet(g, objet[n], bound);
             acheter[n] = new Eshop_BtnAcheter(objet[n],joueur);
-            separ[n] = new JLabel(separation);
-            g.add(separ[n]);
+//            separ[n] = new JLabel(separation);
+//            g.add(separ[n]);
             g.add(acheter[n]);
             acheter[n].setBounds(5 * largeur / 6, bound, 65, 50);
-            separ[n].setBounds(0, bound - 50, largeur, 50);
+//            separ[n].setBounds(0, bound - 50, largeur, 50);
 
             bound += 200;
 

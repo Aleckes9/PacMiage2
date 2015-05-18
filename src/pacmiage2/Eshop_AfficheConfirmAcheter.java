@@ -38,7 +38,7 @@ JoueurInfo j;
         JLabel texte = new JLabel();
         AfficheBarreInformation barreDuHaut = new AfficheBarreInformation(f,j);
     
-        g.add(barreDuHaut.getBarreDuHaut());
+       // g.add(barreDuHaut.getBarreDuHaut());
         new Eshop_AfficheObjet(g, it, 150*hauteur/768);
         texte.setText("Voulez-vous acheter cet objet?");
         texte.setForeground(Color.white);
@@ -48,11 +48,12 @@ JoueurInfo j;
         g.add(texte);
         g.add(oui);
         g.add(non);
-      
+   
         texte.setBounds(largeur / 3, hauteur / 2, 600*largeur/1360, 100*hauteur/768);
         oui.setBounds(2 * largeur / 5, 2 * hauteur / 3, 80*largeur/1360, 50*hauteur/768);
         non.setBounds(largeur / 2, 2 * hauteur / 3, 80*largeur/1360, 50*hauteur/768);
         g.setLayout(new BorderLayout());
+           f.add(barreDuHaut.getBarreDuHaut());
         f.add(g);
 
         f.setVisible(true);

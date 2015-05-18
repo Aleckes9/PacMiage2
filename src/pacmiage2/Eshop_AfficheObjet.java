@@ -45,7 +45,11 @@ public class Eshop_AfficheObjet {
          */
         ImageIcon icon = new ImageIcon(it.getImage());
         JLabel image = new JLabel(icon);
-
+ ImageIcon separation = new ImageIcon("./eshop/separation.png");
+        JLabel separ = new JLabel(separation);
+      
+           
+           
         /**
          * Ajout des éléments à la fenêtre
          */
@@ -53,15 +57,15 @@ public class Eshop_AfficheObjet {
         f.add(prix);
         f.add(description);
         f.add(image);
-
-        /**
+ f.add(separ);
+       /**
          * Paramétrage de la position des objets dans la fenêtre
          */
         image.setBounds(largeur * 50 / 1366, bound * hauteur / 768, largeur * 150 / 1366, 150 * hauteur / 768);
         description.setBounds(largeur / 4, bound + (20 * hauteur / 768), largeur, 100 * hauteur / 768);
         prix.setBounds(3 * largeur / 4, bound + (10 * hauteur / 768), largeur, 30 * hauteur / 768);
         nom.setBounds(2 * largeur / 5, bound, largeur / 2, 30 * hauteur / 768);
-
+  separ.setBounds(0, bound - 50, largeur, 50);
     }
 
 }
