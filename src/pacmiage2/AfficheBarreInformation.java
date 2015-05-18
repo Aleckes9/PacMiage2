@@ -22,15 +22,15 @@ public class AfficheBarreInformation {
 
     JPanel p;
 
-    public AfficheBarreInformation(JDialog f,JoueurInfo joueur) {
+    public AfficheBarreInformation(JDialog f, JoueurInfo joueur) {
         this.p = new JPanel();
         p.setBackground(Color.black);
         p.setLayout(new BorderLayout());
-        JLabel graine=new JLabel();
-    graine.setText(joueur.getGraines()+" Graines");
-graine.setBackground(Color.black);
-graine.setFont(new Font("Serif", Font.BOLD, 40));
-graine.setForeground(Color.WHITE);
+        JLabel graine = new JLabel();
+        graine.setText(joueur.getGraines() + " Graines");
+        graine.setBackground(Color.black);
+        graine.setFont(new Font("Serif", Font.BOLD, 40));
+        graine.setForeground(Color.WHITE);
         p.add(graine, BorderLayout.WEST);
 
     }

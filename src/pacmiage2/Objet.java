@@ -6,11 +6,14 @@
 package pacmiage2;
 
 /**
- *Objet de l'eshop caractérisé par un nom, une image, une description et un prix
+ * Objet de l'eshop caractérisé par un nom, une image, une description et un
+ * prix
+ *
  * @author Maëlle
  */
 public class Objet {
- private   String nom;
+
+    private String nom;
     private String image;
     private String description;
     private int prix;
@@ -37,5 +40,5 @@ public class Objet {
     public int getPrix() {
         return prix;
     }
-   
+
 }

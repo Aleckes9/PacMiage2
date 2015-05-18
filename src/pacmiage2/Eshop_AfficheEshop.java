@@ -16,7 +16,8 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
 /**
- *Affichage de l'eshop
+ * Affichage de l'eshop
+ *
  * @author Maëlle
  */
 public class Eshop_AfficheEshop {
@@ -25,20 +26,18 @@ public class Eshop_AfficheEshop {
     static int hauteur = (int) tailleEcran.getHeight();
     static int largeur = (int) tailleEcran.getWidth();
 
-  //  public Eshop_AfficheEshop(JoueurInfo joueur) {
-  
- public static void main(String[] args){
-     System.out.println("yo");
-  JoueurInfo joueur=new JoueurInfo();
+    //  public Eshop_AfficheEshop(JoueurInfo joueur) {
+    public static void main(String[] args) {
+        System.out.println("yo");
+        JoueurInfo joueur = new JoueurInfo();
         /**
          * On définit les propriétés de la fenêtre
          */
         JDialog f = new JDialog();
         f.setBounds(0, 0, largeur, hauteur);
         JPanel g = new JPanel();
-   g.setPreferredSize(new Dimension(largeur,2500));
+        g.setPreferredSize(new Dimension(largeur, 2500));
         g.setBackground(Color.black);
-     
 
         /**
          * On affiche les objets
@@ -46,12 +45,12 @@ public class Eshop_AfficheEshop {
         LecteurObjet lecteur = new LecteurObjet();
         Objet objet[] = lecteur.getObjet();
         JButton acheter[] = new JButton[objet.length];
-       // ImageIcon separation = new ImageIcon("./eshop/separation.png");
+        // ImageIcon separation = new ImageIcon("./eshop/separation.png");
         //JLabel separ[] = new JLabel[objet.length];
         int bound = 20;
         for (int n = 0; n < objet.length; n++) {
             new Eshop_AfficheObjet(g, objet[n], bound);
-            acheter[n] = new Eshop_BtnAcheter(objet[n],joueur);
+            acheter[n] = new Eshop_BtnAcheter(objet[n], joueur);
 //            separ[n] = new JLabel(separation);
 //            g.add(separ[n]);
             g.add(acheter[n]);
@@ -64,20 +63,17 @@ public class Eshop_AfficheEshop {
         /**
          * Onajoute la barre du haut contenant les informations joueurs
          */
-        g.setPreferredSize(new Dimension(largeur,bound));
-    g.setLayout(new BorderLayout());
-        AfficheBarreInformation barre = new AfficheBarreInformation(f,joueur);
-          //g.add(barre.getBarreDuHaut(), BorderLayout.NORTH);
-          JScrollPane scroll=new JScrollPane(g);
-   
-     scroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-   
- 
+        g.setPreferredSize(new Dimension(largeur, bound));
+        g.setLayout(new BorderLayout());
+        AfficheBarreInformation barre = new AfficheBarreInformation(f, joueur);
+        //g.add(barre.getBarreDuHaut(), BorderLayout.NORTH);
+        JScrollPane scroll = new JScrollPane(g);
 
-     
-       f.add(scroll);
-       f.add(barre.getBarreDuHaut(), BorderLayout.NORTH);
-  
+        scroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+
+        f.add(scroll);
+        f.add(barre.getBarreDuHaut(), BorderLayout.NORTH);
+
         f.setVisible(true);
 
     }

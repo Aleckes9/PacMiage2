@@ -17,16 +17,18 @@ import static pacmiage2.Eshop_AfficheEshop.hauteur;
 import static pacmiage2.Eshop_AfficheEshop.largeur;
 
 /**
- *Ouvre un message de confirmation pour l'achat d'un objet 
+ * Ouvre un message de confirmation pour l'achat d'un objet
+ *
  * @author Maëlle
  */
 public class Eshop_AfficheConfirmAcheter extends AbstractAction {
 
     Objet it;
-JoueurInfo j;
-    public Eshop_AfficheConfirmAcheter(Objet it,JoueurInfo j) {
+    JoueurInfo j;
+
+    public Eshop_AfficheConfirmAcheter(Objet it, JoueurInfo j) {
         this.it = it;
-        this.j=j;
+        this.j = j;
     }
 
     @Override
@@ -36,24 +38,24 @@ JoueurInfo j;
         g.setBackground(Color.black);
         f.setBounds(0, 0, largeur, hauteur);
         JLabel texte = new JLabel();
-        AfficheBarreInformation barreDuHaut = new AfficheBarreInformation(f,j);
-    
-       // g.add(barreDuHaut.getBarreDuHaut());
-        new Eshop_AfficheObjet(g, it, 150*hauteur/768);
+        AfficheBarreInformation barreDuHaut = new AfficheBarreInformation(f, j);
+
+        // g.add(barreDuHaut.getBarreDuHaut());
+        new Eshop_AfficheObjet(g, it, 150 * hauteur / 768);
         texte.setText("Voulez-vous acheter cet objet?");
         texte.setForeground(Color.white);
-        texte.setFont(new Font(null, 30*largeur/1360, 30*hauteur/768));
-        Eshop_BtnConfirmAchat oui = new Eshop_BtnConfirmAchat(j,it);
+        texte.setFont(new Font(null, 30 * largeur / 1360, 30 * hauteur / 768));
+        Eshop_BtnConfirmAchat oui = new Eshop_BtnConfirmAchat(j, it);
         Eshop_BtnRetourEshop non = new Eshop_BtnRetourEshop(f);
         g.add(texte);
         g.add(oui);
         g.add(non);
-   
-        texte.setBounds(largeur / 3, hauteur / 2, 600*largeur/1360, 100*hauteur/768);
-        oui.setBounds(2 * largeur / 5, 2 * hauteur / 3, 80*largeur/1360, 50*hauteur/768);
-        non.setBounds(largeur / 2, 2 * hauteur / 3, 80*largeur/1360, 50*hauteur/768);
+
+        texte.setBounds(largeur / 3, hauteur / 2, 600 * largeur / 1360, 100 * hauteur / 768);
+        oui.setBounds(2 * largeur / 5, 2 * hauteur / 3, 80 * largeur / 1360, 50 * hauteur / 768);
+        non.setBounds(largeur / 2, 2 * hauteur / 3, 80 * largeur / 1360, 50 * hauteur / 768);
         g.setLayout(new BorderLayout());
-           f.add(barreDuHaut.getBarreDuHaut());
+        f.add(barreDuHaut.getBarreDuHaut());
         f.add(g);
 
         f.setVisible(true);

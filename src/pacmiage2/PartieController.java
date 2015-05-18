@@ -18,85 +18,73 @@ import org.newdawn.slick.SlickException;
  *
  * @author Alexandre
  */
-public class PartieController extends BasicGame{
-      private GameContainer container;
-  private Map map;
-  private Joueur player;
+public class PartieController extends BasicGame {
+
+    private GameContainer container;
+    private Map map;
+    private Joueur player;
     private java.util.Map<Integer, Graine> grainesMap;
 
-
     public PartieController() {
-        
-       super("Lesson 1 :: WindowGame");
-       map = new Map();
-       player = new Joueur(map);
-       grainesMap = new HashMap<Integer, Graine>();
-       
+
+        super("Lesson 1 :: WindowGame");
+        map = new Map();
+        player = new Joueur(map);
+        grainesMap = new HashMap<Integer, Graine>();
 
     }
 
+    @Override
+    public void init(GameContainer container) throws SlickException {
 
-  
-  @Override
-public void init(GameContainer container) throws SlickException {
-  
-
-  this.container = container;
-  this.map.init(); 
-                     for (int objectID = 0; objectID < map.getObjectCount(); objectID++) {
+        this.container = container;
+        this.map.init();
+        for (int objectID = 0; objectID < map.getObjectCount(); objectID++) {
             if ("graine".equals(map.getObjectType(objectID))) {
                 String nomObjet = map.getObjectName(objectID);
-                  grainesMap.put(objectID , new Graine(nomObjet, map.getObjectX(objectID), map.getObjectY(objectID)));
-            }   
-     }
-  this.player.init();
-  
-  
-  JoueurController controller = new JoueurController(this.player);
-  container.getInput().addKeyListener(controller);
-  Music background = new Music("bruno.ogg");
-  background.loop();
-}
-  
-  
-  @Override
-public void render(GameContainer container, Graphics g) throws SlickException {
-  // placement de camera (leçon 4)
-  this.map.renderBackground();
-  
-  
-  
-      for (Integer graine : grainesMap.keySet()) {
-          grainesMap.get(graine).render(g);
-      }
+                grainesMap.put(objectID, new Graine(nomObjet, map.getObjectX(objectID), map.getObjectY(objectID)));
+            }
+        }
+        this.player.init();
 
-          
-      
-  this.player.render(g);
+        JoueurController controller = new JoueurController(this.player);
+        container.getInput().addKeyListener(controller);
+        Music background = new Music("bruno.ogg");
+        background.loop();
+    }
 
-  this.map.renderForeground();
+    @Override
+    public void render(GameContainer container, Graphics g) throws SlickException {
+        // placement de camera (leçon 4)
+        this.map.renderBackground();
 
-}
+        for (Integer graine : grainesMap.keySet()) {
+            grainesMap.get(graine).render(g);
+        }
+        this.player.render(g);
 
+        this.map.renderForeground();
 
-@Override
-public void update(GameContainer container, int delta) throws SlickException {
-  // [...] test de trigger (leçon 6) 
+    }
+
+    @Override
+    public void update(GameContainer container, int delta) throws SlickException {
+        // [...] test de trigger (leçon 6) 
         for (Integer uneGraine : grainesMap.keySet()) {
             Graine graine = grainesMap.get(uneGraine);
-            if(graine != null){
-                
-        if (player.estEnCollisionObjet(graine.getX(), graine.getY())) {
-           
-                  grainesMap.remove(uneGraine);
-            
-        }
-                
+            if (graine != null) {
+
+                if (player.estEnCollisionObjet(graine.getX(), graine.getY())) {
+
+                    grainesMap.remove(uneGraine);
+
+                }
+
             }
 
-     }
-  this.player.update(delta);
-  // [...] mise à jour de la camera (leçon 4) 
-}
-  
+        }
+        this.player.update(delta);
+        // [...] mise à jour de la camera (leçon 4) 
+    }
+
 }

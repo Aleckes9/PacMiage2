@@ -10,16 +10,17 @@ import javax.swing.JButton;
 import javax.swing.JDialog;
 
 /**
- *Bouton pour annuler un achat et revenir à l'eshop
+ * Bouton pour annuler un achat et revenir à l'eshop
+ *
  * @author Maëlle
  */
-public class Eshop_BtnRetourEshop extends JButton{
+public class Eshop_BtnRetourEshop extends JButton {
 
-    public Eshop_BtnRetourEshop(JDialog  f) {
-    this.setAction(new FermerLaFenetre(f));
-       this.setText("Non");
-       this.setForeground(Color.white);
-       this.setBackground(Color.black);
+    public Eshop_BtnRetourEshop(JDialog f) {
+        this.setAction(new FermerLaFenetre(f));
+        this.setText("Non");
+        this.setForeground(Color.white);
+        this.setBackground(Color.black);
     }
-      
+
 }

@@ -11,18 +11,21 @@ import javax.swing.JDialog;
 import javax.swing.JFrame;
 
 /**
- *Ferme la fenêtre de confirmation et revient à l'eshop
+ * Ferme la fenêtre de confirmation et revient à l'eshop
+ *
  * @author Maëlle
  */
 public class FermerLaFenetre extends AbstractAction {
-JDialog  f;
-    public FermerLaFenetre(JDialog  f) {
-    this.f=f;
+
+    JDialog f;
+
+    public FermerLaFenetre(JDialog f) {
+        this.f = f;
     }
 
     @Override
     public void actionPerformed(ActionEvent ae) {
-f.dispose();
+        f.dispose();
     }
-    
+
 }

@@ -28,7 +28,7 @@ public class LecteurObjet {
         //On crée une instance de SAXBuilder
         SAXBuilder sxb = new SAXBuilder();
         try {
-         //On crée un nouveau document JDOM avec en argument le fichier XML
+            //On crée un nouveau document JDOM avec en argument le fichier XML
 
             document = sxb.build(new File("./eshop/objet.xml"));
         } catch (Exception e) {

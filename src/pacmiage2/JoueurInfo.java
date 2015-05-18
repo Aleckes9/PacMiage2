@@ -12,23 +12,28 @@ import java.util.ArrayList;
  * @author Maëlle
  */
 public class JoueurInfo {
-   private int graines;
-   private int record;
-   private ArrayList<Objet> ObjetDispo;
+
+    private int graines;
+    private int record;
+    private ArrayList<Objet> ObjetDispo;
+
     public JoueurInfo() {
         this.graines = 0;
         this.record = 0;
-        ObjetDispo=new ArrayList<>();
+        ObjetDispo = new ArrayList<>();
     }
-   public void ajouterGraines(int n){
-       graines+=n;
-   }
-   public void retirerGraines(int n){
-       graines-=n;
-   }
-   public int getGraines(){
-       return graines;
-   }
+
+    public void ajouterGraines(int n) {
+        graines += n;
+    }
+
+    public void retirerGraines(int n) {
+        graines -= n;
+    }
+
+    public int getGraines() {
+        return graines;
+    }
 
     public int getRecord() {
         return record;
@@ -41,10 +46,12 @@ public class JoueurInfo {
     public void setRecord(int record) {
         this.record = record;
     }
-    public void ajouterObjet(Objet o){
+
+    public void ajouterObjet(Objet o) {
         ObjetDispo.add(o);
     }
-   public void retirerObjet(Objet o){
-       ObjetDispo.remove(o);
-   }
+
+    public void retirerObjet(Objet o) {
+        ObjetDispo.remove(o);
+    }
 }

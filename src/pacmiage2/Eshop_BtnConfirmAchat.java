@@ -5,21 +5,21 @@
  */
 package pacmiage2;
 
-
 import java.awt.Color;
 import javax.swing.JButton;
 
 /**
- *Bouton pour confirmer l'achat d'un objet
+ * Bouton pour confirmer l'achat d'un objet
+ *
  * @author Maëlle
  */
-public class Eshop_BtnConfirmAchat extends JButton{
+public class Eshop_BtnConfirmAchat extends JButton {
 
-    public Eshop_BtnConfirmAchat(JoueurInfo j,Objet it) {
-    this.setAction(new Eshop_Action_ConfirmAchat(j,it));
-       this.setText("Oui");
-       this.setForeground(Color.white);
-       this.setBackground(Color.black);
+    public Eshop_BtnConfirmAchat(JoueurInfo j, Objet it) {
+        this.setAction(new Eshop_Action_ConfirmAchat(j, it));
+        this.setText("Oui");
+        this.setForeground(Color.white);
+        this.setBackground(Color.black);
     }
-    
+
 }

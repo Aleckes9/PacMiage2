@@ -67,5 +67,4 @@ public class Graine {
     public int getXMillieu() {
         return x + (width / 2);
     }
-
 }
