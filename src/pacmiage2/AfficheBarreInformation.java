@@ -31,7 +31,6 @@ public class AfficheBarreInformation {
 graine.setBackground(Color.black);
 graine.setFont(new Font("Serif", Font.BOLD, 40));
 graine.setForeground(Color.WHITE);
-       
         p.add(graine, BorderLayout.WEST);
 
     }

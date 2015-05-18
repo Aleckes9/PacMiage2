@@ -66,7 +66,7 @@ public class Eshop_AfficheEshop {
         g.setPreferredSize(new Dimension(largeur,bound));
     g.setLayout(new BorderLayout());
         AfficheBarreInformation barre = new AfficheBarreInformation(f,joueur);
-          g.add(barre.getBarreDuHaut(), BorderLayout.NORTH);
+          //g.add(barre.getBarreDuHaut(), BorderLayout.NORTH);
           JScrollPane scroll=new JScrollPane(g);
    
      scroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
@@ -75,6 +75,7 @@ public class Eshop_AfficheEshop {
 
      
        f.add(scroll);
+       f.add(barre.getBarreDuHaut(), BorderLayout.NORTH);
   
         f.setVisible(true);
 
