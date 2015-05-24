@@ -53,7 +53,7 @@ public class Eshop_Action_ConfirmAchat extends AbstractAction {
         JLabel texte = new JLabel();
         texte.setText(message);
         texte.setForeground(Color.white);
-        texte.setFont(new Font(null, 30 * largeur / 1360, 30 * hauteur / 768));
+        texte.setFont(new Font(null, 30 , 30));
 
         p.setLayout(new BorderLayout());
         p.add(texte, BorderLayout.NORTH);

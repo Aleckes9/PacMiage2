@@ -6,6 +6,7 @@
 package pacmiage2;
 
 import java.awt.Color;
+import java.awt.Font;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 
@@ -19,6 +20,8 @@ public class Eshop_BtnRetourEshop extends JButton {
     public Eshop_BtnRetourEshop(JDialog f) {
         this.setAction(new FermerLaFenetre(f));
         this.setText("Non");
+        this.setFont(new Font(null, 30, 30 ));
+        this.setBorderPainted(false);
         this.setForeground(Color.white);
         this.setBackground(Color.black);
     }

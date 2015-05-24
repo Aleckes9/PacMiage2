@@ -5,6 +5,8 @@
  */
 package pacmiage2;
 
+import java.awt.Color;
+import java.awt.Dimension;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
@@ -19,7 +21,9 @@ public class Eshop_BtnAcheter extends JButton {
         this.setAction(new Eshop_AfficheConfirmAcheter(it, j));
         ImageIcon icon = new ImageIcon("./eshop/Caddy.png");
         this.setIcon(icon);
-
+     this.setBackground(Color.black);
+        this.setBorderPainted(false);
+       
     }
 
 }

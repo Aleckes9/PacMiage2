@@ -8,6 +8,7 @@ package pacmiage2;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.GridLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JDialog;
@@ -28,7 +29,7 @@ public class Eshop_AfficheEshop {
 
     //  public Eshop_AfficheEshop(JoueurInfo joueur) {
     public static void main(String[] args) {
-        System.out.println("yo");
+     
         JoueurInfo joueur = new JoueurInfo();
         /**
          * On définit les propriétés de la fenêtre
@@ -44,29 +45,36 @@ public class Eshop_AfficheEshop {
          */
         LecteurObjet lecteur = new LecteurObjet();
         Objet objet[] = lecteur.getObjet();
-        JButton acheter[] = new JButton[objet.length];
+    
         // ImageIcon separation = new ImageIcon("./eshop/separation.png");
-        //JLabel separ[] = new JLabel[objet.length];
-        int bound = 20;
-        for (int n = 0; n < objet.length; n++) {
-            new Eshop_AfficheObjet(g, objet[n], bound);
-            acheter[n] = new Eshop_BtnAcheter(objet[n], joueur);
-//            separ[n] = new JLabel(separation);
-//            g.add(separ[n]);
-            g.add(acheter[n]);
-            acheter[n].setBounds(5 * largeur / 6, bound, 65, 50);
-//            separ[n].setBounds(0, bound - 50, largeur, 50);
+   
 
-            bound += 200;
+             GridLayout layout = new GridLayout(objet.length,0);
+   layout.setVgap(30);
+      g.setLayout(layout);
+        for (int n = 0; n < objet.length; n++) {
+                 
+
+     
+        
+            JPanel h=new JPanel();
+
+            new Eshop_AfficheObjet(h,objet[n],joueur,true);
+         g.add(h);
+         
+     
+
+
+          
 
         }
         /**
          * Onajoute la barre du haut contenant les informations joueurs
          */
-        g.setPreferredSize(new Dimension(largeur, bound));
-        g.setLayout(new BorderLayout());
+     
+    
         AfficheBarreInformation barre = new AfficheBarreInformation(f, joueur);
-        //g.add(barre.getBarreDuHaut(), BorderLayout.NORTH);
+      
         JScrollPane scroll = new JScrollPane(g);
 
         scroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);

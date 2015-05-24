@@ -5,11 +5,16 @@
  */
 package pacmiage2;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.GridLayout;
+import java.awt.Rectangle;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.border.Border;
 import static pacmiage2.Eshop_AfficheEshop.hauteur;
 import static pacmiage2.Eshop_AfficheEshop.largeur;
 
@@ -20,50 +25,70 @@ import static pacmiage2.Eshop_AfficheEshop.largeur;
  */
 public class Eshop_AfficheObjet {
 
-    public Eshop_AfficheObjet(JPanel f, Objet it, int bound) {
+    public Eshop_AfficheObjet(JPanel f, Objet it,JoueurInfo joueur,boolean b) {
 
         /**
          * Paramètres de l'affichage du nom
          */
         JLabel nom = new JLabel(it.getNom());
         nom.setForeground(Color.white);
-        nom.setFont(new Font(null, largeur * 40 / 1366, 40 * hauteur / 768));
-        /**
+        nom.setFont(new Font(null,  40 , 40));
+       
+            /**
          * Paramètres de l'affichage du prix
          */
         JLabel prix = new JLabel("" + it.getPrix());
         prix.setForeground(Color.white);
-        prix.setFont(new Font(null, largeur * 40 / 1366, 40 * hauteur / 768));
+        prix.setFont(new Font(null, 10 , 40 ));
         /**
          * Paramètres de l'affichage de la description
          */
         JLabel description = new JLabel(it.getDescription());
         description.setForeground(Color.white);
-        description.setFont(new Font(null, largeur * 20 / 1366, 20 * hauteur / 768));
+        description.setFont(new Font(null,  20 , 20 ));
+     
         /**
          * Paramètre de l'affichage de l'image
          */
         ImageIcon icon = new ImageIcon(it.getImage());
         JLabel image = new JLabel(icon);
-        ImageIcon separation = new ImageIcon("./eshop/separation.png");
-        JLabel separ = new JLabel(separation);
+       
+JLabel j=new JLabel();
 
+GridLayout layout1 = new GridLayout(2,0);
+
+      layout1.setHgap(10);
+      layout1.setVgap(5);
+      j.setLayout(layout1);
+       j.add(nom,BorderLayout.NORTH);
+       j.add(description,BorderLayout.CENTER);
+    
+       JLabel k=new JLabel();
+
+GridLayout layout2 = new GridLayout(0,2);
+
+      layout1.setHgap(10);
+      layout1.setVgap(5);
+      k.setLayout(layout2);
+       k.add(prix);
+       if(b==true){k.add(new Eshop_BtnAcheter(it, joueur));}
         /**
          * Ajout des éléments à la fenêtre
          */
-        f.add(nom);
-        f.add(prix);
-        f.add(description);
+             GridLayout layout = new GridLayout(1,0);
+    
+      f.setLayout(layout);
+    
         f.add(image);
-        f.add(separ);
-        /**
-         * Paramétrage de la position des objets dans la fenêtre
-         */
-        image.setBounds(largeur * 50 / 1366, bound * hauteur / 768, largeur * 150 / 1366, 150 * hauteur / 768);
-        description.setBounds(largeur / 4, bound + (20 * hauteur / 768), largeur, 100 * hauteur / 768);
-        prix.setBounds(3 * largeur / 4, bound + (10 * hauteur / 768), largeur, 30 * hauteur / 768);
-        nom.setBounds(2 * largeur / 5, bound, largeur / 2, 30 * hauteur / 768);
-        separ.setBounds(0, bound - 50, largeur, 50);
-    }
+       
+        f.add(j);
+        f.add(k);
+      
+    
+      
+f.setBackground(Color.black);
+      
+       
+       
 
-}
+}}
