@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <eshop>
     <objet>
         <nom>Double Pièce</nom>
@@ -8,61 +8,61 @@
     </objet>
     <objet>
         <nom>Freezer</nom>
-        <description>Immobilise tous les ennemis pendant une durée de 10 secondes</description>
+        <description>Immobilise tous les ennemis </description>
         <image>./src/ressources/image/eshop/freezer.png</image>
         <prix>100</prix>
     </objet>	
     <objet>
         <nom>Joker</nom>
-        <description>Permet d'éviter une question(ne fonctionne pas au passage de niveau)</description>
+        <description>Permet d'éviter une question</description>
         <image>./src/ressources/image/eshop/Joker.jpg</image>
         <prix>200</prix>
     </objet>
     <objet>
         <nom>Speed</nom>
-        <description>Augmente la vitesse du Pac-man pendant une durée de 10 secondes</description>
+        <description>Augmente la vitesse du Pac-man </description>
         <image>./src/ressources/image/eshop/Boost.png</image>
         <prix>100</prix>
     </objet>
     <objet>
         <nom>Slow</nom>
-        <description>Ralenti les ennemis du Pac-man pendant une durée de 10 secondes</description>
+        <description>Ralenti les ennemis du Pac-man</description>
         <image>./src/ressources/image/eshop/Ralentisseur.png</image>
         <prix>100</prix>
     </objet>
     <objet>
         <nom>Invincible</nom>
-        <description>Rend le pac-man invincible pendant une durée 10 secondes</description>
+        <description>Rend le pac-man invincible </description>
         <image>./src/ressources/image/eshop/Etoile.png</image>
         <prix>100</prix>
     </objet>
     <objet>
         <nom>Red</nom>
-        <description>Change la couleur du pac-man pendant toute la partie</description>
+        <description>Change la couleur du pac-man </description>
         <image>./src/ressources/image/eshop/Rouge.png</image>
         <prix>25</prix>
     </objet>
     <objet>
         <nom>Blue</nom>
-        <description>Change la couleur du pac-man pendant toute la partie</description>
+        <description>Change la couleur du pac-man </description>
         <image>./src/ressources/image/eshop/Bleu.png</image>
         <prix>25</prix>
     </objet>
     <objet>
         <nom>Green</nom>
-        <description>Change la couleur du pac-man pendant toute la partie</description>
+        <description>Change la couleur du pac-man </description>
         <image>./src/ressources/image/eshop/Vert.png</image>
         <prix>25</prix>
     </objet>
     <objet>
         <nom>Pink</nom>
-        <description>Change la couleur du pac-man pendant toute la partie</description>
+        <description>Change la couleur du pac-man</description>
         <image>./src/ressources/image/eshop/Rose.png</image>
         <prix>25</prix>
     </objet>
     <objet>
         <nom>Hello Kitty</nom>
-        <description>Transforme le pac man en Hello Kitty pendant toute la partie</description>
+        <description>Transforme le pac man en Hello Kitty </description>
         <image>./src/ressources/image/eshop/hello_kitty.png</image>
         <prix>500</prix>
     </objet>
