@@ -15,14 +15,20 @@ public class Objet {
 
     private String nom;
     private String image;
+    private String miniImage;
     private String description;
     private int prix;
 
-    public Objet(String nom, String image, String description, int prix) {
+    public Objet(String nom, String image, String description, int prix,String miniImage) {
         this.nom = nom;
         this.image = image;
         this.description = description;
         this.prix = prix;
+        this.miniImage=miniImage;
+    }
+
+    public String getMiniImage() {
+        return miniImage;
     }
 
     public String getNom() {

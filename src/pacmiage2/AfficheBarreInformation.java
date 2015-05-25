@@ -25,6 +25,7 @@ public class AfficheBarreInformation {
 
     public AfficheBarreInformation(JDialog f, JoueurInfo joueur,boolean isEshop) {
         JDialog j;
+             
         if(isEshop){
             j=f;
         }
@@ -32,6 +33,7 @@ public class AfficheBarreInformation {
             j=null;
         }
         this.p = new JPanel();
+         
         p.setBackground(Color.black);
         p.setLayout(new BorderLayout());
         JLabel graine = new JLabel();
@@ -40,12 +42,14 @@ public class AfficheBarreInformation {
         graine.setFont(new Font("Serif", Font.BOLD, 40));
         graine.setForeground(Color.WHITE);
         p.add(graine, BorderLayout.WEST);
-        p.setLayout(new GridLayout(0,4));
+ p.setLayout(new GridLayout(0,6));
         for(int i=0;i<joueur.getObjetDispo().length;i++){
-           if(joueur.getObjetDispo()[i]!=null){
+//           if(joueur.getObjetDispo()[i]!=null){
                p.add(new Btn_Objet(joueur.getObjetDispo()[i],joueur,j));
-           }
+          // }
         }
+        BtnRetourMenu bt=new BtnRetourMenu(joueur);
+        p.add(bt);
     }
     
 

@@ -14,19 +14,19 @@ import javax.swing.JDialog;
  *
  * @author Maëlle
  */
-class Btn_Objet extends JButton {
+public class BtnRetourMenu extends JButton{
 
-    public Btn_Objet(Objet it, JoueurInfo j,JDialog eshopFenetre) {
-       
-  this.setAction(new Action_Btn_Objet(it, j,j.isJeuEnCours(),eshopFenetre));
-        if(it!=null){
-            ImageIcon icon = new ImageIcon(it.getMiniImage());
-        this.setIcon(icon);
-        }
+    public BtnRetourMenu( JoueurInfo j) {
+
+//        ImageIcon icon = new ImageIcon("./src/ressources/image/eshop/Caddy.png");
+//        this.setIcon(icon);
+        this.setText("Retour Menu");
      this.setBackground(Color.black);
         this.setBorderPainted(false);
+        this.setForeground(Color.white);
        
-        }
+    }
     
+        
     
 }

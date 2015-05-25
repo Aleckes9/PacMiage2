@@ -2,68 +2,79 @@
 <eshop>
     <objet>
         <nom>Double Pièce</nom>
-        <description>Doubler le nombre de pièces ramassées pendant une durée de 10 secondes</description>
+        <description>Doubler le nombre de pièces ramassées </description>
         <image>./src/ressources/image/eshop/Double.png</image>
+		<mini_image>./src/ressources/image/eshop/miniDouble.png</mini_image>
         <prix>50</prix>
     </objet>
     <objet>
         <nom>Freezer</nom>
         <description>Immobilise tous les ennemis </description>
         <image>./src/ressources/image/eshop/freezer.png</image>
+		 <mini_image>./src/ressources/image/eshop/minifreezer.png</mini_image>
         <prix>100</prix>
     </objet>	
     <objet>
         <nom>Joker</nom>
         <description>Permet d'éviter une question</description>
         <image>./src/ressources/image/eshop/Joker.jpg</image>
+		  <mini_image>./src/ressources/image/eshop/miniJoker.jpg</mini_image>
         <prix>200</prix>
     </objet>
     <objet>
         <nom>Speed</nom>
         <description>Augmente la vitesse du Pac-man </description>
         <image>./src/ressources/image/eshop/Boost.png</image>
+		<mini_image>./src/ressources/image/eshop/miniBoost.png</mini_image>
         <prix>100</prix>
     </objet>
     <objet>
         <nom>Slow</nom>
         <description>Ralenti les ennemis du Pac-man</description>
         <image>./src/ressources/image/eshop/Ralentisseur.png</image>
+		<mini_image>./src/ressources/image/eshop/miniRalentisseur.png</mini_image>
         <prix>100</prix>
     </objet>
     <objet>
         <nom>Invincible</nom>
         <description>Rend le pac-man invincible </description>
         <image>./src/ressources/image/eshop/Etoile.png</image>
+		 <mini_image>./src/ressources/image/eshop/miniEtoile.png</mini_image>
         <prix>100</prix>
     </objet>
     <objet>
         <nom>Red</nom>
         <description>Change la couleur du pac-man </description>
         <image>./src/ressources/image/eshop/Rouge.png</image>
+		 <mini_image>./src/ressources/image/eshop/miniRouge.png</mini_image>
         <prix>25</prix>
     </objet>
     <objet>
         <nom>Blue</nom>
         <description>Change la couleur du pac-man </description>
         <image>./src/ressources/image/eshop/Bleu.png</image>
+		 <mini_image>./src/ressources/image/eshop/miniBleu.png</mini_image>
         <prix>25</prix>
     </objet>
     <objet>
         <nom>Green</nom>
         <description>Change la couleur du pac-man </description>
         <image>./src/ressources/image/eshop/Vert.png</image>
+		<mini_image>./src/ressources/image/eshop/miniVert.png</mini_image>
         <prix>25</prix>
     </objet>
     <objet>
         <nom>Pink</nom>
         <description>Change la couleur du pac-man</description>
         <image>./src/ressources/image/eshop/Rose.png</image>
+		<mini_image>./src/ressources/image/eshop/miniRose.png</mini_image>
         <prix>25</prix>
     </objet>
     <objet>
         <nom>Hello Kitty</nom>
         <description>Transforme le pac man en Hello Kitty </description>
         <image>./src/ressources/image/eshop/hello_kitty.png</image>
+		<mini_image>./src/ressources/image/eshop/minihello_kitty.png</mini_image>
         <prix>500</prix>
     </objet>
 </eshop>

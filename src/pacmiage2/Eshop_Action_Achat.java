@@ -39,7 +39,7 @@ public class Eshop_Action_Achat extends AbstractAction {
 
     @Override
     public void actionPerformed(ActionEvent ae) {
-        String picture="./eshop/ghost.png";
+        String picture="./src/ressources/image/eshop/ghost.png";
         if(j.getNbObjet()>=4){
              message = "Vous avez trop d'objets";
         }
