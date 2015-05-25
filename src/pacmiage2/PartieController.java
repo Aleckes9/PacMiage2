@@ -5,9 +5,8 @@
  */
 package pacmiage2;
 
-import java.util.ArrayList;
+
 import java.util.HashMap;
-import java.util.List;
 import org.newdawn.slick.BasicGame;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
@@ -49,7 +48,7 @@ public class PartieController extends BasicGame {
 
         JoueurController controller = new JoueurController(this.player);
         container.getInput().addKeyListener(controller);
-        Music background = new Music("bruno.ogg");
+        Music background = new Music("./src/ressources/musique/bruno.ogg");
         background.loop();
     }
 

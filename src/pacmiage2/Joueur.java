@@ -31,7 +31,7 @@ public class Joueur {
     }
 
     public void init() throws SlickException {
-        SpriteSheet spriteSheet = new SpriteSheet("./src/main/resources/pacManMove.png", 32, 32);
+        SpriteSheet spriteSheet = new SpriteSheet("./src/ressources/image/personnage/pacManMove.png", 32, 32);
         this.animations[0] = loadAnimation(spriteSheet, 0, 1, 0);
         this.animations[1] = loadAnimation(spriteSheet, 0, 1, 1);
         this.animations[2] = loadAnimation(spriteSheet, 0, 1, 2);

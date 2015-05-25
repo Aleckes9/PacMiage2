@@ -48,7 +48,7 @@ public class Eshop_Action_ConfirmAchat extends AbstractAction {
         JPanel p = new JPanel();
         p.setBackground(Color.black);
         f.setBounds(largeur / 3, hauteur / 4, 4 * largeur / 11, hauteur / 2);
-        ImageIcon icon = new ImageIcon("./eshop/ghost.png");
+        ImageIcon icon = new ImageIcon("./src/ressources/image/eshop/ghost.png");
         JLabel image = new JLabel(icon);
         JLabel texte = new JLabel();
         texte.setText(message);

@@ -30,7 +30,7 @@ public class LecteurObjet {
         try {
             //On crée un nouveau document JDOM avec en argument le fichier XML
 
-            document = sxb.build(new File("./eshop/objet.xml"));
+            document = sxb.build(new File("./src/ressources/image/eshop/objet.xml"));
         } catch (Exception e) {
             System.out.println("Fichier de la liste d'objet non trouvé");
         }

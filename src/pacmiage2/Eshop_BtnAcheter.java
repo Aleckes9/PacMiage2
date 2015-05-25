@@ -19,7 +19,7 @@ public class Eshop_BtnAcheter extends JButton {
 
     public Eshop_BtnAcheter(Objet it, JoueurInfo j) {
         this.setAction(new Eshop_AfficheConfirmAcheter(it, j));
-        ImageIcon icon = new ImageIcon("./eshop/Caddy.png");
+        ImageIcon icon = new ImageIcon("./src/ressources/image/eshop/Caddy.png");
         this.setIcon(icon);
      this.setBackground(Color.black);
         this.setBorderPainted(false);

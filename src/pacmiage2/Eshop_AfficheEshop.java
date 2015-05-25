@@ -29,7 +29,7 @@ public class Eshop_AfficheEshop {
 
     //  public Eshop_AfficheEshop(JoueurInfo joueur) {
     public static void main(String[] args) {
-     
+
         JoueurInfo joueur = new JoueurInfo();
         /**
          * On définit les propriétés de la fenêtre
@@ -45,36 +45,25 @@ public class Eshop_AfficheEshop {
          */
         LecteurObjet lecteur = new LecteurObjet();
         Objet objet[] = lecteur.getObjet();
-    
+
         // ImageIcon separation = new ImageIcon("./eshop/separation.png");
-   
-
-             GridLayout layout = new GridLayout(objet.length,0);
-   layout.setVgap(30);
-      g.setLayout(layout);
+        GridLayout layout = new GridLayout(objet.length, 0);
+        layout.setVgap(30);
+        g.setLayout(layout);
         for (int n = 0; n < objet.length; n++) {
-                 
 
-     
-        
-            JPanel h=new JPanel();
+            JPanel h = new JPanel();
 
-            new Eshop_AfficheObjet(h,objet[n],joueur,true);
-         g.add(h);
-         
-     
-
-
-          
+            new Eshop_AfficheObjet(h, objet[n], joueur, true);
+            g.add(h);
 
         }
         /**
          * Onajoute la barre du haut contenant les informations joueurs
          */
-     
-    
+
         AfficheBarreInformation barre = new AfficheBarreInformation(f, joueur);
-      
+
         JScrollPane scroll = new JScrollPane(g);
 
         scroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);

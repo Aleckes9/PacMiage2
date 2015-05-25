@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<questions>
+<question niveau="1">
+    <text>
+    	Qu'est-ce qu'un algorithme ?<choix></choix>
+
+    </text>
+    <reponse rep="false">
+    	Un problème de décision
+    </reponse>
+        <reponse rep="true">
+    	Une méthode ou un procédé décrit pas à pas
+    </reponse>
+        <reponse rep="false">
+    	Un langage de programmation
+    </reponse>
+        <reponse rep="false">
+    	Un code numérique
+    </reponse>
+</question>
+
+<question niveau="2">
+    <text>
+n ←− taille du tableau\n
+Si n > 2
+  Pour i allant de 2 à n
+    tmp ←− tableau[i]
+	 j ←− i
+	 ???
+	   tableau[j] ←− tableau[j-1]
+	   j ←− j − 1
+	 tableau[j] ←− tmp
+sortir : tableau
+    </text>
+    <reponse rep="true">
+        (a) Tant que j ≥ 2 et tableau[j − 1] > tmp
+    </reponse>
+        <reponse rep="false">
+        (b) Tant que j ≤ i et tableau[j − 1] > tmp
+    </reponse>
+        <reponse rep="false">
+        (c) Pour j allant de 1 à n
+    </reponse>
+        <reponse rep="false">
+        (d) Pour j allant de 2 à i
+    </reponse>
+
+        <reponse rep="false">
+        (d) Pour j allant de 2 à i
+    </reponse>
+        <reponse rep="false">
+        (d) Pour j allant de 2 à i
+    </reponse>
+</question>
+</questions>

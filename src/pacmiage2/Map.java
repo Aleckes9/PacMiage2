@@ -21,7 +21,7 @@ public class Map {
 
     // méthodes d’initialisation et d'affichage  [...]
     public void init() throws SlickException {
-        this.tiledMap = new TiledMap("./src/main/resources/map/pacManCarte.tmx");
+        this.tiledMap = new TiledMap("./src/ressources/map/pacManCarte.tmx");
 
     }
 
