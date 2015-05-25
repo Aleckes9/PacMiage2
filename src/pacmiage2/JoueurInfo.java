@@ -5,7 +5,7 @@
  */
 package pacmiage2;
 
-import java.util.ArrayList;
+import java.lang.reflect.Array;
 
 /**
  *
@@ -15,43 +15,112 @@ public class JoueurInfo {
 
     private int graines;
     private int record;
-    private ArrayList<Objet> ObjetDispo;
-
+    private Objet[]objetDispo;
+    private boolean jeuEnCours;
+private int nbObjet;
+  /*
+ * Constructeur JoueurInfo
+ */
     public JoueurInfo() {
         this.graines = 0;
         this.record = 0;
-        ObjetDispo = new ArrayList<>();
+        objetDispo = (Objet[]) Array.newInstance(Objet.class,4);
+        for(int i=0;i<4;i++){
+           objetDispo[i]=null; 
+        }
+    nbObjet=0;
     }
-
+/**
+ * Récupère le nombre d'objet que possède le joueur
+ * @return le nombre d'objet que possède le joueur
+ */
+    public int getNbObjet() {
+        return nbObjet;
+    }
+/**
+ * Ajoute des graines sur le compte du joueur
+ * @param n nombre de graines à ajouter
+ */
     public void ajouterGraines(int n) {
         graines += n;
     }
-
+/**
+ * Retire des graines sur le compte du joueur
+ * @param n nombre de graines à retirer
+ */
     public void retirerGraines(int n) {
         graines -= n;
     }
-
+/**
+ * Récupère le nombre de graine actuellement disponible sur le compte du joueur
+ * @return le nombre de graine actuellement disponible sur le compte du joueur
+ */
     public int getGraines() {
         return graines;
     }
-
+/**
+ * Récupère le record du joueur 
+ * @return le record du joueur 
+ */
     public int getRecord() {
         return record;
     }
-
-    public ArrayList<Objet> getObjetDispo() {
-        return ObjetDispo;
+/**
+ * Récupère les objets du joueur
+ * @return 
+ */
+    public Objet[] getObjetDispo() {
+        return objetDispo;
     }
-
-    public void setRecord(int record) {
-        this.record = record;
+    /**
+     * Récupère l'état du joueur 
+     * @return true si le joueur est en train de jouer false sinon
+     */
+     public boolean isJeuEnCours() {
+        return jeuEnCours;
     }
-
-    public void ajouterObjet(Objet o) {
-        ObjetDispo.add(o);
+/**
+ * Change l'état du joueur 
+ * @param jeuEnCours état du joueur après changement
+ */
+    public void setJeuEnCours(boolean jeuEnCours) {
+        this.jeuEnCours = jeuEnCours;
     }
-
+/**
+/**
+ * Modifie le record du joueur
+ * @param record à modifier
+ */
+    public void setRecord(int reccord) {
+        this.record = reccord;
+    }
+/**
+ * Ajoute un objet au joueur
+ * @param o objet à ajouter
+ * @return true si l'objet a pu être ajouté false sinon
+ */
+    public boolean ajouterObjet(Objet o) {
+      for(int i=0;i<4;i++){
+          if(objetDispo[i]==null){
+              objetDispo[i]=o;
+              nbObjet++;
+              return true;
+              
+          }
+      }
+      return false;
+    }
+    
+/**
+ * Retire un objet au joueur
+ * @param o objet à retirer
+ */
     public void retirerObjet(Objet o) {
-        ObjetDispo.remove(o);
+         for(int i=0;i<4;i++){
+          if(objetDispo[i]==o){
+              objetDispo[i]=null;
+                   nbObjet--;
+          }
+      }
     }
 }

@@ -7,16 +7,12 @@ package pacmiage2;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridLayout;
-import java.awt.Rectangle;
 import javax.swing.ImageIcon;
+import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.border.Border;
-import static pacmiage2.Eshop_AfficheEshop.hauteur;
-import static pacmiage2.Eshop_AfficheEshop.largeur;
 
 /**
  * Affiche un objet donné avec son nom, son image, sa description et son prix
@@ -25,7 +21,7 @@ import static pacmiage2.Eshop_AfficheEshop.largeur;
  */
 public class Eshop_AfficheObjet {
 
-    public Eshop_AfficheObjet(JPanel f, Objet it,JoueurInfo joueur,boolean b) {
+    public Eshop_AfficheObjet(JPanel f, Objet it,JoueurInfo joueur,boolean b,JDialog eshopFenetre) {
 
         /**
          * Paramètres de l'affichage du nom
@@ -71,7 +67,7 @@ GridLayout layout2 = new GridLayout(0,2);
       layout1.setVgap(5);
       k.setLayout(layout2);
        k.add(prix);
-       if(b==true){k.add(new Eshop_BtnAcheter(it, joueur));}
+       if(b==true){k.add(new Eshop_BtnAcheter(it, joueur,eshopFenetre));}
         /**
          * Ajout des éléments à la fenêtre
          */

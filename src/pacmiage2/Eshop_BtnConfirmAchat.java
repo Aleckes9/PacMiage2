@@ -8,6 +8,7 @@ package pacmiage2;
 import java.awt.Color;
 import java.awt.Font;
 import javax.swing.JButton;
+import javax.swing.JDialog;
 
 /**
  * Bouton pour confirmer l'achat d'un objet
@@ -16,8 +17,8 @@ import javax.swing.JButton;
  */
 public class Eshop_BtnConfirmAchat extends JButton {
 
-    public Eshop_BtnConfirmAchat(JoueurInfo j, Objet it) {
-        this.setAction(new Eshop_Action_ConfirmAchat(j, it));
+    public Eshop_BtnConfirmAchat(JoueurInfo j, Objet it,JDialog confirmFenetre,JDialog eshopFenetre) {
+        this.setAction(new Eshop_Action_Achat(j, it,confirmFenetre,eshopFenetre));
         this.setText("Oui");
         this.setFont(new Font(null, 30, 30 ));
         this.setBorderPainted(false);

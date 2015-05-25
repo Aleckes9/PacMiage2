@@ -26,10 +26,12 @@ public class Eshop_AfficheConfirmAcheter extends AbstractAction {
 
     Objet it;
     JoueurInfo j;
+    JDialog eshopFenetre;
 
-    public Eshop_AfficheConfirmAcheter(Objet it, JoueurInfo j) {
+    public Eshop_AfficheConfirmAcheter(Objet it, JoueurInfo j,JDialog eshopFenetre) {
         this.it = it;
         this.j = j;
+    this.eshopFenetre=eshopFenetre;
     }
 
     @Override
@@ -40,14 +42,14 @@ public class Eshop_AfficheConfirmAcheter extends AbstractAction {
         g.setBackground(Color.black);
         f.setBounds(0, 0, largeur, hauteur);
         JLabel texte = new JLabel();
-        AfficheBarreInformation barreDuHaut = new AfficheBarreInformation(f, j);
+        AfficheBarreInformation barreDuHaut = new AfficheBarreInformation(f, j,false);
 JPanel d=new JPanel();
 
-        new Eshop_AfficheObjet(d, it,j,false);
+        new Eshop_AfficheObjet(d, it,j,false,eshopFenetre);
         texte.setText("Voulez-vous acheter cet objet?");
         texte.setForeground(Color.white);
         texte.setFont(new Font(null, 40, 40 ));
-        Eshop_BtnConfirmAchat oui = new Eshop_BtnConfirmAchat(j, it);
+        Eshop_BtnConfirmAchat oui = new Eshop_BtnConfirmAchat(j, it,f,eshopFenetre);
         Eshop_BtnRetourEshop non = new Eshop_BtnRetourEshop(f);
         g.add(texte);
             JPanel bt=new JPanel();

@@ -8,6 +8,7 @@ package pacmiage2;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.GridLayout;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -22,7 +23,14 @@ public class AfficheBarreInformation {
 
     JPanel p;
 
-    public AfficheBarreInformation(JDialog f, JoueurInfo joueur) {
+    public AfficheBarreInformation(JDialog f, JoueurInfo joueur,boolean isEshop) {
+        JDialog j;
+        if(isEshop){
+            j=f;
+        }
+        else{
+            j=null;
+        }
         this.p = new JPanel();
         p.setBackground(Color.black);
         p.setLayout(new BorderLayout());
@@ -32,8 +40,14 @@ public class AfficheBarreInformation {
         graine.setFont(new Font("Serif", Font.BOLD, 40));
         graine.setForeground(Color.WHITE);
         p.add(graine, BorderLayout.WEST);
-
+        p.setLayout(new GridLayout(0,4));
+        for(int i=0;i<joueur.getObjetDispo().length;i++){
+           if(joueur.getObjetDispo()[i]!=null){
+               p.add(new Btn_Objet(joueur.getObjetDispo()[i],joueur,j));
+           }
+        }
     }
+    
 
     /**
      * Renvoie le JPanel où s'affiche la barre d'information joueur
