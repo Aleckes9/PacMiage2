@@ -31,6 +31,7 @@ public class Eshop_AfficheEshop {
     public static void main(String[] args) {
 
         JoueurInfo joueur = new JoueurInfo();
+        joueur.ajouterGraines(100);
         /**
          * On définit les propriétés de la fenêtre
          */
