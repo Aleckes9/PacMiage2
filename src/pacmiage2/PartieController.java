@@ -6,7 +6,9 @@
 package pacmiage2;
 
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import org.newdawn.slick.BasicGame;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
@@ -21,16 +23,23 @@ public class PartieController extends BasicGame {
 
     private GameContainer container;
     private Map map;
-    private Joueur player;
+    private PacMiage player;
     private java.util.Map<Integer, Graine> grainesMap;
+    private List<Fantome> listFantome;
+    private AffichageScore score;
+
 
     public PartieController() {
 
         super("Lesson 1 :: WindowGame");
         map = new Map();
-        player = new Joueur(map);
+        player = new PacMiage(map);
         grainesMap = new HashMap<Integer, Graine>();
-
+        listFantome = new ArrayList<Fantome>();
+        for (int i = 0; i < 5; i++) {
+            listFantome.add(new Fantome(map));
+        }
+        score = new AffichageScore(map);
     }
 
     @Override
@@ -45,8 +54,11 @@ public class PartieController extends BasicGame {
             }
         }
         this.player.init();
+        for (Fantome fantome : listFantome) {
+            fantome.init();
+        }
 
-        JoueurController controller = new JoueurController(this.player);
+        PacMiageController controller = new PacMiageController(this.player);
         container.getInput().addKeyListener(controller);
         Music background = new Music("./src/ressources/musique/bruno.ogg");
         background.loop();
@@ -62,27 +74,44 @@ public class PartieController extends BasicGame {
         }
         this.player.render(g);
 
+        for (Fantome fantome : listFantome) {
+            fantome.render(g);
+        }
         this.map.renderForeground();
+        
+        this.score.render(g);
+        
 
     }
 
     @Override
     public void update(GameContainer container, int delta) throws SlickException {
         // [...] test de trigger (leçon 6) 
+        int graineRemove = -1;
         for (Integer uneGraine : grainesMap.keySet()) {
             Graine graine = grainesMap.get(uneGraine);
             if (graine != null) {
 
                 if (player.estEnCollisionObjet(graine.getX(), graine.getY())) {
 
-                    grainesMap.remove(uneGraine);
-
+                    graineRemove = uneGraine;
+                    
                 }
 
             }
 
         }
+        if(graineRemove != -1){
+            grainesMap.remove(graineRemove);
+            this.score.setArgent(this.score.getArgent()+1);
+        }
+        
         this.player.update(delta);
+        for (Fantome fantome : listFantome) {
+            fantome.update(delta);
+        }
+        
+        
         // [...] mise à jour de la camera (leçon 4) 
     }
 

@@ -27,7 +27,7 @@ public class Graine {
         this.name = name;
         this.x = x;
         this.y = y;
-        imageGraine = new Image("./src/main/resources/graine.png");
+        imageGraine = new Image("./src/ressources/image/objet/graine.png");
         width = imageGraine.getWidth();
         height = imageGraine.getHeight();
     }

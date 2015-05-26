@@ -12,13 +12,16 @@ import org.newdawn.slick.SlickException;
  *
  * @author Maëlle
  */
-public class PacMiage2 {
+public class JeuPacMiage {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) throws SlickException {
-        new AppGameContainer(new PartieController(), 496, 496, false).start();
+        AppGameContainer game = new AppGameContainer(new PartieController(), 1000, 800, false);
+        game.setTargetFrameRate(60);
+        game.start();
+        
     }
 
 }

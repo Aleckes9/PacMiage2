@@ -12,11 +12,11 @@ import org.newdawn.slick.KeyListener;
  *
  * @author Alexandre
  */
-public class JoueurController implements KeyListener {
+public class PacMiageController implements KeyListener {
 
-    private Joueur player;
+    private PacMiage player;
 
-    public JoueurController(Joueur player) {
+    public PacMiageController(PacMiage player) {
         this.player = player;
     }
 
@@ -41,22 +41,19 @@ public class JoueurController implements KeyListener {
     public void keyPressed(int key, char c) {
         switch (key) {
             case Input.KEY_RIGHT:
-                this.player.setDirection(0);
-                this.player.setMoving(true);
+                this.player.setFuturDirection(0);           
                 break;
             case Input.KEY_LEFT:
-                this.player.setDirection(1);
-                this.player.setMoving(true);
+                this.player.setFuturDirection(1);
                 break;
             case Input.KEY_UP:
-                this.player.setDirection(2);
-                this.player.setMoving(true);
+                this.player.setFuturDirection(2);
                 break;
             case Input.KEY_DOWN:
-                this.player.setDirection(3);
-                this.player.setMoving(true);
+                this.player.setFuturDirection(3);
                 break;
         }
+         this.player.setMoving(true);
     }
 
     @Override

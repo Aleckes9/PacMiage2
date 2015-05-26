@@ -15,18 +15,20 @@ import org.newdawn.slick.SpriteSheet;
  *
  * @author Alexandre
  */
-public class Joueur {
+public class PacMiage {
 
-    private float x = 230, y = 230;
+    private float x = 448, y = 200;
     private int direction = 0;
+    private int futurDirection = 0;
+
     private boolean moving = false;
     private Animation[] animations = new Animation[8];
     private boolean onStair = false;
-    private int vitesse = 1;
+    private float vitesse = 1f;
 
     private Map map;
 
-    public Joueur(Map map) {
+    public PacMiage(Map map) {
         this.map = map;
     }
 
@@ -52,65 +54,55 @@ public class Joueur {
 
     public void render(Graphics g) throws SlickException {
         g.setColor(new Color(0, 0, 0, .5f));
-
         g.drawAnimation(animations[direction + (moving ? 4 : 0)], x, y);
     }
 
     public void update(int delta) {
         if (this.moving) {
-            float futurX = getFuturX(delta + vitesse);
-            float futurY = getFuturY(delta + vitesse);
-            //tout les x pour y = 0
-            //tout les y pour x = 0
-            //tout les x pour y = max
-            //tout les y pour x = max
+            float futurX = getFuturX(delta + vitesse, this.direction);
+            float futurY = getFuturY(delta + vitesse, this.direction);
+            float futurXDir = getFuturX(delta + vitesse, this.futurDirection);
+            float futurYDir = getFuturY(delta + vitesse, this.futurDirection);
+            float futurX1Dir = getFuturX1(delta + vitesse, this.futurDirection);
+            float futurY1Dir = getFuturY1(delta + vitesse, this.futurDirection);
 
-            if (estEnCollisionMur(futurX, futurY)) {
-                this.moving = false;
+            if (!estEnCollisionMur(futurX1Dir, futurY1Dir)) {
+                this.direction = this.futurDirection;
+                this.x = futurXDir;
+                this.y = futurYDir;
+
             } else {
-                this.x = futurX;
-                this.y = futurY;
+                if (estEnCollisionMur(futurX, futurY)) {
+                    this.moving = false;
+                } else {
+                    this.x = futurX;
+                    this.y = futurY;
+                }
             }
-
         }
     }
 
     public boolean estEnCollisionMur(float xObjet, float yObjet) {
         boolean collision = false;
-        for (int x = 0; x < 32; x++) {
-            if (x == 0 || x == 31) {
-                for (int j = 0; j < 32; j++) {
-                    collision = this.map.isCollision(xObjet + x, yObjet + j);
-                    if (collision) {
-                        break;
-                    }
-                }
-            } else {
-                for (int j = 0; j < 32; j = j + 31) {
-                    collision = this.map.isCollision(xObjet + x, yObjet + j);
-                    if (collision) {
-                        break;
-                    }
-                }
-            }
-
-            if (collision) {
-                break;
-            }
-        }
+        if(this.map.isCollision(xObjet + 0.822f, yObjet + 0.822f)
+             ||this.map.isCollision(xObjet + 31f, yObjet + 0.822f)
+                ||this.map.isCollision(xObjet + 0.822f, yObjet + 31f)
+                  ||this.map.isCollision(xObjet + 31f, yObjet + 31f)
+                ){
+        collision = true;
+    } 
         return collision;
-
     }
 
     public boolean estEnCollisionObjet(float xObjet, float yObjet) {
 
-        return xObjet > this.x && xObjet < this.x + 32 && yObjet > this.y && yObjet < this.y + 32;
+        return xObjet > this.x && xObjet < this.x + 33 && yObjet > this.y && yObjet < this.y + 33;
 
     }
 
-    private float getFuturX(int delta) {
+    private float getFuturX(float delta, int direction) {
         float futurX = this.x;
-        switch (this.direction) {
+        switch (direction) {
             case 1:
                 futurX = this.x - .1f * delta;
                 break;
@@ -121,24 +113,40 @@ public class Joueur {
         return futurX;
     }
 
-    private float getFuturY(int delta) {
+    private float getFuturY(float delta, int direction) {
         float futurY = this.y;
-        switch (this.direction) {
+        switch (direction) {
             case 2:
                 futurY = this.y - .1f * delta;
                 break;
             case 3:
                 futurY = this.y + .1f * delta;
                 break;
+        }
+        return futurY;
+    }
+    
+       private float getFuturX1(float delta, int direction) {
+        float futurX = this.x;
+        switch (direction) {
             case 1:
-                if (this.onStair) {
-                    futurY = this.y + .1f * delta;
-                }
+                futurX = this.x - .2f * delta;
                 break;
             case 0:
-                if (this.onStair) {
-                    futurY = this.y - .1f * delta;
-                }
+                futurX = this.x + .2f * delta;
+                break;
+        }
+        return futurX;
+    }
+
+    private float getFuturY1(float delta, int direction) {
+        float futurY = this.y;
+        switch (direction) {
+            case 2:
+                futurY = this.y - .2f * delta;
+                break;
+            case 3:
+                futurY = this.y + .2f * delta;
                 break;
         }
         return futurY;
@@ -207,6 +215,14 @@ public class Joueur {
 
     public void setOnStair(boolean onStair) {
         this.onStair = onStair;
+    }
+
+    public int getFuturDirection() {
+        return futurDirection;
+    }
+
+    public void setFuturDirection(int futurDirection) {
+        this.futurDirection = futurDirection;
     }
 
 }
