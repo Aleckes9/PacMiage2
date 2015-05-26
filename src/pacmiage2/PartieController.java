@@ -27,6 +27,7 @@ public class PartieController extends BasicGame {
     private java.util.Map<Integer, Graine> grainesMap;
     private List<Fantome> listFantome;
     private AffichageScore score;
+    private int compteurGC = 0;
 
 
     public PartieController() {
@@ -60,13 +61,12 @@ public class PartieController extends BasicGame {
 
         PacMiageController controller = new PacMiageController(this.player);
         container.getInput().addKeyListener(controller);
-        Music background = new Music("./src/ressources/musique/bruno.ogg");
-        background.loop();
+        //Music background = new Music("./src/ressources/musique/bruno.ogg");
+        //background.loop();
     }
 
     @Override
     public void render(GameContainer container, Graphics g) throws SlickException {
-        // placement de camera (leçon 4)
         this.map.renderBackground();
 
         for (Integer graine : grainesMap.keySet()) {
@@ -78,10 +78,7 @@ public class PartieController extends BasicGame {
             fantome.render(g);
         }
         this.map.renderForeground();
-        
         this.score.render(g);
-        
-
     }
 
     @Override
@@ -93,13 +90,9 @@ public class PartieController extends BasicGame {
             if (graine != null) {
 
                 if (player.estEnCollisionObjet(graine.getX(), graine.getY())) {
-
-                    graineRemove = uneGraine;
-                    
+                    graineRemove = uneGraine;  
                 }
-
             }
-
         }
         if(graineRemove != -1){
             grainesMap.remove(graineRemove);
@@ -111,6 +104,11 @@ public class PartieController extends BasicGame {
             fantome.update(delta);
         }
         
+        if(this.compteurGC==4){
+            System.gc();
+            this.compteurGC = 0;
+        }
+        this.compteurGC++;
         
         // [...] mise à jour de la camera (leçon 4) 
     }

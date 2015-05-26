@@ -52,7 +52,6 @@ public class Fantome {
     }
 
     public void render(Graphics g) throws SlickException {
-        g.setColor(new Color(0, 0, 0, .5f));
 
         g.drawAnimation(animations[direction + (moving ? 4 : 0)], x, y);
     }

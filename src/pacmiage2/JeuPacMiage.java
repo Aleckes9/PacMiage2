@@ -21,7 +21,5 @@ public class JeuPacMiage {
         AppGameContainer game = new AppGameContainer(new PartieController(), 1000, 800, false);
         game.setTargetFrameRate(60);
         game.start();
-        
     }
-
 }

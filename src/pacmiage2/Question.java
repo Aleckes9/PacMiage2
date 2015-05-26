@@ -6,7 +6,8 @@
 package pacmiage2;
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.function.Consumer;
+
+
 
 /**
  *
@@ -76,9 +77,6 @@ public class Question {
         return reponse.iterator();
     }
 
-    public void forEachReponse(Consumer<? super Reponse> action) {
-        reponse.forEach(action);
-    }
 
     public int getNiveau() {
         return niveau;
