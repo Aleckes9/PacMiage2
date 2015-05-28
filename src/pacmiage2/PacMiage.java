@@ -17,14 +17,14 @@ import org.newdawn.slick.SpriteSheet;
  */
 public class PacMiage {
 
-    private float x = 448, y = 200;
+    private float x = 416, y = 200;
     private int direction = 0;
     private int futurDirection = 0;
 
     private boolean moving = false;
     private Animation[] animations = new Animation[8];
     private boolean onStair = false;
-    private float vitesse = 1f;
+    private int vitesse = 2;
 
     private Map map;
 
@@ -58,12 +58,12 @@ public class PacMiage {
 
     public void update(int delta) {
         if (this.moving) {
-            float futurX = getFuturX(delta + vitesse, this.direction);
-            float futurY = getFuturY(delta + vitesse, this.direction);
-            float futurXDir = getFuturX(delta + vitesse, this.futurDirection);
-            float futurYDir = getFuturY(delta + vitesse, this.futurDirection);
-            float futurX1Dir = getFuturX1(delta + vitesse, this.futurDirection);
-            float futurY1Dir = getFuturY1(delta + vitesse, this.futurDirection);
+            float futurX = getFuturX(vitesse, this.direction);
+            float futurY = getFuturY(vitesse, this.direction);
+            float futurXDir = getFuturX(vitesse, this.futurDirection);
+            float futurYDir = getFuturY(vitesse, this.futurDirection);
+            float futurX1Dir = getFuturX1(vitesse, this.futurDirection);
+            float futurY1Dir = getFuturY1(vitesse, this.futurDirection);
 
             if (!estEnCollisionMur(futurX1Dir, futurY1Dir)) {
                 this.direction = this.futurDirection;
@@ -83,10 +83,10 @@ public class PacMiage {
 
     public boolean estEnCollisionMur(float xObjet, float yObjet) {
         boolean collision = false;
-        if(this.map.isCollision(xObjet + 0.822f, yObjet + 0.822f)
-             ||this.map.isCollision(xObjet + 31f, yObjet + 0.822f)
-                ||this.map.isCollision(xObjet + 0.822f, yObjet + 31f)
-                  ||this.map.isCollision(xObjet + 31f, yObjet + 31f)
+        if(this.map.isCollision(xObjet + 1, yObjet + 1)
+             ||this.map.isCollision(xObjet + 31, yObjet + 1)
+                ||this.map.isCollision(xObjet + 1, yObjet + 31)
+                  ||this.map.isCollision(xObjet + 31, yObjet + 31)
                 ){
         collision = true;
     } 
@@ -99,60 +99,60 @@ public class PacMiage {
 
     }
 
-    private float getFuturX(float delta, int direction) {
+    private float getFuturX(int delta, int direction) {
         float futurX = this.x;
         switch (direction) {
             case 1:
-                futurX = this.x - .1f * delta;
+                futurX = this.x - 2 * delta;
                 break;
             case 0:
-                futurX = this.x + .1f * delta;
+                futurX = this.x + 2 * delta;
                 break;
         }
         return futurX;
     }
 
-    private float getFuturY(float delta, int direction) {
+    private float getFuturY(int delta, int direction) {
         float futurY = this.y;
         switch (direction) {
             case 2:
-                futurY = this.y - .1f * delta;
+                futurY = this.y - 2 * delta;
                 break;
             case 3:
-                futurY = this.y + .1f * delta;
+                futurY = this.y + 2 * delta;
                 break;
         }
         return futurY;
     }
     
-       private float getFuturX1(float delta, int direction) {
+       private float getFuturX1(int delta, int direction) {
         float futurX = this.x;
         switch (direction) {
             case 1:
-                futurX = this.x - .2f * delta;
+                futurX = this.x - 4 * delta;
                 break;
             case 0:
-                futurX = this.x + .2f * delta;
+                futurX = this.x + 4 * delta;
                 break;
         }
         return futurX;
     }
 
-    private float getFuturY1(float delta, int direction) {
+    private float getFuturY1(int delta, int direction) {
         float futurY = this.y;
         switch (direction) {
             case 2:
-                futurY = this.y - .2f * delta;
+                futurY = this.y - 4 * delta;
                 break;
             case 3:
-                futurY = this.y + .2f * delta;
+                futurY = this.y + 4 * delta;
                 break;
         }
         return futurY;
     }
 
-//        private float getFuturX(int delta) {
-//        float futurX = this.x;
+//        private int getFuturX(int delta) {
+//        int futurX = this.x;
 //        switch (this.direction) {
 //            case 1:
 //                futurX = this.x - .1f * delta;
@@ -164,8 +164,8 @@ public class PacMiage {
 //        return futurX;
 //    }
 //
-//    private float getFuturY(int delta) {
-//        float futurY = this.y;
+//    private int getFuturY(int delta) {
+//        int futurY = this.y;
 //        switch (this.direction) {
 //            case 2:
 //                futurY = this.y - .1f * delta;
@@ -180,7 +180,7 @@ public class PacMiage {
         return x;
     }
 
-    public void setX(float x) {
+    public void setX(int x) {
         this.x = x;
     }
 
@@ -188,7 +188,7 @@ public class PacMiage {
         return y;
     }
 
-    public void setY(float y) {
+    public void setY(int y) {
         this.y = y;
     }
 

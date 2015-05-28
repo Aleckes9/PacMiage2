@@ -18,11 +18,13 @@ import org.newdawn.slick.tiled.TiledMap;
 public class Map {
 
     private TiledMap tiledMap;
-
+    private int tileW;
+    private int tileH;
     // méthodes d’initialisation et d'affichage  [...]
     public void init() throws SlickException {
         this.tiledMap = new TiledMap("./src/ressources/map/pacManCarte.tmx");
-
+        tileW = this.tiledMap.getTileWidth();
+        tileH = this.tiledMap.getTileHeight();
     }
 
     public void renderBackground() {
@@ -37,8 +39,6 @@ public class Map {
 
     // méthode isCollision [...]
     public boolean isCollision(float x, float y) {
-        int tileW = this.tiledMap.getTileWidth();
-        int tileH = this.tiledMap.getTileHeight();
         int logicLayer = this.tiledMap.getLayerIndex("Logic");
         Image tile = this.tiledMap.getTileImage((int) x / tileW, (int) y / tileH, logicLayer);
         boolean collision = tile != null;

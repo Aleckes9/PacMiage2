@@ -16,7 +16,7 @@ import javax.swing.JButton;
  */
 public class FenetreQuestionListener  implements ActionListener {
 
-    FenetreQuestion f;
+        FenetreQuestion f;
 
     public FenetreQuestionListener(FenetreQuestion f) {
         this.f = f;
@@ -31,15 +31,16 @@ public class FenetreQuestionListener  implements ActionListener {
 
             for (Reponse reponse : f.getQuestion().getReponse()) {
                 if (reponse.getText().equals(f.getLabel().getText()) && reponse.isVeracite() == true) {
-                    f.getPanelGlobal().effetFondu("./src/ressources/image/questions/green_tick.png");
+                    
 
                     break;
                 }else{
-                   f.getPanelGlobal().effetFondu("./src/ressources/image/questions/red_cross.png"); 
+                   
                 }
                 }
                 f.getValider().setEnabled(false);
-                f.fermer();
+                
+                f.dispose();
             
 
         } else {

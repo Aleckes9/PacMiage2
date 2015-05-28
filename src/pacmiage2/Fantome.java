@@ -17,13 +17,13 @@ import org.newdawn.slick.SpriteSheet;
  */
 public class Fantome {
 
-    private float x = 448, y = 200;
+    private float x = 416, y = 200;
     private int direction = 2;
     private int futurDirection = 0;
     private boolean moving = true;
     private Animation[] animations = new Animation[8];
     private boolean onStair = false;
-    private int vitesse = 1;
+    private int vitesse = 2;
 
     private Map map;
 
@@ -52,14 +52,16 @@ public class Fantome {
     }
 
     public void render(Graphics g) throws SlickException {
-
         g.drawAnimation(animations[direction + (moving ? 4 : 0)], x, y);
     }
 
     public void update(int delta) {
-
+        boolean collision = true;
+        while(collision){
+        
+    
         int newFuturDirection = (int) (Math.random() * 200) % 4;
-        if (Math.random() < 0.5) {
+        if (Math.random() < 0.7) {
             if (this.direction == 0 && newFuturDirection == 1 || this.direction == 1 && newFuturDirection == 0 || this.direction == 2 && newFuturDirection == 3 || this.direction == 3 && newFuturDirection == 2) {
             } else {
                 this.futurDirection = newFuturDirection;
@@ -68,37 +70,42 @@ public class Fantome {
 
         if (this.moving) {
 
-            float futurX = getFuturX(delta + vitesse, this.direction);
-            float futurY = getFuturY(delta + vitesse, this.direction);
-            float futurXDir = getFuturX(delta + vitesse, this.futurDirection);
-            float futurYDir = getFuturY(delta + vitesse, this.futurDirection);
-            float futurX1Dir = getFuturX1(delta + vitesse, this.futurDirection);
-            float futurY1Dir = getFuturY1(delta + vitesse, this.futurDirection);
+            float futurX = getFuturX(vitesse, this.direction);
+            float futurY = getFuturY(vitesse, this.direction);
+            float futurXDir = getFuturX(vitesse, this.futurDirection);
+            float futurYDir = getFuturY(vitesse, this.futurDirection);
+            float futurX1Dir = getFuturX1(vitesse, this.futurDirection);
+            float futurY1Dir = getFuturY1(vitesse, this.futurDirection);
 
             if (!estEnCollisionMur(futurX1Dir, futurY1Dir)) {
                 this.direction = this.futurDirection;
                 this.x = futurXDir;
                 this.y = futurYDir;
+                collision = false;
 
             } else {
                 if (estEnCollisionMur(futurX, futurY)) {
+                    
                     this.moving = false;
                 } else {
                     this.x = futurX;
                     this.y = futurY;
+                    collision = false;
                 }
             }
         } else {
             this.moving = true;
         }
+        }
+
     }
 
     public boolean estEnCollisionMur(float xObjet, float yObjet) {
         boolean collision = false;
-        if (this.map.isCollision(xObjet + 0.822f, yObjet + 0.822f)
-                || this.map.isCollision(xObjet + 31f, yObjet + 0.822f)
-                || this.map.isCollision(xObjet + 0.822f, yObjet + 31f)
-                || this.map.isCollision(xObjet + 31f, yObjet + 31f)) {
+        if(this.map.isCollision(xObjet + 0.9f, yObjet + 0.9f)
+             ||this.map.isCollision(xObjet + 31.1f, yObjet + 0.9f)
+                ||this.map.isCollision(xObjet + 0.9f, yObjet + 31.1f)
+                  ||this.map.isCollision(xObjet + 31.1f, yObjet + 31.1f)) {
             collision = true;
         }
         return collision;
@@ -109,61 +116,63 @@ public class Fantome {
         return xObjet > this.x && xObjet < this.x + 33 && yObjet > this.y && yObjet < this.y + 33;
 
     }
-
-    private float getFuturX(float delta, int direction) {
+    
+    
+    private float getFuturX(int delta, int direction) {
         float futurX = this.x;
         switch (direction) {
-            case 0:
-                futurX = this.x + .1f * delta;
-                break;
             case 1:
-                futurX = this.x - .1f * delta;
+                futurX = this.x - 2 * delta;
+                break;
+            case 0:
+                futurX = this.x + 2 * delta;
                 break;
         }
         return futurX;
     }
 
-    private float getFuturY(float delta, int direction) {
+    private float getFuturY(int delta, int direction) {
         float futurY = this.y;
         switch (direction) {
             case 2:
-                futurY = this.y - .1f * delta;
+                futurY = this.y - 2 * delta;
                 break;
             case 3:
-                futurY = this.y + .1f * delta;
+                futurY = this.y + 2 * delta;
                 break;
         }
         return futurY;
     }
-
-    private float getFuturX1(float delta, int direction) {
+    
+       private float getFuturX1(int delta, int direction) {
         float futurX = this.x;
         switch (direction) {
             case 1:
-                futurX = this.x - .2f * delta;
+                futurX = this.x - 4 * delta;
                 break;
             case 0:
-                futurX = this.x + .2f * delta;
+                futurX = this.x + 4 * delta;
                 break;
         }
         return futurX;
     }
 
-    private float getFuturY1(float delta, int direction) {
+    private float getFuturY1(int delta, int direction) {
         float futurY = this.y;
         switch (direction) {
             case 2:
-                futurY = this.y - .2f * delta;
+                futurY = this.y - 4 * delta;
                 break;
             case 3:
-                futurY = this.y + .2f * delta;
+                futurY = this.y + 4 * delta;
                 break;
         }
         return futurY;
     }
 
-//        private float getFuturX(int delta) {
-//        float futurX = this.x;
+
+//        private int getFuturX(int delta) {
+//        int futurX = this.x;
 //        switch (this.direction) {
 //            case 1:
 //                futurX = this.x - .1f * delta;
@@ -175,8 +184,8 @@ public class Fantome {
 //        return futurX;
 //    }
 //
-//    private float getFuturY(int delta) {
-//        float futurY = this.y;
+//    private int getFuturY(int delta) {
+//        int futurY = this.y;
 //        switch (this.direction) {
 //            case 2:
 //                futurY = this.y - .1f * delta;
@@ -191,7 +200,7 @@ public class Fantome {
         return x;
     }
 
-    public void setX(float x) {
+    public void setX(int x) {
         this.x = x;
     }
 
@@ -199,7 +208,7 @@ public class Fantome {
         return y;
     }
 
-    public void setY(float y) {
+    public void setY(int y) {
         this.y = y;
     }
 

@@ -18,8 +18,9 @@ public class JeuPacMiage {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws SlickException {
-        AppGameContainer game = new AppGameContainer(new PartieController(), 1000, 800, false);
-        game.setTargetFrameRate(60);
+        AppGameContainer game = new AppGameContainer(new PartieController(), 860, 600, false);
+        //game.setShowFPS(false);
+        game.setTargetFrameRate(30);
         game.start();
     }
 }

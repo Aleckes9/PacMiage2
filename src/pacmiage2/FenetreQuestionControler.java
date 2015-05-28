@@ -22,7 +22,7 @@ import org.xml.sax.SAXException;
  */
 public class FenetreQuestionControler {
     
-    public static void main(String[] args) {
+    public FenetreQuestionControler(){
         try {
             //On crée une nouvelle instance de notre FenetreBoutons
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -40,6 +40,10 @@ public class FenetreQuestionControler {
         } catch (IOException ex) {
             Logger.getLogger(FenetreQuestion.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+    
+    public static void main(String[] args) {
+        
     } 
     
 }

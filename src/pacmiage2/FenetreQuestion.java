@@ -32,7 +32,7 @@ public class FenetreQuestion extends JFrame {
     private ArrayList<GlossyButton> boutons;
     private JTextArea text;
     private JLabel label;
-    private ImageFondu panelGlobal;
+    private JPanel panelGlobal;
 
     /**
      * 
@@ -75,7 +75,7 @@ int largeur = (int)tailleEcran.getWidth();
      */
     private JPanel buildContentPaneGlobal() {
 
-        panelGlobal = new ImageFondu();
+        panelGlobal = new JPanel();
         panelGlobal.setLayout(new BorderLayout());
         
         panelGlobal.add(buildContentPaneGauche(), BorderLayout.WEST);
@@ -174,11 +174,11 @@ int largeur = (int)tailleEcran.getWidth();
         this.question = question;
     }
 
-    public ImageFondu getPanelGlobal() {
+    public JPanel getPanelGlobal() {
         return panelGlobal;
     }
 
-    public void setPanelGlobal(ImageFondu panelGlobal) {
+    public void setPanelGlobal(JPanel panelGlobal) {
         this.panelGlobal = panelGlobal;
     }
 
@@ -217,6 +217,7 @@ int largeur = (int)tailleEcran.getWidth();
     }
     
     public void fermer(){
+        
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         
     }

@@ -3,21 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Maëlle/Documents/NetBeansProjects/PacMiage2/src/pacmiage2/Eshop_Action_Achat.java</file>
-            <file>file:/C:/Users/Maëlle/Documents/NetBeansProjects/PacMiage2/src/pacmiage2/Eshop_AfficheObjet.java</file>
-            <file>file:/C:/Users/Maëlle/Documents/NetBeansProjects/PacMiage2/src/pacmiage2/LecteurObjet.java</file>
-            <file>file:/C:/Users/Maëlle/Documents/NetBeansProjects/PacMiage2/src/pacmiage2/Btn_Objet.java</file>
-            <file>file:/C:/Users/Maëlle/Documents/NetBeansProjects/PacMiage2/src/pacmiage2/PacMiage2.java</file>
-            <file>file:/C:/Users/Maëlle/Documents/NetBeansProjects/PacMiage2/src/pacmiage2/AfficheBarreInformation.java</file>
-            <file>file:/C:/Users/Maëlle/Documents/NetBeansProjects/PacMiage2/src/ressources/questions/questions.xml</file>
-            <file>file:/C:/Users/Maëlle/Documents/NetBeansProjects/PacMiage2/src/pacmiage2/Eshop_BtnAcheter.java</file>
-            <file>file:/C:/Users/Maëlle/Documents/NetBeansProjects/PacMiage2/src/pacmiage2/Objet.java</file>
-            <file>file:/C:/Users/Maëlle/Documents/NetBeansProjects/PacMiage2/src/pacmiage2/PartieController.java</file>
-            <file>file:/C:/Users/Maëlle/Documents/NetBeansProjects/PacMiage2/src/pacmiage2/BtnRetourMenu.java</file>
-            <file>file:/C:/Users/Maëlle/Documents/NetBeansProjects/PacMiage2/src/pacmiage2/Eshop_AfficheConfirmAcheter.java</file>
-            <file>file:/C:/Users/Maëlle/Documents/NetBeansProjects/PacMiage2/src/pacmiage2/Eshop_BtnConfirmAchat.java</file>
-            <file>file:/C:/Users/Maëlle/Documents/NetBeansProjects/PacMiage2/src/pacmiage2/Eshop_Liaison_avec_Menu.java</file>
-            <file>file:/C:/Users/Maëlle/Documents/NetBeansProjects/PacMiage2/src/pacmiage2/Eshop_AfficheEshop.java</file>
+            <file>file:/C:/Users/Aleckes9/Documents/NetBeansProjects/PacMiage2/src/pacmiage2/Fantome.java</file>
+            <file>file:/C:/Users/Aleckes9/Documents/NetBeansProjects/PacMiage2/src/pacmiage2/JeuPacMiage.java</file>
+            <file>file:/C:/Users/Aleckes9/Documents/NetBeansProjects/PacMiage2/src/pacmiage2/ImageFondu.java</file>
+            <file>file:/C:/Users/Aleckes9/Documents/NetBeansProjects/PacMiage2/src/pacmiage2/FenetreQuestionControler.java</file>
+            <file>file:/C:/Users/Aleckes9/Documents/NetBeansProjects/PacMiage2/src/pacmiage2/FenetreQuestion.java</file>
+            <file>file:/C:/Users/Aleckes9/Documents/NetBeansProjects/PacMiage2/src/pacmiage2/FenetreQuestionListener.java</file>
+            <file>file:/C:/Users/Aleckes9/Documents/NetBeansProjects/PacMiage2/src/pacmiage2/PacMiage.java</file>
+            <file>file:/C:/Users/Aleckes9/Documents/NetBeansProjects/PacMiage2/src/pacmiage2/PartieController.java</file>
         </group>
     </open-files>
 </project-private>
