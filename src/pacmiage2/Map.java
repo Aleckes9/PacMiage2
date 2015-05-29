@@ -42,10 +42,6 @@ public class Map {
         int logicLayer = this.tiledMap.getLayerIndex("Logic");
         Image tile = this.tiledMap.getTileImage((int) x / tileW, (int) y / tileH, logicLayer);
         boolean collision = tile != null;
-        if (collision) {
-            Color color = tile.getColor((int) x % tileW, (int) y % tileH);
-            collision = color.getAlpha() > 0;
-        }
         return collision;
     }
 

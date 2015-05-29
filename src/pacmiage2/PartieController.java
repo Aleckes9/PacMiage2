@@ -62,8 +62,7 @@ public class PartieController extends BasicGame {
         img = new Image("./src/ressources/image/questions/green_tick.png");
         this.container = container;
         this.map.init();
-        //for (int objectID = 0; objectID < map.getObjectCount(); objectID++) {
-        for (int objectID = 0; objectID < 10; objectID++) {
+        for (int objectID = 0; objectID < map.getObjectCount(); objectID++) {
             if ("graine".equals(map.getObjectType(objectID))) {
                 String nomObjet = map.getObjectName(objectID);
                 grainesMap.put(objectID, new Graine(nomObjet, map.getObjectX(objectID), map.getObjectY(objectID)));

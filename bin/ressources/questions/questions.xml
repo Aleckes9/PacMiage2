@@ -1,0 +1,378 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<questions>
+<question niveau="1">
+    <text>
+    	Qu'est-ce qu'un algorithme ?<choix></choix>
+
+    </text>
+    <reponse rep="false">
+    	Un problème de décision
+    </reponse>
+        <reponse rep="true">
+    	Une méthode ou un procédé décrit pas à pas
+    </reponse>
+        <reponse rep="false">
+    	Un langage de programmation
+    </reponse>
+        <reponse rep="false">
+    	Un code numérique
+    </reponse>
+</question>
+<question niveau="1">
+    <text>
+    	Dans une pile, le dernier arrivé est<choix></choix>
+
+    </text>
+    <reponse rep="true">
+    	le premier sorti
+    </reponse>
+        <reponse rep="false">
+    	le dernier sorti
+    </reponse>
+        <reponse rep="false">
+    	On ne sait pas
+    </reponse>
+       
+</question>
+<question niveau="1">
+    <text>
+    	Dans une file, le dernier arrivé est<choix></choix>
+
+    </text>
+    <reponse rep="false">
+    	le premier sorti
+    </reponse>
+        <reponse rep="true">
+    	le dernier sorti
+    </reponse>
+        <reponse rep="false">
+    	On ne sait pas
+    </reponse>
+       
+</question>
+<question niveau="1">
+    <text>
+    	L'ajout d'un élément à une pile à une complexité de<choix></choix>
+
+    </text>
+    <reponse rep="true">
+    	O(1)
+    </reponse>
+        <reponse rep="false">
+    O(n)
+    </reponse>
+        <reponse rep="false">
+    O(log2(n))
+    </reponse>
+	
+       
+</question>
+<question niveau="1">
+    <text>
+    	L'accès dans le pire des cas à une donnée dans une table de hachage a une complexité de<choix></choix>
+
+    </text>
+    <reponse rep="false">
+    	O(1)
+    </reponse>
+        <reponse rep="true">
+    O(n)
+    </reponse>
+        <reponse rep="false">
+    O(n²)
+    </reponse>
+	
+       
+</question>
+<question niveau="1">
+    <text>
+    	La complexite moyenne d'un tri rapide est de<choix></choix>
+
+    </text>
+    <reponse rep="false">
+    	O(1)
+    </reponse>
+        <reponse rep="false">
+    O(n)
+    </reponse>
+        <reponse rep="true">
+   O(nlog(n))
+    </reponse>
+	
+       
+</question>
+<question niveau="1">
+    <text>
+    	Une fractale est obtenue grâce à<choix></choix>
+
+    </text>
+    <reponse rep="true">
+    un algorithme récursif
+    </reponse>
+        <reponse rep="false">
+    un algorithme réparti
+    </reponse>
+        <reponse rep="false">
+un algorithme émergeant
+    </reponse>
+	
+       
+</question>
+<question niveau="1">
+    <text>
+    	Dans un arbre binaire, la clé droite est<choix></choix>
+
+    </text>
+    <reponse rep="true">
+    supérieure à la clé gauche
+    </reponse>
+        <reponse rep="false">
+    inférieure à la clé gauche
+    </reponse>
+        <reponse rep="false">
+	on ne sait pas
+    </reponse>
+	
+</question>
+<question niveau="1">
+    <text>
+    	La complexité moyenne d'une recherche dans un arbre binaire est de<choix></choix>
+
+    </text>
+    <reponse rep="false">
+   O(n)
+    </reponse>
+        <reponse rep="false">
+   O(n/2)
+    </reponse>
+        <reponse rep="true">
+	O(log(n))
+    </reponse>
+	
+</question>
+<question niveau="1">
+    <text>
+    Un arbre est équilibré si<choix></choix>
+
+    </text>
+    <reponse rep="false">
+   il a autant de feuille d'un côté que de l'autre
+    </reponse>
+        <reponse rep="true">
+   tous ses sous arbres sont équilibrés
+    </reponse>
+        <reponse rep="false">
+	il a autant de noeud d'un côté que de l'autre
+    </reponse>
+	
+</question>
+<question niveau="1">
+    <text>
+    La hauteur d'un arbre est<choix></choix>
+
+    </text>
+    <reponse rep="true">
+ la distance entre la feuille la plus éloignée et la racine
+    </reponse>
+        <reponse rep="false">
+  la distance entre la feuille la moins éloignée et la racine
+    </reponse>
+        <reponse rep="false">
+	le nombre de noeud
+    </reponse>
+	
+</question>
+<question niveau="2">
+    <text>
+n ←− taille du tableau\n
+Si n > 2
+  Pour i allant de 2 à n
+    tmp ←− tableau[i]
+	 j ←− i
+	 ???
+	   tableau[j] ←− tableau[j-1]
+	   j ←− j − 1
+	 tableau[j] ←− tmp
+sortir : tableau
+    </text>
+    <reponse rep="true">
+        (a) Tant que j ≥ 2 et tableau[j − 1] > tmp
+    </reponse>
+        <reponse rep="false">
+        (b) Tant que j ≤ i et tableau[j − 1] > tmp
+    </reponse>
+        <reponse rep="false">
+        (c) Pour j allant de 1 à n
+    </reponse>
+        <reponse rep="false">
+        (d) Pour j allant de 2 à i
+    </reponse>
+
+        <reponse rep="false">
+        (d) Pour j allant de 2 à i
+    </reponse>
+        <reponse rep="false">
+        (d) Pour j allant de 2 à i
+    </reponse>
+</question>
+<question niveau="2">
+    <text>
+   On a un ensemble de valeurs suivant une loi uniforme discrète. Le tri le plus efficace sera:<choix></choix>
+
+    </text>
+    <reponse rep="false">
+le tri rapide
+    </reponse>
+        <reponse rep="false">
+le tri fusion
+    </reponse>
+        <reponse rep="true">
+le tri par comptage
+		</reponse>
+	
+</question>
+<question niveau="2">
+    <text>
+   On veut écrire un algorithme qui vérifie qu'un document est bien parenthèsé. Pour cela, on utilisera<choix></choix>
+
+    </text>
+    <reponse rep="true">
+une pile
+    </reponse>
+        <reponse rep="false">
+une file   
+ </reponse>
+        <reponse rep="false">
+une table de hachage
+		</reponse>
+	
+</question>
+<question niveau="2">
+    <text>
+  Parmi ces 3 fonctions, laquelle est la meilleure fonction de hachage?<choix></choix>
+
+    </text>
+    <reponse rep="false">
+f(x)=2x²+5
+    </reponse>
+        <reponse rep="false">
+f(x)=1  
+ </reponse>
+        <reponse rep="true">
+f(x)=x[m], avec m un entier premier
+		</reponse>
+	
+</question>
+<question niveau="2">
+    <text>
+ On ajoute dans l'ordre a,b,c,d,e,f,g à une pile. On dépile esuite deux fois. Quel sera le prochain caractère à être dépilé?<choix></choix>
+
+    </text>
+    <reponse rep="false">
+c
+    </reponse>
+        <reponse rep="true">
+e
+ </reponse>
+        <reponse rep="false">
+f
+		</reponse>
+	
+</question>
+<question niveau="2">
+    <text>
+ On ajoute dans l'ordre a,b,c,d,e,f,g à une file. On dépile esuite deux fois. Quel sera le prochain caractère à être dépilé?<choix></choix>
+
+    </text>
+    <reponse rep="true">
+c
+    </reponse>
+        <reponse rep="false">
+e
+ </reponse>
+        <reponse rep="false">
+f
+		</reponse>
+	
+</question>
+<question niveau="2">
+    <text>
+ On ajoute dans l'ordre a, b, c, d, f. On dépile 2 fois et on obtient c. La structure de donnée est<choix></choix>
+
+    </text>
+    <reponse rep="false">
+une file
+    </reponse>
+        <reponse rep="false">
+une pile
+ </reponse>
+        <reponse rep="true">
+on ne sait pas
+		</reponse>
+	
+</question>
+<question niveau="2">
+    <text>
+ On ajoute dans l'ordre à un arbre binaire 4,1,5,7,6,2,3. L'arbre est-il équilibré?<choix></choix>
+
+    </text>
+    <reponse rep="false">
+oui
+    </reponse>
+        <reponse rep="true">
+non
+ </reponse>
+        <reponse rep="false">
+on ne sait pas
+		</reponse>
+	
+</question>
+<question niveau="2">
+    <text>
+ On ajoute dans l'ordre à un arbre binaire 4,1,5,7,6,2,3,9,10,11. Qu'elle est la hauteur de l'arbre?<choix></choix>
+
+    </text>
+    <reponse rep="true">
+6
+    </reponse>
+        <reponse rep="false">
+3
+ </reponse>
+        <reponse rep="false">
+10
+		</reponse>
+	
+</question>
+<question niveau="2">
+    <text>
+On enfile a,b,v,c,s,d dans une file. Quel sera le premier défilé?<choix></choix>
+
+    </text>
+    <reponse rep="true">
+a
+    </reponse>
+        <reponse rep="false">
+d
+ </reponse>
+        <reponse rep="false">
+on ne sait pas
+		</reponse>
+	
+</question>
+<question niveau="2">
+    <text>
+On ajoute dans dans une table de hachage les couples(1;clou) et (2;masse). On parcours la table: Quelle sera la première valeur parcourue?<choix></choix>
+
+    </text>
+    <reponse rep="true">
+clou
+    </reponse>
+        <reponse rep="false">
+masse
+ </reponse>
+        <reponse rep="false">
+on ne sait pas
+		</reponse>
+	
+</question>
+</questions>

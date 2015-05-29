@@ -1,0 +1,2 @@
+dist/allInOneJar.jar
+a ajouter dans splicejar
