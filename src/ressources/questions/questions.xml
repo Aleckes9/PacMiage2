@@ -1,8 +1,9 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <questions>
+
 <question niveau="1">
     <text>
-    	Qu'est-ce qu'un algorithme ?<choix></choix>
+    	Qu'est-ce qu'un algorithme ?
 
     </text>
     <reponse rep="false">
@@ -18,6 +19,7 @@
     	Un code numérique
     </reponse>
 </question>
+
 <question niveau="1">
     <text>
     	Dans une pile, le dernier arrivé est<choix></choix>
@@ -34,10 +36,10 @@
     </reponse>
        
 </question>
+
 <question niveau="1">
     <text>
-    	Dans une file, le dernier arrivé est<choix></choix>
-
+    	Dans une file, le dernier arrivé est
     </text>
     <reponse rep="false">
     	le premier sorti
@@ -47,21 +49,20 @@
     </reponse>
         <reponse rep="false">
     	On ne sait pas
-    </reponse>
-       
+    </reponse>   
 </question>
+
 <question niveau="1">
     <text>
-    	L'ajout d'un élément à une pile à une complexité de<choix></choix>
-
+    	L'ajout d'un élément à une pile à une complexité de
     </text>
     <reponse rep="true">
     	O(1)
     </reponse>
-        <reponse rep="false">
+    <reponse rep="false">
     O(n)
     </reponse>
-        <reponse rep="false">
+    <reponse rep="false">
     O(log2(n))
     </reponse>
 	
@@ -182,6 +183,7 @@ un algorithme émergeant
     </reponse>
 	
 </question>
+
 <question niveau="2">
     <text>
 n ←− taille du tableau\n
@@ -215,6 +217,7 @@ sortir : tableau
         (d) Pour j allant de 2 à i
     </reponse>
 </question>
+
 <question niveau="2">
     <text>
    On a un ensemble de valeurs suivant une loi uniforme discrète. Le tri le plus efficace sera:<choix></choix>
@@ -231,6 +234,7 @@ le tri par comptage
 		</reponse>
 	
 </question>
+
 <question niveau="2">
     <text>
    On veut écrire un algorithme qui vérifie qu'un document est bien parenthèsé. Pour cela, on utilisera<choix></choix>
@@ -247,6 +251,7 @@ une table de hachage
 		</reponse>
 	
 </question>
+
 <question niveau="2">
     <text>
   Parmi ces 3 fonctions, laquelle est la meilleure fonction de hachage?<choix></choix>
@@ -263,6 +268,7 @@ f(x)=x[m], avec m un entier premier
 		</reponse>
 	
 </question>
+
 <question niveau="2">
     <text>
  On ajoute dans l'ordre a,b,c,d,e,f,g à une pile. On dépile esuite deux fois. Quel sera le prochain caractère à être dépilé?<choix></choix>
@@ -279,6 +285,8 @@ f
 		</reponse>
 	
 </question>
+
+
 <question niveau="2">
     <text>
  On ajoute dans l'ordre a,b,c,d,e,f,g à une file. On dépile esuite deux fois. Quel sera le prochain caractère à être dépilé?<choix></choix>
@@ -295,6 +303,9 @@ f
 		</reponse>
 	
 </question>
+
+
+
 <question niveau="2">
     <text>
  On ajoute dans l'ordre a, b, c, d, f. On dépile 2 fois et on obtient c. La structure de donnée est<choix></choix>
@@ -311,6 +322,8 @@ on ne sait pas
 		</reponse>
 	
 </question>
+
+
 <question niveau="2">
     <text>
  On ajoute dans l'ordre à un arbre binaire 4,1,5,7,6,2,3. L'arbre est-il équilibré?<choix></choix>
@@ -327,6 +340,8 @@ on ne sait pas
 		</reponse>
 	
 </question>
+
+
 <question niveau="2">
     <text>
  On ajoute dans l'ordre à un arbre binaire 4,1,5,7,6,2,3,9,10,11. Qu'elle est la hauteur de l'arbre?<choix></choix>
@@ -343,6 +358,8 @@ on ne sait pas
 		</reponse>
 	
 </question>
+
+
 <question niveau="2">
     <text>
 On enfile a,b,v,c,s,d dans une file. Quel sera le premier défilé?<choix></choix>
@@ -359,6 +376,8 @@ on ne sait pas
 		</reponse>
 	
 </question>
+
+
 <question niveau="2">
     <text>
 On ajoute dans dans une table de hachage les couples(1;clou) et (2;masse). On parcours la table: Quelle sera la première valeur parcourue?<choix></choix>
@@ -375,4 +394,6 @@ on ne sait pas
 		</reponse>
 	
 </question>
+
+
 </questions>

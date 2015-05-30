@@ -6,7 +6,6 @@
 package pacmiage2;
 
 import org.newdawn.slick.Animation;
-import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.SpriteSheet;
@@ -17,10 +16,10 @@ import org.newdawn.slick.SpriteSheet;
  */
 public class PacMiage {
 
-    private float x = 416, y = 200;
+    private float x , y;
     private int direction = 0;
     private int futurDirection = 0;
-
+    private String imagePac;
     private boolean moving = false;
     private Animation[] animations = new Animation[8];
     private boolean onStair = false;
@@ -28,12 +27,15 @@ public class PacMiage {
 
     private Map map;
 
-    public PacMiage(Map map) {
+    public PacMiage(Map map) throws SlickException {
         this.map = map;
+        imagePac = "./src/ressources/image/personnage/pacManMove.png";
     }
 
-    public void init() throws SlickException {
-        SpriteSheet spriteSheet = new SpriteSheet("./src/ressources/image/personnage/pacManMove.png", 32, 32);
+    public void init(int posX, int pasY) throws SlickException {
+        x = posX;
+        y = pasY;        
+        SpriteSheet spriteSheet = new SpriteSheet(imagePac, 32, 32);
         this.animations[0] = loadAnimation(spriteSheet, 0, 1, 0);
         this.animations[1] = loadAnimation(spriteSheet, 0, 1, 1);
         this.animations[2] = loadAnimation(spriteSheet, 0, 1, 2);
@@ -54,6 +56,7 @@ public class PacMiage {
 
     public void render(Graphics g) throws SlickException {
         g.drawAnimation(animations[direction + (moving ? 4 : 0)], x, y);
+        
     }
 
     public void update(int delta) {
@@ -127,6 +130,14 @@ public class PacMiage {
 
     public void setX(int x) {
         this.x = x;
+    }
+    
+    public float getCenterX() {
+        return x+16;
+    }
+    
+    public float getCenterY() {
+        return y+16;
     }
 
     public float getY() {

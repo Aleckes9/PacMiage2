@@ -6,6 +6,7 @@
 package pacmiage2;
 
 import java.util.ArrayList;
+import java.util.List;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -16,7 +17,7 @@ import org.w3c.dom.NodeList;
  */
 class QuestionBuilder {
 
-    private ArrayList<Question> q;
+    private List<Question> q;
     private Element r;
 
     public QuestionBuilder(Element racine) {
@@ -27,7 +28,14 @@ class QuestionBuilder {
 
     }
 
-    Question getQuestion(int indice) {
+    Question getQuestion(int niveau) {
+        List<Question> listQuestionNv = new ArrayList<Question>();
+        for (Question qestion : q) {
+            if(qestion.getNiveau() == niveau){
+                listQuestionNv.add(qestion);
+            }
+        }
+        int indice = (int) ((Math.random() * 100) % listQuestionNv.size());
         return q.get(indice);
     }
 

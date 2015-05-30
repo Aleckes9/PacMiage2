@@ -5,26 +5,15 @@
  */
 package pacmiage2;
 
-
-import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
 import org.newdawn.slick.BasicGame;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
-import org.newdawn.slick.Image;
 import org.newdawn.slick.Music;
 import org.newdawn.slick.SlickException;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.xml.sax.SAXException;
+import org.newdawn.slick.Sound;
 
 /**
  *
@@ -32,21 +21,21 @@ import org.xml.sax.SAXException;
  */
 public class PartieController extends BasicGame {
 
+    private JoueurInfo joueur;
     private GameContainer container;
     private Map map;
     private PacMiage player;
     private java.util.Map<Integer, Graine> grainesMap;
     private List<Fantome> listFantome;
     private AffichageScore score;
-    private int compteurGC = 0;
-    private float alpha = 1f;
-    Image img;
-    
+    private AffichageValidationReponse imageVeracite;
+    private Sound son;
+    private Music background;
+    private int niveau;
 
+    public PartieController(int niveau) throws SlickException {
 
-    public PartieController() {
-
-        super("Lesson 1 :: WindowGame");
+        super("PacMiage");
         map = new Map();
         player = new PacMiage(map);
         grainesMap = new HashMap<Integer, Graine>();
@@ -55,34 +44,51 @@ public class PartieController extends BasicGame {
             listFantome.add(new Fantome(map));
         }
         score = new AffichageScore(map);
+        this.niveau = niveau;
     }
 
     @Override
     public void init(GameContainer container) throws SlickException {
-        img = new Image("./src/ressources/image/questions/green_tick.png");
+
         this.container = container;
         this.map.init();
+        int compteurOrgFant = 0;
         for (int objectID = 0; objectID < map.getObjectCount(); objectID++) {
+
             if ("graine".equals(map.getObjectType(objectID))) {
                 String nomObjet = map.getObjectName(objectID);
                 grainesMap.put(objectID, new Graine(nomObjet, map.getObjectX(objectID), map.getObjectY(objectID)));
             }
-        }
-        this.player.init();
-        for (Fantome fantome : listFantome) {
-            fantome.init();
+            if ("originePac".equals(map.getObjectType(objectID))) {
+                this.player.init(map.getObjectX(objectID), map.getObjectY(objectID));
+            }
+            if ("origineFantome".equals(map.getObjectType(objectID))) {
+                if (compteurOrgFant < listFantome.size()) {
+                    Fantome fantome = listFantome.get(compteurOrgFant);
+                    fantome.init();
+                    fantome.initEtat(map.getObjectX(objectID), map.getObjectY(objectID));
+                    compteurOrgFant++;
+                }
+            }
+            if ("departFantome".equals(map.getObjectType(objectID))) {
+                for (Fantome fantome : listFantome) {
+                    fantome.initDepart(map.getObjectX(objectID), map.getObjectY(objectID));
+                }
+            }
         }
 
         PacMiageController controller = new PacMiageController(this.player);
         container.getInput().addKeyListener(controller);
-        //Music background = new Music("./src/ressources/musique/bruno.ogg");
-        //background.loop();
+        background = new Music("./src/ressources/musique/bruno.ogg");
+        background.setVolume(0.5f);
+        background.loop();
+        son = new Sound("./src/ressources/musique/0218.ogg");
+
     }
 
     @Override
     public void render(GameContainer container, Graphics g) throws SlickException {
         this.map.renderBackground();
-
         for (Integer graine : grainesMap.keySet()) {
             grainesMap.get(graine).render(g);
         }
@@ -93,70 +99,74 @@ public class PartieController extends BasicGame {
         }
         this.map.renderForeground();
         this.score.render(g);
-        
-        g.drawImage(img, 200, 200);
-        img.setAlpha(alpha);
-        alpha = alpha - 0.1f;
+        if (this.imageVeracite != null) {
+            this.imageVeracite.render(g, container);
+        }
+
     }
 
     @Override
     public void update(GameContainer container, int delta) throws SlickException {
-        // [...] test de trigger (leçon 6) 
+
+        if (this.imageVeracite != null) {
+            for (Fantome fantomevit : listFantome) {
+                fantomevit.setVitesse(2);
+            }
+
+            if (this.imageVeracite.isInvisible()) {
+                this.imageVeracite = null;
+                for (Fantome fantomevit : listFantome) {
+                    fantomevit.setVitesse(4);
+                }
+            }
+        }
+
         int graineRemove = -1;
+
         for (Integer uneGraine : grainesMap.keySet()) {
             Graine graine = grainesMap.get(uneGraine);
             if (graine != null) {
-
                 if (player.estEnCollisionObjet(graine.getX(), graine.getY())) {
-                    graineRemove = uneGraine;  
+                    graineRemove = uneGraine;
                 }
             }
         }
-        if(graineRemove != -1){
+
+        if (graineRemove != -1) {
             grainesMap.remove(graineRemove);
-            this.score.setArgent(this.score.getArgent()+1000);
-            if(grainesMap.isEmpty()){
-                
-                container.pause();
-                
-                FenetreQuestion fenetre = null;
-                try {
-            //On crée une nouvelle instance de notre FenetreBoutons
-            DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-            final DocumentBuilder builder = factory.newDocumentBuilder();
-            final Document document = builder.parse(new File("./src/ressources/questions/questions.xml"));
-            Element racine = document.getDocumentElement();
-            QuestionBuilder qBuilder = new QuestionBuilder(racine);
-            fenetre = new FenetreQuestion(qBuilder.getQuestion(1));
-            fenetre.setVisible(true);//On la rend visible
-
-        } catch (ParserConfigurationException ex) {
-            Logger.getLogger(FenetreQuestion.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SAXException ex) {
-            Logger.getLogger(FenetreQuestion.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(FenetreQuestion.class.getName()).log(Level.SEVERE, null, ex);
-        }
-                while(fenetre.isVisible()){
-                    container.sleep(100);
-                }
-
-                
-                container.resume();
+            this.score.setArgent(this.score.getArgent() + 1000);
+            son.play();
+            if (grainesMap.isEmpty()) {
+                ouvertureQuestion();
             }
         }
-        
+
         this.player.update(delta);
         for (Fantome fantome : listFantome) {
-            fantome.update(delta);
+            if (fantome.estEnCollisionCible(this.player.getCenterX(), this.player.getCenterY())) {
+                ouvertureQuestion();
+                fantome.resetPos();
+            }
+
+            fantome.update(this.player.getX(), this.player.getY());
         }
-        
-        if(this.compteurGC==4){
-            System.gc();
-            this.compteurGC = 0;
+
+    }
+
+    private void ouvertureQuestion() throws SlickException {
+        container.pause();
+        ControlerQuestion ctrlQuestion = new ControlerQuestion(niveau);
+        while (ctrlQuestion.getFenetre().isVisible()) {
+            container.sleep(100);
         }
-        this.compteurGC++;
-        
+        container.resume();
+        container.sleep(100);
+        boolean choix = ctrlQuestion.getFenetre().isChoix();
+        imageVeracite = new AffichageValidationReponse(choix);
+        if (choix) {
+            this.score.setArgent(this.score.getArgent() + 10000);
+        }
+
     }
 
 }

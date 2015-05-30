@@ -6,7 +6,6 @@
 package pacmiage2;
 
 import org.newdawn.slick.Animation;
-import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.SpriteSheet;
@@ -17,13 +16,17 @@ import org.newdawn.slick.SpriteSheet;
  */
 public class Fantome {
 
-    private float x = 416, y = 200;
+    private float x, y;
+    private float xOrg, yOrg;
+    private float xDepart, yDepart;
     private int direction = 2;
     private int futurDirection = 0;
-    private boolean moving = true;
-    private Animation[] animations = new Animation[8];
+    private boolean moving = false;
+    private final Animation[] animations = new Animation[8];
     private boolean onStair = false;
-    private int vitesse = 2;
+    private int vitesse = 4;
+    private int frequence = 0;
+    private int topDepart;
 
     private Map map;
 
@@ -31,7 +34,14 @@ public class Fantome {
         this.map = map;
     }
 
+    public void resetPos() {
+        x = xOrg;
+        y = yOrg;
+        moving = false;
+    }
+
     public void init() throws SlickException {
+        topDepart = 0;
         SpriteSheet spriteSheet = new SpriteSheet("./src/ressources/image/personnage/FantomMove.png", 32, 32);
         this.animations[0] = loadAnimation(spriteSheet, 0, 1, 0);
         this.animations[1] = loadAnimation(spriteSheet, 0, 1, 1);
@@ -42,6 +52,19 @@ public class Fantome {
         this.animations[6] = loadAnimation(spriteSheet, 1, 6, 2);
         this.animations[7] = loadAnimation(spriteSheet, 1, 6, 3);
     }
+    
+    public void initEtat(int posX, int pasY){
+        x = xOrg = posX;
+        y = yOrg = pasY;
+        moving = false;
+    }
+    
+    public void initDepart(int posX, int pasY){
+        xDepart = posX;
+        yDepart = pasY;
+    }
+    
+    
 
     private Animation loadAnimation(SpriteSheet spriteSheet, int startX, int endX, int y) {
         Animation animation = new Animation();
@@ -55,46 +78,86 @@ public class Fantome {
         g.drawAnimation(animations[direction + (moving ? 4 : 0)], x, y);
     }
 
-    public void update(int delta) {
-        boolean collision = true;
-        Double random = Math.random();
-                int newFuturDirection = (int) (random*100) % 4;
-        if (random < 0.7) {
-            if (this.direction == 0 && newFuturDirection == 1 || this.direction == 1 && newFuturDirection == 0 || this.direction == 2 && newFuturDirection == 3 || this.direction == 3 && newFuturDirection == 2) {
-            } else {
-                this.futurDirection = newFuturDirection;
-            }
+    public void update(float newXPac, float newYPac) {
+        if(topDepart == 150){
+            this.depart();
+            topDepart = 0;
         }
-        
-        
-        while(collision){
+        if (this.moving) {
 
-            float futurX = getFuturX(vitesse, this.direction);
-            float futurY = getFuturY(vitesse, this.direction);
-            float futurXDir = getFuturX(vitesse, this.futurDirection);
-            float futurYDir = getFuturY(vitesse, this.futurDirection);
+            float moyX, moyY;
+            moyX = x - newXPac;
+            moyY = y - newYPac;
+            boolean collision = true;
+            int vitesseTmp = vitesse;
 
-            //Si la future destination n'est pas en collision on change de direction.
-            if (!estEnCollisionMur(futurXDir, futurYDir)) {
-                this.direction = this.futurDirection;
-                this.x = futurXDir;
-                this.y = futurYDir;
-                collision = false;
+            if (frequence != 50) {
 
-            } else {
-                //Si la future direction est en collision et que celle d'origine aussi on change de direction aussi
-                if (estEnCollisionMur(futurX, futurY)) {  
-                    
-                    this.direction = (this.direction + 1)%4;
-                
-                //Sinon on continu dans la direction de base.
-                } else {
-                    this.x = futurX;
-                    this.y = futurY;
-                    collision = false;
+                while (collision) {
+
+                    Double random = Math.random();
+                    int newFuturDirection = (int) (random * 100) % 4;
+
+                    if (random < 0.40) {
+
+                    } else {
+                        if (Math.abs(moyX) > Math.abs(moyY)) {
+                            if (moyX < 0) {
+                                newFuturDirection = 0;
+                            } else {
+                                newFuturDirection = 1;
+                            }
+                        } else {
+                            if (moyY < 0) {
+                                newFuturDirection = 3;
+                            } else {
+                                newFuturDirection = 2;
+                            }
+                        }
+                    }
+
+                    if (this.direction == 0 && newFuturDirection == 1 || this.direction == 1 && newFuturDirection == 0 || this.direction == 2 && newFuturDirection == 3 || this.direction == 3 && newFuturDirection == 2) {
+
+                    } else {
+                        this.futurDirection = newFuturDirection;
+                    }
+
+                    float futurX = getFuturX(vitesse, this.direction);
+                    float futurY = getFuturY(vitesse, this.direction);
+                    float futurXDir = getFuturX(vitesse, this.futurDirection);
+                    float futurYDir = getFuturY(vitesse, this.futurDirection);
+
+                    //Si la future destination n'est pas en collision on change de direction.
+                    if (!estEnCollisionMur(futurXDir, futurYDir)) {
+                        this.direction = this.futurDirection;
+                        this.x = futurXDir;
+                        this.y = futurYDir;
+                        collision = false;
+
+                    } else {
+
+                        if (!estEnCollisionMur(futurX, futurY)) {
+                            this.x = futurX;
+                            this.y = futurY;
+                            collision = false;
+
+                        } else {
+                            vitesse = 2;
+                        }
+                    }
+
                 }
-            }
+                
 
+                frequence = 0;
+
+            }
+            if (vitesse != vitesseTmp) {
+                vitesse = vitesseTmp;
+            }
+            frequence++;
+        }else{
+            topDepart++;
         }
 
     }
@@ -102,26 +165,25 @@ public class Fantome {
     public boolean estEnCollisionMur(float xObjet, float yObjet) {
 
         return this.map.isCollision(xObjet + 1, yObjet + 1)
-             ||this.map.isCollision(xObjet + 31, yObjet + 1)
-                ||this.map.isCollision(xObjet + 1, yObjet + 31)
-                  ||this.map.isCollision(xObjet + 31, yObjet + 31);
+                || this.map.isCollision(xObjet + 31, yObjet + 1)
+                || this.map.isCollision(xObjet + 1, yObjet + 31)
+                || this.map.isCollision(xObjet + 31, yObjet + 31);
     }
 
-    public boolean estEnCollisionObjet(float xObjet, float yObjet) {
+    public boolean estEnCollisionCible(float xObjet, float yObjet) {
 
         return xObjet > this.x && xObjet < this.x + 33 && yObjet > this.y && yObjet < this.y + 33;
 
     }
-    
-    
+
     private float getFuturX(int delta, int direction) {
         float futurX = this.x;
         switch (direction) {
             case 1:
-                futurX = this.x - 2 * delta;
+                futurX = this.x - 1 * delta;
                 break;
             case 0:
-                futurX = this.x + 2 * delta;
+                futurX = this.x + 1 * delta;
                 break;
         }
         return futurX;
@@ -131,15 +193,14 @@ public class Fantome {
         float futurY = this.y;
         switch (direction) {
             case 2:
-                futurY = this.y - 2 * delta;
+                futurY = this.y - 1 * delta;
                 break;
             case 3:
-                futurY = this.y + 2 * delta;
+                futurY = this.y + 1 * delta;
                 break;
         }
         return futurY;
     }
-    
 
     public float getX() {
         return x;
@@ -187,6 +248,20 @@ public class Fantome {
 
     public void setFuturDirection(int futurDirection) {
         this.futurDirection = futurDirection;
+    }
+
+    public int getVitesse() {
+        return vitesse;
+    }
+
+    public void setVitesse(int vitesse) {
+        this.vitesse = vitesse;
+    }
+
+    public void depart() {
+        this.moving = true;
+        x = xDepart;
+        y = yDepart;
     }
 
 }

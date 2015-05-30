@@ -52,6 +52,9 @@ public class PacMiageController implements KeyListener {
             case Input.KEY_DOWN:
                 this.player.setFuturDirection(3);
                 break;
+            case Input.KEY_ESCAPE:
+                System.exit(0);
+                break;
         }
          this.player.setMoving(true);
     }

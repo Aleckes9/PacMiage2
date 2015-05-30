@@ -31,11 +31,10 @@ public class FenetreQuestionListener  implements ActionListener {
 
             for (Reponse reponse : f.getQuestion().getReponse()) {
                 if (reponse.getText().equals(f.getLabel().getText()) && reponse.isVeracite() == true) {
-                    
-
+                        f.setChoix(true);
                     break;
                 }else{
-                   
+                   f.setChoix(false);
                 }
                 }
                 f.getValider().setEnabled(false);
