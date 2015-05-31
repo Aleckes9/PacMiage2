@@ -37,6 +37,7 @@ public class Eshop_AfficheConfirmAcheter extends AbstractAction {
     @Override
     public void actionPerformed(ActionEvent ae) {
         JFrame f = new JFrame();
+           f.setUndecorated(true);
         f.setBackground(Color.black);
         JPanel g = new JPanel();
         g.setBackground(Color.black);
