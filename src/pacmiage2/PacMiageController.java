@@ -15,6 +15,7 @@ import org.newdawn.slick.KeyListener;
 public class PacMiageController implements KeyListener {
 
     private PacMiage player;
+    private JoueurInfo joueur;
 
     public PacMiageController(PacMiage player) {
         this.player = player;
@@ -51,6 +52,18 @@ public class PacMiageController implements KeyListener {
                 break;
             case Input.KEY_DOWN:
                 this.player.setFuturDirection(3);
+                break;
+            case Input.KEY_1:
+               
+                break;
+            case Input.KEY_2:
+                
+                break;
+            case Input.KEY_3:
+                
+                break;
+            case Input.KEY_4:
+                
                 break;
             case Input.KEY_ESCAPE:
                 System.exit(0);

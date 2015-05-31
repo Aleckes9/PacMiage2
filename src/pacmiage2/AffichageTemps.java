@@ -1,33 +1,26 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package pacmiage2;
 
-import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
 import org.newdawn.slick.SlickException;
+
 /**
  *
  * @author Aleckes9
  */
-public class AffichageScore {
-        private float x, y;
-        private int score;
-        private int futureScore;
-        public AffichageScore() {
+public class AffichageTemps {
+    private float x, y;
+        private int temps;
+
+        
+        public AffichageTemps() {
     }
     
         public void render(Graphics g) throws SlickException {
             
-            if(score<futureScore){
-                score = score+1;
-            }
             
             
-        String argentString = String.valueOf(score);
+        String argentString = String.valueOf(temps);
                 float xx = x;
                 float yy = y;
             for (int i = 0; i < argentString.length(); i++) {
@@ -48,24 +41,19 @@ public class AffichageScore {
             
         }
 
-
-    public int getScore() {
-        return score;
+    public int getTemps() {
+        return temps;
     }
 
-    public void setScore(int score) {
-        this.score = score;
+    public void setTemps(int temps) {
+        this.temps = temps;
     }
 
-    public int getFutureScore() {
-        return futureScore;
-    }
 
-    public void setFutureScore(int futureScore) {
-        this.futureScore = futureScore;
-    }
+
+
+
     
     
-        
         
 }

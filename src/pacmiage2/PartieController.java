@@ -28,10 +28,15 @@ public class PartieController extends BasicGame {
     private java.util.Map<Integer, Graine> grainesMap;
     private List<Fantome> listFantome;
     private AffichageScore score;
+    private AffichageTemps temps;
     private AffichageValidationReponse imageVeracite;
     private Sound son;
     private Music background;
     private int niveau;
+    private Objet[] listBonus;
+    private int nbQuestions;
+    private int nbQuestionsCorrect;
+    private ControlerTemps timer;
 
     public PartieController(int niveau) throws SlickException {
 
@@ -43,8 +48,11 @@ public class PartieController extends BasicGame {
         for (int i = 0; i < 5; i++) {
             listFantome.add(new Fantome(map));
         }
-        score = new AffichageScore(map);
+        score = new AffichageScore();
+        temps = new AffichageTemps();
         this.niveau = niveau;
+        timer = new ControlerTemps(120);
+
     }
 
     @Override
@@ -70,10 +78,16 @@ public class PartieController extends BasicGame {
                     compteurOrgFant++;
                 }
             }
+            if ("score".equals(map.getObjectType(objectID))) {
+                score.initPos(map.getObjectX(objectID), map.getObjectY(objectID));
+            }
             if ("departFantome".equals(map.getObjectType(objectID))) {
                 for (Fantome fantome : listFantome) {
                     fantome.initDepart(map.getObjectX(objectID), map.getObjectY(objectID));
                 }
+            }
+            if ("temps".equals(map.getObjectType(objectID))) {
+                    temps.initPos(map.getObjectX(objectID), map.getObjectY(objectID));
             }
         }
 
@@ -88,25 +102,31 @@ public class PartieController extends BasicGame {
 
     @Override
     public void render(GameContainer container, Graphics g) throws SlickException {
-        this.map.renderBackground();
-        for (Integer graine : grainesMap.keySet()) {
-            grainesMap.get(graine).render(g);
-        }
-        this.player.render(g);
+        if (!grainesMap.isEmpty()) {
+            this.map.renderBackground();
+            for (Integer graine : grainesMap.keySet()) {
+                grainesMap.get(graine).render(g);
+            }
+            this.player.render(g);
 
-        for (Fantome fantome : listFantome) {
-            fantome.render(g);
-        }
-        this.map.renderForeground();
-        this.score.render(g);
-        if (this.imageVeracite != null) {
-            this.imageVeracite.render(g, container);
+            for (Fantome fantome : listFantome) {
+                fantome.render(g);
+            }
+            this.map.renderForeground();
+            this.score.render(g);
+            this.temps.render(g);
+            if (this.imageVeracite != null) {
+                this.imageVeracite.render(g, container);
+            }
+        } else {
+
         }
 
     }
 
     @Override
     public void update(GameContainer container, int delta) throws SlickException {
+        this.temps.setTemps(this.timer.getTempsRestant());
 
         if (this.imageVeracite != null) {
             for (Fantome fantomevit : listFantome) {
@@ -134,7 +154,7 @@ public class PartieController extends BasicGame {
 
         if (graineRemove != -1) {
             grainesMap.remove(graineRemove);
-            this.score.setArgent(this.score.getArgent() + 1000);
+            this.score.setFutureScore(this.score.getFutureScore() + 10);
             son.play();
             if (grainesMap.isEmpty()) {
                 ouvertureQuestion();
@@ -154,6 +174,7 @@ public class PartieController extends BasicGame {
     }
 
     private void ouvertureQuestion() throws SlickException {
+        nbQuestions++;
         container.pause();
         ControlerQuestion ctrlQuestion = new ControlerQuestion(niveau);
         while (ctrlQuestion.getFenetre().isVisible()) {
@@ -164,7 +185,10 @@ public class PartieController extends BasicGame {
         boolean choix = ctrlQuestion.getFenetre().isChoix();
         imageVeracite = new AffichageValidationReponse(choix);
         if (choix) {
-            this.score.setArgent(this.score.getArgent() + 10000);
+            this.score.setFutureScore(this.score.getFutureScore() + 100);
+            nbQuestionsCorrect++;
+        }else{
+            //this.score.setFutureScore(this.score.getFutureScore() - 100);
         }
 
     }
