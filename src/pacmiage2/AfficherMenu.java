@@ -120,7 +120,7 @@ public class AfficherMenu implements ActionListener {
                     new SelectionnerNiveau();
                     break;
                 case "store":
-                    //f.dispose();
+                    f.dispose();
                     JoueurInfo joueur=new JoueurInfo();
                     new Eshop_AfficheEshop(joueur);
                     break;
