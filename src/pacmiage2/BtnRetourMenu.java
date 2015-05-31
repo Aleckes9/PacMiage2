@@ -18,8 +18,7 @@ public class BtnRetourMenu extends JButton{
 
     public BtnRetourMenu( JoueurInfo j) {
 
-//        ImageIcon icon = new ImageIcon("./src/ressources/image/eshop/Caddy.png");
-//        this.setIcon(icon);
+  this.setAction(new RetourMenu(j));
         this.setText("Retour Menu");
      this.setBackground(Color.black);
         this.setBorderPainted(false);

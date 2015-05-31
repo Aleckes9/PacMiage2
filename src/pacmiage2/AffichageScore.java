@@ -23,7 +23,8 @@ public class AffichageScore {
     }
     
         public void render(Graphics g) throws SlickException {
-        g.setColor(new Color(0, 0, 0, .5f));
+
+       g.setColor(new Color(0, 0, 0, .5f));
         String argentString = String.valueOf(argent);
                 float xx = x;
                 float yy = y;

@@ -14,5 +14,6 @@ public class Eshop_Liaison_avec_Menu {
        JoueurInfo joueur=new JoueurInfo();
        joueur.ajouterGraines(5000);
       new Eshop_AfficheEshop(joueur);
-               }
+               
+   }
 }
