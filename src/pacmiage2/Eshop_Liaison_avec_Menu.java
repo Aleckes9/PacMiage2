@@ -14,16 +14,8 @@ import java.io.IOException;
  */
 
 public class Eshop_Liaison_avec_Menu {
-    public static    Sauvegarde save;
    public static void main(String[] args) throws IOException, FileNotFoundException, ClassNotFoundException  {
       
-       JoueurInfo joueur=new JoueurInfo();
-       joueur.ajouterGraines(5000);
-      save=new Sauvegarde();
-      joueur= save.lectureFichier();
-       
-
-      new Eshop_AfficheEshop(joueur);
-              
+      
    }
 }

@@ -5,6 +5,9 @@
  */
 package pacmiage2;
 
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.newdawn.slick.Input;
 import org.newdawn.slick.KeyListener;
 
@@ -16,9 +19,10 @@ public class PacMiageController implements KeyListener {
 
     private PacMiage player;
     private JoueurInfo joueur;
-
-    public PacMiageController(PacMiage player) {
+PartieController partie;
+    public PacMiageController(PacMiage player, PartieController partie) {
         this.player = player;
+        this.partie=partie;
     }
 
     @Override
@@ -68,6 +72,16 @@ public class PacMiageController implements KeyListener {
             case Input.KEY_ESCAPE:
                 System.exit(0);
                 break;
+        
+        case Input.KEY_ENTER:
+        {
+            try {
+                new AfficheMenuPartie(partie);
+            } catch (IOException ex) {
+                Logger.getLogger(PacMiageController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+                    break;
         }
          this.player.setMoving(true);
     }

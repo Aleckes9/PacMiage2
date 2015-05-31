@@ -10,7 +10,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
 import javax.swing.ImageIcon;
-import javax.swing.JDialog;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
@@ -21,7 +21,7 @@ import javax.swing.JPanel;
  */
 public class Eshop_AfficheObjet {
 
-    public Eshop_AfficheObjet(JPanel f, Objet it,JoueurInfo joueur,boolean b,JDialog eshopFenetre) {
+    public Eshop_AfficheObjet(JPanel f, Objet it,JoueurInfo joueur,boolean b,JFrame eshopFenetre) {
 
         /**
          * Paramètres de l'affichage du nom

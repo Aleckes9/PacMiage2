@@ -1,5 +1,6 @@
 package pacmiage2;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import javax.swing.JPanel;
 import javax.swing.JFrame;
@@ -11,7 +12,7 @@ import javax.swing.JFrame;
 public class Fenetre extends JFrame{
     
     JPanel j = new JPanel();
-    
+    public static    Sauvegarde save;
     public Fenetre(){
         Session.getInstance();
         this.setSize(2000, 1100);
@@ -21,8 +22,11 @@ public class Fenetre extends JFrame{
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
     
-    public static void main(String[] args) throws IOException {
-        new AfficherMenu();
+    public static void main(String[] args) throws IOException, FileNotFoundException, ClassNotFoundException {
+        JoueurInfo joueur=new JoueurInfo();
+        save=new Sauvegarde();
+      joueur= save.lectureFichier();
+        new AfficherMenu(joueur);
         //new SelectionnerNiveau();
     }
     

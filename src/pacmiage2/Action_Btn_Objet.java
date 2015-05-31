@@ -9,6 +9,7 @@ import java.awt.Color;
 import java.awt.event.ActionEvent;
 import javax.swing.AbstractAction;
 import javax.swing.JDialog;
+import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 /**
@@ -19,8 +20,8 @@ public class Action_Btn_Objet  extends AbstractAction{
 private boolean jeuEnCours;
 private Objet it;
 private JoueurInfo j;
-private JDialog eshopFenetre;
-    public Action_Btn_Objet(Objet it, JoueurInfo j,boolean jeuEnCours,JDialog eshopFenetre) {
+private JFrame eshopFenetre;
+    public Action_Btn_Objet(Objet it, JoueurInfo j,boolean jeuEnCours,JFrame eshopFenetre) {
     this.jeuEnCours=jeuEnCours;
     this.it=it;
     this.j=j;

@@ -12,6 +12,7 @@ import java.awt.GridLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JDialog;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -36,8 +37,9 @@ public class Eshop_AfficheEshop {
         /**
          * On définit les propriétés de la fenêtre
          */
-        JDialog f = new JDialog();
+        JFrame f = new JFrame();
         f.setBounds(0, 0, largeur, hauteur);
+     f.setUndecorated(true);
         JPanel g = new JPanel();
         g.setPreferredSize(new Dimension(largeur, 2500));
         g.setBackground(Color.black);
@@ -75,7 +77,7 @@ public class Eshop_AfficheEshop {
          */
      
     
-        AfficheBarreInformation barre = new AfficheBarreInformation(f, joueur,true);
+        AfficheBarreInformation barre = new AfficheBarreInformation(f, joueur);
       
         JScrollPane scroll = new JScrollPane(g);
 

@@ -37,7 +37,13 @@ public class PartieController extends BasicGame {
     private int nbQuestions;
     private int nbQuestionsCorrect;
     private ControlerTemps timer;
+ public Music getBackground() {
+        return background;
+    }
 
+    public JoueurInfo getJoueur() {
+        return joueur;
+    }
     public PartieController(int niveau) throws SlickException {
 
         super("PacMiage");
@@ -91,7 +97,7 @@ public class PartieController extends BasicGame {
             }
         }
 
-        PacMiageController controller = new PacMiageController(this.player);
+        PacMiageController controller = new PacMiageController(this.player,this);
         container.getInput().addKeyListener(controller);
         background = new Music("./src/ressources/musique/bruno.ogg");
         background.setVolume(0.5f);

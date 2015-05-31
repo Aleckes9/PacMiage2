@@ -17,9 +17,9 @@ import javax.swing.JFrame;
  */
 public class FermerLaFenetre extends AbstractAction {
 
-    JDialog f;
+    JFrame f;
 
-    public FermerLaFenetre(JDialog f) {
+    public FermerLaFenetre(JFrame f) {
         this.f = f;
     }
 

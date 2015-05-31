@@ -6,10 +6,9 @@
 package pacmiage2;
 
 import java.awt.Color;
-import java.awt.Dimension;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JDialog;
+import javax.swing.JFrame;
 
 /**
  * Bouton pour sélectionner un objet à acheter
@@ -18,7 +17,7 @@ import javax.swing.JDialog;
  */
 public class Eshop_BtnAcheter extends JButton {
 
-    public Eshop_BtnAcheter(Objet it, JoueurInfo j,JDialog eshopFenetre) {
+    public Eshop_BtnAcheter(Objet it, JoueurInfo j,JFrame eshopFenetre) {
         this.setAction(new Eshop_AfficheConfirmAcheter(it, j,eshopFenetre));
         ImageIcon icon = new ImageIcon("./src/ressources/image/eshop/Caddy.png");
         this.setIcon(icon);

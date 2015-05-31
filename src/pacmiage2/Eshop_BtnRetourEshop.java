@@ -8,7 +8,7 @@ package pacmiage2;
 import java.awt.Color;
 import java.awt.Font;
 import javax.swing.JButton;
-import javax.swing.JDialog;
+import javax.swing.JFrame;
 
 /**
  * Bouton pour annuler un achat et revenir à l'eshop
@@ -17,7 +17,7 @@ import javax.swing.JDialog;
  */
 public class Eshop_BtnRetourEshop extends JButton {
 
-    public Eshop_BtnRetourEshop(JDialog f) {
+    public Eshop_BtnRetourEshop(JFrame f) {
         this.setAction(new FermerLaFenetre(f));
         this.setText(Session.getInstance().recupererValeur("non"));
         this.setFont(new Font(null, 30, 30 ));

@@ -6,9 +6,8 @@
 package pacmiage2;
 
 import java.awt.Color;
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JDialog;
+import javax.swing.JFrame;
 
 /**
  *
@@ -16,9 +15,9 @@ import javax.swing.JDialog;
  */
 public class BtnRetourMenu extends JButton{
 
-    public BtnRetourMenu( JoueurInfo j) {
+    public BtnRetourMenu( JoueurInfo j,JFrame f) {
 
-  this.setAction(new RetourMenu(j));
+  this.setAction(new RetourMenu(j,f));
         this.setText(Session.getInstance().recupererValeur("retour"));
      this.setBackground(Color.black);
         this.setBorderPainted(false);

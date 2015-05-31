@@ -12,6 +12,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.AbstractAction;
 import javax.swing.ImageIcon;
 import javax.swing.JDialog;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import static pacmiage2.Eshop_AfficheEshop.hauteur;
@@ -27,10 +28,10 @@ public class Eshop_Action_Achat extends AbstractAction {
   private   JoueurInfo j;
     private Objet it;
     private String message;
-    private  JDialog confirmFenetre;
-    private  JDialog eshopFenetre;
+    private  JFrame confirmFenetre;
+    private  JFrame  eshopFenetre;
 
-    public Eshop_Action_Achat(JoueurInfo j, Objet it,JDialog confirmFenetre,JDialog eshopFenetre) {
+    public Eshop_Action_Achat(JoueurInfo j, Objet it,JFrame  confirmFenetre,JFrame  eshopFenetre) {
         this.j = j;
         this.it = it;
             this.confirmFenetre=confirmFenetre;

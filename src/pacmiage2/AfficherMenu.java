@@ -26,11 +26,13 @@ import javax.swing.JPanel;
  *
  * @author Axel Nini
  */
+
 public class AfficherMenu implements ActionListener {
-
+ 
     Fenetre f = new Fenetre();
-
-    public AfficherMenu() throws IOException {
+JoueurInfo joueur;
+    public AfficherMenu(JoueurInfo joueur) throws IOException {
+        this.joueur=joueur;
         JPanel j = new JPanel();
         JPanel boutons = new JPanel();
         JButton nouvellepartie = new JButton();
@@ -121,7 +123,7 @@ public class AfficherMenu implements ActionListener {
                     break;
                 case "store":
                     f.dispose();
-                    JoueurInfo joueur=new JoueurInfo();
+                    
                     new Eshop_AfficheEshop(joueur);
                     break;
                 case "score":
@@ -136,7 +138,7 @@ public class AfficherMenu implements ActionListener {
                         Session.getInstance().setLocale(Locale.FRENCH);
                     }
                     f.dispose();
-                    new AfficherMenu();
+                    new AfficherMenu(joueur);
                     break;
                     
             }

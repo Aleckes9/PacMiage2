@@ -8,7 +8,7 @@ package pacmiage2;
 import java.awt.Color;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JDialog;
+import javax.swing.JFrame;
 
 /**
  *
@@ -16,7 +16,7 @@ import javax.swing.JDialog;
  */
 class Btn_Objet extends JButton {
 
-    public Btn_Objet(Objet it, JoueurInfo j,JDialog eshopFenetre) {
+    public Btn_Objet(Objet it, JoueurInfo j,JFrame eshopFenetre) {
        
   this.setAction(new Action_Btn_Objet(it, j,j.isJeuEnCours(),eshopFenetre));
         if(it!=null){

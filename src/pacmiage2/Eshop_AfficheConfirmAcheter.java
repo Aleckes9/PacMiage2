@@ -5,13 +5,13 @@
  */
 package pacmiage2;
 
-import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import javax.swing.AbstractAction;
 import javax.swing.JDialog;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import static pacmiage2.Eshop_AfficheEshop.hauteur;
@@ -26,9 +26,9 @@ public class Eshop_AfficheConfirmAcheter extends AbstractAction {
 
     Objet it;
     JoueurInfo j;
-    JDialog eshopFenetre;
+    JFrame eshopFenetre;
 
-    public Eshop_AfficheConfirmAcheter(Objet it, JoueurInfo j,JDialog eshopFenetre) {
+    public Eshop_AfficheConfirmAcheter(Objet it, JoueurInfo j,JFrame eshopFenetre) {
         this.it = it;
         this.j = j;
     this.eshopFenetre=eshopFenetre;
@@ -36,13 +36,13 @@ public class Eshop_AfficheConfirmAcheter extends AbstractAction {
 
     @Override
     public void actionPerformed(ActionEvent ae) {
-        JDialog f = new JDialog();
+        JFrame f = new JFrame();
         f.setBackground(Color.black);
         JPanel g = new JPanel();
         g.setBackground(Color.black);
         f.setBounds(0, 0, largeur, hauteur);
         JLabel texte = new JLabel();
-        AfficheBarreInformation barreDuHaut = new AfficheBarreInformation(f, j,false);
+        AfficheBarreInformation barreDuHaut = new AfficheBarreInformation(f, j);
 JPanel d=new JPanel();
 
         new Eshop_AfficheObjet(d, it,j,false,eshopFenetre);

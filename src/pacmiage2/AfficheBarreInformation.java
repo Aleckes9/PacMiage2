@@ -10,6 +10,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
 import javax.swing.JDialog;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
@@ -23,15 +24,11 @@ public class AfficheBarreInformation {
 
     JPanel p;
 
-    public AfficheBarreInformation(JDialog f, JoueurInfo joueur,boolean isEshop) {
-        JDialog j;
+    public AfficheBarreInformation(JFrame f, JoueurInfo joueur) {
+      
              
-        if(isEshop){
-            j=f;
-        }
-        else{
-            j=null;
-        }
+       
+     
         this.p = new JPanel();
          
         p.setBackground(Color.black);
@@ -44,11 +41,11 @@ public class AfficheBarreInformation {
         p.add(graine, BorderLayout.WEST);
  p.setLayout(new GridLayout(0,6));
         for(int i=0;i<joueur.getObjetDispo().length;i++){
-//           if(joueur.getObjetDispo()[i]!=null){
-               p.add(new Btn_Objet(joueur.getObjetDispo()[i],joueur,j));
-          // }
+
+               p.add(new Btn_Objet(joueur.getObjetDispo()[i],joueur,f));
+        
         }
-        BtnRetourMenu bt=new BtnRetourMenu(joueur);
+        BtnRetourMenu bt=new BtnRetourMenu(joueur,f);
         p.add(bt);
     }
     
