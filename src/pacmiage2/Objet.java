@@ -5,13 +5,15 @@
  */
 package pacmiage2;
 
+import java.io.Serializable;
+
 /**
  * Objet de l'eshop caractérisé par un nom, une image, une description et un
  * prix
  *
  * @author Maëlle
  */
-public class Objet {
+public class Objet  implements Serializable {
 
     private String nom;
     private String image;

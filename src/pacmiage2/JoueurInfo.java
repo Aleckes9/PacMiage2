@@ -5,13 +5,14 @@
  */
 package pacmiage2;
 
+import java.io.Serializable;
 import java.lang.reflect.Array;
 
 /**
  *
  * @author Maëlle
  */
-public class JoueurInfo {
+public class JoueurInfo  implements Serializable {
 
     private int graines;
     private int record;

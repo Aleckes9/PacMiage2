@@ -30,7 +30,6 @@ public class Sauvegarde implements Serializable {
     /**
      * Enregistre dans un fichier la liste des médias
      *
-     * @param nomFichier nom du fichier où est enregistré le joueur
      * @param monObjetSerializable information du joueur
      * @throws FileNotFoundException
      * @throws IOException
@@ -38,9 +37,9 @@ public class Sauvegarde implements Serializable {
     public void enregistrerFichier( JoueurInfo monObjetSerializable) throws FileNotFoundException, IOException {
         File f = new File(nomFichier);
         FileOutputStream fos = new FileOutputStream(f);
-        ObjectOutputStream out = new ObjectOutputStream(fos);
-        out.writeObject(monObjetSerializable);
-        out.close();
+        try (ObjectOutputStream out = new ObjectOutputStream(fos)) {
+            out.writeObject(monObjetSerializable);
+        }
     }
 
     /**
