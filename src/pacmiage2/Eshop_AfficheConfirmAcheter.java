@@ -46,7 +46,7 @@ public class Eshop_AfficheConfirmAcheter extends AbstractAction {
 JPanel d=new JPanel();
 
         new Eshop_AfficheObjet(d, it,j,false,eshopFenetre);
-        texte.setText("Voulez-vous acheter cet objet?");
+        texte.setText(Session.getInstance().recupererValeur("confirmation"));
         texte.setForeground(Color.white);
         texte.setFont(new Font(null, 40, 40 ));
         Eshop_BtnConfirmAchat oui = new Eshop_BtnConfirmAchat(j, it,f,eshopFenetre);

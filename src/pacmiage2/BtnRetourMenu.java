@@ -19,7 +19,7 @@ public class BtnRetourMenu extends JButton{
     public BtnRetourMenu( JoueurInfo j) {
 
   this.setAction(new RetourMenu(j));
-        this.setText("Retour Menu");
+        this.setText(Session.getInstance().recupererValeur("retour"));
      this.setBackground(Color.black);
         this.setBorderPainted(false);
         this.setForeground(Color.white);

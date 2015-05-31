@@ -19,7 +19,7 @@ public class Eshop_BtnRetourEshop extends JButton {
 
     public Eshop_BtnRetourEshop(JDialog f) {
         this.setAction(new FermerLaFenetre(f));
-        this.setText("Non");
+        this.setText(Session.getInstance().recupererValeur("non"));
         this.setFont(new Font(null, 30, 30 ));
         this.setBorderPainted(false);
         this.setForeground(Color.white);

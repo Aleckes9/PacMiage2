@@ -19,7 +19,7 @@ public class Eshop_BtnConfirmAchat extends JButton {
 
     public Eshop_BtnConfirmAchat(JoueurInfo j, Objet it,JDialog confirmFenetre,JDialog eshopFenetre) {
         this.setAction(new Eshop_Action_Achat(j, it,confirmFenetre,eshopFenetre));
-        this.setText("Oui");
+        this.setText(Session.getInstance().recupererValeur("oui"));
         this.setFont(new Font(null, 30, 30 ));
         this.setBorderPainted(false);
         this.setForeground(Color.white);
