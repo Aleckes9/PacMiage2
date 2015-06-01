@@ -98,16 +98,19 @@ PartieController partie;
         Session.getInstance();
         switch (tp.getName()) {
             case "son":
-               new ActionSon(partie.getBackground());
+                if( partie.getBackground().getVolume()!=0){
+                partie.getBackground().setVolume(0);
+            }else{
+            partie.getBackground().setVolume(0.5f);}
                 break;
             case "choixObjet":
-                new ActionChoixObjet(partie);
+                new ActionChoixObjet(partie,partie.getJoueur());
                 break;
             case "quitter":
                new RetourMenu(partie.getJoueur(),f);
                 break;
             case "reprendre":
-                new FermerLaFenetre(f);
+               f.dispose();
                 
                 break;
                 
