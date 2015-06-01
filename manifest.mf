@@ -1,8 +1,8 @@
 Manifest-Version: 1.0
 Ant-Version: Apache Ant 1.9.4
-Created-By: 1.8.0_25-b18 (Oracle Corporation)
+Created-By: 1.7.0_67-b01 (Oracle Corporation)
 Bundle-Name: My Library
 Implementation-Title: My Library
-built-by: Maëlle
+built-by: Alexandre
 Main-Class: pacmiage2.JeuPacMiage
 

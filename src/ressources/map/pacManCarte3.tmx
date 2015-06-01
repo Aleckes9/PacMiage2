@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="64" height="48" tilewidth="16" tileheight="16" nextobjectid="356">
+ <tileset firstgid="1" name="Color2" tilewidth="16" tileheight="16">
+  <image source="Color2.png" trans="ff00ff" width="600" height="600"/>
+ </tileset>
+ <tileset firstgid="1370" name="color" tilewidth="16" tileheight="16">
+  <image source="../NetBeansProjects/PacMiage2/src/ressources/map/color.png" trans="ff00ff" width="640" height="640"/>
+ </tileset>
+ <tileset firstgid="2970" name="solide" tilewidth="16" tileheight="16">
+  <image source="../NetBeansProjects/PacMiage2/src/ressources/map/solide.png" trans="ff00ff" width="160" height="160"/>
+ </tileset>
+ <tileset firstgid="3070" name="score" tilewidth="16" tileheight="16">
+  <image source="../NetBeansProjects/PacMiage2/src/ressources/score.png" trans="ff00ff" width="146" height="48"/>
+ </tileset>
+ <tileset firstgid="3097" name="terrain" tilewidth="16" tileheight="16">
+  <image source="../NetBeansProjects/PacMiage2/src/ressources/map/terrain.png" trans="ff00ff" width="1000" height="500"/>
+ </tileset>
+ <tileset firstgid="5019" name="Dégrader" tilewidth="16" tileheight="16">
+  <image source="../NetBeansProjects/PacMiage2/src/ressources/map/Dégrader.png" trans="ff00ff" width="1000" height="508"/>
+ </tileset>
+ <tileset firstgid="6941" name="score2" tilewidth="16" tileheight="16">
+  <image source="../NetBeansProjects/PacMiage2/src/ressources/image/score/score2.png" trans="ff00ff" width="160" height="48"/>
+ </tileset>
+ <layer name="Calque de Tile 1" width="64" height="48">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3ZV5AURRzH8TXALreXwJyFF3OOwGECVCgtc45gzsKLARM5mMEEr+Ys5gx3hEPi3b2as5iz4oP4pWaa/de//F93785aRbkPn+qru56e/nWY7Z1r75nLtafmpeZjARamv1+Ed7AYS7AUy7AcK9CBTnThL6HLIOtnpVOVUnugb1Lf4jt8jx/wI37Cz/gFv+I3/I4/8CdWpZn75UvkWEiyflZWqVIKzb9RPrExNsGm2AybYwtsia2wNbbBttgO26Nvmnm40M8g62elryql0PwD84kWDMJBOBiH4FAchsEYgqE4HEfgSAxLM48Whhtk/awMU6UUmv+8fOJ8XIALcREuxiW4FJfhclyBK3EVrsaoNPMsYbRB1s/KKFVKoflvzSduw+24A3fiLtyN6ZiBe3Av7sP9eAAz08xtwiyDrJ+VmaqUQvO/kE+8iJfwMl7Bq3gNr+MNvIm38DbmYC5a08xfC20GWT8rraqUQvO/m0+8h/fxAT7ER/gYn+BTfIbP8QW+xFdYmWbuUyiRYyHJ+llZqUopNP8GhcSG6IGeyKOAXqhDEfVoQCOa0IzeaeYBQh+DrJ+V3qqUQvPvUkjsit2wO/bAntgLe2Mf7Iv9sD8OwIHon2YeKQwwyPpZ6a9KKTT/CYXEiTgJJ+MUnIrTcDrOwJk4C2fjHJyLEWnmacJIg6yflRGqlELzjykkbsCNuAk34xaMxTiMxwRMxCRMxhRMTTM/L0wzyPpZmapKKTT/g4XEQ3gYj+BRPIbH8QSexFN4Gs/gWTyH2Wlm+bMlpE6s2aqUQvOvrsvxgMvl1sP6WFTP9x6015d+XowlWIplWI4V6EBnZN2uyPZj217b/zLz92zg+Y8eDaWfC+iFOhRRjwY0oimybnNk+7Ftu7rl5h/CtUMjro9V7fYrnf9x9G18FftX7fYrnf+5XNuKsQ2lvk7AREzCZEypoP+u/Urm19e3mPWl8//Ntasxp6HU1zbMw3wswMIK+u/aryS/r28x60vnb2nM5QY12vVj96+bq6zWk29/x64vnf96so/pJn/s/nVzldV68uWPXV/W/Fv3cRkGNpa0/Mt4uTl2pbV+rHqOvo/VL/d73/oNnX/rOerG1/XX6o+bY1da68eqp3P57uf661u/vvzWPDlufN27Ej1Our+h+9PK59p397Pyl3uusPJb+1yPr9Vfaz6t/enq6/HUuax1We65wsrv22dWf3zzML0pl5vRZP9dX69zWe3Hnvt8+a1x1vfx9VfrIHtnN/n19Xq/WO3Hnvt8+UPH2ddfrbGZ7yrN9t/19Xq/WO3/V/tf5/f1VzuK7Ed3k19frz/PrPaz3v/WOOv8Vn/Lff7rvL7nbei6C8ku81vjrD+PrP6W+/zXeX2ft6HrLiT/zkX/OcrtM6u/ej71OtDt+s5/ejx955KYzwGd//ii/xzl9pnv/Gud63S7vvOfvo/vXBLzObAmv/n+z7gmdp9l/f3Pd/+Y+d+hmNgRO6Xr3zd+sfss6+9/vvvHzP8xxcSxOC5d/25/Vev9T6Xv/9w+z6J/1xQT1+K6Nd/9xPu/ar3/qfT9n9vn1epfpe/n1vX2K30/t663v/bzucz/u4TUrWbbse9/NLe/yv2/S0jdarYd+/6npqampqbm/+IfKzO8OAAwAAA=
+  </data>
+ </layer>
+ <layer name="Logic" width="64" height="48">
+  <data encoding="base64" compression="gzip">
+   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
+  </data>
+ </layer>
+ <objectgroup name="trigger">
+  <object id="181" name="graine 1" type="graine" x="857.625" y="569.125" width="15" height="15"/>
+  <object id="182" name="graine 1" type="graine" x="697.625" y="218.125" width="15" height="15"/>
+  <object id="183" name="graine 1" type="graine" x="505.125" y="600.25" width="15" height="15"/>
+  <object id="184" name="graine 1" type="graine" x="153.125" y="569.625" width="15" height="15"/>
+  <object id="185" name="graine 1" type="graine" x="697.625" y="344.75" width="15" height="15"/>
+  <object id="186" name="graine 1" type="graine" x="792.125" y="633.625" width="15" height="15"/>
+  <object id="187" name="graine 1" type="graine" x="632.625" y="410.75" width="15" height="15"/>
+  <object id="188" name="graine 1" type="graine" x="153.125" y="632.625" width="15" height="15"/>
+  <object id="189" name="graine 1" type="graine" x="503.625" y="439.75" width="15" height="15"/>
+  <object id="190" name="graine 1" type="graine" x="601.125" y="378.75" width="15" height="15"/>
+  <object id="191" name="graine 1" type="graine" x="408.625" y="380.25" width="15" height="15"/>
+  <object id="192" name="graine 1" type="graine" x="858.625" y="378.75" width="15" height="15"/>
+  <object id="193" name="graine 1" type="graine" x="249.625" y="408.75" width="15" height="15"/>
+  <object id="194" name="graine 1" type="graine" x="185.375" y="217.375" width="15" height="15"/>
+  <object id="195" name="graine 1" type="graine" x="473.625" y="537.25" width="15" height="15"/>
+  <object id="196" name="graine 1" type="graine" x="697.125" y="378.25" width="15" height="15"/>
+  <object id="197" name="graine 1" type="graine" x="761.125" y="411.25" width="15" height="15"/>
+  <object id="198" name="graine 1" type="graine" x="570.125" y="504.75" width="15" height="15"/>
+  <object id="199" name="graine 1" type="graine" x="441.625" y="633.125" width="15" height="15"/>
+  <object id="200" name="graine 1" type="graine" x="825.375" y="568.375" width="15" height="15"/>
+  <object id="201" name="graine 1" type="graine" x="315.125" y="506.25" width="15" height="15"/>
+  <object id="202" name="graine 1" type="graine" x="729.125" y="218.625" width="15" height="15"/>
+  <object id="203" name="graine 1" type="graine" x="471.875" y="312" width="15" height="15"/>
+  <object id="204" name="graine 1" type="graine" x="249.125" y="218.625" width="15" height="15"/>
+  <object id="205" name="graine 1" type="graine" x="121.875" y="537" width="15" height="15"/>
+  <object id="206" name="graine 1" type="graine" x="185.375" y="280.375" width="15" height="15"/>
+  <object id="207" name="graine 1" type="graine" x="761.625" y="219.125" width="15" height="15"/>
+  <object id="208" name="graine 1" type="graine" x="633.125" y="441.25" width="15" height="15"/>
+  <object id="209" name="graine 1" type="graine" x="216.625" y="632.125" width="15" height="15"/>
+  <object id="210" name="graine 1" type="graine" x="888.875" y="312" width="15" height="15"/>
+  <object id="211" name="graine 1" type="graine" x="600.625" y="346.25" width="15" height="15"/>
+  <object id="212" name="graine 1" type="graine" x="503.125" y="409.25" width="15" height="15"/>
+  <object id="213" name="graine 1" type="graine" x="760.625" y="380.75" width="15" height="15"/>
+  <object id="214" name="graine 1" type="graine" x="601.625" y="633.125" width="15" height="15"/>
+  <object id="215" name="graine 1" type="graine" x="376.625" y="632.125" width="15" height="15"/>
+  <object id="216" name="graine 1" type="graine" x="859.125" y="473.25" width="15" height="15"/>
+  <object id="217" name="graine 1" type="graine" x="442.125" y="312.75" width="15" height="15"/>
+  <object id="218" name="graine 1" type="graine" x="315.625" y="472.75" width="15" height="15"/>
+  <object id="219" name="originePac" type="originePac" x="494.875" y="527" width="32" height="32"/>
+  <object id="220" name="graine 1" type="graine" x="217.625" y="218.125" width="15" height="15"/>
+  <object id="221" name="graine 1" type="graine" x="632.625" y="473.25" width="15" height="15"/>
+  <object id="222" name="graine 1" type="graine" x="888.875" y="536" width="15" height="15"/>
+  <object id="223" name="graine 1" type="graine" x="250.125" y="505.25" width="15" height="15"/>
+  <object id="224" name="graine 1" type="graine" x="154.125" y="218.625" width="15" height="15"/>
+  <object id="225" name="graine 1" type="graine" x="761.625" y="281.125" width="15" height="15"/>
+  <object id="226" name="graine 1" type="graine" x="442.625" y="218.125" width="15" height="15"/>
+  <object id="227" name="graine 1" type="graine" x="121.875" y="600" width="15" height="15"/>
+  <object id="228" name="graine 1" type="graine" x="249.125" y="281.625" width="15" height="15"/>
+  <object id="229" name="graine 1" type="graine" x="698.125" y="505.25" width="15" height="15"/>
+  <object id="230" name="graine 1" type="graine" x="823.375" y="632.375" width="15" height="15"/>
+  <object id="231" name="graine 1" type="graine" x="248.125" y="569.625" width="15" height="15"/>
+  <object id="232" name="graine 1" type="graine" x="377.625" y="410.75" width="15" height="15"/>
+  <object id="233" name="graine 1" type="graine" x="503.625" y="375.75" width="15" height="15"/>
+  <object id="234" name="graine 1" type="graine" x="344.375" y="631.375" width="15" height="15"/>
+  <object id="235" name="graine 1" type="graine" x="858.625" y="442.75" width="15" height="15"/>
+  <object id="236" name="graine 1" type="graine" x="249.625" y="344.75" width="15" height="15"/>
+  <object id="237" name="graine 1" type="graine" x="441.625" y="347.25" width="15" height="15"/>
+  <object id="238" name="graine 1" type="graine" x="762.125" y="474.25" width="15" height="15"/>
+  <object id="239" name="graine 1" type="graine" x="314.125" y="218.625" width="15" height="15"/>
+  <object id="240" name="graine 1" type="graine" x="698.625" y="471.75" width="15" height="15"/>
+  <object id="241" name="graine 1" type="graine" x="537.125" y="536.75" width="15" height="15"/>
+  <object id="242" name="graine 1" type="graine" x="858.125" y="345.75" width="15" height="15"/>
+  <object id="243" name="graine 1" type="graine" x="664.375" y="632.375" width="15" height="15"/>
+  <object id="244" name="graine 1" type="graine" x="314.625" y="409.75" width="15" height="15"/>
+  <object id="245" name="graine 1" type="graine" x="794.125" y="569.625" width="15" height="15"/>
+  <object id="246" name="graine 1" type="graine" x="602.625" y="218.125" width="15" height="15"/>
+  <object id="247" name="graine 1" type="graine" x="154.125" y="281.625" width="15" height="15"/>
+  <object id="248" name="graine 1" type="graine" x="122.875" y="248" width="15" height="15"/>
+  <object id="249" name="graine 1" type="graine" x="377.625" y="218.125" width="15" height="15"/>
+  <object id="250" name="graine 1" type="graine" x="855.625" y="633.125" width="15" height="15"/>
+  <object id="251" name="graine 1" type="graine" x="378.125" y="441.25" width="15" height="15"/>
+  <object id="252" name="graine 1" type="graine" x="121.625" y="569.125" width="15" height="15"/>
+  <object id="253" name="graine 1" type="graine" x="280.875" y="345" width="15" height="15"/>
+  <object id="254" name="graine 1" type="graine" x="856.625" y="219.125" width="15" height="15"/>
+  <object id="255" name="graine 1" type="graine" x="888.625" y="505.25" width="15" height="15"/>
+  <object id="256" name="graine 1" type="graine" x="632.625" y="379.25" width="15" height="15"/>
+  <object id="257" name="graine 1" type="graine" x="152.625" y="380.75" width="15" height="15"/>
+  <object id="258" name="graine 1" type="graine" x="504.375" y="632.375" width="15" height="15"/>
+  <object id="259" name="graine 1" type="graine" x="121.625" y="632.125" width="15" height="15"/>
+  <object id="260" name="graine 1" type="graine" x="537.125" y="311.75" width="15" height="15"/>
+  <object id="261" name="graine 1" type="graine" x="761.625" y="443.75" width="15" height="15"/>
+  <object id="262" name="graine 1" type="graine" x="315.125" y="442.25" width="15" height="15"/>
+  <object id="263" name="graine 1" type="graine" x="441.625" y="506.25" width="15" height="15"/>
+  <object id="264" name="graine 1" type="graine" x="857.125" y="504.75" width="15" height="15"/>
+  <object id="265" name="graine 1" type="graine" x="409.125" y="218.625" width="15" height="15"/>
+  <object id="266" name="graine 1" type="graine" x="601.625" y="505.25" width="15" height="15"/>
+  <object id="267" name="graine 1" type="graine" x="249.125" y="378.25" width="15" height="15"/>
+  <object id="268" name="graine 1" type="graine" x="280.875" y="505" width="15" height="15"/>
+  <object id="269" name="graine 1" type="graine" x="378.125" y="472.75" width="15" height="15"/>
+  <object id="270" name="graine 1" type="graine" x="568.125" y="633.625" width="15" height="15"/>
+  <object id="271" name="graine 1" type="graine" x="152.625" y="505.75" width="15" height="15"/>
+  <object id="272" name="graine 1" type="graine" x="665.375" y="217.375" width="15" height="15"/>
+  <object id="273" name="graine 1" type="graine" x="601.125" y="472.75" width="15" height="15"/>
+  <object id="274" name="graine 1" type="graine" x="122.875" y="313" width="15" height="15"/>
+  <object id="275" name="graine 1" type="graine" x="217.625" y="281.125" width="15" height="15"/>
+  <object id="276" name="graine 1" type="graine" x="697.625" y="408.75" width="15" height="15"/>
+  <object id="277" name="graine 1" type="graine" x="824.375" y="280.375" width="15" height="15"/>
+  <object id="278" name="graine 1" type="graine" x="760.625" y="633.125" width="15" height="15"/>
+  <object id="279" name="graine 1" type="graine" x="153.375" y="345.5" width="15" height="15"/>
+  <object id="280" name="graine 1" type="graine" x="505.625" y="249.75" width="15" height="15"/>
+  <object id="281" name="graine 1" type="graine" x="216.625" y="569.125" width="15" height="15"/>
+  <object id="282" name="graine 1" type="graine" x="793.125" y="219.625" width="15" height="15"/>
+  <object id="283" name="graine 1" type="graine" x="121.875" y="345" width="15" height="15"/>
+  <object id="284" name="graine 1" type="graine" x="153.125" y="411.25" width="15" height="15"/>
+  <object id="285" name="graine 1" type="graine" x="313.125" y="632.625" width="15" height="15"/>
+  <object id="286" name="graine 1" type="graine" x="250.625" y="535.75" width="15" height="15"/>
+  <object id="287" name="graine 1" type="graine" x="504.625" y="502.75" width="15" height="15"/>
+  <object id="288" name="departFantome" type="departFantome" x="495.625" y="304.25" width="32" height="32"/>
+  <object id="289" name="graine 1" type="graine" x="762.125" y="538.25" width="15" height="15"/>
+  <object id="290" name="graine 1" type="graine" x="536.625" y="633.125" width="15" height="15"/>
+  <object id="291" name="graine 1" type="graine" x="377.125" y="379.75" width="15" height="15"/>
+  <object id="292" name="graine 1" type="graine" x="698.125" y="441.25" width="15" height="15"/>
+  <object id="293" name="graine 1" type="graine" x="888.125" y="281.625" width="15" height="15"/>
+  <object id="294" name="graine 1" type="graine" x="442.125" y="536.75" width="15" height="15"/>
+  <object id="295" name="graine 1" type="graine" x="473.125" y="633.625" width="15" height="15"/>
+  <object id="296" name="graine 1" type="graine" x="250.625" y="471.75" width="15" height="15"/>
+  <object id="297" name="graine 1" type="graine" x="505.375" y="217.375" width="15" height="15"/>
+  <object id="298" name="graine 1" type="graine" x="569.125" y="218.625" width="15" height="15"/>
+  <object id="299" name="graine 1" type="graine" x="889.125" y="569.625" width="15" height="15"/>
+  <object id="300" name="graine 1" type="graine" x="122.625" y="218.125" width="15" height="15"/>
+  <object id="301" name="graine 1" type="graine" x="887.125" y="633.625" width="15" height="15"/>
+  <object id="302" name="graine 1" type="graine" x="506.125" y="280.25" width="15" height="15"/>
+  <object id="303" name="graine 1" type="graine" x="184.375" y="568.375" width="15" height="15"/>
+  <object id="304" name="graine 1" type="graine" x="728.875" y="506" width="15" height="15"/>
+  <object id="305" name="graine 1" type="graine" x="888.125" y="219.625" width="15" height="15"/>
+  <object id="306" name="graine 1" type="graine" x="152.625" y="444.75" width="15" height="15"/>
+  <object id="307" name="graine 1" type="graine" x="633.125" y="633.625" width="15" height="15"/>
+  <object id="308" name="graine 1" type="graine" x="184.375" y="631.375" width="15" height="15"/>
+  <object id="309" name="graine 1" type="graine" x="503.125" y="345.25" width="15" height="15"/>
+  <object id="310" name="graine 1" type="graine" x="569.125" y="345.75" width="15" height="15"/>
+  <object id="311" name="graine 1" type="graine" x="761.625" y="507.75" width="15" height="15"/>
+  <object id="312" name="graine 1" type="graine" x="889.625" y="346.25" width="15" height="15"/>
+  <object id="313" name="graine 1" type="graine" x="249.125" y="314.25" width="15" height="15"/>
+  <object id="314" name="graine 1" type="graine" x="281.625" y="632.125" width="15" height="15"/>
+  <object id="315" name="graine 1" type="graine" x="282.625" y="218.125" width="15" height="15"/>
+  <object id="316" name="graine 1" type="graine" x="568.625" y="537.25" width="15" height="15"/>
+  <object id="317" name="graine 1" type="graine" x="728.875" y="345" width="15" height="15"/>
+  <object id="318" name="graine 1" type="graine" x="761.125" y="347.25" width="15" height="15"/>
+  <object id="319" name="graine 1" type="graine" x="696.625" y="633.125" width="15" height="15"/>
+  <object id="320" name="graine 1" type="graine" x="537.625" y="218.125" width="15" height="15"/>
+  <object id="321" name="graine 1" type="graine" x="762.625" y="569.125" width="15" height="15"/>
+  <object id="322" name="graine 1" type="graine" x="314.625" y="345.75" width="15" height="15"/>
+  <object id="323" name="graine 1" type="graine" x="793.125" y="281.625" width="15" height="15"/>
+  <object id="324" name="graine 1" type="graine" x="504.625" y="569.75" width="15" height="15"/>
+  <object id="325" name="graine 1" type="graine" x="474.125" y="218.625" width="15" height="15"/>
+  <object id="326" name="graine 1" type="graine" x="122.625" y="281.125" width="15" height="15"/>
+  <object id="327" name="graine 1" type="graine" x="824.375" y="218.375" width="15" height="15"/>
+  <object id="328" name="graine 1" type="graine" x="153.125" y="475.25" width="15" height="15"/>
+  <object id="329" name="graine 1" type="graine" x="248.125" y="632.625" width="15" height="15"/>
+  <object id="330" name="graine 1" type="graine" x="889.875" y="600" width="15" height="15"/>
+  <object id="331" name="graine 1" type="graine" x="504.125" y="472.25" width="15" height="15"/>
+  <object id="332" name="graine 1" type="graine" x="760.625" y="316.75" width="15" height="15"/>
+  <object id="333" name="graine 1" type="graine" x="568.625" y="312.25" width="15" height="15"/>
+  <object id="334" name="graine 1" type="graine" x="409.625" y="473.25" width="15" height="15"/>
+  <object id="335" name="graine 1" type="graine" x="859.125" y="409.25" width="15" height="15"/>
+  <object id="336" name="graine 1" type="graine" x="410.125" y="346.75" width="15" height="15"/>
+  <object id="337" name="graine 1" type="graine" x="728.125" y="633.625" width="15" height="15"/>
+  <object id="338" name="graine 1" type="graine" x="408.125" y="632.625" width="15" height="15"/>
+  <object id="339" name="graine 1" type="graine" x="314.125" y="379.25" width="15" height="15"/>
+  <object id="340" name="graine 1" type="graine" x="410.125" y="505.75" width="15" height="15"/>
+  <object id="341" name="graine 1" type="graine" x="856.625" y="281.125" width="15" height="15"/>
+  <object id="342" name="graine 1" type="graine" x="634.125" y="218.625" width="15" height="15"/>
+  <object id="343" name="graine 1" type="graine" x="121.125" y="505.25" width="15" height="15"/>
+  <object id="344" name="graine 1" type="graine" x="888.875" y="251" width="15" height="15"/>
+  <object id="345" name="graine 1" type="graine" x="250.125" y="441.25" width="15" height="15"/>
+  <object id="346" name="graine 1" type="graine" x="345.375" y="217.375" width="15" height="15"/>
+  <object id="347" name="origineFantome" type="origineFantome" x="656" y="561" width="32" height="32"/>
+  <object id="350" name="origineFantome" type="origineFantome" x="653" y="273" width="32" height="32"/>
+  <object id="351" name="origineFantome" type="origineFantome" x="336" y="562" width="32" height="32"/>
+  <object id="352" name="origineFantome" type="origineFantome" x="335" y="270" width="32" height="32"/>
+  <object id="353" name="temps" type="temps" x="729" y="115" width="56" height="48"/>
+  <object id="355" name="score" type="score" x="309" y="115" width="56" height="48"/>
+ </objectgroup>
+</map>

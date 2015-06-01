@@ -22,9 +22,7 @@ import javax.swing.text.AttributeSet;
 import javax.swing.text.SimpleAttributeSet;
 import javax.swing.text.StyleConstants;
 import javax.swing.text.StyleContext;
-import stylebutton.ButtonType;
-import stylebutton.GlossyButton;
-import stylebutton.Theme;
+
 
 /**
  *
@@ -33,8 +31,8 @@ import stylebutton.Theme;
 public class FenetreQuestion extends JFrame {
 
     private Question question;
-    private GlossyButton valider;
-    private ArrayList<GlossyButton> boutons;
+    private JButton valider;
+    private ArrayList<JButton> boutons;
     private JTextPane text;
     private JTextPane label;
     private JPanel panelGlobal;
@@ -47,10 +45,10 @@ public class FenetreQuestion extends JFrame {
     public FenetreQuestion(Question question) {
         super();
         this.question = question;
-        boutons = new ArrayList<GlossyButton>();
+        boutons = new ArrayList<JButton>();
 
         for (Reponse bouton : question.getReponse()) {
-            boutons.add(new GlossyButton(bouton.getText(), Theme.GLOSSY_BLACK_THEME, ButtonType.BUTTON_ROUNDED_RECTANGLUR));
+            boutons.add(new JButton(bouton.getText()));
         }
         label = new JTextPane();
         text = new JTextPane();
@@ -136,7 +134,7 @@ public class FenetreQuestion extends JFrame {
 
         JPanel panel = new JPanel();
         panel.setLayout(new FlowLayout());
-        valider = new GlossyButton("Valider", Theme.GLOSSY_BLUEGREEN_THEME);
+        valider = new JButton("Valider");
         panel.add(valider);
         valider.addActionListener(new FenetreQuestionListener(this));
         return panel;
@@ -160,7 +158,7 @@ public class FenetreQuestion extends JFrame {
      *
      * @return
      */
-    public GlossyButton getValider() {
+    public JButton getValider() {
         return valider;
     }
 
@@ -168,7 +166,7 @@ public class FenetreQuestion extends JFrame {
      *
      * @param valider
      */
-    public void setValider(GlossyButton valider) {
+    public void setValider(JButton valider) {
         this.valider = valider;
     }
 
@@ -208,7 +206,7 @@ public class FenetreQuestion extends JFrame {
      *
      * @return
      */
-    public ArrayList<GlossyButton> getBoutons() {
+    public ArrayList<JButton> getBoutons() {
         return boutons;
     }
 
@@ -216,7 +214,7 @@ public class FenetreQuestion extends JFrame {
      *
      * @param boutons
      */
-    public void setBoutons(ArrayList<GlossyButton> boutons) {
+    public void setBoutons(ArrayList<JButton> boutons) {
         this.boutons = boutons;
     }
 
