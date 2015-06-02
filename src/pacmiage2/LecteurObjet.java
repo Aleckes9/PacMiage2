@@ -49,7 +49,7 @@ public class LecteurObjet {
         while (i.hasNext()) {
 
             Element courant = (Element) i.next();
-            objet[n] = new Objet(courant.getChildText("nom"), courant.getChildText("image"), courant.getChildText("description"), Integer.parseInt(courant.getChildText("prix")),courant.getChildText("mini_image"));
+            objet[n] = new Objet(courant.getChildText("nom"), courant.getChildText("image"), courant.getChild("description").getChildText(Session.getInstance().getLocale().toString()), Integer.parseInt(courant.getChildText("prix")),courant.getChildText("mini_image"));
             n++;
         }
     }
