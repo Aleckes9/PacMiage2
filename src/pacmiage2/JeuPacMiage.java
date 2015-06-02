@@ -22,8 +22,8 @@ public class JeuPacMiage {
     public static void main(String[] args) throws SlickException {
         int niveau = 1;
 
-        
-        AppGameContainer game = new AppGameContainer(new PartieController(niveau), 1024, 768, false);
+       JoueurInfo joueur=new JoueurInfo();
+        AppGameContainer game = new AppGameContainer(new PartieController(niveau,joueur), 1024, 768, false);
         //game.setShowFPS(false);
         
         game.setTargetFrameRate(30);

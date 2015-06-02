@@ -19,10 +19,11 @@ public class PacMiageController implements KeyListener {
 
     private PacMiage player;
     private JoueurInfo joueur;
-PartieController partie;
-    public PacMiageController(PacMiage player, PartieController partie) {
+private PartieController partie;
+    public PacMiageController(PacMiage player, PartieController partie,JoueurInfo joueur) {
         this.player = player;
         this.partie=partie;
+        this.joueur=joueur;
     }
 
     @Override

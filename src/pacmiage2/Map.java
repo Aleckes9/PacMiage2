@@ -22,7 +22,7 @@ public class Map {
     private int tileH;
     // méthodes d’initialisation et d'affichage  [...]
     public void init() throws SlickException {
-        this.tiledMap = new TiledMap("./src/ressources/map/pacManCarte5.tmx");
+        this.tiledMap = new TiledMap("./src/ressources/map/pacManCarte4.tmx");
         tileW = this.tiledMap.getTileWidth();
         tileH = this.tiledMap.getTileHeight();
     }

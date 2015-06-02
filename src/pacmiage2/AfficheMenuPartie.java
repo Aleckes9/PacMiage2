@@ -19,8 +19,8 @@ import static pacmiage2.Eshop_AfficheEshop.largeur;
  */
 public class AfficheMenuPartie implements ActionListener{
 
-    JFrame f = new JFrame();
-PartieController partie;
+   private JFrame f = new JFrame();
+private PartieController partie;
     public AfficheMenuPartie(PartieController partie) throws IOException  {
        this.partie=partie;
         JPanel j = new JPanel();
@@ -104,7 +104,8 @@ PartieController partie;
             partie.getBackground().setVolume(0.5f);}
                 break;
             case "choixObjet":
-                new ActionChoixObjet(partie,partie.getJoueur());
+                new ActionChoixObjet(partie);
+                
                 break;
             case "quitter":
                new RetourMenu(partie.getJoueur(),f);
