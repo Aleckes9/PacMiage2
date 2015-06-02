@@ -26,11 +26,12 @@ private JoueurInfo j;
        save= new Sauvegarde();
     try {
         save.enregistrerFichier(j);
+        new AfficherMenu(j);
     } catch (IOException ex) {
         Logger.getLogger(RetourMenu.class.getName()).log(Level.SEVERE, null, ex);
     }
     f.dispose();
-       System.exit(0); 
+       
     }
 
     
