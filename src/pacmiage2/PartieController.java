@@ -59,6 +59,7 @@ public class PartieController extends BasicGame {
         this.niveau = niveau;
         timer = new ControlerTemps(120);
 this.joueur=joueur;
+
     }
 
     @Override
@@ -177,6 +178,10 @@ this.joueur=joueur;
             fantome.update(this.player.getX(), this.player.getY());
         }
 
+    }
+
+    public AffichageTemps getAffichageTemps() {
+        return temps;
     }
 
     private void ouvertureQuestion() throws SlickException {
