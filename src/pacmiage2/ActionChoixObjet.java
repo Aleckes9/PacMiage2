@@ -31,7 +31,8 @@ class ActionChoixObjet  {
          l.setForeground(Color.WHITE);
          l.setFont(new Font("Kristen ITC", Font.PLAIN, 44));
         if(partie.getJoueur().getNbObjet()==0){
-            l.setText("Aucun objet");
+  new ObjetFreezer().executer(partie);
+//   l.setText("Aucun objet");
          p.add(l);
         }else{
          for(int i=0;i<partie.getJoueur().getObjetDispo().length;i++){

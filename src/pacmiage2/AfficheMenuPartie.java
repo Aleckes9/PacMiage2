@@ -22,6 +22,7 @@ public class AfficheMenuPartie implements ActionListener{
    private JFrame f = new JFrame();
 private PartieController partie;
     public AfficheMenuPartie(PartieController partie) throws IOException  {
+          partie.getContainer().pause();
        this.partie=partie;
         JPanel j = new JPanel();
         JPanel boutons = new JPanel();

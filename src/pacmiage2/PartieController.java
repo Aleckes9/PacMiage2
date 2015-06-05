@@ -62,6 +62,10 @@ this.joueur=joueur;
 
     }
 
+    public GameContainer getContainer() {
+        return container;
+    }
+
     @Override
     public void init(GameContainer container) throws SlickException {
 
