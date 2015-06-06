@@ -41,12 +41,12 @@ public class SelectionnerNiveau implements ActionListener {
         this.fenetre = f;
         
         JPanel j = new JPanel();
+        f.setJpanel(j);
         JPanel niveaux = new JPanel();
         JLabel titre = new JLabel(Session.getInstance().recupererValeur("niveaux"), JLabel.CENTER);
         BorderLayout disposition = new BorderLayout();
         j.setLayout(disposition);
 
-        f.setVisible(true);
         f.setContentPane(j);
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -104,19 +104,19 @@ public class SelectionnerNiveau implements ActionListener {
 
             switch (tp.getText()) {
                 case "1":
-                    executerPartie(1, properties.getProperty("carte1"));
+                    fenetre.executerPartie(1, properties.getProperty("carte1"));
                     break;
                 case "2":
-                    executerPartie(2, properties.getProperty("carte2"));
+                    fenetre.executerPartie(2, properties.getProperty("carte2"));
                     break;
                 case "3":
-                    executerPartie(3, properties.getProperty("carte3"));
+                    fenetre.executerPartie(3, properties.getProperty("carte3"));
                     break;
                 case "4":
-                    executerPartie(4, properties.getProperty("carte4"));
+                    fenetre.executerPartie(4, properties.getProperty("carte4"));
                     break;
                 case "5":
-                    executerPartie(5, properties.getProperty("carte5"));
+                    fenetre.executerPartie(5, properties.getProperty("carte5"));
                     break;
             }
         } catch (SlickException ex) {
@@ -124,16 +124,6 @@ public class SelectionnerNiveau implements ActionListener {
         }
     }
 
-    public void executerPartie(int niveau, String cheminCarte) throws SlickException {
-        fenetre.dispose();
-        AppGameContainer game = new AppGameContainer(new PartieController(niveau, this.joueur, cheminCarte), 1024, 768, false);
-        //game.setShowFPS(false);
-        game.setTargetFrameRate(30);
-        game.setMusicOn(true);
-        game.setMusicVolume(0.5f);
-        game.start();
-        
 
-    }
 
 }

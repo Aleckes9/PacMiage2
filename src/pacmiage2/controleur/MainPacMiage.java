@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.newdawn.slick.AppGameContainer;
+import org.newdawn.slick.SlickException;
 import pacmiage2.utiles.Importation_Config;
 import pacmiage2.modele.JoueurInfo;
 import pacmiage2.utiles.Sauvegarde;
@@ -32,6 +34,8 @@ public class MainPacMiage {
     public static Sauvegarde sauvegarde;
 
     public static JoueurInfo joueur;
+    
+  
 
     public static void main(String[] args) {
 
@@ -42,22 +46,42 @@ public class MainPacMiage {
             config.setConfiguration();
             //propeties reçoit le properties créé par la class Importation_Config
             properties = config.getConfiguration();
-
+            AppGameContainer game;
+            boolean attente = true;
+            boolean start = false;
             sauvegarde = new Sauvegarde(properties.getProperty("pathSauvegarde"));
 
-            joueur =  (JoueurInfo) sauvegarde.lectureFichier();
+            joueur = (JoueurInfo) sauvegarde.lectureFichier();
             if (joueur == null) {
                 joueur = new JoueurInfo();
                 sauvegarde.enregistrerFichier(joueur);
             }
 
-            Fenetre mainFenetre = new Fenetre(properties, joueur);
+            Fenetre mainFenetre = new Fenetre(properties, joueur, sauvegarde);
             mainFenetre.initFenetre();
             mainFenetre.initFenetreMenu();
-            
+
+          while (attente) {
+              System.out.println("ici");
+                if (mainFenetre.getPartieController() != null) {
+                    System.out.println("la");
+                    PartieController partieController = mainFenetre.getPartieController();
+                    game = new AppGameContainer(partieController, 1024, 768, false);
+                    mainFenetre.dispose();
+                    //game.setShowFPS(false);
+                    game.setTargetFrameRate(30);
+                    game.setMusicOn(true);
+                    game.setMusicVolume(0.5f);
+                    game.start();
+                    attente = false;
+                }
+            }
+
         } catch (IOException ex) {
             Logger.getLogger(MainPacMiage.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
+            Logger.getLogger(MainPacMiage.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SlickException ex) {
             Logger.getLogger(MainPacMiage.class.getName()).log(Level.SEVERE, null, ex);
         }
 

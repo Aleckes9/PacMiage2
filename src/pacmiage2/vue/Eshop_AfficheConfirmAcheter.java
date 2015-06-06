@@ -19,8 +19,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import pacmiage2.modele.JoueurInfo;
 import pacmiage2.utiles.Session;
-import static pacmiage2.vue.Eshop_AfficheEshop.hauteur;
-import static pacmiage2.vue.Eshop_AfficheEshop.largeur;
+
 
 /**
  * Ouvre un message de confirmation pour l'achat d'un objet
@@ -46,7 +45,7 @@ public class Eshop_AfficheConfirmAcheter extends AbstractAction {
         f.setBackground(Color.black);
         JPanel g = new JPanel();
         g.setBackground(Color.black);
-        f.setBounds(0, 0, largeur, hauteur);
+        f.setBounds(0, 0, eshopFenetre.getWidth(), eshopFenetre.getHeight());
         JLabel texte = new JLabel();
         AfficheBarreInformation barreDuHaut = new AfficheBarreInformation(eshopFenetre, j);
         JPanel d = new JPanel();

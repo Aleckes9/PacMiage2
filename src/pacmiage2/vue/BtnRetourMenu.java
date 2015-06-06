@@ -8,8 +8,8 @@ package pacmiage2.vue;
 import pacmiage2.modele.JoueurInfo;
 import java.awt.Color;
 import javax.swing.JButton;
-import javax.swing.JFrame;
 import pacmiage2.controleur.RetourMenu;
+import pacmiage2.modele.Fenetre;
 import pacmiage2.utiles.Session;
 
 /**
@@ -18,7 +18,7 @@ import pacmiage2.utiles.Session;
  */
 public class BtnRetourMenu extends JButton{
 
-    public BtnRetourMenu( JoueurInfo j,JFrame f) {
+    public BtnRetourMenu( JoueurInfo j,Fenetre f) {
 this.setAction(new RetourMenu(j,f));
         this.setText(Session.getInstance().recupererValeur("retour"));
      this.setBackground(Color.black);

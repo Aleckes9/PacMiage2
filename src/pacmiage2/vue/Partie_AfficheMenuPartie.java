@@ -13,8 +13,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import pacmiage2.controleur.ActionChoixObjet;
 import pacmiage2.utiles.Session;
-import static pacmiage2.vue.Eshop_AfficheEshop.hauteur;
-import static pacmiage2.vue.Eshop_AfficheEshop.largeur;
+
 
 /**
  *
@@ -37,7 +36,7 @@ public class Partie_AfficheMenuPartie implements ActionListener {
 
         fenetre.setLocationRelativeTo(null);
         fenetre.setUndecorated(true);
-        fenetre.setBounds(largeur / 3, hauteur / 4, 4 * largeur / 11, hauteur / 2);
+        fenetre.setBounds(partie.getContainer().getWidth() / 3, partie.getContainer().getHeight() / 4, 4 * partie.getContainer().getWidth() / 11, partie.getContainer().getHeight() / 2);
         fenetre.setVisible(true);
         fenetre.setContentPane(j);
         fenetre.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
