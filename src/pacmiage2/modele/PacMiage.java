@@ -20,6 +20,10 @@ public class PacMiage {
     private int direction = 0;
     private int futurDirection = 0;
     private String imagePac;
+
+    public void setImagePac(String imagePac) {
+        this.imagePac = imagePac;
+    }
     private boolean moving = false;
     private Animation[] animations = new Animation[8];
     private boolean onStair = false;

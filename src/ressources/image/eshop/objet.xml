@@ -21,13 +21,13 @@
         <prix>100</prix>
     </objet>	
     <objet>
-        <nom>Joker</nom>
+        <nom>Clock</nom>
         <description>
-        <fr>Permet d'éviter une question</fr>
-        <en>Skip a question</en>
+        <fr>Donne 20snd</fr>
+        <en>Give 20snd</en>
         </description>
-        <image>./src/ressources/image/eshop/Joker.jpg</image>
-		  <mini_image>./src/ressources/image/eshop/miniJoker.jpg</mini_image>
+        <image>./src/ressources/image/eshop/clock.png</image>
+		  <mini_image>./src/ressources/image/eshop/miniclock.png</mini_image>
         <prix>200</prix>
     </objet>
     <objet>

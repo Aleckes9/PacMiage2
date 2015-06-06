@@ -49,6 +49,7 @@ public class PartieController extends BasicGame {
     private int nbQuestionsCorrect;
     private ControleurTemps timer;
     private String cheminCarte;
+    
 
     public PartieController(int niveau, JoueurInfo joueur, String cheminCarte) throws SlickException {
 

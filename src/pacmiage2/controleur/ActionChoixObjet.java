@@ -12,6 +12,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import pacmiage2.utiles.ObjetFreezer;
+import pacmiage2.utiles.ObjetInvinsible;
 
 
 /**
@@ -22,7 +23,7 @@ public class ActionChoixObjet  {
 
     public ActionChoixObjet(PartieController partie) {
        
-       new ObjetFreezer(partie);
+       new  ObjetInvinsible(partie);
     }
 //        JFrame f=new JFrame();
 //        
