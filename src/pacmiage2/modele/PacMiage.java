@@ -59,6 +59,10 @@ public class PacMiage {
         
     }
 
+    public void setVitesse(int vitesse) {
+        this.vitesse = vitesse;
+    }
+
     public void update(int delta) {
         if (this.moving) {
             float futurX = getFuturX(vitesse, this.direction);

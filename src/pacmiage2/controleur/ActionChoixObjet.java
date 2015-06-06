@@ -11,6 +11,7 @@ import javax.swing.Action;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import pacmiage2.utiles.ObjetFreezer;
 
 
 /**
@@ -20,7 +21,8 @@ import javax.swing.JPanel;
 public class ActionChoixObjet  {
 
     public ActionChoixObjet(PartieController partie) {
-        
+       
+       new ObjetFreezer(partie);
     }
 //        JFrame f=new JFrame();
 //        

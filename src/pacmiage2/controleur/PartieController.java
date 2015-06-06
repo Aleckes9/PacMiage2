@@ -66,6 +66,14 @@ public class PartieController extends BasicGame {
         this.joueur = joueur;
     }
 
+    public PacMiage getPlayer() {
+        return player;
+    }
+
+    public List<Fantome> getListFantome() {
+        return listFantome;
+    }
+
     @Override
     public void init(GameContainer container) throws SlickException {
 
@@ -110,6 +118,10 @@ public class PartieController extends BasicGame {
         background.loop();
         son = new Sound("./src/ressources/musique/0218.ogg");
 
+    }
+
+    public ControleurTemps getTimer() {
+        return timer;
     }
 
     @Override

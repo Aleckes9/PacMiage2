@@ -112,6 +112,7 @@ public class Partie_AfficheMenuPartie implements ActionListener {
                 }
                 break;
             case "choixObjet":
+                fenetre.dispose();
                 new ActionChoixObjet(partie);
 
                 break;
