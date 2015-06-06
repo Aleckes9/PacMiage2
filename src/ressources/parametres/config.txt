@@ -1,0 +1,19 @@
+
+
+##### données utiles au Jeu PacMiage ##########
+
+#Emplacement du fichier de sauvegarde
+pathSauvegarde = ./src/ressources/sauvegarde/sauvegarde.txt
+
+carte1 = ./src/ressources/map/pacManCarte1.tmx
+carte2 = ./src/ressources/map/pacManCarte2.tmx
+carte3 = ./src/ressources/map/pacManCarte3.tmx
+carte4 = ./src/ressources/map/pacManCarte4.tmx
+carte5 = ./src/ressources/map/pacManCarte5.tmx
+
+
+
+
+
+
+
