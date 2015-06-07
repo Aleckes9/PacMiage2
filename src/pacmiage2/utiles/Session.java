@@ -18,21 +18,21 @@ import java.util.logging.Logger;
  * @author Axel
  */
 public class Session {
-    
+
     private static Session session = new Session();
     private Locale locale = Locale.FRENCH;
     private Properties prop;
-    
+
     HashMap<Locale, String> ficProp = new HashMap();
-    
-     public String recupererValeur(String cle){
+
+    public String recupererValeur(String cle) {
         String valeur = prop.getProperty(cle);
         return valeur;
     }
-     
-     public static Properties load(String filename) throws IOException{
+
+    public static Properties load(String filename) throws IOException {
         Properties properties = new Properties();
-        
+
         FileInputStream input = new FileInputStream(filename);
         properties.load(input);
         return properties;
@@ -46,21 +46,21 @@ public class Session {
     public void setLocale(Locale locale) {
         this.locale = locale;
         String chemin = ficProp.get(locale);
-        try { 
+        try {
             prop = Session.getInstance().load(chemin);
         } catch (IOException ex) {
             Logger.getLogger(Session.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    public static Session getInstance(){
+
+    public static Session getInstance() {
         return session;
     }
-    
-    private Session(){
 
-        ficProp.put(Locale.FRENCH, ".\\src\\ressources\\properties\\pacfr.properties");
-        ficProp.put(Locale.ENGLISH, ".\\src\\ressources\\properties\\pacen.properties");
+    private Session() {
+
+        ficProp.put(Locale.FRENCH, "./src/ressources/properties/pacfr.properties");
+        ficProp.put(Locale.ENGLISH, "./src/ressources/properties/pacen.properties");
         setLocale(Locale.FRENCH);
-}
-    
+    }
 }

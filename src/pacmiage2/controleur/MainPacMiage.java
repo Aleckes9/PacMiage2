@@ -34,8 +34,6 @@ public class MainPacMiage {
     public static Sauvegarde sauvegarde;
 
     public static JoueurInfo joueur;
-    
-  
 
     public static void main(String[] args) {
 
@@ -61,10 +59,9 @@ public class MainPacMiage {
             mainFenetre.initFenetre();
             mainFenetre.initFenetreMenu();
 
-          while (attente) {
-              System.out.println("ici");
+            while (attente) {
+                System.out.print("");
                 if (mainFenetre.getPartieController() != null) {
-                    System.out.println("la");
                     PartieController partieController = mainFenetre.getPartieController();
                     game = new AppGameContainer(partieController, 1024, 768, false);
                     mainFenetre.dispose();
@@ -73,7 +70,11 @@ public class MainPacMiage {
                     game.setMusicOn(true);
                     game.setMusicVolume(0.5f);
                     game.start();
-                    attente = false;
+                    System.out.println("dzdq");
+                    mainFenetre.setPartieController(null);
+                    mainFenetre.initFenetre();
+                    mainFenetre.initFenetreNiveau();
+//                    attente = false;
                 }
             }
 

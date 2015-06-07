@@ -114,10 +114,10 @@ public class PartieController extends BasicGame {
 
         PacMiageController controller = new PacMiageController(this.player, this, joueur);
         container.getInput().addKeyListener(controller);
-        background = new Music("./src/ressources/musique/bruno.ogg");
-        background.setVolume(0.5f);
-        background.loop();
-        son = new Sound("./src/ressources/musique/0218.ogg");
+//        background = new Music("./src/ressources/musique/bruno.ogg");
+//        background.setVolume(0.5f);
+//        background.loop();
+//        son = new Sound("./src/ressources/musique/0218.ogg");
 
     }
 
@@ -180,7 +180,7 @@ public class PartieController extends BasicGame {
         if (graineRemove != -1) {
             grainesMap.remove(graineRemove);
             this.score.setFutureScore(this.score.getFutureScore() + 10);
-            son.play();
+//            son.play();
             if (grainesMap.isEmpty()) {
                 ouvertureQuestion();
             }
@@ -196,6 +196,11 @@ public class PartieController extends BasicGame {
             fantome.update(this.player.getX(), this.player.getY());
         }
 
+        if (timer.getTempsRestant() == 0){
+            joueur.setRecord(score.getFutureScore());
+            container.exit();
+            System.out.println("ahaiahia");
+        }
     }
 
     public Partie_AffichageTemps getAffichageTemps() {
@@ -204,6 +209,7 @@ public class PartieController extends BasicGame {
 
     private void ouvertureQuestion() throws SlickException {
         nbQuestions++;
+        timer.stop();
         container.pause();
         ControleurQuestion ctrlQuestion = new ControleurQuestion(niveau);
         while (ctrlQuestion.getFenetre().isVisible()) {
@@ -217,9 +223,9 @@ public class PartieController extends BasicGame {
             this.score.setFutureScore(this.score.getFutureScore() + 100);
             nbQuestionsCorrect++;
         } else {
-            //this.score.setFutureScore(this.score.getFutureScore() - 100);
+            timer.setTempsRestant(timer.getTempsRestant()-10);
         }
-
+        timer.start();
     }
 
     public GameContainer getContainer() {
