@@ -6,8 +6,9 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.AbstractAction;
-import javax.swing.JFrame;
-import pacmiage2.modele.Fenetre;
+import pacmiage2.modele.FenetrePrincipale;
+import pacmiage2.utiles.Configuration;
+import pacmiage2.utiles.SauvegardeFichier;
 
 /**
  *
@@ -16,9 +17,9 @@ import pacmiage2.modele.Fenetre;
 public class RetourMenu extends AbstractAction {
 
     private JoueurInfo j;
-    private Fenetre f;
+    private FenetrePrincipale f;
 
-    public RetourMenu(JoueurInfo j, Fenetre f) {
+    public RetourMenu(JoueurInfo j, FenetrePrincipale f) {
         this.j = j;
         this.f = f;
     }
@@ -26,7 +27,7 @@ public class RetourMenu extends AbstractAction {
     @Override
     public void actionPerformed(ActionEvent ae) {
         try {
-            f.getSauvegarde().enregistrerFichier(j);
+            SauvegardeFichier.getInstance().enregistrerFichier(JoueurInfo.getInstance(), Configuration.getInstance().recupererValeur("pathSauvegarde"));
             f.initFenetre();
             f.initFenetreMenu();
         } catch (IOException | ClassNotFoundException ex) {

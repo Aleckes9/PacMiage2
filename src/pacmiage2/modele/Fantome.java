@@ -5,6 +5,7 @@
  */
 package pacmiage2.modele;
 
+import pacmiage2.vue.partie.Partie_AffichageMap;
 import org.newdawn.slick.Animation;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.SlickException;
@@ -28,9 +29,9 @@ public class Fantome {
     private int frequence = 0;
     private int topDepart;
 
-    private Map map;
+    private Partie_AffichageMap map;
 
-    public Fantome(Map map) {
+    public Fantome(Partie_AffichageMap map) {
         this.map = map;
     }
 

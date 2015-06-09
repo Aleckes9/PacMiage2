@@ -5,7 +5,7 @@
  */
 package pacmiage2.vue;
 
-import pacmiage2.modele.Fenetre;
+import pacmiage2.modele.FenetrePrincipale;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
@@ -26,7 +26,7 @@ public class AfficheBarreInformation {
 
     JPanel p;
 
-    public AfficheBarreInformation(Fenetre f, JoueurInfo joueur) {
+    public AfficheBarreInformation(FenetrePrincipale f, JoueurInfo joueur) {
 
         this.p = new JPanel();
 

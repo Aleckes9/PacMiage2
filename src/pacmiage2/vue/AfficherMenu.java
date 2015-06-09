@@ -5,7 +5,7 @@
  */
 package pacmiage2.vue;
 
-import pacmiage2.modele.Fenetre;
+import pacmiage2.modele.FenetrePrincipale;
 import java.awt.GridLayout;
 import java.awt.Color;
 import java.awt.Cursor;
@@ -31,7 +31,7 @@ import pacmiage2.utiles.Session;
  */
 public class AfficherMenu implements ActionListener {
 
-    private Fenetre fenetre;
+    private FenetrePrincipale fenetre;
     private JoueurInfo joueur;
     private JPanel j = new JPanel();
     private JPanel boutons = new JPanel();
@@ -41,7 +41,7 @@ public class AfficherMenu implements ActionListener {
     private JLabel logo = new JLabel(new ImageIcon(".\\src\\ressources\\image\\logo\\logo.png"));
     private JButton changerLangue = new JButton(new ImageIcon("./src/ressources/image/drapeau/enfr.png"));
 
-    public AfficherMenu(JoueurInfo joueur, Fenetre uneFenetre) throws IOException {
+    public AfficherMenu(JoueurInfo joueur, FenetrePrincipale uneFenetre) throws IOException {
         this.fenetre = uneFenetre;
         this.joueur = joueur;
 

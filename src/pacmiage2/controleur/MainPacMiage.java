@@ -1,15 +1,16 @@
 package pacmiage2.controleur;
 
-import pacmiage2.modele.Fenetre;
+import pacmiage2.controleur.partie.PartieController;
+import pacmiage2.modele.FenetrePrincipale;
 import java.io.IOException;
-import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.newdawn.slick.AppGameContainer;
 import org.newdawn.slick.SlickException;
-import pacmiage2.utiles.Importation_Config;
+import pacmiage2.utiles.Configuration;
 import pacmiage2.modele.JoueurInfo;
-import pacmiage2.utiles.Sauvegarde;
+import pacmiage2.utiles.ChargerFichier;
+import pacmiage2.utiles.SauvegardeFichier;
 
 /**
  *
@@ -17,64 +18,52 @@ import pacmiage2.utiles.Sauvegarde;
  */
 public class MainPacMiage {
 
-    /**
-     * Properties est une class utilisée pour récupérer des valeurs dans un
-     * fichiers spécifique. Chaque paramètre est stocké comme une paire composée
-     * d'un pointeur de référence ('key') donnant le nom du paramètre, suivi de
-     * la valeur désirée de ce paramètre.
-     */
-    public static Properties properties;
-
-    /**
-     * Importation_Config est la class utilisée pour récuperer nôtre fichiers de
-     * configuration et retourner un properties utilisable.
-     */
-    public static Importation_Config config;
-
-    public static Sauvegarde sauvegarde;
 
     public static JoueurInfo joueur;
 
     public static void main(String[] args) {
 
         try {
-            //Création d'un objet Importation_Config avec un constructeur vide.
-            config = new Importation_Config();
-            //initialise le properties
-            config.setConfiguration();
-            //propeties reçoit le properties créé par la class Importation_Config
-            properties = config.getConfiguration();
-            AppGameContainer game;
-            boolean attente = true;
-            boolean start = false;
-            sauvegarde = new Sauvegarde(properties.getProperty("pathSauvegarde"));
 
-            joueur = (JoueurInfo) sauvegarde.lectureFichier();
+            AppGameContainer game;
+
+            joueur = (JoueurInfo) ChargerFichier.getInstance().lectureFichier(Configuration.getInstance().recupererValeur("pathSauvegarde"));
             if (joueur == null) {
-                joueur = new JoueurInfo();
-                sauvegarde.enregistrerFichier(joueur);
+                SauvegardeFichier.getInstance().enregistrerFichier(JoueurInfo.getInstance(), Configuration.getInstance().recupererValeur("pathSauvegarde"));
+            }else{
+                JoueurInfo.setInstance(joueur);
             }
 
-            Fenetre mainFenetre = new Fenetre(properties, joueur, sauvegarde);
+            FenetrePrincipale mainFenetre = new FenetrePrincipale(JoueurInfo.getInstance());
             mainFenetre.initFenetre();
             mainFenetre.initFenetreMenu();
 
-            while (attente) {
+            while (true) {
                 System.out.print("");
+                //
                 if (mainFenetre.getPartieController() != null) {
-                    PartieController partieController = mainFenetre.getPartieController();
+                    PartieController partieController;
+                    partieController = mainFenetre.getPartieController();
                     game = new AppGameContainer(partieController, 1024, 768, false);
+                    partieController.setGame(game);
                     mainFenetre.dispose();
-                    //game.setShowFPS(false);
+                    game.setShowFPS(false);
+                    //limite le framerate pour garder la même vitesse de jeu sur tout les appariels
                     game.setTargetFrameRate(30);
                     game.setMusicOn(true);
                     game.setMusicVolume(0.5f);
+                    //démarre la partie 
                     game.start();
-                    System.out.println("dzdq");
+                    //ferme la partie en cours sans fermer l'application
+                    game.setForceExit(false);
+                    game.exit();
+                    
+                    
                     mainFenetre.setPartieController(null);
                     mainFenetre.initFenetre();
                     mainFenetre.initFenetreNiveau();
-//                    attente = false;
+                    
+
                 }
             }
 

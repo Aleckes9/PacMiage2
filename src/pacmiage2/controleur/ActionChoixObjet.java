@@ -1,6 +1,6 @@
 package pacmiage2.controleur;
 
-import pacmiage2.controleur.PartieController;
+import pacmiage2.controleur.partie.PartieController;
 import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.Font;
@@ -11,8 +11,8 @@ import javax.swing.Action;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import pacmiage2.utiles.ObjetFreezer;
-import pacmiage2.utiles.ObjetInvinsible;
+import pacmiage2.utiles.objetBonus.ObjetFreezer;
+import pacmiage2.utiles.objetBonus.ObjetInvinsible;
 
 
 /**

@@ -17,13 +17,18 @@ import java.util.logging.Logger;
  *
  * @author Axel
  */
-public class Session {
+public final class Session {
 
-    private static Session session = new Session();
+    private static final Session session = new Session();
     private Locale locale = Locale.FRENCH;
     private Properties prop;
+    private final HashMap<Locale, String> ficProp = new HashMap();
 
-    HashMap<Locale, String> ficProp = new HashMap();
+    private Session() {
+        ficProp.put(Locale.FRENCH, "./src/ressources/properties/pacfr.properties");
+        ficProp.put(Locale.ENGLISH, "./src/ressources/properties/pacen.properties");
+        setLocale(Locale.FRENCH);
+    }
 
     public String recupererValeur(String cle) {
         String valeur = prop.getProperty(cle);
@@ -47,7 +52,7 @@ public class Session {
         this.locale = locale;
         String chemin = ficProp.get(locale);
         try {
-            prop = Session.getInstance().load(chemin);
+            prop = Session.load(chemin);
         } catch (IOException ex) {
             Logger.getLogger(Session.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -57,10 +62,4 @@ public class Session {
         return session;
     }
 
-    private Session() {
-
-        ficProp.put(Locale.FRENCH, "./src/ressources/properties/pacfr.properties");
-        ficProp.put(Locale.ENGLISH, "./src/ressources/properties/pacen.properties");
-        setLocale(Locale.FRENCH);
-    }
 }

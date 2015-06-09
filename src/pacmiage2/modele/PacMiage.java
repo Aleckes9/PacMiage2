@@ -5,6 +5,7 @@
  */
 package pacmiage2.modele;
 
+import pacmiage2.vue.partie.Partie_AffichageMap;
 import org.newdawn.slick.Animation;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.SlickException;
@@ -29,9 +30,9 @@ public class PacMiage {
     private boolean onStair = false;
     private int vitesse = 2;
 
-    private Map map;
+    private Partie_AffichageMap map;
 
-    public PacMiage(Map map) throws SlickException {
+    public PacMiage(Partie_AffichageMap map) throws SlickException {
         this.map = map;
         imagePac = "./src/ressources/image/personnage/pacManMove.png";
     }

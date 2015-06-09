@@ -6,7 +6,7 @@
 package pacmiage2.controleur;
 
 import pacmiage2.modele.JoueurInfo;
-import pacmiage2.modele.Fenetre;
+import pacmiage2.modele.FenetrePrincipale;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Cursor;
@@ -21,9 +21,9 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import org.newdawn.slick.AppGameContainer;
 import org.newdawn.slick.SlickException;
 import pacmiage2.utiles.Session;
+import pacmiage2.utiles.Configuration;
 
 /**
  *
@@ -32,12 +32,10 @@ import pacmiage2.utiles.Session;
 public class SelectionnerNiveau implements ActionListener {
     
     private JoueurInfo joueur;
-    private Properties properties;
-    private Fenetre fenetre;
+    private FenetrePrincipale fenetre;
 
-    public SelectionnerNiveau(Properties properties, JoueurInfo joueur, Fenetre f) {
+    public SelectionnerNiveau(JoueurInfo joueur, FenetrePrincipale f) {
         this.joueur = joueur;
-        this.properties = properties;
         this.fenetre = f;
         
         JPanel j = new JPanel();
@@ -104,19 +102,19 @@ public class SelectionnerNiveau implements ActionListener {
 
             switch (tp.getText()) {
                 case "1":
-                    fenetre.executerPartie(1, properties.getProperty("carte1"));
+                    fenetre.executerPartie(1, Configuration.getInstance().recupererValeur("carte1"));
                     break;
                 case "2":
-                    fenetre.executerPartie(2, properties.getProperty("carte2"));
+                    fenetre.executerPartie(2, Configuration.getInstance().recupererValeur("carte2"));
                     break;
                 case "3":
-                    fenetre.executerPartie(3, properties.getProperty("carte3"));
+                    fenetre.executerPartie(3, Configuration.getInstance().recupererValeur("carte3"));
                     break;
                 case "4":
-                    fenetre.executerPartie(4, properties.getProperty("carte4"));
+                    fenetre.executerPartie(4, Configuration.getInstance().recupererValeur("carte4"));
                     break;
                 case "5":
-                    fenetre.executerPartie(5, properties.getProperty("carte5"));
+                    fenetre.executerPartie(5, Configuration.getInstance().recupererValeur("carte5"));
                     break;
             }
         } catch (SlickException ex) {

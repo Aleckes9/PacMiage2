@@ -6,8 +6,8 @@
 package pacmiage2.controleur;
 
 import pacmiage2.modele.JoueurInfo;
-import pacmiage2.vue.Eshop_AfficheObjet;
-import pacmiage2.modele.Fenetre;
+import pacmiage2.vue.eshop.Eshop_AfficheObjet;
+import pacmiage2.modele.FenetrePrincipale;
 import pacmiage2.modele.Objet;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
@@ -24,8 +24,8 @@ public class Action_Btn_Objet  extends AbstractAction{
 private boolean jeuEnCours;
 private Objet it;
 private JoueurInfo j;
-private Fenetre eshopFenetre;
-    public Action_Btn_Objet(Objet it, JoueurInfo j,boolean jeuEnCours,Fenetre eshopFenetre) {
+private FenetrePrincipale eshopFenetre;
+    public Action_Btn_Objet(Objet it, JoueurInfo j,boolean jeuEnCours,FenetrePrincipale eshopFenetre) {
     this.jeuEnCours=jeuEnCours;
     this.it=it;
     this.j=j;

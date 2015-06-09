@@ -7,7 +7,7 @@ package pacmiage2.vue;
 
 import pacmiage2.controleur.Action_Btn_Objet;
 import pacmiage2.modele.JoueurInfo;
-import pacmiage2.modele.Fenetre;
+import pacmiage2.modele.FenetrePrincipale;
 import pacmiage2.modele.Objet;
 import java.awt.Color;
 import javax.swing.ImageIcon;
@@ -20,16 +20,16 @@ import javax.swing.JFrame;
  */
 public class Btn_Objet extends JButton {
 
-    public Btn_Objet(Objet it, JoueurInfo j,Fenetre eshopFenetre) {
+    public Btn_Objet(Objet it, JoueurInfo j,FenetrePrincipale eshopFenetre) {
        
-  this.setAction(new Action_Btn_Objet(it, j,j.isJeuEnCours(),eshopFenetre));
-        if(it!=null){
-            ImageIcon icon = new ImageIcon(it.getMiniImage());
-        this.setIcon(icon);
-        }
-     this.setBackground(Color.black);
-        this.setBorderPainted(false);
-       
+//  this.setAction(new Action_Btn_Objet(it, j,j.isJeuEnCours(),eshopFenetre));
+//        if(it!=null){
+//            ImageIcon icon = new ImageIcon(it.getMiniImage());
+//        this.setIcon(icon);
+//        }
+//     this.setBackground(Color.black);
+//        this.setBorderPainted(false);
+//       
         }
     
     
