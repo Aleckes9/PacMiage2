@@ -38,6 +38,8 @@ if(jeuEnCours==true){
     
 }else{
     JDialog f = new JDialog();
+            f.setBounds(FenetrePrincipale.getTailleEcran().width / 4, FenetrePrincipale.getTailleEcran().height / 4, 4 * FenetrePrincipale.getTailleEcran().width / 8, FenetrePrincipale.getTailleEcran().height / 2);
+
         f.setBackground(Color.black);
     JPanel panel = new JPanel();
     new Eshop_AfficheObjet(panel, it, false,eshopFenetre);

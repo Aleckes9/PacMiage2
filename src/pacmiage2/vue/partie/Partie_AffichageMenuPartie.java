@@ -11,7 +11,6 @@ import java.io.IOException;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import pacmiage2.controleur.ActionChoixObjet;
 import pacmiage2.utiles.Session;
 
 
@@ -109,11 +108,6 @@ public class Partie_AffichageMenuPartie implements ActionListener {
                 } else {
                     partie.getBackground().setVolume(0.5f);
                 }
-                break;
-            case "choixObjet":
-                fenetre.dispose();
-                new ActionChoixObjet(partie);
-
                 break;
             case "quitter":
                 //new RetourMenu(partie.getJoueur(), fenetre);

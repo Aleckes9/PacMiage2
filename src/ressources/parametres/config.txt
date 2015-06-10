@@ -17,6 +17,12 @@ carteMini3 = ./src/ressources/image/miniMap/carteMini3.png
 carteMini4 = ./src/ressources/image/miniMap/carteMini4.png
 carteMini5 = ./src/ressources/image/miniMap/carteMini5.png
 
+carteFantome1 = ./src/ressources/image/personnage/blue.png
+carteFantome2 = ./src/ressources/image/personnage/android.png
+carteFantome3 = ./src/ressources/image/personnage/ball.png
+carteFantome4 = ./src/ressources/image/personnage/bowser.png
+carteFantome5 = ./src/ressources/image/personnage/cupidon.png
+
 
 
 

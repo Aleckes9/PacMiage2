@@ -11,10 +11,10 @@ import java.io.IOException;
 import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import pacmiage2.controleur.FenetreMenuListener;
+import pacmiage2.modele.JoueurInfo;
 import pacmiage2.utiles.Session;
 
 /**
@@ -29,10 +29,10 @@ public final class FenetreMenu {
     private final JPanel boutons = new JPanel();
 
     private final JLabel logo = new JLabel(new ImageIcon(".\\src\\ressources\\image\\logo\\logo.png"));
+    private final JLabel record = new JLabel("Record : " + String.valueOf(JoueurInfo.getInstance().getRecord()));
     
     private final JButton nouvellepartie = new JButton();
     private final JButton store = new JButton();
-    private final JButton scores = new JButton();
     private final JButton quitter = new JButton();
     private final JButton changerLangue = new JButton(new ImageIcon("./src/ressources/image/drapeau/enfr.png"));
 
@@ -52,16 +52,19 @@ public final class FenetreMenu {
 
         initButtonLangue();
         initButtonOptions();
+        initRecord();
+        
         
         boutons.add(nouvellepartie);
         boutons.add(store);
-        boutons.add(scores);
         boutons.add(quitter);
-                
+        boutons.add(record);       
         jPanel.setLayout(new GridLayout(3, 0));
         jPanel.add(logo);
         jPanel.add(boutons);
+   
         jPanel.add(changerLangue);
+        
         
         fenetre.revalidate();
         fenetre.repaint();
@@ -71,6 +74,13 @@ public final class FenetreMenu {
     public void initFenetre(){
         fenetre.setVisible(true);
         fenetre.setContentPane(jPanel);
+    }
+    
+   public void initRecord(){
+        record.setBackground(Color.black);
+        record.setFont(new Font("Kristen ITC", Font.PLAIN, 44));
+        record.setAlignmentX(Component.CENTER_ALIGNMENT);
+        
     }
     
     public void initButtonLangue(){
@@ -92,16 +102,13 @@ public final class FenetreMenu {
         store.setName("store");
         initConfigButton(store);
 
-        scores.setText(Session.getInstance().recupererValeur("score"));
-        scores.setName("scores");
-        initConfigButton(scores);
+
         
         quitter.setText(Session.getInstance().recupererValeur("quitter"));
         quitter.setName("quitter");
         
         nouvellepartie.setAlignmentX(Component.CENTER_ALIGNMENT);
         store.setAlignmentX(Component.CENTER_ALIGNMENT);
-        scores.setAlignmentX(Component.CENTER_ALIGNMENT);
         quitter.setAlignmentX(Component.CENTER_ALIGNMENT);
         
         initConfigButton(quitter);

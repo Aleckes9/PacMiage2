@@ -24,7 +24,7 @@ public class Eshop_AfficheEshop {
 
 
     //  public Eshop_AfficheEshop(JoueurInfo joueur) {
-    public Eshop_AfficheEshop(FenetrePrincipale f) {
+    public Eshop_AfficheEshop(FenetrePrincipale f) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
         f.initFenetre();
         /**
          * On définit les propriétés de la fenêtre
@@ -47,7 +47,7 @@ public class Eshop_AfficheEshop {
 
     }
 
-    public JScrollPane buildListObjet(FenetrePrincipale f) {
+    public JScrollPane buildListObjet(FenetrePrincipale f) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 
         JPanel jPanelObjet = new JPanel();
         jPanelObjet.setBackground(Color.black);

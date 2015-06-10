@@ -13,6 +13,8 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.AbstractAction;
 import javax.swing.ImageIcon;
 import javax.swing.JDialog;
@@ -49,7 +51,15 @@ public class Eshop_Action_Achat extends AbstractAction {
             message = "Cet objet a été ajouté à votre liste";
             picture = it.getImage();
             eshopFenetre.dispose();
-            new Eshop_AfficheEshop(eshopFenetre);
+            try {
+                new Eshop_AfficheEshop(eshopFenetre);
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(Eshop_Action_Achat.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (InstantiationException ex) {
+                Logger.getLogger(Eshop_Action_Achat.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IllegalAccessException ex) {
+                Logger.getLogger(Eshop_Action_Achat.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
         JDialog f = new JDialog();
 

@@ -45,6 +45,7 @@ public class MainPacMiage {
                     PartieController partieController;
                     partieController = mainFenetre.getPartieController();
                     game = new AppGameContainer(partieController, 1024, 768, false);
+                    //game = new AppGameContainer(partieController, mainFenetre.getWidth(), mainFenetre.getWidth(), false);
                     partieController.setGame(game);
                     mainFenetre.dispose();
                     game.setShowFPS(false);

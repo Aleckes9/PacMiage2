@@ -2,6 +2,7 @@ package pacmiage2.controleur;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Locale;
 import java.util.logging.Level;
@@ -42,9 +43,6 @@ public class FenetreMenuListener implements ActionListener{
                     fenetre.initFenetreShop();
                     //new Eshop_AfficheEshop(joueur, fenetre);
                     break;
-                case "score":
-                    System.out.println("Les scores");
-                    break;
                 case "quitter":
                     System.exit(0);
                     break;
@@ -64,6 +62,10 @@ public class FenetreMenuListener implements ActionListener{
             Logger.getLogger(FenetreMenu.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(FenetreMenu.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            Logger.getLogger(FenetreMenuListener.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            Logger.getLogger(FenetreMenuListener.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }

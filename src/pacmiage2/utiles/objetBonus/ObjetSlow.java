@@ -1,18 +1,24 @@
 package pacmiage2.utiles.objetBonus;
 
 import pacmiage2.controleur.partie.PartieController;
+import pacmiage2.modele.Bonus;
 import pacmiage2.modele.Fantome;
 
 /**
  *
  * @author Maëlle
  */
-public class ObjetSlow {
+public class ObjetSlow implements Bonus {
     private  PartieController partie;
 
-    public ObjetSlow(PartieController partie){
+    public ObjetSlow(){
     
-     this.partie=partie;
+     
+}
+
+    @Override
+    public void executerBonus(PartieController partie) {
+this.partie=partie;
        for(Fantome f:partie.getListFantome()){
          f.setVitesse(1);
      }
@@ -22,5 +28,5 @@ public class ObjetSlow {
      }
        for(Fantome f:partie.getListFantome()){
               f.setVitesse(2);
-       }
-}}
+       }    }
+}

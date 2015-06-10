@@ -1,6 +1,7 @@
 package pacmiage2.utiles.objetBonus;
 
 import pacmiage2.controleur.partie.PartieController;
+import pacmiage2.modele.Bonus;
 import pacmiage2.modele.Fantome;
 import pacmiage2.modele.PacMiage;
 
@@ -8,19 +9,22 @@ import pacmiage2.modele.PacMiage;
  *
  * @author Maëlle
  */
-public class ObjetSpeed{
-    private  PartieController partie;
+public class ObjetSpeed implements Bonus{
 
-    public ObjetSpeed(PartieController partie){
+    public ObjetSpeed(){
     
-     this.partie=partie;
+
+       }
+
+    @Override
+    public void executerBonus(PartieController partie) {
+
      PacMiage p=partie.getPlayer();
      p.setVitesse(4);
              int stop=partie.getTimer().getTemps()-20;
      while(partie.getTimer().getTemps()!=stop){
         
      }
-        p.setVitesse(2);
-       }
+        p.setVitesse(2);    }
 }
 

@@ -10,6 +10,7 @@ import org.newdawn.slick.Animation;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.SpriteSheet;
+import pacmiage2.utiles.Configuration;
 
 /**
  *
@@ -41,9 +42,9 @@ public class Fantome {
         moving = false;
     }
 
-    public void init() throws SlickException {
+    public void init(int niveau) throws SlickException {
         topDepart = 0;
-        SpriteSheet spriteSheet = new SpriteSheet("./src/ressources/image/personnage/FantomMove.png", 32, 32);
+        SpriteSheet spriteSheet = new SpriteSheet(Configuration.getInstance().recupererValeur("carteFantome"+ String.valueOf(niveau)), 32, 32);
         this.animations[0] = loadAnimation(spriteSheet, 0, 1, 0);
         this.animations[1] = loadAnimation(spriteSheet, 0, 1, 1);
         this.animations[2] = loadAnimation(spriteSheet, 0, 1, 2);

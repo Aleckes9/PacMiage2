@@ -21,13 +21,11 @@ import pacmiage2.modele.PacMiage;
 public class PacMiageController implements KeyListener {
 
     private PacMiage player;
-    private JoueurInfo joueur;
     private PartieController partie;
 
-    public PacMiageController(PacMiage player, PartieController partie, JoueurInfo joueur) {
+    public PacMiageController(PacMiage player, PartieController partie) {
         this.player = player;
         this.partie = partie;
-        this.joueur = joueur;
     }
 
     @Override
@@ -63,7 +61,7 @@ public class PacMiageController implements KeyListener {
                 this.player.setFuturDirection(3);
                 break;
             case Input.KEY_1:
-
+               // partie.getAffichageBonus().get(1).getBonus().
                 break;
             case Input.KEY_2:
 

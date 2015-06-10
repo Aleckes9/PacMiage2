@@ -19,14 +19,18 @@ public class Objet  implements Serializable {
     private String image;
     private String miniImage;
     private String description;
+    private Bonus bonus;
     private int prix;
 
-    public Objet(String nom, String image, String description, int prix,String miniImage) {
+    public Objet(String nom, String image, String description, int prix,String miniImage) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
         this.nom = nom;
         this.image = image;
         this.description = description;
         this.prix = prix;
         this.miniImage=miniImage;
+        //Class classe = Class.forName("java.lang.String");
+        Class classe = Class.forName("pacmiage2.utiles.objetBonus.Objet"+nom.replaceAll(" ", ""));
+        this.bonus = (Bonus)classe.newInstance();
     }
 
     public String getMiniImage() {

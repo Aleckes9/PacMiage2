@@ -1,38 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="64" height="48" tilewidth="16" tileheight="16" nextobjectid="422">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="64" height="48" tilewidth="16" tileheight="16" nextobjectid="426">
  <tileset firstgid="1" name="color" tilewidth="16" tileheight="16">
   <image source="color.png" trans="ff00ff" width="640" height="640"/>
  </tileset>
  <tileset firstgid="1601" name="solide" tilewidth="16" tileheight="16">
   <image source="solide.png" trans="ff00ff" width="160" height="160"/>
  </tileset>
- <tileset firstgid="1701" name="score" tilewidth="16" tileheight="16">
-  <image source="../score.png" width="146" height="48"/>
- </tileset>
- <tileset firstgid="1728" name="color" tilewidth="16" tileheight="16">
+ <tileset firstgid="1701" name="color" tilewidth="16" tileheight="16">
   <image source="color1.png" width="128" height="64"/>
  </tileset>
- <tileset firstgid="1760" name="score2" tilewidth="16" tileheight="16">
+ <tileset firstgid="1733" name="score2" tilewidth="16" tileheight="16">
   <image source="../image/score/score2.png" width="160" height="48"/>
+ </tileset>
+ <tileset firstgid="1763" name="1" tilewidth="32" tileheight="40">
+  <image source="../image/chiffre/1.png" width="32" height="40"/>
+ </tileset>
+ <tileset firstgid="1764" name="2" tilewidth="32" tileheight="40">
+  <image source="../image/chiffre/2.png" width="32" height="40"/>
+ </tileset>
+ <tileset firstgid="1765" name="3" tilewidth="32" tileheight="40">
+  <image source="../image/chiffre/3.png" width="32" height="40"/>
+ </tileset>
+ <tileset firstgid="1766" name="4" tilewidth="32" tileheight="40">
+  <image source="../image/chiffre/4.png" width="32" height="40"/>
  </tileset>
  <layer name="Calque de Tile 1" width="64" height="48">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA+WYx44TQRBA13PYg8nwJyaH0yw55zCbA3tY/sLkcIK/MBmWi7nxD/wA/AivNV3CtIzUZWbcQ/nwZLXVmunXriqXKm9NTc3AcTgBJ+EUnIYzcBbOQR657zz0PS8DNjyy1jzzAlyES3AZrsBVuAbX4QbchFtwG+5AAbMwB/OwAIuwBMuwojiD5qw/PP0A8Za1Vf92ViL3EN6HrC36u32drKQdIN6ytupfZCWdAPGWtUV/V9+6WUkRIN6ytujv6lsvK+kGiLesLfr3vf/r7Pc9hPcha4v+rr45x/vwAB7CI3g84O3u5o1R/3bg+BbewXv4AB/hE3w26u/q217YB/vhAByEQ3AYjsBROGbU39W3WZiDeViARViCZViBVVhrgH9eg//fcv8JPIVn8BxeGPWPzf1Nw/6xOWDR3501Nges+sfmwIbyuVXfgeb9mnPGxn/qGYjm/XXEf+oZiOb9bt+36WrjP/UMRPN+7fxnC2yFbbAddsBO2AW7YU9W7ktZAzQzGM0ZY3vgTuIaoJnB1FH/Cl8DUsWAZgajOVts/ev6GpAqBjQzGM3ZYutfz9eAVP8DmhmMtv+JzYGOj4FUOVCHf96Kz4HCx0CqHKhj/j3Tis+Bro+BVDlQpb/b4+L4nuL3l1xJ1QtV5S/uLo5fKX7/TR8DqXqhKvwH3V0cf1X69xL2Qv/qH7q7OP6p9P8y0Av9T/7D3KX31/pLLzTuHND8p4V7h7lL76/1l15o3DkQ+546Z/CrsAZ3YX3M/qlncMP81xvoP8p7m3i3o/rnI9I0f/mU72P7uknt/8Rp0vq/79N/Ok1a/+f8B50mqf8b5mS1/4vt66z2f7HPsNr/NdF/nP1f7PMs93910jT/sP/7BSbuP4sAMAAA
+   H4sIAAAAAAAAC+WYx44TQRBA13PYg8nwJyaH0yw55zCbA3vY/QuTwwk+AslkWC7mb+BHeK3pEqZlpC4z4x7KhyerrdZMv3ZVuVR5a2pqBk7CKTgNZ+AsnIPzcAHyyH0Xoe95FbDhkbXmmZfgMlyBq3ANrsMNuAm34DbcgbtwDwqYhTmYhwVYhCVYhhXFGTRn/eHpB4i3rK36t7MSuYfwPmRt0d/t62Ql7QDxlrVV/yIr6QSIt6wt+rv61s1KigDxlrVFf1ffellJN0C8ZW3Rv+/932a/7yG8D1lb9Hf1zTk+gIfwCB7DkwFvdzfvjPq3A8f38AE+wif4DF/gq1F/V9/2wwE4CIfgMByBo3AMjsMJo/6uvs3CHMzDAizCEizDCqzCWgP88xr8/5b7T+EZPIcX8NKof2zubxn2j80Bi/7urLE5YNU/Ngc2lM+t+g4079ecMzb+U89ANO+vI/5Tz0A073f73kxXG/+pZyCa92vnP9tgO+yAnbALdsMe2Av7snJfyhqgmcFozhjbA3cS1wDNDKaO+lf4GpAqBjQzGM3ZYutf19eAVDGgmcFozhZb/3q+BqT6H9DMYLT9T2wOdHwMpMqBOvzzVnwOFD4GUuVAHfPvmVZ8DnR9DKTKgSr93R4Xx5uK319yJVUvVJW/uLs4fq34/bd8DKTqharwH3R3cfxd6d9L2Av9q3/o7uL4p9L/20Av9D/5D3OX3l/rL73QuHNA858W7h3mLr2/1l96oXHnQOx76pzBr8Ia3If1MfunnsEN819voP8o723i3Y7qn49I0/zlU76P7esmtf8Tp0nr//rTfzpNWv/n/AedJqn/G+Zktf+L7eus9n+xz7Da/zXRf5z9X+zzLPd/ddI0/7D/+wXfjeTOADAAAA==
   </data>
  </layer>
  <layer name="Logic" width="64" height="48">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA+2ZWU7DMBCG/dTDQCk8ABehQLkLlMuwXIZDsO87ZQeJidRRjeVxZmxnMfiXPiVO7Nq/3ZnUjVJZWVlZWahpYGl85CCp2xRdgX/00x2fp47Uvz5n+x2lDoBD4Ag4Bk6AU+AMOAcuOoIPr1now3f9L8HbFXAN3AC3wB1wDzwAj8BTAv77wjbYbgTenoEX4BV4A96BD+AT+AK+W+7fJ/4L+qqaXFR33kMvXHWNtilT+J4bI/E/0wCrBgML1HUOUv9/RThnXGX/v/0X5z1LmTrq9Sh863H71cuh/peBFUuZOur1KHzrcfvVy7HXv+0KXf++cq9/2xW6/uvKvv7ceOM860Lrc/ICSup/S9nXnxtvrniWxr8rD3DHJ/W/p2TxX3d+kI5H6n9XyeK/bv9l44md/01J598n/l3xLh1PaP6X9mfel8Z/0/6p/O9bDlVo/6H5v+zzzfVM3X9Z/vctD4FNrVx8zzYc92P1L/U/Uu78L11/LO+oybOlKG+Pr1H3fftrY/6XxEPT+Q//O6Mkff6G+pf2Z8on/+v+Q+cf7xexPmQcY/WH8sn/uv/Q+cf7GO9lx1j9oUK//zH3f3p7M9/rdWy4+ou5/zP9x9z/6e0x3+vX8dyGq7+Y+z9q/VNRVeufiqpefyreXPU4+z9u3FP1qfHG+v/HLHPzAnf/x417qj41Xun7H/P3f+oK/f2fuqT+p9Tk/W8xD2sE88ACsGhp07Ncc4GfMxsIvjs1yxL/ZWOtEvMdsA8DS1niPysrK+s/6AegQEOtADAAAA==
-  </data>
- </layer>
- <layer name="Calque 3" width="64" height="48">
-  <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA+1aa0/DMAzsp/z/nwTjsQo09kDlUST2V2g1Im1eiHOJkzbFJ1nqFI/4lp5ziWgahUKhUFjcm6bZA3EA80vHWN+rCef/MuRufuMzIPrAvCnC8tiC/DvwO3OFXcv3iPVfEv+Y9Ud+s7niLZK/1c1D5RGr/82CAu1l9v2X6sE9eS4Vdr4Y/kvofRYoH+V/mf84PK/PPu/Mtfc7mGufFZO3F8ij9abyp58/HNq2mvtKzKN9IiaPqz+V/9whzX/0EDV5IVqvxPqP++gqUG9U967gdI3om85H/Y7E+nfmcm/16Y3q3hWcrhF90/mod8/9/pfWB1pPKv/v4fno+T43Lg20Hmn/Q/XHjbv6gc8ncHpH65Hmj467+oHPJ3B6l66Xy+f8VKrfmls9nH/g+ot0P0Tny+1/0PGb4fnWnPxDyJ3FmHcn+PtL93/697nx1pw8Sei5/WmI54T5cvd/dP9tCR8OLagnblyaP7r/pvJP9R/S/Z+CG7fv/yowuPtKtJ7c519u3PJHIkV/Oc7/Y01/nd9oPTvHesbE+Z6wZuab8vxH9ec7z8XGMXC+HOc/vf/53/c/Pr3RO56c97qhebn9H9U3cq9TIi+3/6sNqH6Xxj9m/TuH1moN9H8ZcuzfU0Zvyt5PKhQKRQ34AT+i8jMAMAAA
+   H4sIAAAAAAAAC+2Y927CMBDG+Svv/xItHaBWtEBFB5VK9957j+foF4ElONKczyOD+qSflMiX+C7OZ59dqQQLFkzXPiN93y+B77em74/gncHMbBbfuCWgLfTPmji+FcF/swTfxoANDbqafnmg8lgW5t8ZPLMNdsAu2AP74AAcgiNwDE4KrEk1lmsG4x/nfwrOwDm4AJfgClyDG3AL7kqQv8n4x9/sHjyAR/AEnsELeAVv4B18FDj/VcP8lW7mSo6p/hsThJrLJPnHz7iag7vkOitUfyb5S/yLbtJ8Qv6j/vO4rg3dN6Px2q8djddZJn4tB340Xtv86f16graV5jYt/eg8YeLHxW+bf9HNdf5xDSGpH/M2Gq+L8Y/X0aqm3qjuk+B0LdE37Y/WOy7GvxONrq1peqO6T4LTtUTftD9Vu7vMP+3/z1of0nhs89/CdS/lea7dtUnjcV3/UP1x7UnzQVqdwOldGo/r/KXtSfNBWp3A6d11vJw/V0/Z1ltFi4erH7j5xfV8KO3Pd/0jbZ/C9XTUrx90zixivxmH39/1/E/fz7XXo35NortvXwCLFv35nv+l62+d5MNZXagnrt11/tL11zZ/2/rD9fxPjWtX/39VE+68UhqP7/0v167yl2CjPx/7/zimv/ZvNJ5mwniaMLwm1Jj+8tz/Uf2l7edM6Wn252P/F85//vf5T5re6BmPz3NdXT/f9R/Vt+RcJws/3/Vf2Uyq30nL32T8OwlaKyt0PeTMx/qdJ90o2/PJYMGCBSuD/QKC/UrCADAAAA==
   </data>
  </layer>
  <objectgroup name="trigger" width="64" height="48">
   <object id="1" name="graine1" type="graine" x="152" y="218" width="15" height="15"/>
-  <object id="1" name="graine2" type="graine" x="120" y="218" width="15" height="15"/>
+  <object id="2" name="graine2" type="graine" x="120" y="218" width="15" height="15"/>
   <object id="12" name="graine2" type="graine" x="184" y="218" width="15" height="15"/>
   <object id="13" name="graine1" type="graine" x="216" y="218" width="15" height="15"/>
   <object id="14" name="graine1" type="graine" x="344" y="217" width="15" height="15"/>
@@ -253,5 +257,9 @@
   <object id="419" name="departFantome" type="departFantome" x="496" y="400" width="32" height="32"/>
   <object id="420" name="score" type="score" x="313" y="116" width="56" height="48"/>
   <object id="421" name="temps" type="temps" x="730" y="116" width="56" height="48"/>
+  <object id="422" name="objet" type="objet" x="244" y="19" width="50" height="50"/>
+  <object id="423" name="objet" type="objet" x="420" y="20" width="50" height="50"/>
+  <object id="424" name="objet" type="objet" x="591" y="20" width="50" height="50"/>
+  <object id="425" name="objet" type="objet" x="752" y="20" width="50" height="50"/>
  </objectgroup>
 </map>

@@ -1,6 +1,7 @@
 package pacmiage2.controleur;
 
 import java.awt.event.ActionEvent;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -29,6 +30,10 @@ public class Btn_RetourEshop extends AbstractAction {
             f.initFenetreShop();
         } catch (IOException | ClassNotFoundException ex) {
             Logger.getLogger(RetourMenu.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            Logger.getLogger(Btn_RetourEshop.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            Logger.getLogger(Btn_RetourEshop.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }

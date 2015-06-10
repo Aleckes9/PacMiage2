@@ -32,7 +32,6 @@ public class ControleurTemps {
      */
     public ControleurTemps(int temps) {
         timer = createTimer();
-        timer.start();
         this.setTempsRestant(temps);
         this.setTemps(temps);
     }

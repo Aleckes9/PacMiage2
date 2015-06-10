@@ -37,7 +37,7 @@ public class FenetrePrincipale extends JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setBackground(Color.BLACK);
         this.setBounds(0, 0, (int)tailleEcran.getWidth(), (int)tailleEcran.getHeight());
-            this.setUndecorated(true);
+           //this.setUndecorated(true);
         
         jpanel.setPreferredSize(new Dimension((int)tailleEcran.getWidth(), (int)tailleEcran.getHeight()));
         jpanel.setBackground(Color.black);
@@ -52,7 +52,7 @@ public class FenetrePrincipale extends JFrame {
         new SelectionnerNiveau(this);
     }
 
-    public void initFenetreShop() throws IOException, FileNotFoundException, ClassNotFoundException {
+    public void initFenetreShop() throws IOException, FileNotFoundException, ClassNotFoundException, InstantiationException, IllegalAccessException {
         new Eshop_AfficheEshop(this);
     }
     
@@ -62,7 +62,7 @@ public class FenetrePrincipale extends JFrame {
     
         public void executerPartie(int niveau, String cheminCarte) throws SlickException {
         
-        partieController = new PartieController(niveau, this.joueur, cheminCarte);
+        partieController = new PartieController(niveau, cheminCarte);
 
     }
     

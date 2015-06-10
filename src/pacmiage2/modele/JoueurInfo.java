@@ -95,8 +95,11 @@ public class JoueurInfo implements Serializable {
      *
      * @param record à modifier
      */
-    public void setRecord(int reccord) {
-        this.record = reccord;
+    public void setRecord(int record) {
+        if(record>this.record){
+            this.record = record;
+        }
+        
     }
 
     /**

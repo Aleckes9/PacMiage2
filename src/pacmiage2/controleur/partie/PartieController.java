@@ -29,6 +29,7 @@ import pacmiage2.modele.Objet;
 import pacmiage2.modele.PacMiage;
 import pacmiage2.utiles.Configuration;
 import pacmiage2.utiles.SauvegardeFichier;
+import pacmiage2.vue.partie.Partie_AffichageObjetBonus;
 
 /**
  *
@@ -36,40 +37,38 @@ import pacmiage2.utiles.SauvegardeFichier;
  */
 public class PartieController extends BasicGame {
 
-    private JoueurInfo joueur;
     private GameContainer container;
-    private Partie_AffichageMap map;
-    private PacMiage player;
-    private java.util.Map<Integer, Graine> grainesMap;
-    private List<Fantome> listFantome;
-    private Partie_AffichageScore score;
-    private Partie_AffichageTemps temps;
+    private final Partie_AffichageMap map;
+    private final PacMiage player;
+    private final java.util.Map<Integer, Graine> grainesMap;
+    private final List<Fantome> listFantome;
+    private final Partie_AffichageScore score;
+    private final Partie_AffichageTemps temps;
     private Partie_AffichageValidationReponse imageVeracite;
     private Sound son;
     private Music background;
-    private int niveau;
-    private Objet[] listBonus;
+    private final int niveau;
     private int nbQuestions;
     private int nbQuestionsCorrect;
-    private ControleurTemps timer;
-    private String cheminCarte;
+    private final ControleurTemps timer;
+    private final String cheminCarte;
     private AppGameContainer game;
-    
+    private List<Partie_AffichageObjetBonus> affichageBonus;
 
-    public PartieController(int niveau, JoueurInfo joueur, String cheminCarte) throws SlickException {
+    public PartieController(int niveau, String cheminCarte) throws SlickException {
 
         super("PacMiage");
         map = new Partie_AffichageMap();
         this.cheminCarte = cheminCarte;
         player = new PacMiage(map);
-        grainesMap = new HashMap<Integer, Graine>();
-        listFantome = new ArrayList<Fantome>();
+        grainesMap = new HashMap<>();
+        listFantome = new ArrayList<>();
 
         score = new Partie_AffichageScore();
         temps = new Partie_AffichageTemps();
         this.niveau = niveau;
         timer = new ControleurTemps(5);
-        this.joueur = joueur;
+        affichageBonus = new ArrayList<>();
     }
 
     public PacMiage getPlayer() {
@@ -82,15 +81,19 @@ public class PartieController extends BasicGame {
 
     @Override
     public void init(GameContainer container) throws SlickException {
-
+        this.timer.start();
         this.container = container;
         this.map.init(cheminCarte);
         int idDepartFant = 0;
+        List<Integer> idObjetsBonus = new ArrayList<Integer>();
         for (int objectID = 0; objectID < map.getObjectCount(); objectID++) {
 
             if ("graine".equals(map.getObjectType(objectID))) {
                 String nomObjet = map.getObjectName(objectID);
                 grainesMap.put(objectID, new Graine(nomObjet, map.getObjectX(objectID), map.getObjectY(objectID)));
+            }
+            if ("objet".equals(map.getObjectType(objectID))) {
+                idObjetsBonus.add(objectID);
             }
             if ("originePac".equals(map.getObjectType(objectID))) {
                 this.player.init(map.getObjectX(objectID), map.getObjectY(objectID));
@@ -98,7 +101,7 @@ public class PartieController extends BasicGame {
             if ("origineFantome".equals(map.getObjectType(objectID))) {
                 Fantome fantome = new Fantome(map);
                 listFantome.add(fantome);
-                fantome.init();
+                fantome.init(niveau);
                 fantome.initEtat(map.getObjectX(objectID), map.getObjectY(objectID));
 
             }
@@ -116,13 +119,23 @@ public class PartieController extends BasicGame {
         for (Fantome fantome : listFantome) {
             fantome.initDepart(map.getObjectX(idDepartFant), map.getObjectY(idDepartFant));
         }
+        
+        
+        int compteurobjet=0;
+        for (Objet objetBonus : JoueurInfo.getInstance().getObjetDispo()) {
+            if(objetBonus != null){
+            affichageBonus.add(new Partie_AffichageObjetBonus(objetBonus, map.getObjectX(idObjetsBonus.get(compteurobjet)), map.getObjectY(idObjetsBonus.get(compteurobjet))));
+            compteurobjet++;
+            }
 
-        PacMiageController controller = new PacMiageController(this.player, this, joueur);
+        }
+
+        PacMiageController controller = new PacMiageController(this.player, this);
         container.getInput().addKeyListener(controller);
-//        background = new Music("./src/ressources/musique/bruno.ogg");
-//        background.setVolume(0.5f);
-//        background.loop();
-//        son = new Sound("./src/ressources/musique/0218.ogg");
+        background = new Music("./src/ressources/musique/bruno.ogg");
+        background.setVolume(0.5f);
+        background.loop();
+        son = new Sound("./src/ressources/musique/0218.ogg");
 
     }
 
@@ -146,6 +159,11 @@ public class PartieController extends BasicGame {
             this.map.renderForeground();
             this.score.render(g);
             this.temps.render(g);
+            
+            for (Partie_AffichageObjetBonus bonus : this.affichageBonus) {
+                bonus.render(g);
+            }
+            
             if (this.imageVeracite != null) {
                 this.imageVeracite.render(g, container);
             }
@@ -157,6 +175,7 @@ public class PartieController extends BasicGame {
 
     @Override
     public void update(GameContainer container, int delta) throws SlickException {
+        
         this.temps.setTemps(this.timer.getTempsRestant());
 
         if (this.imageVeracite != null) {
@@ -189,6 +208,8 @@ public class PartieController extends BasicGame {
 //            son.play();
             if (grainesMap.isEmpty()) {
                 ouvertureQuestion();
+                JoueurInfo.getInstance().setRecord(score.getFutureScore());
+                JoueurInfo.getInstance().ajouterGraines(score.getFutureScore());
             }
         }
 
@@ -252,9 +273,6 @@ public class PartieController extends BasicGame {
         return background;
     }
 
-    public JoueurInfo getJoueur() {
-        return joueur;
-    }
 
     public AppGameContainer getGame() {
         return game;
@@ -262,6 +280,14 @@ public class PartieController extends BasicGame {
 
     public void setGame(AppGameContainer game) {
         this.game = game;
+    }
+
+    public List<Partie_AffichageObjetBonus> getAffichageBonus() {
+        return affichageBonus;
+    }
+
+    public void setAffichageBonus(List<Partie_AffichageObjetBonus> affichageBonus) {
+        this.affichageBonus = affichageBonus;
     }
     
     
