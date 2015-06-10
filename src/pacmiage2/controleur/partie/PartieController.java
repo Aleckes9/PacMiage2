@@ -53,7 +53,7 @@ public class PartieController extends BasicGame {
     private final ControleurTemps timer;
     private final String cheminCarte;
     private AppGameContainer game;
-    private List<Partie_AffichageObjetBonus> affichageBonus;
+    private Partie_AffichageObjetBonus[] affichageBonus;
 
     public PartieController(int niveau, String cheminCarte) throws SlickException {
 
@@ -67,8 +67,8 @@ public class PartieController extends BasicGame {
         score = new Partie_AffichageScore();
         temps = new Partie_AffichageTemps();
         this.niveau = niveau;
-        timer = new ControleurTemps(5);
-        affichageBonus = new ArrayList<>();
+        timer = new ControleurTemps(20);
+        affichageBonus = new Partie_AffichageObjetBonus[4];
     }
 
     public PacMiage getPlayer() {
@@ -124,8 +124,10 @@ public class PartieController extends BasicGame {
         int compteurobjet=0;
         for (Objet objetBonus : JoueurInfo.getInstance().getObjetDispo()) {
             if(objetBonus != null){
-            affichageBonus.add(new Partie_AffichageObjetBonus(objetBonus, map.getObjectX(idObjetsBonus.get(compteurobjet)), map.getObjectY(idObjetsBonus.get(compteurobjet))));
+            affichageBonus[compteurobjet]=new Partie_AffichageObjetBonus(objetBonus, map.getObjectX(idObjetsBonus.get(compteurobjet)), map.getObjectY(idObjetsBonus.get(compteurobjet)));
             compteurobjet++;
+            }else{
+                 affichageBonus[compteurobjet]=null;
             }
 
         }
@@ -161,7 +163,9 @@ public class PartieController extends BasicGame {
             this.temps.render(g);
             
             for (Partie_AffichageObjetBonus bonus : this.affichageBonus) {
-                bonus.render(g);
+                if(bonus != null){
+                    bonus.render(g);
+                }
             }
             
             if (this.imageVeracite != null) {
@@ -282,13 +286,15 @@ public class PartieController extends BasicGame {
         this.game = game;
     }
 
-    public List<Partie_AffichageObjetBonus> getAffichageBonus() {
+    public Partie_AffichageObjetBonus[] getAffichageBonus() {
         return affichageBonus;
     }
 
-    public void setAffichageBonus(List<Partie_AffichageObjetBonus> affichageBonus) {
+    public void setAffichageBonus(Partie_AffichageObjetBonus[] affichageBonus) {
         this.affichageBonus = affichageBonus;
     }
+
+
     
     
 

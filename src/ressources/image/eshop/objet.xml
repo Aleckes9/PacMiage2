@@ -68,7 +68,7 @@
         </description>
         <image>./src/ressources/image/eshop/Rouge.png</image>
 		 <mini_image>./src/ressources/image/eshop/miniRouge.png</mini_image>
-        <prix>2500</prix>
+        <prix>25</prix>
     </objet>
     <objet>
         <nom>Blue</nom>
@@ -78,7 +78,7 @@
         </description>
         <image>./src/ressources/image/eshop/Bleu.png</image>
 		 <mini_image>./src/ressources/image/eshop/miniBleu.png</mini_image>
-        <prix>2500</prix>
+        <prix>25</prix>
     </objet>
     <objet>
         <nom>Green</nom>
@@ -98,7 +98,7 @@
         </description>
         <image>./src/ressources/image/eshop/Rose.png</image>
 		<mini_image>./src/ressources/image/eshop/miniRose.png</mini_image>
-        <prix>2500</prix>
+        <prix>25</prix>
     </objet>
     <objet>
         <nom>Hello Kitty</nom>
@@ -108,6 +108,6 @@
         </description>
         <image>./src/ressources/image/eshop/hello_kitty.png</image>
 		<mini_image>./src/ressources/image/eshop/minihello_kitty.png</mini_image>
-        <prix>50000</prix>
+        <prix>500</prix>
     </objet>
 </eshop>

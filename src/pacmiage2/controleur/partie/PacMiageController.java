@@ -61,23 +61,16 @@ public class PacMiageController implements KeyListener {
                 this.player.setFuturDirection(3);
                 break;
             case Input.KEY_1:
-                if(partie.getAffichageBonus().size() != 0){
-                    partie.getContainer().pause();
-                    partie.getAffichageBonus().get(0).getObjet().getBonus().executerBonus(partie);
-                    JoueurInfo.getInstance().retirerObjet(partie.getAffichageBonus().get(0).getObjet());
-                    partie.getAffichageBonus().remove(partie.getAffichageBonus().get(0));
-                    partie.getContainer().resume();
-                    
-                }
+                executionBonus(0);
                 break;
             case Input.KEY_2:
-                partie.getAffichageBonus().get(1).getObjet().getBonus().executerBonus(partie);
+                executionBonus(1);
                 break;
             case Input.KEY_3:
-                partie.getAffichageBonus().get(2).getObjet().getBonus().executerBonus(partie);
+                executionBonus(2);
                 break;
             case Input.KEY_4:
-                partie.getAffichageBonus().get(3).getObjet().getBonus().executerBonus(partie);
+                executionBonus(3);
                 break;
             case Input.KEY_ESCAPE:
                 System.exit(0);
@@ -106,6 +99,17 @@ public class PacMiageController implements KeyListener {
     @Override
     public void keyReleased(int key, char c) {
         this.player.setMoving(true);
+    }
+
+    private void executionBonus(int choix) {
+        if (partie.getAffichageBonus()[choix] != null) {
+            partie.getContainer().pause();
+            partie.getAffichageBonus()[choix].getObjet().getBonus().executerBonus(partie);
+            JoueurInfo.getInstance().retirerObjet(partie.getAffichageBonus()[choix].getObjet());
+            partie.getAffichageBonus()[choix]=null;
+            partie.getContainer().resume();
+
+        }
     }
 
 }
