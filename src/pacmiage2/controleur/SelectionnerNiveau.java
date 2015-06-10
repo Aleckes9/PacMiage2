@@ -5,15 +5,15 @@
  */
 package pacmiage2.controleur;
 
-import pacmiage2.modele.JoueurInfo;
 import pacmiage2.modele.FenetrePrincipale;
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Cursor;
+import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.BoxLayout;
@@ -24,6 +24,8 @@ import javax.swing.JPanel;
 import org.newdawn.slick.SlickException;
 import pacmiage2.utiles.Session;
 import pacmiage2.utiles.Configuration;
+import pacmiage2.vue.bouton.Btn_RetourMenu;
+import pacmiage2.vue.menu.CarteIcon;
 
 /**
  *
@@ -31,17 +33,16 @@ import pacmiage2.utiles.Configuration;
  */
 public class SelectionnerNiveau implements ActionListener {
     
-    private JoueurInfo joueur;
     private FenetrePrincipale fenetre;
 
-    public SelectionnerNiveau(JoueurInfo joueur, FenetrePrincipale f) {
-        this.joueur = joueur;
+    public SelectionnerNiveau(FenetrePrincipale f) {
         this.fenetre = f;
         
         JPanel j = new JPanel();
         f.setJpanel(j);
         JPanel niveaux = new JPanel();
         JLabel titre = new JLabel(Session.getInstance().recupererValeur("niveaux"), JLabel.CENTER);
+        titre.setPreferredSize(new Dimension(f.getWidth(), f.getHeight()/5));
         BorderLayout disposition = new BorderLayout();
         j.setLayout(disposition);
 
@@ -50,7 +51,7 @@ public class SelectionnerNiveau implements ActionListener {
 
         j.setBackground(Color.black);
         niveaux.setBackground(Color.black);
-        niveaux.setLayout(new BoxLayout(niveaux, BoxLayout.X_AXIS));
+        niveaux.setLayout(new BoxLayout(niveaux, BoxLayout.PAGE_AXIS));
         Font f1 = new Font("Kristen ITC", Font.PLAIN, 50);
 
         titre.setFont(f1);
@@ -58,37 +59,45 @@ public class SelectionnerNiveau implements ActionListener {
 
         for (int i = 1; i <= 5; i++) {
 
-            final JButton level = new JButton();
-
+            
+            final CarteIcon carteLevel = new CarteIcon(Configuration.getInstance().recupererValeur("carteMini"+ String.valueOf(i)));
+            final JButton level = new JButton(carteLevel);
             level.setText(String.valueOf(i));
             level.setForeground(Color.white);
             level.setBackground(Color.black);
             level.setBorderPainted(false);
             level.setFocusPainted(false);
             level.setFont(f1);
+            
             level.setCursor(new Cursor(Cursor.HAND_CURSOR));
             level.addActionListener((ActionListener) this);
+            level.setAlignmentX(Component.CENTER_ALIGNMENT);
 
             level.addMouseListener(new java.awt.event.MouseAdapter() {
                 @Override
                 public void mouseEntered(java.awt.event.MouseEvent evt) {
-                    level.setBackground(Color.YELLOW);
-                    level.setForeground(Color.black);
+                    level.setForeground(Color.YELLOW);
                 }
 
                 @Override
                 public void mouseExited(java.awt.event.MouseEvent evt) {
-                    level.setBackground(Color.BLACK);
+
                     level.setForeground(Color.white);
                 }
             });
+            
+
+                //level.setPreferredSize(new Dimension(level.getImage().getWidth(), level.getImage().getHeight()*3));
             niveaux.add(level);
 
+
             j.add((niveaux), BorderLayout.CENTER);
+            
         }
 
-        j.add((titre), BorderLayout.NORTH);
-
+        j.add(titre, BorderLayout.NORTH);
+        j.add(new Btn_RetourMenu(f), BorderLayout.SOUTH);
+        
         f.revalidate();
         f.repaint();
         f.setVisible(false);

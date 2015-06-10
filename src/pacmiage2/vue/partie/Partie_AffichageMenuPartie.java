@@ -19,7 +19,7 @@ import pacmiage2.utiles.Session;
  *
  * @author Maëlle
  */
-public class Partie_AfficheMenuPartie implements ActionListener {
+public class Partie_AffichageMenuPartie implements ActionListener {
 
     private JFrame fenetre = new JFrame();
     private PartieController partie;
@@ -30,7 +30,7 @@ public class Partie_AfficheMenuPartie implements ActionListener {
     private JButton quitter = new JButton();
     private JButton reprendre = new JButton();
 
-    public Partie_AfficheMenuPartie(PartieController partie) throws IOException {
+    public Partie_AffichageMenuPartie(PartieController partie) throws IOException {
         partie.getContainer().pause();
         this.partie = partie;
 

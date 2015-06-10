@@ -13,7 +13,6 @@ import java.awt.Color;
 import java.awt.event.ActionEvent;
 import javax.swing.AbstractAction;
 import javax.swing.JDialog;
-import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 /**
@@ -25,7 +24,8 @@ private boolean jeuEnCours;
 private Objet it;
 private JoueurInfo j;
 private FenetrePrincipale eshopFenetre;
-    public Action_Btn_Objet(Objet it, JoueurInfo j,boolean jeuEnCours,FenetrePrincipale eshopFenetre) {
+
+    public Action_Btn_Objet(Objet it, FenetrePrincipale eshopFenetre) {
     this.jeuEnCours=jeuEnCours;
     this.it=it;
     this.j=j;
@@ -40,7 +40,7 @@ if(jeuEnCours==true){
     JDialog f = new JDialog();
         f.setBackground(Color.black);
     JPanel panel = new JPanel();
-    new Eshop_AfficheObjet(panel, it, j, false,eshopFenetre);
+    new Eshop_AfficheObjet(panel, it, false,eshopFenetre);
 f.add(panel);
 f.setVisible(true);
 }

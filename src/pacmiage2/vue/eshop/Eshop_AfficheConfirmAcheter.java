@@ -5,7 +5,8 @@
  */
 package pacmiage2.vue.eshop;
 
-import pacmiage2.vue.AfficheBarreInformation;
+import pacmiage2.vue.bouton.Eshop_BtnConfirmAchat;
+import pacmiage2.vue.bouton.Eshop_BtnRetourEshop;
 import pacmiage2.modele.FenetrePrincipale;
 import pacmiage2.modele.Objet;
 import java.awt.Color;
@@ -13,14 +14,10 @@ import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import javax.swing.AbstractAction;
-import javax.swing.JDialog;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import pacmiage2.modele.JoueurInfo;
 import pacmiage2.utiles.Session;
-import pacmiage2.vue.AfficheBarreInformation;
-
 
 /**
  * Ouvre un message de confirmation pour l'achat d'un objet
@@ -41,42 +38,40 @@ public class Eshop_AfficheConfirmAcheter extends AbstractAction {
 
     @Override
     public void actionPerformed(ActionEvent ae) {
-        JFrame f = new JFrame();
-        f.setBackground(Color.black);
+        
+        eshopFenetre.dispose();
+        eshopFenetre.initFenetre();
         JPanel g = new JPanel();
-        g.setBackground(Color.black);
-        f.setBounds(0, 0, eshopFenetre.getWidth(), eshopFenetre.getHeight());
+        
         JLabel texte = new JLabel();
-        AfficheBarreInformation barreDuHaut = new AfficheBarreInformation(eshopFenetre, j);
         JPanel d = new JPanel();
-
-        new Eshop_AfficheObjet(d, it, j, false, eshopFenetre);
+        g.setBackground(Color.BLACK);
+        new Eshop_AfficheObjet(d, it, false, eshopFenetre);
         texte.setText(Session.getInstance().recupererValeur("confirmation"));
+        
         texte.setForeground(Color.white);
         texte.setFont(new Font(null, 40, 40));
-        Eshop_BtnConfirmAchat oui = new Eshop_BtnConfirmAchat(j, it, f, eshopFenetre);
-        Eshop_BtnRetourEshop non = new Eshop_BtnRetourEshop(f);
+        Eshop_BtnConfirmAchat oui = new Eshop_BtnConfirmAchat(it, eshopFenetre);
+        Eshop_BtnRetourEshop non = new Eshop_BtnRetourEshop(eshopFenetre);
         g.add(texte);
         JPanel bt = new JPanel();
         bt.add(oui);
         bt.add(non);
 
         bt.setBackground(Color.black);
-        JPanel vide = new JPanel();
-        vide.setBackground(Color.black);
-        GridLayout layout = new GridLayout(5, 0);
 
-        f.setBackground(Color.yellow);
-        f.setLayout(layout);
+        GridLayout layout = new GridLayout(4, 0);
 
-        f.add(barreDuHaut.getBarreDuHaut());
+        eshopFenetre.setBackground(Color.yellow);
+        eshopFenetre.setLayout(layout);
 
-        f.add(d);
-        f.add(vide);
-        f.add(g);
-        f.add(bt);
+        eshopFenetre.add(new AfficheBarreInformation(eshopFenetre));
 
-        f.setVisible(true);
+        eshopFenetre.add(d);
+        eshopFenetre.add(g);
+        eshopFenetre.add(bt);
+
+        eshopFenetre.setVisible(true);
     }
 
 }

@@ -1,33 +1,32 @@
 package pacmiage2.controleur;
 
-import pacmiage2.modele.JoueurInfo;
 import java.awt.event.ActionEvent;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.AbstractAction;
 import pacmiage2.modele.FenetrePrincipale;
+import pacmiage2.modele.JoueurInfo;
 import pacmiage2.utiles.Configuration;
 import pacmiage2.utiles.SauvegardeFichier;
 
 /**
  *
- * @author Maëlle
+ * @author Aleckes9
  */
-public class RetourMenu extends AbstractAction {
+public class Btn_RetourEshop extends AbstractAction {
 
     private FenetrePrincipale f;
 
-    public RetourMenu(FenetrePrincipale f) {
+    public Btn_RetourEshop(FenetrePrincipale f) {
         this.f = f;
     }
 
     @Override
     public void actionPerformed(ActionEvent ae) {
         try {
-            SauvegardeFichier.getInstance().enregistrerFichier(JoueurInfo.getInstance(), Configuration.getInstance().recupererValeur("pathSauvegarde"));
-            //f.initFenetre();
-            f.initFenetreMenu();
+            f.dispose();
+            f.initFenetreShop();
         } catch (IOException | ClassNotFoundException ex) {
             Logger.getLogger(RetourMenu.class.getName()).log(Level.SEVERE, null, ex);
         }

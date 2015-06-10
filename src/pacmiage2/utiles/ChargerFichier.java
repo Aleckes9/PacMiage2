@@ -12,7 +12,7 @@ import java.io.ObjectInputStream;
  */
 public class ChargerFichier {
 
-    private static ChargerFichier CHARGER = new ChargerFichier();
+    private static final ChargerFichier CHARGER = new ChargerFichier();
 
     
 

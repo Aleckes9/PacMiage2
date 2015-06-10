@@ -16,7 +16,6 @@ import java.awt.event.ActionEvent;
 import javax.swing.AbstractAction;
 import javax.swing.ImageIcon;
 import javax.swing.JDialog;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
@@ -27,53 +26,47 @@ import javax.swing.JPanel;
  */
 public class Eshop_Action_Achat extends AbstractAction {
 
-  private   JoueurInfo j;
     private Objet it;
     private String message;
-    private  JFrame confirmFenetre;
-    private  FenetrePrincipale  eshopFenetre;
+    private FenetrePrincipale eshopFenetre;
 
-    public Eshop_Action_Achat(JoueurInfo j, Objet it,JFrame  confirmFenetre,FenetrePrincipale  eshopFenetre) {
-        this.j = j;
+    public Eshop_Action_Achat(Objet it, FenetrePrincipale eshopFenetre) {
         this.it = it;
-            this.confirmFenetre=confirmFenetre;
-    this.eshopFenetre=eshopFenetre;
+        this.eshopFenetre = eshopFenetre;
     }
 
     @Override
     public void actionPerformed(ActionEvent ae) {
-        String picture="./src/ressources/image/eshop/ghost.png";
-        if(j.getNbObjet()>=4){
-             message = "Vous avez trop d'objets";
-        }
-        else if (j.getGraines() < it.getPrix()) {
+        JoueurInfo joueur = JoueurInfo.getInstance();
+        String picture = "./src/ressources/image/eshop/ghost.png";
+        if (joueur.getNbObjet() >= 4) {
+            message = "Vous avez trop d'objets";
+        } else if (joueur.getGraines() < it.getPrix()) {
             message = "Vous n'avez pas assez de graines";
         } else {
-            j.retirerGraines(it.getPrix());
-            j.ajouterObjet(it);
+            joueur.retirerGraines(it.getPrix());
+            joueur.ajouterObjet(it);
             message = "Cet objet a été ajouté à votre liste";
-            picture=it.getImage();
+            picture = it.getImage();
             eshopFenetre.dispose();
-            new Eshop_AfficheEshop(j, eshopFenetre);
-           
+            new Eshop_AfficheEshop(eshopFenetre);
         }
         JDialog f = new JDialog();
 
         JPanel p = new JPanel();
         p.setBackground(Color.black);
-        //f.setBounds(largeur / 3, hauteur / 4, 4 * largeur / 11, hauteur / 2);
+        f.setBounds(FenetrePrincipale.getTailleEcran().width / 3, FenetrePrincipale.getTailleEcran().height / 4, 4 * FenetrePrincipale.getTailleEcran().width / 11, FenetrePrincipale.getTailleEcran().height / 2);
         ImageIcon icon = new ImageIcon(picture);
         JLabel image = new JLabel(icon);
         JLabel texte = new JLabel();
         texte.setText(message);
         texte.setForeground(Color.white);
-        texte.setFont(new Font(null, 30 , 30));
+        texte.setFont(new Font(null, 30, 30));
 
         p.setLayout(new BorderLayout());
         p.add(texte, BorderLayout.NORTH);
         p.add(image);
         f.add(p);
-         confirmFenetre.dispose();
         f.setVisible(true);
     }
 

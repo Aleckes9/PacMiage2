@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pacmiage2.vue.eshop;
+package pacmiage2.vue.bouton;
 
 import pacmiage2.modele.JoueurInfo;
 import pacmiage2.vue.eshop.Eshop_AfficheConfirmAcheter;
@@ -13,6 +13,7 @@ import java.awt.Color;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import pacmiage2.vue.eshop.Eshop_AfficheConfirmAcheter;
 
 /**
  * Bouton pour sélectionner un objet à acheter

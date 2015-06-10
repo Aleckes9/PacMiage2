@@ -6,13 +6,11 @@
 package pacmiage2.controleur.partie;
 
 import java.io.IOException;
-import pacmiage2.controleur.partie.PacMiageController;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.lwjgl.opengl.GL11;
 import org.newdawn.slick.AppGameContainer;
 import org.newdawn.slick.BasicGame;
 import org.newdawn.slick.GameContainer;
@@ -24,7 +22,6 @@ import pacmiage2.vue.partie.Partie_AffichageScore;
 import pacmiage2.vue.partie.Partie_AffichageTemps;
 import pacmiage2.vue.partie.Partie_AffichageValidationReponse;
 import pacmiage2.modele.Fantome;
-import pacmiage2.modele.FenetrePrincipale;
 import pacmiage2.modele.Graine;
 import pacmiage2.modele.JoueurInfo;
 import pacmiage2.vue.partie.Partie_AffichageMap;

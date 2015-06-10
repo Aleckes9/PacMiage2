@@ -17,9 +17,8 @@ import java.awt.GridLayout;
 import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextArea;
+
 import javax.swing.JTextPane;
 import javax.swing.text.AttributeSet;
 import javax.swing.text.SimpleAttributeSet;
@@ -46,9 +45,8 @@ public class Question_FenetreQuestion extends JFrame {
      * @param question
      */
     public Question_FenetreQuestion(Question question) {
-        super();
         this.question = question;
-        boutons = new ArrayList<JButton>();
+        boutons = new ArrayList<>();
 
         for (Reponse bouton : question.getReponse()) {
             boutons.add(new JButton(bouton.getText()));

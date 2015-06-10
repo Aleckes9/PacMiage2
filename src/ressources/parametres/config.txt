@@ -11,6 +11,12 @@ carte3 = ./src/ressources/map/pacManCarte3.tmx
 carte4 = ./src/ressources/map/pacManCarte4.tmx
 carte5 = ./src/ressources/map/pacManCarte5.tmx
 
+carteMini1 = ./src/ressources/image/miniMap/carteMini1.png
+carteMini2 = ./src/ressources/image/miniMap/carteMini2.png
+carteMini3 = ./src/ressources/image/miniMap/carteMini3.png
+carteMini4 = ./src/ressources/image/miniMap/carteMini4.png
+carteMini5 = ./src/ressources/image/miniMap/carteMini5.png
+
 
 
 

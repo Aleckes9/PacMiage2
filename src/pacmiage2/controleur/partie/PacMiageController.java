@@ -10,7 +10,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.newdawn.slick.Input;
 import org.newdawn.slick.KeyListener;
-import pacmiage2.vue.partie.Partie_AfficheMenuPartie;
+import pacmiage2.vue.partie.Partie_AffichageMenuPartie;
 import pacmiage2.modele.JoueurInfo;
 import pacmiage2.modele.PacMiage;
 
@@ -82,7 +82,7 @@ public class PacMiageController implements KeyListener {
                 try {
 
                     partie.getContainer().pause();
-                    Partie_AfficheMenuPartie affMenu = new Partie_AfficheMenuPartie(partie);
+                    Partie_AffichageMenuPartie affMenu = new Partie_AffichageMenuPartie(partie);
 
                     while (affMenu.getFenetre().isVisible()) {
                         partie.getContainer().sleep(50);

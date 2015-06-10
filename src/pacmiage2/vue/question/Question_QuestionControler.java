@@ -24,6 +24,7 @@ import pacmiage2.utiles.QuestionBuilder;
 public class Question_QuestionControler {
     
     public Question_QuestionControler(){
+        
         try {
             //On crée une nouvelle instance de notre FenetreBoutons
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -42,9 +43,5 @@ public class Question_QuestionControler {
             Logger.getLogger(Question_FenetreQuestion.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
-    public static void main(String[] args) {
-        
-    } 
     
 }

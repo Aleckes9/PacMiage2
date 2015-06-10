@@ -19,30 +19,28 @@ import org.w3c.dom.NodeList;
  */
 public class QuestionBuilder {
 
-    private List<Question> q;
-    private Element r;
+    private List<Question> questions;
+    private Element racine;
 
     public QuestionBuilder(Element racine) {
-
-        r = racine;
-        q = new ArrayList<Question>();
+        this.racine = racine;
+        questions = new ArrayList<Question>();
         fabriquerQuestion();
-
     }
 
     public Question getQuestion(int niveau) {
         List<Question> listQuestionNv = new ArrayList<Question>();
-        for (Question qestion : q) {
+        for (Question qestion : questions) {
             if(qestion.getNiveau() == niveau){
                 listQuestionNv.add(qestion);
             }
         }
         int indice = (int) ((Math.random() * 100) % listQuestionNv.size());
-        return q.get(indice);
+        return questions.get(indice);
     }
 
     private void fabriquerQuestion() {
-        final NodeList racineNoeuds = r.getChildNodes();
+        final NodeList racineNoeuds = racine.getChildNodes();
         final int nbRacineNoeuds = racineNoeuds.getLength();
 
         for (int i = 0; i < nbRacineNoeuds; i++) {
@@ -63,7 +61,7 @@ public class QuestionBuilder {
                     reponse.setVeracite(reponseNoeud.getAttribute("rep").trim().equals("true"));
                     question.addReponse(reponse);
                 }
-                q.add(question);
+                questions.add(question);
             }
         }
 

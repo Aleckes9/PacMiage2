@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <eshop>
     <objet>
         <nom>Double Coins</nom>
@@ -8,7 +8,7 @@
         </description>
         <image>./src/ressources/image/eshop/Double.png</image>
 		<mini_image>./src/ressources/image/eshop/miniDouble.png</mini_image>
-        <prix>50</prix>
+        <prix>5</prix>
     </objet>
     <objet>
         <nom>Freezer</nom>
@@ -18,7 +18,7 @@
         </description>
         <image>./src/ressources/image/eshop/freezer.png</image>
 		 <mini_image>./src/ressources/image/eshop/minifreezer.png</mini_image>
-        <prix>100</prix>
+        <prix>10000</prix>
     </objet>	
     <objet>
         <nom>Clock</nom>
@@ -28,7 +28,7 @@
         </description>
         <image>./src/ressources/image/eshop/clock.png</image>
 		  <mini_image>./src/ressources/image/eshop/miniclock.png</mini_image>
-        <prix>200</prix>
+        <prix>20000</prix>
     </objet>
     <objet>
         <nom>Speed</nom>
@@ -38,7 +38,7 @@
         </description>
         <image>./src/ressources/image/eshop/Boost.png</image>
 		<mini_image>./src/ressources/image/eshop/miniBoost.png</mini_image>
-        <prix>100</prix>
+        <prix>10000</prix>
     </objet>
     <objet>
         <nom>Slow</nom>
@@ -48,7 +48,7 @@
         </description>
         <image>./src/ressources/image/eshop/Ralentisseur.png</image>
 		<mini_image>./src/ressources/image/eshop/miniRalentisseur.png</mini_image>
-        <prix>100</prix>
+        <prix>10000</prix>
     </objet>
     <objet>
         <nom>Invincible</nom>
@@ -68,7 +68,7 @@
         </description>
         <image>./src/ressources/image/eshop/Rouge.png</image>
 		 <mini_image>./src/ressources/image/eshop/miniRouge.png</mini_image>
-        <prix>25</prix>
+        <prix>2500</prix>
     </objet>
     <objet>
         <nom>Blue</nom>
@@ -78,7 +78,7 @@
         </description>
         <image>./src/ressources/image/eshop/Bleu.png</image>
 		 <mini_image>./src/ressources/image/eshop/miniBleu.png</mini_image>
-        <prix>25</prix>
+        <prix>2500</prix>
     </objet>
     <objet>
         <nom>Green</nom>
@@ -88,7 +88,7 @@
         </description>
         <image>./src/ressources/image/eshop/Vert.png</image>
 		<mini_image>./src/ressources/image/eshop/miniVert.png</mini_image>
-        <prix>25</prix>
+        <prix>2500</prix>
     </objet>
     <objet>
         <nom>Pink</nom>
@@ -98,7 +98,7 @@
         </description>
         <image>./src/ressources/image/eshop/Rose.png</image>
 		<mini_image>./src/ressources/image/eshop/miniRose.png</mini_image>
-        <prix>25</prix>
+        <prix>2500</prix>
     </objet>
     <objet>
         <nom>Hello Kitty</nom>
@@ -108,6 +108,6 @@
         </description>
         <image>./src/ressources/image/eshop/hello_kitty.png</image>
 		<mini_image>./src/ressources/image/eshop/minihello_kitty.png</mini_image>
-        <prix>500</prix>
+        <prix>50000</prix>
     </objet>
 </eshop>

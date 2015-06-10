@@ -4,16 +4,13 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.Properties;
 import javax.swing.JPanel;
 import javax.swing.JFrame;
-import org.newdawn.slick.AppGameContainer;
 import org.newdawn.slick.SlickException;
 import pacmiage2.controleur.partie.PartieController;
-import pacmiage2.vue.AfficherMenu;
+import pacmiage2.vue.menu.FenetreMenu;
 import pacmiage2.vue.eshop.Eshop_AfficheEshop;
 import pacmiage2.controleur.SelectionnerNiveau;
-import pacmiage2.utiles.SauvegardeFichier;
 import pacmiage2.utiles.Session;
 
 /**
@@ -23,11 +20,9 @@ import pacmiage2.utiles.Session;
 public class FenetrePrincipale extends JFrame {
 
     private JPanel jpanel;
-    private JoueurInfo joueur;
-    static Dimension tailleEcran = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-    static int hauteur = (int) tailleEcran.getHeight();
-    static int largeur = (int) tailleEcran.getWidth();
-    PartieController partieController;
+    private final JoueurInfo joueur;
+    private static Dimension tailleEcran = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
+    private PartieController partieController;
 
     public FenetrePrincipale(JoueurInfo joueur) {
         this.joueur = joueur;
@@ -40,24 +35,25 @@ public class FenetrePrincipale extends JFrame {
         jpanel = new JPanel();
         this.setContentPane(jpanel);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setBackground(Color.BLACK);
+        this.setBounds(0, 0, (int)tailleEcran.getWidth(), (int)tailleEcran.getHeight());
+            this.setUndecorated(true);
         
-        this.setBounds(0, 0, largeur, hauteur);
-        //this.setUndecorated(true);
-        jpanel.setPreferredSize(new Dimension(largeur, hauteur));
+        jpanel.setPreferredSize(new Dimension((int)tailleEcran.getWidth(), (int)tailleEcran.getHeight()));
         jpanel.setBackground(Color.black);
         this.setVisible(true);
     }
 
     public void initFenetreMenu() throws IOException, FileNotFoundException, ClassNotFoundException {
-        new AfficherMenu(joueur, this);
+        new FenetreMenu(this);
     }
 
     public void initFenetreNiveau() throws IOException, FileNotFoundException, ClassNotFoundException {
-        new SelectionnerNiveau(joueur, this);
+        new SelectionnerNiveau(this);
     }
 
     public void initFenetreShop() throws IOException, FileNotFoundException, ClassNotFoundException {
-        new Eshop_AfficheEshop(joueur, this);
+        new Eshop_AfficheEshop(this);
     }
     
     
@@ -85,13 +81,6 @@ public class FenetrePrincipale extends JFrame {
         return joueur;
     }
 
-    public int getHauteur() {
-        return hauteur;
-    }
-
-    public int getLargeur() {
-        return largeur;
-    }
 
 
     public PartieController getPartieController() {
@@ -101,6 +90,12 @@ public class FenetrePrincipale extends JFrame {
     public void setPartieController(PartieController partieController) {
         this.partieController = partieController;
     }
+
+    public static Dimension getTailleEcran() {
+        return tailleEcran;
+    }
+    
+    
 
 
     

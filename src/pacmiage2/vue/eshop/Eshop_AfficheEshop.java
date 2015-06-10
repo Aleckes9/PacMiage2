@@ -8,15 +8,12 @@ package pacmiage2.vue.eshop;
 import pacmiage2.modele.FenetrePrincipale;
 import pacmiage2.modele.Objet;
 import java.awt.BorderLayout;
-import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import pacmiage2.modele.JoueurInfo;
 import pacmiage2.utiles.LecteurObjet;
-import pacmiage2.vue.AfficheBarreInformation;
 
 /**
  * Affichage de l'eshop
@@ -25,10 +22,9 @@ import pacmiage2.vue.AfficheBarreInformation;
  */
 public class Eshop_AfficheEshop {
 
-    static Dimension tailleEcran = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
 
     //  public Eshop_AfficheEshop(JoueurInfo joueur) {
-    public Eshop_AfficheEshop(JoueurInfo joueur, FenetrePrincipale f) {
+    public Eshop_AfficheEshop(FenetrePrincipale f) {
         f.initFenetre();
         /**
          * On définit les propriétés de la fenêtre
@@ -42,20 +38,16 @@ public class Eshop_AfficheEshop {
         /**
          * On ajoute la barre du haut contenant les informations joueurs
          */
-        AfficheBarreInformation barre = new AfficheBarreInformation(f, joueur);
-        JScrollPane scroll = buildListObjet(joueur, f);
+        JScrollPane scroll = buildListObjet(f);
         f.add(scroll);
-        f.add(barre.getBarreDuHaut(), BorderLayout.NORTH);
+        f.add(new AfficheBarreInformation(f), BorderLayout.NORTH);
         
-        
-        //f.getContentPane().add(barre.getBarreDuHaut(), BorderLayout.NORTH);
-        //f.getContentPane().add(scroll, BorderLayout.SOUTH);
         f.repaint();
         f.setVisible(true);
 
     }
 
-    public JScrollPane buildListObjet(JoueurInfo joueur, FenetrePrincipale f) {
+    public JScrollPane buildListObjet(FenetrePrincipale f) {
 
         JPanel jPanelObjet = new JPanel();
         jPanelObjet.setBackground(Color.black);
@@ -74,7 +66,7 @@ public class Eshop_AfficheEshop {
 
             JPanel h = new JPanel();
 
-            new Eshop_AfficheObjet(h, objet[n], joueur, true, f);
+            new Eshop_AfficheObjet(h, objet[n], true, f);
             jPanelObjet.add(h);
 
         }

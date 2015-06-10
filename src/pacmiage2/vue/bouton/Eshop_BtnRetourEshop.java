@@ -3,12 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pacmiage2.vue.eshop;
+package pacmiage2.vue.bouton;
 
 import java.awt.Color;
 import java.awt.Font;
 import javax.swing.JButton;
-import javax.swing.JFrame;
+import pacmiage2.controleur.Btn_RetourEshop;
+import pacmiage2.modele.FenetrePrincipale;
 import pacmiage2.utiles.Session;
 
 /**
@@ -18,8 +19,8 @@ import pacmiage2.utiles.Session;
  */
 public class Eshop_BtnRetourEshop extends JButton {
 
-    public Eshop_BtnRetourEshop(JFrame f) {
-        
+    public Eshop_BtnRetourEshop(FenetrePrincipale f) {
+        this.setAction(new Btn_RetourEshop(f));
         this.setText(Session.getInstance().recupererValeur("non"));
         this.setFont(new Font(null, 30, 30 ));
         this.setBorderPainted(false);
