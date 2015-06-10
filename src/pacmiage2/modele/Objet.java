@@ -53,4 +53,14 @@ public class Objet  implements Serializable {
         return prix;
     }
 
+    public Bonus getBonus() {
+        return bonus;
+    }
+
+    public void setBonus(Bonus bonus) {
+        this.bonus = bonus;
+    }
+
+    
+    
 }

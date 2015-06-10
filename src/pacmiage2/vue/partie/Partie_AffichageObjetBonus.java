@@ -11,16 +11,16 @@ import pacmiage2.modele.Objet;
  */
 public class Partie_AffichageObjetBonus {
 
-    private Objet bonus;
+    private Objet objet;
     private int x, y;
     private int width, height;
     private Image imageGraine;
 
-    public Partie_AffichageObjetBonus(Objet bonus, int x, int y) throws SlickException {
-        this.bonus = bonus;
+    public Partie_AffichageObjetBonus(Objet objet, int x, int y) throws SlickException {
+        this.objet = objet;
         this.x = x;
         this.y = y;
-        imageGraine = new Image(bonus.getMiniImage());
+        imageGraine = new Image(objet.getMiniImage());
         width = imageGraine.getWidth();
         height = imageGraine.getHeight();
     }
@@ -65,12 +65,12 @@ public class Partie_AffichageObjetBonus {
         return x + (width / 2);
     }
 
-    public Objet getBonus() {
-        return bonus;
+    public Objet getObjet() {
+        return objet;
     }
 
-    public void setBonus(Objet bonus) {
-        this.bonus = bonus;
+    public void setBonus(Objet objet) {
+        this.objet = objet;
     }
     
     

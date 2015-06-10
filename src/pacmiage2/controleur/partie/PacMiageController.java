@@ -61,16 +61,23 @@ public class PacMiageController implements KeyListener {
                 this.player.setFuturDirection(3);
                 break;
             case Input.KEY_1:
-               // partie.getAffichageBonus().get(1).getBonus().
+                if(partie.getAffichageBonus().size() != 0){
+                    partie.getContainer().pause();
+                    partie.getAffichageBonus().get(0).getObjet().getBonus().executerBonus(partie);
+                    JoueurInfo.getInstance().retirerObjet(partie.getAffichageBonus().get(0).getObjet());
+                    partie.getAffichageBonus().remove(partie.getAffichageBonus().get(0));
+                    partie.getContainer().resume();
+                    
+                }
                 break;
             case Input.KEY_2:
-
+                partie.getAffichageBonus().get(1).getObjet().getBonus().executerBonus(partie);
                 break;
             case Input.KEY_3:
-
+                partie.getAffichageBonus().get(2).getObjet().getBonus().executerBonus(partie);
                 break;
             case Input.KEY_4:
-
+                partie.getAffichageBonus().get(3).getObjet().getBonus().executerBonus(partie);
                 break;
             case Input.KEY_ESCAPE:
                 System.exit(0);

@@ -5,6 +5,8 @@
  */
 package pacmiage2.modele;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import pacmiage2.vue.partie.Partie_AffichageMap;
 import org.newdawn.slick.Animation;
 import org.newdawn.slick.Graphics;
@@ -24,7 +26,15 @@ public class PacMiage {
 
     public void setImagePac(String imagePac) {
         this.imagePac = imagePac;
+        try {
+            initAnimation();
+        } catch (SlickException ex) {
+            Logger.getLogger(PacMiage.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
+    
+    
+    
     private boolean moving = false;
     private Animation[] animations = new Animation[8];
     private boolean onStair = false;
@@ -40,6 +50,10 @@ public class PacMiage {
     public void init(int posX, int pasY) throws SlickException {
         x = posX;
         y = pasY;        
+        initAnimation();
+    }
+    
+    public void initAnimation() throws SlickException{
         SpriteSheet spriteSheet = new SpriteSheet(imagePac, 32, 32);
         this.animations[0] = loadAnimation(spriteSheet, 0, 1, 0);
         this.animations[1] = loadAnimation(spriteSheet, 0, 1, 1);

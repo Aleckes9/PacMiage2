@@ -23,6 +23,10 @@ carteFantome3 = ./src/ressources/image/personnage/ball.png
 carteFantome4 = ./src/ressources/image/personnage/bowser.png
 carteFantome5 = ./src/ressources/image/personnage/cupidon.png
 
+pacBleu = ./src/ressources/image/personnage/pacBleu.png
+pacVert = ./src/ressources/image/personnage/pacVert.png
+pacRose = ./src/ressources/image/personnage/pacRose.png
+pacRouge = ./src/ressources/image/personnage/pacRouge.png
 
 
 
