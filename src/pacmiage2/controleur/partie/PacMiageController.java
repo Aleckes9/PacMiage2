@@ -10,6 +10,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.newdawn.slick.Input;
 import org.newdawn.slick.KeyListener;
+import org.newdawn.slick.SlickException;
 import pacmiage2.vue.partie.Partie_AffichageMenuPartie;
 import pacmiage2.modele.JoueurInfo;
 import pacmiage2.modele.PacMiage;
@@ -80,16 +81,25 @@ public class PacMiageController implements KeyListener {
                 try {
 
                     partie.getContainer().pause();
+                    partie.getTimer().stop();
+                    partie.getGame().setFullscreen(false);
                     Partie_AffichageMenuPartie affMenu = new Partie_AffichageMenuPartie(partie);
 
                     while (affMenu.getFenetre().isVisible()) {
                         partie.getContainer().sleep(50);
                     }
+                    partie.getGame().setFullscreen(true);
+                    while(!partie.getGame().isFullscreen()){
+                        
+                    }
                     partie.getContainer().resume();
+                    partie.getTimer().start();
 
                 } catch (IOException ex) {
                     Logger.getLogger(PacMiageController.class.getName()).log(Level.SEVERE, null, ex);
-                }
+                } catch (SlickException ex) {
+                Logger.getLogger(PacMiageController.class.getName()).log(Level.SEVERE, null, ex);
+            }
             }
             break;
         }
@@ -103,11 +113,9 @@ public class PacMiageController implements KeyListener {
 
     private void executionBonus(int choix) {
         if (partie.getAffichageBonus()[choix] != null) {
-            partie.getContainer().pause();
             partie.getAffichageBonus()[choix].getObjet().getBonus().executerBonus(partie);
             JoueurInfo.getInstance().retirerObjet(partie.getAffichageBonus()[choix].getObjet());
             partie.getAffichageBonus()[choix]=null;
-            partie.getContainer().resume();
 
         }
     }

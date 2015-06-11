@@ -21,14 +21,9 @@ public class ObjetFreezer implements Bonus{
     this.partie=partie;
        for(Fantome f:partie.getListFantome()){
          f.setMoving(false);
-     }
-     int stop=partie.getTimer().getTemps()-20;
-     while(partie.getTimer().getTemps()!=stop){
-        
-     }
-       for(Fantome f:partie.getListFantome()){
-              f.setMoving(true);
-       }    }
+     }  
+    
+    }
        
 
   

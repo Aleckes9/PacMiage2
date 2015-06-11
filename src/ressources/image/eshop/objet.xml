@@ -18,7 +18,7 @@
         </description>
         <image>./src/ressources/image/eshop/freezer.png</image>
 		 <mini_image>./src/ressources/image/eshop/minifreezer.png</mini_image>
-        <prix>10000</prix>
+        <prix>100</prix>
     </objet>	
     <objet>
         <nom>Clock</nom>
@@ -28,7 +28,7 @@
         </description>
         <image>./src/ressources/image/eshop/clock.png</image>
 		  <mini_image>./src/ressources/image/eshop/miniclock.png</mini_image>
-        <prix>20000</prix>
+        <prix>200</prix>
     </objet>
     <objet>
         <nom>Speed</nom>
@@ -38,7 +38,7 @@
         </description>
         <image>./src/ressources/image/eshop/Boost.png</image>
 		<mini_image>./src/ressources/image/eshop/miniBoost.png</mini_image>
-        <prix>10000</prix>
+        <prix>100</prix>
     </objet>
     <objet>
         <nom>Slow</nom>
@@ -48,7 +48,7 @@
         </description>
         <image>./src/ressources/image/eshop/Ralentisseur.png</image>
 		<mini_image>./src/ressources/image/eshop/miniRalentisseur.png</mini_image>
-        <prix>10000</prix>
+        <prix>100</prix>
     </objet>
     <objet>
         <nom>Invinsible</nom>
@@ -108,6 +108,6 @@
         </description>
         <image>./src/ressources/image/eshop/hello_kitty.png</image>
 		<mini_image>./src/ressources/image/eshop/minihello_kitty.png</mini_image>
-        <prix>500</prix>
+        <prix>50</prix>
     </objet>
 </eshop>

@@ -27,12 +27,10 @@ import pacmiage2.utiles.Session;
 public class Eshop_AfficheConfirmAcheter extends AbstractAction {
 
     Objet it;
-    JoueurInfo j;
     FenetrePrincipale eshopFenetre;
 
-    public Eshop_AfficheConfirmAcheter(Objet it, JoueurInfo j, FenetrePrincipale eshopFenetre) {
+    public Eshop_AfficheConfirmAcheter(Objet it, FenetrePrincipale eshopFenetre) {
         this.it = it;
-        this.j = j;
         this.eshopFenetre = eshopFenetre;
     }
 
@@ -41,6 +39,7 @@ public class Eshop_AfficheConfirmAcheter extends AbstractAction {
         
         eshopFenetre.dispose();
         eshopFenetre.initFenetre();
+        
         JPanel g = new JPanel();
         
         JLabel texte = new JLabel();

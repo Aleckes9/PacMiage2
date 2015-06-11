@@ -19,22 +19,11 @@ import org.newdawn.slick.SpriteSheet;
  */
 public class PacMiage {
 
-    private float x , y;
+    private float x, y;
     private int direction = 0;
     private int futurDirection = 0;
     private String imagePac;
 
-    public void setImagePac(String imagePac) {
-        this.imagePac = imagePac;
-        try {
-            initAnimation();
-        } catch (SlickException ex) {
-            Logger.getLogger(PacMiage.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-    
-    
-    
     private boolean moving = false;
     private Animation[] animations = new Animation[8];
     private boolean onStair = false;
@@ -49,11 +38,11 @@ public class PacMiage {
 
     public void init(int posX, int pasY) throws SlickException {
         x = posX;
-        y = pasY;        
+        y = pasY;
         initAnimation();
     }
-    
-    public void initAnimation() throws SlickException{
+
+    public void initAnimation() throws SlickException {
         SpriteSheet spriteSheet = new SpriteSheet(imagePac, 32, 32);
         this.animations[0] = loadAnimation(spriteSheet, 0, 1, 0);
         this.animations[1] = loadAnimation(spriteSheet, 0, 1, 1);
@@ -75,7 +64,7 @@ public class PacMiage {
 
     public void render(Graphics g) throws SlickException {
         g.drawAnimation(animations[direction + (moving ? 4 : 0)], x, y);
-        
+
     }
 
     public void setVitesse(int vitesse) {
@@ -94,9 +83,18 @@ public class PacMiage {
                 this.x = futurXDir;
                 this.y = futurYDir;
 
+
             } else {
                 if (estEnCollisionMur(futurX, futurY)) {
                     this.moving = false;
+                    if(vitesse != 2){
+                    float futurX2 = getFuturX(2, this.direction);
+                    float futurY2 = getFuturY(2, this.direction);
+                    if (!estEnCollisionMur(futurX2, futurY2)) {
+                        this.x = futurX2;
+                        this.y = futurY2;
+                    }
+                    }
                 } else {
                     this.x = futurX;
                     this.y = futurY;
@@ -107,9 +105,9 @@ public class PacMiage {
 
     public boolean estEnCollisionMur(float xObjet, float yObjet) {
         return this.map.isCollision(xObjet + 1, yObjet + 1)
-             ||this.map.isCollision(xObjet + 31, yObjet + 1)
-                ||this.map.isCollision(xObjet + 1, yObjet + 31)
-                  ||this.map.isCollision(xObjet + 31, yObjet + 31);
+                || this.map.isCollision(xObjet + 31, yObjet + 1)
+                || this.map.isCollision(xObjet + 1, yObjet + 31)
+                || this.map.isCollision(xObjet + 31, yObjet + 31);
     }
 
     public boolean estEnCollisionObjet(float xObjet, float yObjet) {
@@ -143,9 +141,6 @@ public class PacMiage {
         }
         return futurY;
     }
-    
-
-
 
     public float getX() {
         return x;
@@ -154,13 +149,13 @@ public class PacMiage {
     public void setX(int x) {
         this.x = x;
     }
-    
+
     public float getCenterX() {
-        return x+16;
+        return x + 16;
     }
-    
+
     public float getCenterY() {
-        return y+16;
+        return y + 16;
     }
 
     public float getY() {
@@ -201,6 +196,15 @@ public class PacMiage {
 
     public void setFuturDirection(int futurDirection) {
         this.futurDirection = futurDirection;
+    }
+
+    public void setImagePac(String imagePac) {
+        this.imagePac = imagePac;
+        try {
+            initAnimation();
+        } catch (SlickException ex) {
+            Logger.getLogger(PacMiage.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
 }

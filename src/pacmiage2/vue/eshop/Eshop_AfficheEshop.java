@@ -25,6 +25,7 @@ public class Eshop_AfficheEshop {
 
     //  public Eshop_AfficheEshop(JoueurInfo joueur) {
     public Eshop_AfficheEshop(FenetrePrincipale f) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+        f.dispose();
         f.initFenetre();
         /**
          * On définit les propriétés de la fenêtre

@@ -1,14 +1,13 @@
-
 package pacmiage2.vue.menu;
 
 import java.awt.BorderLayout;
 import pacmiage2.modele.FenetrePrincipale;
-import java.awt.GridLayout;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Cursor;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.Insets;
 import java.io.IOException;
 import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
@@ -26,13 +25,13 @@ import pacmiage2.utiles.Session;
 public final class FenetreMenu {
 
     private final FenetrePrincipale fenetre;
-    
+
     private final JPanel jPanel = new JPanel();
     private final JPanel boutons = new JPanel();
 
     private final JLabel logo = new JLabel(new ImageIcon(".\\src\\ressources\\image\\logo\\logo.png"));
     private final JLabel record = new JLabel("Record : " + String.valueOf(JoueurInfo.getInstance().getRecord()));
-    
+
     private final JButton nouvellepartie = new JButton();
     private final JButton store = new JButton();
     private final JButton quitter = new JButton();
@@ -42,12 +41,11 @@ public final class FenetreMenu {
         this.fenetre = uneFenetre;
         this.init();
     }
-    
-    
-    public void init(){
-        
+
+    public void init() {
+        jPanel.setLayout(null);
         this.initFenetre();
-        
+        Insets insets = jPanel.getInsets();
         jPanel.setBackground(Color.black);
         boutons.setBackground(Color.black);
         boutons.setLayout(new BoxLayout(boutons, BoxLayout.PAGE_AXIS));
@@ -55,37 +53,37 @@ public final class FenetreMenu {
         initButtonLangue();
         initButtonOptions();
         initRecord();
-        
-        
+
         boutons.add(nouvellepartie);
         boutons.add(store);
         boutons.add(quitter);
-        boutons.add(record);   
+        boutons.add(record);
 
         jPanel.add(logo);
         jPanel.add(boutons);
-   
+
         jPanel.add(changerLangue);
-        
-        
+        logo.setBounds(0, insets.top, fenetre.getWidth(), fenetre.getHeight() / 4);
+        boutons.setBounds(0, insets.top + (int) (logo.getHeight() * 1.2), fenetre.getWidth(), fenetre.getHeight() / 4);
+        changerLangue.setBounds(fenetre.getWidth() / 2 - changerLangue.getIcon().getIconWidth() / 2, boutons.getY() + (int) (boutons.getHeight() * 1.2), changerLangue.getIcon().getIconWidth(), changerLangue.getIcon().getIconHeight());
+
         fenetre.revalidate();
         fenetre.repaint();
     }
-    
-    
-    public void initFenetre(){
+
+    public void initFenetre() {
         fenetre.setVisible(true);
         fenetre.setContentPane(jPanel);
     }
-    
-   public void initRecord(){
+
+    public void initRecord() {
         record.setBackground(Color.black);
         record.setFont(new Font("Kristen ITC", Font.PLAIN, 44));
         record.setAlignmentX(Component.CENTER_ALIGNMENT);
-        
+
     }
-    
-    public void initButtonLangue(){
+
+    public void initButtonLangue() {
         changerLangue.setBackground(Color.black);
         changerLangue.setBorderPainted(false);
         changerLangue.setFocusPainted(false);
@@ -93,11 +91,11 @@ public final class FenetreMenu {
         changerLangue.setDisabledIcon(changerLangue.getIcon());
         changerLangue.addActionListener(new FenetreMenuListener(fenetre));
         changerLangue.setName("langue");
-        changerLangue.setPreferredSize(new Dimension(fenetre.getWidth(), fenetre.getHeight()/8));
-        changerLangue.setSize(fenetre.getWidth(), fenetre.getHeight()/8);
+        changerLangue.setPreferredSize(new Dimension(fenetre.getWidth(), fenetre.getHeight() / 8));
+        changerLangue.setSize(fenetre.getWidth(), fenetre.getHeight() / 8);
     }
-    
-    public void initButtonOptions(){
+
+    public void initButtonOptions() {
         nouvellepartie.setText(Session.getInstance().recupererValeur("nouvelle"));
         nouvellepartie.setName("nouvelle");
         initConfigButton(nouvellepartie);
@@ -106,20 +104,15 @@ public final class FenetreMenu {
         store.setName("store");
         initConfigButton(store);
 
-
-        
         quitter.setText(Session.getInstance().recupererValeur("quitter"));
         quitter.setName("quitter");
-        
+
         nouvellepartie.setAlignmentX(Component.CENTER_ALIGNMENT);
         store.setAlignmentX(Component.CENTER_ALIGNMENT);
         quitter.setAlignmentX(Component.CENTER_ALIGNMENT);
-        
+
         initConfigButton(quitter);
     }
-    
-    
-    
 
     public void initConfigButton(final JButton button) {
         button.setForeground(Color.white);
@@ -144,6 +137,5 @@ public final class FenetreMenu {
             }
         });
     }
-    
 
 }

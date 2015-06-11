@@ -9,22 +9,14 @@ import pacmiage2.modele.PacMiage;
  *
  * @author Maëlle
  */
-public class ObjetSpeed implements Bonus{
+public class ObjetSpeed implements Bonus {
 
-    public ObjetSpeed(){
-    
+    public ObjetSpeed() {
 
-       }
+    }
 
     @Override
     public void executerBonus(PartieController partie) {
-
-     PacMiage p=partie.getPlayer();
-     p.setVitesse(4);
-             int stop=partie.getTimer().getTemps()-20;
-     while(partie.getTimer().getTemps()!=stop){
-        
-     }
-        p.setVitesse(2);    }
+        partie.getPlayer().setVitesse(4);
+    }
 }
-

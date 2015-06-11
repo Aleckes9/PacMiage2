@@ -61,11 +61,12 @@ public class Eshop_Action_Achat extends AbstractAction {
                 Logger.getLogger(Eshop_Action_Achat.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        JDialog f = new JDialog();
-
+        
+        JDialog fenetre = new JDialog();
+               fenetre.setAlwaysOnTop(true);
         JPanel p = new JPanel();
         p.setBackground(Color.black);
-        f.setBounds(FenetrePrincipale.getTailleEcran().width / 3, FenetrePrincipale.getTailleEcran().height / 4, 4 * FenetrePrincipale.getTailleEcran().width / 11, FenetrePrincipale.getTailleEcran().height / 2);
+        fenetre.setBounds(FenetrePrincipale.getTailleEcran().width / 3, FenetrePrincipale.getTailleEcran().height / 4, 4 * FenetrePrincipale.getTailleEcran().width / 11, FenetrePrincipale.getTailleEcran().height / 2);
         ImageIcon icon = new ImageIcon(picture);
         JLabel image = new JLabel(icon);
         JLabel texte = new JLabel();
@@ -76,8 +77,8 @@ public class Eshop_Action_Achat extends AbstractAction {
         p.setLayout(new BorderLayout());
         p.add(texte, BorderLayout.NORTH);
         p.add(image);
-        f.add(p);
-        f.setVisible(true);
+        fenetre.add(p);
+        fenetre.setVisible(true);
     }
 
 }

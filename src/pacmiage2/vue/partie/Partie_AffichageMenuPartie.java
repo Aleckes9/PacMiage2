@@ -18,42 +18,47 @@ import pacmiage2.utiles.Session;
  *
  * @author Maëlle
  */
-public class Partie_AffichageMenuPartie implements ActionListener {
+public final class Partie_AffichageMenuPartie implements ActionListener {
 
-    private JFrame fenetre = new JFrame();
-    private PartieController partie;
-    private JPanel j = new JPanel();
-    private JPanel boutons = new JPanel();
-    private JButton son = new JButton();
-    private JButton choixObjet = new JButton();
-    private JButton quitter = new JButton();
-    private JButton reprendre = new JButton();
+    private final JFrame fenetre = new JFrame();
+    private final PartieController partie;
+    private final JPanel j = new JPanel();
+    private final JPanel boutons = new JPanel();
+    private final JButton son = new JButton();
+    private final JButton quitter = new JButton();
+    private final JButton reprendre = new JButton();
 
     public Partie_AffichageMenuPartie(PartieController partie) throws IOException {
         partie.getContainer().pause();
         this.partie = partie;
+        initFenetre();
+        initButton();
+        fenetre.revalidate();
+        fenetre.repaint();
 
+    }
+    
+     public void initFenetre() {
         fenetre.setLocationRelativeTo(null);
         fenetre.setUndecorated(true);
-        fenetre.setBounds(partie.getContainer().getWidth() / 3, partie.getContainer().getHeight() / 4, 4 * partie.getContainer().getWidth() / 11, partie.getContainer().getHeight() / 2);
+        fenetre.setBounds(0, 0,partie.getGame().getScreenWidth() , partie.getGame().getScreenHeight());
         fenetre.setVisible(true);
         fenetre.setContentPane(j);
+        fenetre.setAlwaysOnTop(true);
+        fenetre.toFront();
         fenetre.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+     }
+     
+     public void initButton() {
         j.setBackground(java.awt.Color.black);
         boutons.setBackground(java.awt.Color.black);
 
         son.setText(Session.getInstance().recupererValeur("son"));
         son.setName("son");
-
         configButton(son);
 
-        choixObjet.setText(Session.getInstance().recupererValeur("choisir"));
-        choixObjet.setName("choixObjet");
-        configButton(choixObjet);
         quitter.setText(Session.getInstance().recupererValeur("retour"));
-
-        quitter.setName(Session.getInstance().recupererValeur("quitter"));
-
+        quitter.setName("quitter");
         configButton(quitter);
 
         reprendre.setText(Session.getInstance().recupererValeur("continuer"));
@@ -64,13 +69,9 @@ public class Partie_AffichageMenuPartie implements ActionListener {
         j.add(boutons);
 
         boutons.add(son);
-        boutons.add(choixObjet);
         boutons.add(quitter);
         boutons.add(reprendre);
-        fenetre.revalidate();
-        fenetre.repaint();
-
-    }
+     }
 
     public void configButton(final JButton button) {
         button.setForeground(Color.white);
@@ -110,11 +111,17 @@ public class Partie_AffichageMenuPartie implements ActionListener {
                 }
                 break;
             case "quitter":
-                //new RetourMenu(partie.getJoueur(), fenetre);
+                partie.getContainer().exit();
+                this.fenetre.dispose();
+                
+                break;
+                
+                case "retour":
+                partie.getContainer().exit();
+                
                 break;
             case "reprendre":
                 fenetre.dispose();
-
                 break;
 
         }

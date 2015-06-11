@@ -10,10 +10,13 @@ import pacmiage2.modele.Reponse;
 import pacmiage2.modele.Question;
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Component;
+import java.awt.Cursor;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -24,7 +27,6 @@ import javax.swing.text.AttributeSet;
 import javax.swing.text.SimpleAttributeSet;
 import javax.swing.text.StyleConstants;
 import javax.swing.text.StyleContext;
-
 
 /**
  *
@@ -97,10 +99,32 @@ public class Question_FenetreQuestion extends JFrame {
     private JPanel buildContentPaneDroite() {
 
         JPanel panel = new JPanel();
+        panel.setBackground(Color.BLACK);
         panel.setSize(this.getWidth() / 2, this.getHeight());
         panel.setLayout(new GridLayout(boutons.size(), 1));
-        for (JButton unBouton : boutons) {
+        for (final JButton unBouton : boutons) {
             unBouton.addActionListener(new FenetreQuestionListener(this));
+            unBouton.setForeground(Color.white);
+            unBouton.setBackground(Color.black);
+            unBouton.setBorderPainted(false);
+            unBouton.setFocusPainted(false);
+            unBouton.setFont(new Font("Kristen ITC", Font.PLAIN, 25));
+
+            unBouton.setCursor(new Cursor(Cursor.HAND_CURSOR));
+            unBouton.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+            unBouton.addMouseListener(new java.awt.event.MouseAdapter() {
+                @Override
+                public void mouseEntered(java.awt.event.MouseEvent evt) {
+                    unBouton.setForeground(Color.YELLOW);
+                }
+
+                @Override
+                public void mouseExited(java.awt.event.MouseEvent evt) {
+
+                    unBouton.setForeground(Color.white);
+                }
+            });
             panel.add(unBouton);
         }
         return panel;
@@ -115,11 +139,10 @@ public class Question_FenetreQuestion extends JFrame {
         JPanel panel = new JPanel();
         panel.setSize(this.getWidth() / 2, this.getHeight());
         panel.setLayout(new GridLayout(2, 1));
-        Font font = new Font("Market", Font.BOLD, 18);
-        text.setFont(font);
         text.setBackground(Color.BLACK);
-        label.setFont(font);
+        text.setFont(new Font("Kristen ITC", Font.PLAIN, 25));
         label.setBackground(Color.BLACK);
+        label.setFont(new Font("Kristen ITC", Font.PLAIN, 25));
         appendToPane(text, question.getText(), Color.ORANGE);
         appendToPane(label, question.getChoix(), Color.RED);
         panel.add(text);
@@ -137,12 +160,32 @@ public class Question_FenetreQuestion extends JFrame {
         panel.setLayout(new FlowLayout());
         valider = new JButton("Valider");
         panel.add(valider);
+            valider.setForeground(Color.white);
+            valider.setBackground(Color.black);
+            valider.setBorderPainted(false);
+            valider.setFocusPainted(false);
+            valider.setFont(new Font("Kristen ITC", Font.PLAIN, 25));
+
+            valider.setCursor(new Cursor(Cursor.HAND_CURSOR));
+            valider.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+            valider.addMouseListener(new java.awt.event.MouseAdapter() {
+                @Override
+                public void mouseEntered(java.awt.event.MouseEvent evt) {
+                    valider.setForeground(Color.GREEN);
+                }
+
+                @Override
+                public void mouseExited(java.awt.event.MouseEvent evt) {
+
+                    valider.setForeground(Color.white);
+                }
+            });
         valider.addActionListener(new FenetreQuestionListener(this));
         return panel;
     }
-    
-    private void appendToPane(JTextPane tp, String msg, Color c)
-    {
+
+    private void appendToPane(JTextPane tp, String msg, Color c) {
         StyleContext sc = StyleContext.getDefaultStyleContext();
         AttributeSet aset = sc.addAttribute(SimpleAttributeSet.EMPTY, StyleConstants.Foreground, c);
 

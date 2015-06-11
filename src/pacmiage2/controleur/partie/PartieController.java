@@ -15,12 +15,13 @@ import org.newdawn.slick.AppGameContainer;
 import org.newdawn.slick.BasicGame;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
+import org.newdawn.slick.Image;
 import org.newdawn.slick.Music;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.Sound;
 import pacmiage2.vue.partie.Partie_AffichageScore;
 import pacmiage2.vue.partie.Partie_AffichageTemps;
-import pacmiage2.vue.partie.Partie_AffichageValidationReponse;
+import pacmiage2.vue.partie.Partie_AffichageImageFondu;
 import pacmiage2.modele.Fantome;
 import pacmiage2.modele.Graine;
 import pacmiage2.modele.JoueurInfo;
@@ -44,7 +45,7 @@ public class PartieController extends BasicGame {
     private final List<Fantome> listFantome;
     private final Partie_AffichageScore score;
     private final Partie_AffichageTemps temps;
-    private Partie_AffichageValidationReponse imageVeracite;
+    private Partie_AffichageImageFondu imageVeracite;
     private Sound son;
     private Music background;
     private final int niveau;
@@ -54,6 +55,11 @@ public class PartieController extends BasicGame {
     private final String cheminCarte;
     private AppGameContainer game;
     private Partie_AffichageObjetBonus[] affichageBonus;
+    private int multiplicateur;
+    private boolean collision;
+    private boolean fantomeMove;
+    private ControleurTemps tempsBonus;
+    private boolean gameOver;
 
     public PartieController(int niveau, String cheminCarte) throws SlickException {
 
@@ -67,8 +73,12 @@ public class PartieController extends BasicGame {
         score = new Partie_AffichageScore();
         temps = new Partie_AffichageTemps();
         this.niveau = niveau;
-        timer = new ControleurTemps(20);
+        timer = new ControleurTemps(10);
         affichageBonus = new Partie_AffichageObjetBonus[4];
+        multiplicateur = 1;
+        collision = true;
+        fantomeMove = true;
+        gameOver = false;
     }
 
     public PacMiage getPlayer() {
@@ -81,11 +91,11 @@ public class PartieController extends BasicGame {
 
     @Override
     public void init(GameContainer container) throws SlickException {
-        
+        container.setForceExit(false);
         this.container = container;
         this.map.init(cheminCarte);
         int idDepartFant = 0;
-        List<Integer> idObjetsBonus = new ArrayList<Integer>();
+        List<Integer> idObjetsBonus = new ArrayList<>();
         for (int objectID = 0; objectID < map.getObjectCount(); objectID++) {
 
             if ("graine".equals(map.getObjectType(objectID))) {
@@ -119,22 +129,21 @@ public class PartieController extends BasicGame {
         for (Fantome fantome : listFantome) {
             fantome.initDepart(map.getObjectX(idDepartFant), map.getObjectY(idDepartFant));
         }
-        
-        
-        int compteurobjet=0;
+
+        int compteurobjet = 0;
         for (Objet objetBonus : JoueurInfo.getInstance().getObjetDispo()) {
-            if(objetBonus != null){
-            affichageBonus[compteurobjet]=new Partie_AffichageObjetBonus(objetBonus, map.getObjectX(idObjetsBonus.get(compteurobjet)), map.getObjectY(idObjetsBonus.get(compteurobjet)));
-            compteurobjet++;
-            }else{
-                 affichageBonus[compteurobjet]=null;
+            if (objetBonus != null) {
+                affichageBonus[compteurobjet] = new Partie_AffichageObjetBonus(objetBonus, map.getObjectX(idObjetsBonus.get(compteurobjet)), map.getObjectY(idObjetsBonus.get(compteurobjet)));
+                compteurobjet++;
+            } else {
+                affichageBonus[compteurobjet] = null;
             }
 
         }
 
         PacMiageController controller = new PacMiageController(this.player, this);
         container.getInput().addKeyListener(controller);
-        background = new Music(Configuration.getInstance().recupererValeur("musique"+String.valueOf(niveau)));
+        background = new Music(Configuration.getInstance().recupererValeur("musique" + String.valueOf(niveau)));
         background.setVolume(0.5f);
         background.loop();
         son = new Sound("./src/ressources/musique/0218.ogg");
@@ -148,6 +157,8 @@ public class PartieController extends BasicGame {
     @Override
     public void render(GameContainer container, Graphics g) throws SlickException {
         
+        if(!gameOver){
+            
         if (!grainesMap.isEmpty()) {
             this.map.renderBackground();
             for (Integer graine : grainesMap.keySet()) {
@@ -161,25 +172,32 @@ public class PartieController extends BasicGame {
             this.map.renderForeground();
             this.score.render(g);
             this.temps.render(g);
-            
+
             for (Partie_AffichageObjetBonus bonus : this.affichageBonus) {
-                if(bonus != null){
+                if (bonus != null) {
                     bonus.render(g);
                 }
             }
-            
+
             if (this.imageVeracite != null) {
                 this.imageVeracite.render(g, container);
             }
         } else {
 
         }
+        
+        }else{
+            this.imageVeracite.render(g, container);
+        }
+        
 
     }
 
     @Override
     public void update(GameContainer container, int delta) throws SlickException {
-        
+
+        if(!gameOver){
+            
         this.temps.setTemps(this.timer.getTempsRestant());
 
         if (this.imageVeracite != null) {
@@ -208,7 +226,7 @@ public class PartieController extends BasicGame {
 
         if (graineRemove != -1) {
             grainesMap.remove(graineRemove);
-            this.score.setFutureScore(this.score.getFutureScore() + 10);
+            this.score.setFutureScore(this.score.getFutureScore() + 10 * multiplicateur);
 //            son.play();
             if (grainesMap.isEmpty()) {
                 ouvertureQuestion();
@@ -219,52 +237,62 @@ public class PartieController extends BasicGame {
 
         this.player.update(delta);
         for (Fantome fantome : listFantome) {
-            if (fantome.estEnCollisionCible(this.player.getCenterX(), this.player.getCenterY())) {
-                ouvertureQuestion();
-                fantome.resetPos();
+            if (collision) {
+                if (fantome.estEnCollisionCible(this.player.getCenterX(), this.player.getCenterY())) {
+                    ouvertureQuestion();
+                    fantome.resetPos();
+                }
+            } else {
+                if (tempsBonus.getTempsRestant() == 0) {
+                    player.setImagePac(Configuration.getInstance().recupererValeur("pacNormal"));
+                    collision = true;
+                }
             }
 
             fantome.update(this.player.getX(), this.player.getY());
         }
 
-        if (timer.getTempsRestant() == 0){
+        if (timer.getTempsRestant() == 0) {
             JoueurInfo.getInstance().setRecord(score.getFutureScore());
             JoueurInfo.getInstance().ajouterGraines(score.getFutureScore());
             try {
                 SauvegardeFichier.getInstance().enregistrerFichier(JoueurInfo.getInstance(), Configuration.getInstance().recupererValeur("pathSauvegarde"));
+            
             } catch (IOException ex) {
                 Logger.getLogger(PartieController.class.getName()).log(Level.SEVERE, null, ex);
             }
-            container.setForceExit(false);
-            container.exit();
+            imageVeracite = new Partie_AffichageImageFondu(new Image(Configuration.getInstance().recupererValeur("gameOver")));
+            gameOver = true;
             
         }
-        
-        
- 
-    }
+        }else{
+            if (this.imageVeracite.isInvisible()) {
+                container.exit();
+            }
+        }
 
-    public Partie_AffichageTemps getAffichageTemps() {
-        return temps;
     }
 
     private void ouvertureQuestion() throws SlickException {
         nbQuestions++;
         timer.stop();
         container.pause();
+        this.game.setFullscreen(false);
         ControleurQuestion ctrlQuestion = new ControleurQuestion(niveau);
         while (ctrlQuestion.getFenetre().isVisible()) {
             container.sleep(100);
         }
+        this.game.setFullscreen(true);
         container.resume();
-        container.sleep(100);
+        container.sleep(1000);
         boolean choix = ctrlQuestion.getFenetre().isChoix();
-        imageVeracite = new Partie_AffichageValidationReponse(choix);
         if (choix) {
+            imageVeracite = new Partie_AffichageImageFondu(new Image(Configuration.getInstance().recupererValeur("repValide")));
             this.score.setFutureScore(this.score.getFutureScore() + 100);
             nbQuestionsCorrect++;
         } else {
-            timer.setTempsRestant(timer.getTempsRestant()-10);
+            imageVeracite = new Partie_AffichageImageFondu(new Image(Configuration.getInstance().recupererValeur("repFausse")));
+            timer.setTempsRestant(timer.getTempsRestant() - 10);
         }
         timer.start();
     }
@@ -276,7 +304,6 @@ public class PartieController extends BasicGame {
     public Music getBackground() {
         return background;
     }
-
 
     public AppGameContainer getGame() {
         return game;
@@ -294,8 +321,64 @@ public class PartieController extends BasicGame {
         this.affichageBonus = affichageBonus;
     }
 
+    public void setMultiplicateur(int multiplicateur) {
+        this.multiplicateur = multiplicateur;
+    }
 
-    
-    
+    public Partie_AffichageImageFondu getImageVeracite() {
+        return imageVeracite;
+    }
+
+    public void setImageVeracite(Partie_AffichageImageFondu imageVeracite) {
+        this.imageVeracite = imageVeracite;
+    }
+
+    public Sound getSon() {
+        return son;
+    }
+
+    public void setSon(Sound son) {
+        this.son = son;
+    }
+
+    public int getNbQuestions() {
+        return nbQuestions;
+    }
+
+    public void setNbQuestions(int nbQuestions) {
+        this.nbQuestions = nbQuestions;
+    }
+
+    public int getNbQuestionsCorrect() {
+        return nbQuestionsCorrect;
+    }
+
+    public void setNbQuestionsCorrect(int nbQuestionsCorrect) {
+        this.nbQuestionsCorrect = nbQuestionsCorrect;
+    }
+
+    public boolean isCollision() {
+        return collision;
+    }
+
+    public void setCollision(boolean collision) {
+        this.collision = collision;
+    }
+
+    public ControleurTemps getTempsBonus() {
+        return tempsBonus;
+    }
+
+    public void setTempsBonus(ControleurTemps tempsBonus) {
+        this.tempsBonus = tempsBonus;
+    }
+
+    public boolean isFantomeMove() {
+        return fantomeMove;
+    }
+
+    public void setFantomeMove(boolean fantomeMove) {
+        this.fantomeMove = fantomeMove;
+    }
 
 }

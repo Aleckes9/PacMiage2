@@ -35,13 +35,11 @@ public class FenetreMenuListener implements ActionListener{
             //todo refresh
             switch (tp.getName()) {
                 case "nouvelle":
-                    fenetre.dispose();
                     fenetre.initFenetreNiveau();
                     break;
                 case "store":
-                    fenetre.dispose();
+                    
                     fenetre.initFenetreShop();
-                    //new Eshop_AfficheEshop(joueur, fenetre);
                     break;
                 case "quitter":
                     System.exit(0);
@@ -53,7 +51,6 @@ public class FenetreMenuListener implements ActionListener{
                     } else {
                         Session.getInstance().setLocale(Locale.FRENCH);
                     }
-                    fenetre.dispose();
                     fenetre.initFenetreMenu();
                     break;
 

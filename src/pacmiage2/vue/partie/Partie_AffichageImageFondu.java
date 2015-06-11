@@ -9,16 +9,12 @@ import org.newdawn.slick.SlickException;
  *
  * @author Aleckes9
  */
-public class Partie_AffichageValidationReponse {
+public class Partie_AffichageImageFondu {
 
     private Image img;
 
-    public Partie_AffichageValidationReponse(boolean veracite) throws SlickException {
-        if(veracite){
-            this.img = new Image("./src/ressources/image/questions/green_tick.png");
-        }else{
-            this.img = new Image("./src/ressources/image/questions/red_cross.png");
-        }
+    public Partie_AffichageImageFondu(Image img) throws SlickException {
+            this.img = img;
     }
 
     public void render(Graphics g, GameContainer container) throws SlickException {

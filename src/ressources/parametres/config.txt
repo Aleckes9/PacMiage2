@@ -1,9 +1,14 @@
-
+﻿
 
 ##### donn�es utiles au Jeu PacMiage ##########
 
 #Emplacement du fichier de sauvegarde
 pathSauvegarde = ./src/ressources/sauvegarde/sauvegarde.txt
+
+gameOver = ./src/ressources/image/logo/gameOver.png
+
+repValide = ./src/ressources/image/questions/green_tick.png
+repFausse = ./src/ressources/image/questions/red_cross.png
 
 carte1 = ./src/ressources/map/pacManCarte1.tmx
 carte2 = ./src/ressources/map/pacManCarte2.tmx
@@ -23,10 +28,12 @@ carteFantome3 = ./src/ressources/image/personnage/ball.png
 carteFantome4 = ./src/ressources/image/personnage/bowser.png
 carteFantome5 = ./src/ressources/image/personnage/cupidon.png
 
+pacNormal = ./src/ressources/image/personnage/pacManMove.png
 pacBleu = ./src/ressources/image/personnage/pacBleu.png
 pacVert = ./src/ressources/image/personnage/pacVert.png
 pacRose = ./src/ressources/image/personnage/pacRose.png
 pacRouge = ./src/ressources/image/personnage/pacRouge.png
+pacInvincible = ./src/ressources/image/personnage/pacInvincible.png
 
 musique1 = ./src/ressources/musique/pacmantheme.ogg
 musique2 = ./src/ressources/musique/bruno.ogg

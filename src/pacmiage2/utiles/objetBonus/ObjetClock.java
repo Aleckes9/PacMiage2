@@ -15,8 +15,7 @@ public class ObjetClock implements Bonus {
 
     @Override
     public void executerBonus(PartieController partie) {
-        int temps = partie.getAffichageTemps().getTemps();
-        partie.getAffichageTemps().setTemps(temps + 20);
+        partie.getTimer().setTempsRestant(partie.getTimer().getTempsRestant()+20);
     }
 
 }

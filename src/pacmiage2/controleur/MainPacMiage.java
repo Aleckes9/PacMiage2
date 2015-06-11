@@ -7,6 +7,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.newdawn.slick.AppGameContainer;
 import org.newdawn.slick.SlickException;
+import org.newdawn.slick.opengl.InternalTextureLoader;
 import pacmiage2.utiles.Configuration;
 import pacmiage2.modele.JoueurInfo;
 import pacmiage2.utiles.ChargerFichier;
@@ -45,9 +46,11 @@ public class MainPacMiage {
                     PartieController partieController;
                     partieController = mainFenetre.getPartieController();
                     game = new AppGameContainer(partieController, 1024, 768, false);
+                    //game.setDisplayMode(mainFenetre.getWidth(), mainFenetre.getWidth(), false);
                     //game = new AppGameContainer(partieController, mainFenetre.getWidth(), mainFenetre.getWidth(), false);
                     partieController.setGame(game);
                     mainFenetre.dispose();
+                       
                     game.setShowFPS(false);
                     //limite le framerate pour garder la même vitesse de jeu sur tout les appariels
                     game.setTargetFrameRate(30);
@@ -59,11 +62,10 @@ public class MainPacMiage {
                     game.setForceExit(false);
                     game.exit();
                     
-                    
+                    InternalTextureLoader.get().clear();
                     mainFenetre.setPartieController(null);
                     mainFenetre.initFenetre();
-                    mainFenetre.initFenetreNiveau();
-                    
+                    mainFenetre.initFenetreMenu();
 
                 }
             }

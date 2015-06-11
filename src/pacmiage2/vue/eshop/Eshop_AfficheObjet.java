@@ -71,7 +71,7 @@ public class Eshop_AfficheObjet {
         k.setLayout(layout2);
         k.add(prix);
         if (b == true) {
-            k.add(new Eshop_BtnAcheter(it, JoueurInfo.getInstance(), eshopFenetre));
+            k.add(new Eshop_BtnAcheter(it, eshopFenetre));
         }
         /**
          * Ajout des éléments à la fenêtre

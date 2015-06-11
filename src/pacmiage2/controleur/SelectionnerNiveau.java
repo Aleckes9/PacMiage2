@@ -39,7 +39,6 @@ public class SelectionnerNiveau implements ActionListener {
         this.fenetre = f;
         
         JPanel j = new JPanel();
-        f.setJpanel(j);
         JPanel niveaux = new JPanel();
         JLabel titre = new JLabel(Session.getInstance().recupererValeur("niveaux"), JLabel.CENTER);
         titre.setPreferredSize(new Dimension(f.getWidth(), f.getHeight()/5));

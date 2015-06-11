@@ -11,7 +11,7 @@ public class ObjetDoubleCoins implements Bonus {
 
     @Override
     public void executerBonus(PartieController partie) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        partie.setMultiplicateur(2);
     }
     
 }
