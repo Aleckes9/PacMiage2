@@ -42,21 +42,21 @@ public class Partie_AffichageMenuPartie implements ActionListener {
         j.setBackground(java.awt.Color.black);
         boutons.setBackground(java.awt.Color.black);
 
-        son.setText("Son on/off");
+        son.setText(Session.getInstance().recupererValeur("son"));
         son.setName("son");
 
         configButton(son);
 
-        choixObjet.setText("Choisir un objet");
+        choixObjet.setText(Session.getInstance().recupererValeur("choisir"));
         choixObjet.setName("choixObjet");
         configButton(choixObjet);
-        quitter.setText("Retour menu");
+        quitter.setText(Session.getInstance().recupererValeur("retour"));
 
-        quitter.setName("quitter");
+        quitter.setName(Session.getInstance().recupererValeur("quitter"));
 
         configButton(quitter);
 
-        reprendre.setText("Continuer la partie");
+        reprendre.setText(Session.getInstance().recupererValeur("continuer"));
         reprendre.setName("reprendre");
         configButton(reprendre);
 

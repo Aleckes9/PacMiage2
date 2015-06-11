@@ -1,6 +1,6 @@
 
 
-##### données utiles au Jeu PacMiage ##########
+##### donnï¿½es utiles au Jeu PacMiage ##########
 
 #Emplacement du fichier de sauvegarde
 pathSauvegarde = ./src/ressources/sauvegarde/sauvegarde.txt
@@ -28,7 +28,11 @@ pacVert = ./src/ressources/image/personnage/pacVert.png
 pacRose = ./src/ressources/image/personnage/pacRose.png
 pacRouge = ./src/ressources/image/personnage/pacRouge.png
 
-
+musique1 = ./src/ressources/musique/pacmantheme.ogg
+musique2 = ./src/ressources/musique/bruno.ogg
+musique3 = ./src/ressources/musique/supporter.ogg
+musique4 = ./src/ressources/musique/mario.ogg
+musique5 = ./src/ressources/musique/hellokitty.ogg
 
 
 

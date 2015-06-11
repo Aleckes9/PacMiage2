@@ -134,7 +134,7 @@ public class PartieController extends BasicGame {
 
         PacMiageController controller = new PacMiageController(this.player, this);
         container.getInput().addKeyListener(controller);
-        background = new Music("./src/ressources/musique/bruno.ogg");
+        background = new Music(Configuration.getInstance().recupererValeur("musique"+String.valueOf(niveau)));
         background.setVolume(0.5f);
         background.loop();
         son = new Sound("./src/ressources/musique/0218.ogg");
