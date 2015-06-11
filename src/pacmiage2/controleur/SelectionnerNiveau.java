@@ -51,7 +51,7 @@ public class SelectionnerNiveau implements ActionListener {
 
         j.setBackground(Color.black);
         niveaux.setBackground(Color.black);
-        niveaux.setLayout(new BoxLayout(niveaux, BoxLayout.PAGE_AXIS));
+        niveaux.setLayout(new BoxLayout(niveaux, BoxLayout.LINE_AXIS));
         Font f1 = new Font("Kristen ITC", Font.PLAIN, 50);
 
         titre.setFont(f1);

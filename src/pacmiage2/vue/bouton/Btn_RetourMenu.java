@@ -6,6 +6,7 @@
 package pacmiage2.vue.bouton;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Font;
 import javax.swing.JButton;
 import pacmiage2.controleur.RetourMenu;

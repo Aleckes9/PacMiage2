@@ -36,10 +36,10 @@ public class FenetrePrincipale extends JFrame {
         this.setContentPane(jpanel);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setBackground(Color.BLACK);
-        this.setBounds(0, 0, (int)tailleEcran.getWidth(), (int)tailleEcran.getHeight());
-           //this.setUndecorated(true);
-        
-        jpanel.setPreferredSize(new Dimension((int)tailleEcran.getWidth(), (int)tailleEcran.getHeight()));
+        this.setBounds(0, 0, (int) tailleEcran.getWidth(), (int) tailleEcran.getHeight());
+        this.setUndecorated(true);
+
+        jpanel.setPreferredSize(new Dimension((int) tailleEcran.getWidth(), (int) tailleEcran.getHeight()));
         jpanel.setBackground(Color.black);
         this.setVisible(true);
     }
@@ -55,17 +55,12 @@ public class FenetrePrincipale extends JFrame {
     public void initFenetreShop() throws IOException, FileNotFoundException, ClassNotFoundException, InstantiationException, IllegalAccessException {
         new Eshop_AfficheEshop(this);
     }
-    
-    
-    
 
-    
-        public void executerPartie(int niveau, String cheminCarte) throws SlickException {
-        
+    public void executerPartie(int niveau, String cheminCarte) throws SlickException {
+
         partieController = new PartieController(niveau, cheminCarte);
 
     }
-    
 
     public JPanel getJpanel() {
         return jpanel;
@@ -75,13 +70,9 @@ public class FenetrePrincipale extends JFrame {
         this.jpanel = jpanel;
     }
 
-
-
     public JoueurInfo getJoueur() {
         return joueur;
     }
-
-
 
     public PartieController getPartieController() {
         return partieController;
@@ -94,18 +85,5 @@ public class FenetrePrincipale extends JFrame {
     public static Dimension getTailleEcran() {
         return tailleEcran;
     }
-    
-    
-
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
 }

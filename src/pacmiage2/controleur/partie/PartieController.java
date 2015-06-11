@@ -81,7 +81,7 @@ public class PartieController extends BasicGame {
 
     @Override
     public void init(GameContainer container) throws SlickException {
-        this.timer.start();
+        
         this.container = container;
         this.map.init(cheminCarte);
         int idDepartFant = 0;
@@ -138,7 +138,7 @@ public class PartieController extends BasicGame {
         background.setVolume(0.5f);
         background.loop();
         son = new Sound("./src/ressources/musique/0218.ogg");
-
+        this.timer.start();
     }
 
     public ControleurTemps getTimer() {

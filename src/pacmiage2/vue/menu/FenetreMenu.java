@@ -1,11 +1,13 @@
 
 package pacmiage2.vue.menu;
 
+import java.awt.BorderLayout;
 import pacmiage2.modele.FenetrePrincipale;
 import java.awt.GridLayout;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Cursor;
+import java.awt.Dimension;
 import java.awt.Font;
 import java.io.IOException;
 import javax.swing.BoxLayout;
@@ -58,8 +60,8 @@ public final class FenetreMenu {
         boutons.add(nouvellepartie);
         boutons.add(store);
         boutons.add(quitter);
-        boutons.add(record);       
-        jPanel.setLayout(new GridLayout(3, 0));
+        boutons.add(record);   
+
         jPanel.add(logo);
         jPanel.add(boutons);
    
@@ -91,6 +93,8 @@ public final class FenetreMenu {
         changerLangue.setDisabledIcon(changerLangue.getIcon());
         changerLangue.addActionListener(new FenetreMenuListener(fenetre));
         changerLangue.setName("langue");
+        changerLangue.setPreferredSize(new Dimension(fenetre.getWidth(), fenetre.getHeight()/8));
+        changerLangue.setSize(fenetre.getWidth(), fenetre.getHeight()/8);
     }
     
     public void initButtonOptions(){
