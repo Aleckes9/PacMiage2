@@ -213,9 +213,9 @@
   <object id="352" name="origineFantome" type="origineFantome" x="335" y="270" width="32" height="32"/>
   <object id="353" name="temps" type="temps" x="729" y="115" width="56" height="48"/>
   <object id="355" name="score" type="score" x="309" y="115" width="56" height="48"/>
-  <object id="356" name="objet" x="245" y="20" width="50" height="50"/>
-  <object id="358" name="objet" x="421" y="19" width="50" height="50"/>
-  <object id="359" name="objet" x="773" y="19" width="50" height="50"/>
-  <object id="360" name="objet" x="597" y="19" width="50" height="50"/>
+  <object id="356" name="objet" type="objet" x="245" y="20" width="50" height="50"/>
+  <object id="358" name="objet" type="objet" x="421" y="19" width="50" height="50"/>
+  <object id="359" name="objet" type="objet" x="773" y="19" width="50" height="50"/>
+  <object id="360" name="objet" type="objet" x="597" y="19" width="50" height="50"/>
  </objectgroup>
 </map>
