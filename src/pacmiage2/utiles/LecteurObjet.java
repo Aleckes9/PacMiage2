@@ -33,7 +33,7 @@ public class LecteurObjet {
         try {
             //On crée un nouveau document JDOM avec en argument le fichier XML
 
-            document = sxb.build(new File("./src/ressources/image/eshop/objet.xml"));
+            document = sxb.build(new File(Configuration.getInstance().recupererValeur("listeBonus")));
         } catch (JDOMException | IOException e) {
             System.out.println("Fichier de la liste d'objet non trouvé");
         }

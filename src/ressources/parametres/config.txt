@@ -49,6 +49,8 @@ objetGhost = ./src/ressources/image/eshop/ghost.png
 
 graine = ./src/ressources/image/objet/graine.png
 
+listeBonus = ./src/ressources/bonus/objet.xml
+
 
 
 
