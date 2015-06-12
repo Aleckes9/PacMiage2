@@ -3,25 +3,6 @@
 
 <question niveau="1">
     <text>
-    	Qu'est-ce qu'un algorithme ?
-
-    </text>
-    <reponse rep="false">
-    	Un problème de décision
-    </reponse>
-        <reponse rep="true">
-    	Une méthode ou un procédé décrit pas à pas
-    </reponse>
-        <reponse rep="false">
-    	Un langage de programmation
-    </reponse>
-        <reponse rep="false">
-    	Un code numérique
-    </reponse>
-</question>
-
-<question niveau="1">
-    <text>
     	Dans une pile, le dernier arrivé est<choix></choix>
 
     </text>
@@ -378,7 +359,7 @@ on ne sait pas
 </question>
 
 
-<question niveau="2">
+<question niveau="3">
     <text>
 On ajoute dans dans une table de hachage les couples(1;clou) et (2;masse). On parcours la table: Quelle sera la première valeur parcourue?<choix></choix>
 
@@ -394,6 +375,401 @@ on ne sait pas
 		</reponse>
 	
 </question>
+<question niveau="3">
+    <text>
+    	Qu'est-ce qu'un algorithme ?
 
+    </text>
+    <reponse rep="false">
+    	Un problème de décision
+    </reponse>
+        <reponse rep="true">
+    	Une méthode ou un procédé décrit pas à pas
+    </reponse>
+        <reponse rep="false">
+    	Un langage de programmation
+    </reponse>
+        <reponse rep="false">
+    	Un code numérique
+    </reponse>
+</question>
+
+<question niveau="3">
+    <text>
+    	Qu'y a-t-il de commun entre une recette de cuisine et un algorithme ?
+    </text>
+    <reponse rep="false">
+    	On peut les appliquer comme des théorèmes
+    </reponse>
+        <reponse rep="false">
+    	Aucun point commun, une recette n'a rien de mathématique
+    </reponse>
+        <reponse rep="false">
+    	Appliquez-les et dans tous les cas, vous obtiendrez un bon résultat
+    </reponse>
+        <reponse rep="true">
+    	Il s'agit d'une suite d'instructions
+    </reponse>
+</question>
+
+<question niveau="3">
+    <text>
+    	Comment se définit la complexité en temps d'un algorithme calculant un résultat à partir d'un paramètre fourni ?
+    </text>
+    <reponse rep="false">
+    	Elle est en général indépendante de la taille de son paramètre d'entrée
+    </reponse>
+        <reponse rep="false">
+    	C'est le temps en milli-secondes de son exécution sur un processeur Pentium
+    </reponse>
+        <reponse rep="true">
+    	C'est l'ordre de grandeur du nombre d'opérations de base effectuées lors de l'exécution de l'algorithme en fonction de la taille de son paramètre d'entrée
+    </reponse>
+        <reponse rep="false">
+    	C'est le nombre exact d'opérations de base effectuées lors de l'exécution de l'algorithme en fonction de la taille de son paramètre d'entrée
+    </reponse>
+</question>
+
+<question niveau="3">
+    <text>
+    	Comment peut-on trier par ordre alphabétique un fichier de 1000 noms ?
+    </text>
+    <reponse rep="false">
+    	Il existe un seul algorithme
+    </reponse>
+        <reponse rep="false">
+    	 Il existe plusieurs algorithmes, dont certains sont plus rapides à exécuter dans tous les cas
+    </reponse>
+        <reponse rep="true">
+    	Il existe plusieurs algorithmes, dont certains sont plus rapides à exécuter en moyenne
+    </reponse>
+        <reponse rep="false">
+    	Aucun algorithme ne peut trier 1000 noms
+    </reponse>
+</question>
+
+<question niveau="3">
+    <text>
+    	Qu'est-ce qu'un arbre ?
+    </text>
+    <reponse rep="false">
+    	Un réseau ad hoc
+    </reponse>
+        <reponse rep="true">
+    	Une structure de données permettant de représenter de façon compacte les éléments d'un ensemble
+    </reponse>
+        <reponse rep="false">
+    	Un modèle de calcul de croissance des plantes
+    </reponse>
+        <reponse rep="false">
+    	Une instruction d'un langage informatique
+    </reponse>
+</question>
+
+<question niveau="3">
+    <text>
+    	Quel type de tri n'existe pas ?
+    </text>
+    <reponse rep="false">
+    	Le tri fusion
+    </reponse>
+        <reponse rep="false">
+    	Le tri rapide
+    </reponse>
+        <reponse rep="false">
+    	Le tri par insertion
+    </reponse>
+        <reponse rep="true">
+    	Le tri par déduction
+    </reponse>
+</question>
+
+<question niveau="3">
+    <text>
+    	Dans un arbre, quel est le sens d'un parcours postfixe ?
+    </text>
+    <reponse rep="false">
+    	Fils gauche - Racine - Fils droite
+    </reponse>
+        <reponse rep="false">
+    	Fils droite - Racine - Fils gauche
+    </reponse>
+        <reponse rep="false">
+    	Racine - Fils gauche - Fils droite
+    </reponse>
+        <reponse rep="true">
+    	Fils gauche - Fils droit - Racine
+    </reponse>
+</question>
+
+<question niveau="3">
+    <text>
+    	Dans un arbre, quel est le sens d'un parcours infixe ?
+    </text>
+    <reponse rep="true">
+    	Fils gauche - Racine - Fils droite
+    </reponse>
+        <reponse rep="false">
+    	Fils droite - Racine - Fils gauche
+    </reponse>
+        <reponse rep="false">
+    	Racine - Fils gauche - Fils droite
+    </reponse>
+        <reponse rep="false">
+    	Fils gauche - Fils droit - Racine
+    </reponse>
+</question>
+
+<question niveau="3">
+    <text>
+    	Dans un arbre, quel est le sens d'un parcours préfixe ?
+    </text>
+    <reponse rep="false">
+    	Fils gauche - Racine - Fils droite
+    </reponse>
+        <reponse rep="false">
+    	Fils droite - Racine - Fils gauche
+    </reponse>
+        <reponse rep="true">
+    	Racine - Fils gauche - Fils droite
+    </reponse>
+        <reponse rep="false">
+    	Fils gauche - Fils droit - Racine
+    </reponse>
+</question>
+
+<question niveau="4">
+    <text>
+    	Parmi ces propositions, laquelle est une structure de données élémentaire ?
+    </text>
+    <reponse rep="true">
+    	La file à priorité
+    </reponse>
+        <reponse rep="false">
+    	La pile à priorité
+    </reponse>
+        <reponse rep="false">
+    	Le vecteur à priorité
+    </reponse>
+        <reponse rep="false">
+    	La liste à priorité
+    </reponse>
+</question>
+
+<question niveau="4">
+    <text>
+    	Lequel de ces arbres n'existe pas ?
+    </text>
+    <reponse rep="false">
+    	L'arbre binaire de recherche
+    </reponse>
+        <reponse rep="true">
+    	L'arbre binaire équilibré
+    </reponse>
+        <reponse rep="false">
+    	Arbre équilibré
+    </reponse>
+        <reponse rep="false">
+    	Arbre AVL
+    </reponse>
+</question>
+ 
+<question niveau="4">
+    <text>
+    	Quelle est la prochaine étape d'un tri par séléction pour la suite suivante : 2-4-3-1 ?
+    </text>
+    <reponse rep="false">
+    	1-2-4-3
+    </reponse>
+        <reponse rep="true">
+    	1-4-3-2
+    </reponse>
+        <reponse rep="false">
+    	1-2-3-4
+    </reponse>
+        <reponse rep="false">
+    	4-2-3-1
+    </reponse>
+</question>
+
+<question niveau="4">
+    <text>
+    	Quelle est la prochaine étape d'un tri par insertion pour la suite suivante : 2-4-3-1 ?
+    </text>
+    <reponse rep="true">
+    	1-2-4-3
+    </reponse>
+        <reponse rep="false">
+    	1-4-3-2
+    </reponse>
+        <reponse rep="false">
+    	1-2-3-4
+    </reponse>
+        <reponse rep="false">
+    	2-3-4-1
+    </reponse>
+</question>
+
+<question niveau="4">
+    <text>
+    	Quelle est la prochaine étape d'un tri à bulle pour la suite suivante : 1-4-5-2-8 ?
+    </text>
+    <reponse rep="false">
+    	1-4-5-8-2
+    </reponse>
+        <reponse rep="false">
+    	1-2-4-5-8
+    </reponse>
+        <reponse rep="false">
+    	1-4-5-2-8
+    </reponse>
+        <reponse rep="true">
+    	1-4-2-5-8
+    </reponse>
+</question>
+
+<question niveau="4">
+    <text>
+    	Pour un tableau de longueur 3, la complexité du tri par tas est :
+    </text>
+    <reponse rep="false">
+    	O(3)
+    </reponse>
+        <reponse rep="false">
+    	O(log(3))
+    </reponse>
+        <reponse rep="true">
+    	O(3log(3))
+    </reponse>
+        <reponse rep="false">
+    	O(1)
+    </reponse>
+</question>
+
+<question niveau="4">
+    <text>
+    	la méthode sommet() appartient à :
+    </text>
+    <reponse rep="false">
+    	la file
+    </reponse>
+        <reponse rep="true">
+    	la pile
+    </reponse>
+        <reponse rep="false">
+    	aux deux
+    </reponse>
+        <reponse rep="false">
+    	aucune de ces deux structures
+    </reponse>
+</question>
+
+<question niveau="4">
+    <text>
+    	la méthode tete() appartient à :
+    </text>
+    <reponse rep="true">
+    	la file
+    </reponse>
+        <reponse rep="false">
+    	la pile
+    </reponse>
+        <reponse rep="false">
+    	aux deux
+    </reponse>
+        <reponse rep="false">
+    	aucune de ces deux structures
+    </reponse>
+</question>
+
+<question niveau="4">
+    <text>
+    	Une récursive terminale signifie que :
+    </text>
+    <reponse rep="false">
+    	il s'agit de la dernière récursive de la classe
+    </reponse>
+        <reponse rep="true">
+    	on ne peut effectuer de calcul derrière la récursive
+    </reponse>
+        <reponse rep="false">
+    	il est impossible de la convertir en fonction non récursive
+    </reponse>
+</question>
+
+<question niveau="4">
+    <text>
+    	Une fonction récursive peut être écrite en fonction itérative :
+    </text>
+    <reponse rep="false">
+    	oui
+    </reponse>
+        <reponse rep="true">
+    	non
+    </reponse>
+        <reponse rep="false">
+    	on ne sait pas
+    </reponse>
+</question>
+
+<question niveau="5">
+    <text>
+    	Lors de condition, il prend moins de mémoire d'utiliser :
+    </text>
+    <reponse rep="true">
+    	un switch
+    </reponse>
+        <reponse rep="false">
+    	un if
+    </reponse>
+        <reponse rep="false">
+    	les deux vont à la même vitesse
+    </reponse>
+</question>
+
+<question niveau="5">
+    <text>
+    	Quelle méthode ne permet pas de résoudre des collisions dans une table de chainage :
+    </text>
+    <reponse rep="false">
+    	l'adressage ouvert
+    </reponse>
+        <reponse rep="false">
+    	chaînage des clés qui ont le même hachage
+    </reponse>
+        <reponse rep="true">
+    	suppression des éléments déjà présents
+    </reponse>
+</question>
+
+<question niveau="5">
+    <text>
+    	la priorité d'un code est d'être :
+    </text>
+    <reponse rep="false">
+    	optimisé
+    </reponse>
+        <reponse rep="true">
+    	maintenable
+    </reponse>
+        <reponse rep="false">
+    	lisible
+    </reponse>
+</question>
+
+<question niveau="5">
+    <text>
+    	Ce code est il optimisé for (i=10; i > 5; i--) {int a=4+i;}
+    </text>
+    <reponse rep="false">
+    	oui
+    </reponse>
+        <reponse rep="true">
+    	non
+    </reponse>
+        <reponse rep="false">
+    	on ne peut pas savoir
+    </reponse>
+</question>
 
 </questions>

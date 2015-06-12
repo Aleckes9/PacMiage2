@@ -54,8 +54,8 @@ public class MainPacMiage {
                     game.setShowFPS(false);
                     //limite le framerate pour garder la même vitesse de jeu sur tout les appariels
                     game.setTargetFrameRate(30);
-                    game.setMusicOn(true);
-                    game.setMusicVolume(0.5f);
+                    //game.setMusicOn(true);
+                    //game.setMusicVolume(0.5f);
                     //démarre la partie 
                     game.start();
                     //ferme la partie en cours sans fermer l'application
