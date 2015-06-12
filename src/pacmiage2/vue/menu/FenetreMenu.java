@@ -64,7 +64,7 @@ public final class FenetreMenu {
 
         jPanel.add(changerLangue);
         logo.setBounds(0, insets.top, fenetre.getWidth(), fenetre.getHeight() / 4);
-        boutons.setBounds(0, insets.top + (int) (logo.getHeight() * 1.2), fenetre.getWidth(), fenetre.getHeight() / 4);
+        boutons.setBounds(0, insets.top + (int) (logo.getHeight() * 1.2), fenetre.getWidth(), (fenetre.getHeight()/3)+100);
         changerLangue.setBounds(fenetre.getWidth() / 2 - changerLangue.getIcon().getIconWidth() / 2, boutons.getY() + (int) (boutons.getHeight() * 1.2), changerLangue.getIcon().getIconWidth(), changerLangue.getIcon().getIconHeight());
 
         fenetre.revalidate();

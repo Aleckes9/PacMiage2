@@ -73,7 +73,7 @@ public class PartieController extends BasicGame {
         score = new Partie_AffichageScore();
         temps = new Partie_AffichageTemps();
         this.niveau = niveau;
-        timer = new ControleurTemps(10);
+        timer = new ControleurTemps(120);
         affichageBonus = new Partie_AffichageObjetBonus[4];
         multiplicateur = 1;
         collision = true;
@@ -232,6 +232,7 @@ public class PartieController extends BasicGame {
                 ouvertureQuestion();
                 JoueurInfo.getInstance().setRecord(score.getFutureScore());
                 JoueurInfo.getInstance().ajouterGraines(score.getFutureScore());
+                gameOver = true;
             }
         }
 
@@ -268,6 +269,13 @@ public class PartieController extends BasicGame {
         }else{
             if (this.imageVeracite.isInvisible()) {
                 container.exit();
+            }
+        }
+        
+        
+        if(tempsBonus!= null && tempsBonus.getTempsRestant() == 0){
+            for (Fantome fantome : listFantome) {
+                fantome.setVitesse(4);
             }
         }
 
