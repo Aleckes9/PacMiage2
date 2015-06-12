@@ -6,7 +6,7 @@
 package pacmiage2.vue.eshop;
 
 import pacmiage2.vue.bouton.Eshop_BtnAcheter;
-import pacmiage2.modele.FenetrePrincipale;
+import pacmiage2.vue.menu.FenetrePrincipale;
 import pacmiage2.modele.Objet;
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -15,7 +15,6 @@ import java.awt.GridLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import pacmiage2.modele.JoueurInfo;
 
 /**
  * Affiche un objet donné avec son nom, son image, sa description et son prix
@@ -24,32 +23,32 @@ import pacmiage2.modele.JoueurInfo;
  */
 public class Eshop_AfficheObjet {
 
-    public Eshop_AfficheObjet(JPanel f, Objet it, boolean b, FenetrePrincipale eshopFenetre) {
+    public Eshop_AfficheObjet(JPanel panel, Objet objet, boolean affBtnAchat, FenetrePrincipale eshopFenetre) {
 
         /**
          * Paramètres de l'affichage du nom
          */
-        JLabel nom = new JLabel(it.getNom());
+        JLabel nom = new JLabel(objet.getNom());
         nom.setForeground(Color.white);
         nom.setFont(new Font(null, 40, 40));
 
         /**
          * Paramètres de l'affichage du prix
          */
-        JLabel prix = new JLabel("" + it.getPrix());
+        JLabel prix = new JLabel("" + objet.getPrix());
         prix.setForeground(Color.white);
         prix.setFont(new Font(null, 10, 40));
         /**
          * Paramètres de l'affichage de la description
          */
-        JLabel description = new JLabel(it.getDescription());
+        JLabel description = new JLabel(objet.getDescription());
         description.setForeground(Color.white);
         description.setFont(new Font(null, 20, 20));
 
         /**
          * Paramètre de l'affichage de l'image
          */
-        ImageIcon icon = new ImageIcon(it.getImage());
+        ImageIcon icon = new ImageIcon(objet.getImage());
         JLabel image = new JLabel(icon);
 
         JLabel j = new JLabel();
@@ -70,22 +69,26 @@ public class Eshop_AfficheObjet {
         layout1.setVgap(5);
         k.setLayout(layout2);
         k.add(prix);
-        if (b == true) {
-            k.add(new Eshop_BtnAcheter(it, eshopFenetre));
+        if (affBtnAchat == true) {
+            k.add(new Eshop_BtnAcheter(objet, eshopFenetre));
         }
         /**
          * Ajout des éléments à la fenêtre
          */
         GridLayout layout = new GridLayout(1, 0);
 
-        f.setLayout(layout);
+        panel.setLayout(layout);
 
-        f.add(image);
+        panel.add(image);
 
-        f.add(j);
-        f.add(k);
+        panel.add(j);
+        panel.add(k);
 
-        f.setBackground(Color.black);
+        panel.setBackground(Color.black);
+
+    }
+
+    public void afficher() {
 
     }
 }

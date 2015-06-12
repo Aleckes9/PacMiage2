@@ -11,7 +11,7 @@ import java.util.logging.Logger;
  * <b>Importation_Config est la class utilisée pour récuperer nôtre fichiers de
  * configuration et retourner un properties utilisable.</b>
  *
- * @author Dupuis.Alexandre
+ * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
  * @version 1.0
  */
 public final class Configuration {
@@ -28,7 +28,7 @@ public final class Configuration {
      * Chemin d'accès au fichier de configuration
      */
     private String cheminConfig = "./src/ressources/parametres/config.txt";
-    private static Configuration config = new Configuration();
+    private static final Configuration config = new Configuration();
 
     /**
      * Constructeur vide de la class Importation_Config

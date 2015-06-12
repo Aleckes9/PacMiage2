@@ -6,9 +6,9 @@ import javax.swing.Timer;
 
 /**
  *
- * @author Aleckes9
+ * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
  */
-public class ControleurTemps {
+public final class ControleurTemps {
 
     /**
      * timer : timer servant à décrémenter le chronometre
@@ -28,7 +28,7 @@ public class ControleurTemps {
     /**
      * Construction du chronometre
      *
-     * @param N : le nombre de secondes initial
+     * @param temps
      */
     public ControleurTemps(int temps) {
         timer = createTimer();
@@ -83,7 +83,7 @@ public class ControleurTemps {
 
     public void setTempsRestant(int tempsRestant) {
         if (tempsRestant < 0) {
-            tempsRestant = 0;
+            this.tempsRestant = 0;
         } else {
             this.tempsRestant = tempsRestant;
         }

@@ -1,7 +1,5 @@
 package pacmiage2.vue.menu;
 
-import java.awt.BorderLayout;
-import pacmiage2.modele.FenetrePrincipale;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Cursor;
@@ -14,7 +12,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import pacmiage2.controleur.FenetreMenuListener;
+import listener.FenetreMenuListener;
 import pacmiage2.modele.JoueurInfo;
 import pacmiage2.utiles.Session;
 
@@ -29,7 +27,7 @@ public final class FenetreMenu {
     private final JPanel jPanel = new JPanel();
     private final JPanel boutons = new JPanel();
 
-    private final JLabel logo = new JLabel(new ImageIcon(".\\src\\ressources\\image\\logo\\logo.png"));
+    private final JLabel logo = new JLabel(new ImageIcon("./src/ressources/image/logo/logo.png"));
     private final JLabel record = new JLabel("Record : " + String.valueOf(JoueurInfo.getInstance().getRecord()));
 
     private final JButton nouvellepartie = new JButton();
@@ -64,7 +62,7 @@ public final class FenetreMenu {
 
         jPanel.add(changerLangue);
         logo.setBounds(0, insets.top, fenetre.getWidth(), fenetre.getHeight() / 4);
-        boutons.setBounds(0, insets.top + (int) (logo.getHeight() * 1.2), fenetre.getWidth(), (fenetre.getHeight()/3)+100);
+        boutons.setBounds(0, insets.top + (int) (logo.getHeight() * 1.2), fenetre.getWidth(), (fenetre.getHeight() / 3) + 100);
         changerLangue.setBounds(fenetre.getWidth() / 2 - changerLangue.getIcon().getIconWidth() / 2, boutons.getY() + (int) (boutons.getHeight() * 1.2), changerLangue.getIcon().getIconWidth(), changerLangue.getIcon().getIconHeight());
 
         fenetre.revalidate();

@@ -1,7 +1,7 @@
 package pacmiage2.controleur;
 
 import pacmiage2.controleur.partie.PartieController;
-import pacmiage2.modele.FenetrePrincipale;
+import pacmiage2.vue.menu.FenetrePrincipale;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -15,7 +15,7 @@ import pacmiage2.utiles.SauvegardeFichier;
 
 /**
  *
- * @author Aleckes9
+ * @author @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
  */
 public class MainPacMiage {
 
@@ -45,23 +45,23 @@ public class MainPacMiage {
                 if (mainFenetre.getPartieController() != null) {
                     PartieController partieController;
                     partieController = mainFenetre.getPartieController();
-                    game = new AppGameContainer(partieController, 1024, 768, false);
-                    //game.setDisplayMode(mainFenetre.getWidth(), mainFenetre.getWidth(), false);
-                    //game = new AppGameContainer(partieController, mainFenetre.getWidth(), mainFenetre.getWidth(), false);
+                    game = new AppGameContainer(partieController, 1024, 768, true);
                     partieController.setGame(game);
                     mainFenetre.dispose();
                        
                     game.setShowFPS(false);
+                    
                     //limite le framerate pour garder la même vitesse de jeu sur tout les appariels
                     game.setTargetFrameRate(30);
-                    //game.setMusicOn(true);
-                    //game.setMusicVolume(0.5f);
+
                     //démarre la partie 
                     game.start();
+                    
                     //ferme la partie en cours sans fermer l'application
                     game.setForceExit(false);
                     game.exit();
                     
+                    //Supprime les images déjà enregistré en mémoire
                     InternalTextureLoader.get().clear();
                     mainFenetre.setPartieController(null);
                     mainFenetre.initFenetre();

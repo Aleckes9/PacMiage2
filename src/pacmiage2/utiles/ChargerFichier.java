@@ -8,13 +8,11 @@ import java.io.ObjectInputStream;
 
 /**
  *
- * @author Aleckes9
+ * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
  */
 public class ChargerFichier {
 
     private static final ChargerFichier CHARGER = new ChargerFichier();
-
-    
 
     private ChargerFichier() {
 

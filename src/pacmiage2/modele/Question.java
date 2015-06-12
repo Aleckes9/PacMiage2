@@ -4,23 +4,23 @@
  * and open the template in the editor.
  */
 package pacmiage2.modele;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 
-
-
 /**
  *
- * @author Aleckes9
+ * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
  */
 public class Question {
+
     private int niveau;
     private String choix;
     private ArrayList<Reponse> reponse;
     private String text;
-    
-    public Question(){
-       reponse = new  ArrayList<Reponse>();
+
+    public Question() {
+        reponse = new ArrayList<>();
     }
 
     public String getChoix() {
@@ -30,8 +30,6 @@ public class Question {
     public void setChoix(String choix) {
         this.choix = choix;
     }
-    
-
 
     public ArrayList<Reponse> getReponse() {
         return reponse;
@@ -40,8 +38,6 @@ public class Question {
     public void setReponse(ArrayList<Reponse> reponse) {
         this.reponse = reponse;
     }
-    
-    
 
     public String getText() {
         return text;
@@ -54,8 +50,6 @@ public class Question {
     public boolean isEmptyChoix() {
         return choix.isEmpty();
     }
-
-
 
     public boolean isEmptyReponse() {
         return reponse.isEmpty();
@@ -77,7 +71,6 @@ public class Question {
         return reponse.iterator();
     }
 
-
     public int getNiveau() {
         return niveau;
     }
@@ -86,9 +79,4 @@ public class Question {
         this.niveau = niveau;
     }
 
-
-    
-    
-    
-    
 }

@@ -11,16 +11,16 @@ import java.io.Serializable;
  * Objet de l'eshop caractérisé par un nom, une image, une description et un
  * prix
  *
- * @author Maëlle
+ * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
  */
 public class Objet  implements Serializable {
 
-    private String nom;
-    private String image;
-    private String miniImage;
-    private String description;
+    private final String nom;
+    private final String image;
+    private final String miniImage;
+    private final String description;
     private Bonus bonus;
-    private int prix;
+    private final int prix;
 
     public Objet(String nom, String image, String description, int prix,String miniImage) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
         this.nom = nom;

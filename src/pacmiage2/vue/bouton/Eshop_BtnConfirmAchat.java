@@ -1,8 +1,8 @@
 
 package pacmiage2.vue.bouton;
 
-import pacmiage2.controleur.eshop.Eshop_Action_Achat;
-import pacmiage2.modele.FenetrePrincipale;
+import listener.Eshop_Action_Achat;
+import pacmiage2.vue.menu.FenetrePrincipale;
 import pacmiage2.modele.Objet;
 import java.awt.Color;
 import java.awt.Font;

@@ -13,9 +13,16 @@ public class Partie_AffichageObjetBonus {
 
     private Objet objet;
     private int x, y;
-    private int width, height;
-    private Image imageGraine;
+    private final int width, height;
+    private final Image imageGraine;
 
+    /**
+     *
+     * @param objet
+     * @param x
+     * @param y
+     * @throws SlickException
+     */
     public Partie_AffichageObjetBonus(Objet objet, int x, int y) throws SlickException {
         this.objet = objet;
         this.x = x;
@@ -25,54 +32,84 @@ public class Partie_AffichageObjetBonus {
         height = imageGraine.getHeight();
     }
 
-    public Partie_AffichageObjetBonus() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public void init() throws SlickException {
-
-    }
-
+    /**
+     *
+     * @param g
+     */
     public void render(Graphics g) {
         g.drawImage(imageGraine, x, y);
     }
 
+    /**
+     *
+     * @param delta
+     */
     public void update(int delta) {
 
     }
 
+    /**
+     *
+     * @return
+     */
     public int getX() {
         return x;
     }
 
+    /**
+     *
+     * @param x
+     */
     public void setX(int x) {
         this.x = x;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getY() {
         return y;
     }
 
+    /**
+     *
+     * @param y
+     */
     public void setY(int y) {
         this.y = y;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getYMillieu() {
         return y + (height / 2);
     }
 
+    /**
+     *
+     * @return
+     */
     public int getXMillieu() {
         return x + (width / 2);
     }
 
+    /**
+     *
+     * @return
+     */
     public Objet getObjet() {
         return objet;
     }
 
+    /**
+     *
+     * @param objet
+     */
     public void setBonus(Objet objet) {
         this.objet = objet;
     }
-    
-    
-}
 
+}

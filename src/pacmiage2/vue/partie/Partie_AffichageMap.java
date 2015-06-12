@@ -5,8 +5,6 @@
  */
 package pacmiage2.vue.partie;
 
-import java.util.ArrayList;
-import org.newdawn.slick.Color;
 import org.newdawn.slick.Image;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.tiled.TiledMap;
@@ -20,8 +18,6 @@ public class Partie_AffichageMap {
     private TiledMap tiledMap;
     private int tileW;
     private int tileH;
-    
-
 
     // méthodes d’initialisation et d'affichage  [...]
     public void init(String cheminCarte) throws SlickException {

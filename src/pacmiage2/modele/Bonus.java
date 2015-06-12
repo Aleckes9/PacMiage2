@@ -5,7 +5,7 @@ import pacmiage2.controleur.partie.PartieController;
 
 /**
  *
- * @author Aleckes9
+ * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
  */
 public interface Bonus extends Serializable{
     

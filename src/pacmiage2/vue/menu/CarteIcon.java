@@ -12,19 +12,17 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.Icon;
 
-public class CarteIcon implements Icon{
+public class CarteIcon implements Icon {
 
     private BufferedImage image;
 
     public CarteIcon(String chemin) {
-       try {                
-          image = ImageIO.read(new File(chemin));
-       } catch (IOException ex) {
+        try {
+            image = ImageIO.read(new File(chemin));
+        } catch (IOException ex) {
             // handle exception...
-       }
+        }
     }
-
-
 
     public BufferedImage getImage() {
         return image;
@@ -36,7 +34,7 @@ public class CarteIcon implements Icon{
 
     @Override
     public void paintIcon(Component c, Graphics g, int x, int y) {
-        g.drawImage(image, 0, 0, null); 
+        g.drawImage(image, 0, 0, null);
     }
 
     @Override
@@ -46,9 +44,7 @@ public class CarteIcon implements Icon{
 
     @Override
     public int getIconHeight() {
-       return image.getHeight();
+        return image.getHeight();
     }
-    
-    
 
 }

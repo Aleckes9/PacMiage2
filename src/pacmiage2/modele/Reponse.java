@@ -7,22 +7,23 @@ package pacmiage2.modele;
 
 /**
  *
- * @author Aleckes9
+ * @author @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël
+ * Senand
  */
 public class Reponse {
-    
+
     private String text;
     private boolean veracite;
-    
-        public Reponse(){
-        
+
+    public Reponse() {
+
     }
-    
-    public Reponse(String text, boolean veracite){
-        
+
+    public Reponse(String text, boolean veracite) {
+
         this.text = text;
         this.veracite = veracite;
-        
+
     }
 
     public String getText() {
@@ -40,9 +41,5 @@ public class Reponse {
     public void setVeracite(boolean veracite) {
         this.veracite = veracite;
     }
-    
-    
-    
-    
-}
 
+}

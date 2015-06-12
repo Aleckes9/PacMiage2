@@ -7,7 +7,7 @@ package pacmiage2.vue.eshop;
 
 import pacmiage2.vue.bouton.Eshop_BtnConfirmAchat;
 import pacmiage2.vue.bouton.Eshop_BtnRetourEshop;
-import pacmiage2.modele.FenetrePrincipale;
+import pacmiage2.vue.menu.FenetrePrincipale;
 import pacmiage2.modele.Objet;
 import java.awt.Color;
 import java.awt.Font;
@@ -16,7 +16,6 @@ import java.awt.event.ActionEvent;
 import javax.swing.AbstractAction;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import pacmiage2.modele.JoueurInfo;
 import pacmiage2.utiles.Session;
 
 /**
@@ -36,18 +35,18 @@ public class Eshop_AfficheConfirmAcheter extends AbstractAction {
 
     @Override
     public void actionPerformed(ActionEvent ae) {
-        
+
         eshopFenetre.dispose();
         eshopFenetre.initFenetre();
-        
+
         JPanel g = new JPanel();
-        
+
         JLabel texte = new JLabel();
         JPanel d = new JPanel();
         g.setBackground(Color.BLACK);
         new Eshop_AfficheObjet(d, it, false, eshopFenetre);
         texte.setText(Session.getInstance().recupererValeur("confirmation"));
-        
+
         texte.setForeground(Color.white);
         texte.setFont(new Font(null, 40, 40));
         Eshop_BtnConfirmAchat oui = new Eshop_BtnConfirmAchat(it, eshopFenetre);

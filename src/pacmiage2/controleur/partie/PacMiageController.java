@@ -17,12 +17,12 @@ import pacmiage2.modele.PacMiage;
 
 /**
  *
- * @author Alexandre
+ * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
  */
 public class PacMiageController implements KeyListener {
 
-    private PacMiage player;
-    private PartieController partie;
+    private final PacMiage player;
+    private final PartieController partie;
 
     public PacMiageController(PacMiage player, PartieController partie) {
         this.player = player;
@@ -89,17 +89,12 @@ public class PacMiageController implements KeyListener {
                         partie.getContainer().sleep(50);
                     }
                     partie.getGame().setFullscreen(true);
-                    while(!partie.getGame().isFullscreen()){
-                        
-                    }
                     partie.getContainer().resume();
                     partie.getTimer().start();
 
-                } catch (IOException ex) {
+                } catch (IOException | SlickException ex) {
                     Logger.getLogger(PacMiageController.class.getName()).log(Level.SEVERE, null, ex);
-                } catch (SlickException ex) {
-                Logger.getLogger(PacMiageController.class.getName()).log(Level.SEVERE, null, ex);
-            }
+                }
             }
             break;
         }

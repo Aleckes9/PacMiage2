@@ -16,12 +16,10 @@ import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
-import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-
 import javax.swing.JTextPane;
 import javax.swing.text.AttributeSet;
 import javax.swing.text.SimpleAttributeSet;
@@ -160,27 +158,27 @@ public class Question_FenetreQuestion extends JFrame {
         panel.setLayout(new FlowLayout());
         valider = new JButton("Valider");
         panel.add(valider);
-            valider.setForeground(Color.white);
-            valider.setBackground(Color.black);
-            valider.setBorderPainted(false);
-            valider.setFocusPainted(false);
-            valider.setFont(new Font("Kristen ITC", Font.PLAIN, 25));
+        valider.setForeground(Color.white);
+        valider.setBackground(Color.black);
+        valider.setBorderPainted(false);
+        valider.setFocusPainted(false);
+        valider.setFont(new Font("Kristen ITC", Font.PLAIN, 25));
 
-            valider.setCursor(new Cursor(Cursor.HAND_CURSOR));
-            valider.setAlignmentX(Component.CENTER_ALIGNMENT);
+        valider.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        valider.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-            valider.addMouseListener(new java.awt.event.MouseAdapter() {
-                @Override
-                public void mouseEntered(java.awt.event.MouseEvent evt) {
-                    valider.setForeground(Color.GREEN);
-                }
+        valider.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                valider.setForeground(Color.GREEN);
+            }
 
-                @Override
-                public void mouseExited(java.awt.event.MouseEvent evt) {
+            @Override
+            public void mouseExited(java.awt.event.MouseEvent evt) {
 
-                    valider.setForeground(Color.white);
-                }
-            });
+                valider.setForeground(Color.white);
+            }
+        });
         valider.addActionListener(new FenetreQuestionListener(this));
         return panel;
     }

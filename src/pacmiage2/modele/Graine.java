@@ -5,29 +5,25 @@
  */
 package pacmiage2.modele;
 
-import org.newdawn.slick.Animation;
-import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
 import org.newdawn.slick.SlickException;
-import org.newdawn.slick.SpriteSheet;
+import pacmiage2.utiles.Configuration;
 
 /**
  *
- * @author Aleckes9
+ * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
  */
 public class Graine {
 
-    private String name;
     private int x, y;
-    private int width, height;
-    private Image imageGraine;
+    private final int width, height;
+    private final Image imageGraine;
 
-    public Graine(String name, int x, int y) throws SlickException {
-        this.name = name;
+    public Graine(int x, int y) throws SlickException {
         this.x = x;
         this.y = y;
-        imageGraine = new Image("./src/ressources/image/objet/graine.png");
+        imageGraine = new Image(Configuration.getInstance().recupererValeur("graine"));
         width = imageGraine.getWidth();
         height = imageGraine.getHeight();
     }

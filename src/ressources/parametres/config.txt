@@ -2,6 +2,9 @@
 
 ##### donn�es utiles au Jeu PacMiage ##########
 
+questions = ./src/ressources/questions/questions.xml
+
+
 #Emplacement du fichier de sauvegarde
 pathSauvegarde = ./src/ressources/sauvegarde/sauvegarde.txt
 
@@ -33,6 +36,7 @@ pacBleu = ./src/ressources/image/personnage/pacBleu.png
 pacVert = ./src/ressources/image/personnage/pacVert.png
 pacRose = ./src/ressources/image/personnage/pacRose.png
 pacRouge = ./src/ressources/image/personnage/pacRouge.png
+helloK = ./src/ressources/image/personnage/helloK.png
 pacInvincible = ./src/ressources/image/personnage/pacInvincible.png
 
 musique1 = ./src/ressources/musique/pacmantheme.ogg
@@ -40,6 +44,10 @@ musique2 = ./src/ressources/musique/bruno.ogg
 musique3 = ./src/ressources/musique/uefa.ogg
 musique4 = ./src/ressources/musique/mario.ogg
 musique5 = ./src/ressources/musique/hellokitty.ogg
+
+objetGhost = ./src/ressources/image/eshop/ghost.png
+
+graine = ./src/ressources/image/objet/graine.png
 
 
 

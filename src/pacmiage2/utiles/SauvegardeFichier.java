@@ -14,14 +14,14 @@ import java.io.Serializable;
 
 /**
  *
- * @author Maëlle Cloitre
+ * @author Maëlle Cloitre / Alexandre Dupuis / Axel Nini / Raphaël Senand
  */
 public class SauvegardeFichier implements Serializable {
 
     private static final SauvegardeFichier SAUVEGARDE = new SauvegardeFichier();
 
     private SauvegardeFichier() {
-        
+
     }
 
     /**
@@ -35,7 +35,7 @@ public class SauvegardeFichier implements Serializable {
     public void enregistrerFichier(Object monObjetSerializable, String cheminFichier) throws FileNotFoundException, IOException {
 
         File f = new File(cheminFichier);
-        if(!f.exists()){
+        if (!f.exists()) {
             f.createNewFile();
         }
         FileOutputStream fos = new FileOutputStream(f);
@@ -44,7 +44,7 @@ public class SauvegardeFichier implements Serializable {
         }
     }
 
-        public static SauvegardeFichier getInstance() {
+    public static SauvegardeFichier getInstance() {
         return SAUVEGARDE;
     }
 }

@@ -5,7 +5,7 @@
  */
 package pacmiage2.vue.bouton;
 
-import pacmiage2.modele.FenetrePrincipale;
+import pacmiage2.vue.menu.FenetrePrincipale;
 import pacmiage2.modele.Objet;
 import java.awt.Color;
 import javax.swing.ImageIcon;

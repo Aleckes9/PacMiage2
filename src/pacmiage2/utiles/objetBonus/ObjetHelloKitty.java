@@ -2,6 +2,7 @@ package pacmiage2.utiles.objetBonus;
 
 import pacmiage2.controleur.partie.PartieController;
 import pacmiage2.modele.Bonus;
+import pacmiage2.utiles.Configuration;
 
 /**
  *
@@ -11,7 +12,7 @@ public class ObjetHelloKitty implements Bonus {
 
     @Override
     public void executerBonus(PartieController partie) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        partie.getPlayer().setImagePac(Configuration.getInstance().recupererValeur("helloK"));
     }
     
 }

@@ -5,14 +5,12 @@
  */
 package pacmiage2.vue.bouton;
 
-import pacmiage2.controleur.Action_Btn_Objet;
-import pacmiage2.modele.JoueurInfo;
-import pacmiage2.modele.FenetrePrincipale;
+import listener.Action_Btn_Objet;
+import pacmiage2.vue.menu.FenetrePrincipale;
 import pacmiage2.modele.Objet;
 import java.awt.Color;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JFrame;
 
 /**
  *

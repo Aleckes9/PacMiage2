@@ -15,28 +15,28 @@ import org.w3c.dom.NodeList;
 
 /**
  *
- * @author Aleckes9
+ * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
  */
 public class QuestionBuilder {
 
-    private List<Question> questions;
-    private Element racine;
+    private final List<Question> questions;
+    private final Element racine;
 
     public QuestionBuilder(Element racine) {
         this.racine = racine;
-        questions = new ArrayList<Question>();
+        questions = new ArrayList<>();
         fabriquerQuestion();
     }
 
     public Question getQuestion(int niveau) {
-        List<Question> listQuestionNv = new ArrayList<Question>();
+        List<Question> listQuestionNv = new ArrayList<>();
         for (Question qestion : questions) {
-            if(qestion.getNiveau() == niveau){
+            if (qestion.getNiveau() == niveau) {
                 listQuestionNv.add(qestion);
             }
         }
         int indice = (int) ((Math.random() * 100) % listQuestionNv.size());
-        return questions.get(indice);
+        return listQuestionNv.get(indice);
     }
 
     private void fabriquerQuestion() {
@@ -48,11 +48,11 @@ public class QuestionBuilder {
                 Question question = new Question();
                 final Element questionNoeud = (Element) racineNoeuds.item(i);
                 question.setNiveau(Integer.parseInt(questionNoeud.getAttribute("niveau")));
-                
+
                 final NodeList text = questionNoeud.getElementsByTagName("text");
                 final Element textNoeud = (Element) text.item(0);
                 question.setText(textNoeud.getTextContent().trim());
-                
+
                 final NodeList reponses = questionNoeud.getElementsByTagName("reponse");
                 for (int j = 0; j < reponses.getLength(); j++) {
                     Reponse reponse = new Reponse();

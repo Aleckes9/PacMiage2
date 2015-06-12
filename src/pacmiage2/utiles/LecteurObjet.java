@@ -7,22 +7,24 @@ package pacmiage2.utiles;
 
 import pacmiage2.modele.Objet;
 import java.io.File;
+import java.io.IOException;
 import java.util.Iterator;
 import java.util.List;
 import org.jdom2.Document;
 import org.jdom2.Element;
+import org.jdom2.JDOMException;
 import org.jdom2.input.SAXBuilder;
 
 /**
  * Lecture du fichier contenant les objets et création d'un tableau d'objet
  *
- * @author Maëlle
+ * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
  */
 public class LecteurObjet {
 
     private static Document document;
     private static Element racine;
-    private Objet[] objet;
+    private final Objet[] objet;
 
     public LecteurObjet() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 
@@ -32,7 +34,7 @@ public class LecteurObjet {
             //On crée un nouveau document JDOM avec en argument le fichier XML
 
             document = sxb.build(new File("./src/ressources/image/eshop/objet.xml"));
-        } catch (Exception e) {
+        } catch (JDOMException | IOException e) {
             System.out.println("Fichier de la liste d'objet non trouvé");
         }
 
@@ -50,7 +52,7 @@ public class LecteurObjet {
         while (i.hasNext()) {
 
             Element courant = (Element) i.next();
-            objet[n] = new Objet(courant.getChildText("nom"), courant.getChildText("image"), courant.getChild("description").getChildText(Session.getInstance().getLocale().toString()), Integer.parseInt(courant.getChildText("prix")),courant.getChildText("mini_image"));
+            objet[n] = new Objet(courant.getChildText("nom"), courant.getChildText("image"), courant.getChild("description").getChildText(Session.getInstance().getLocale().toString()), Integer.parseInt(courant.getChildText("prix")), courant.getChildText("mini_image"));
             n++;
         }
     }

@@ -5,7 +5,7 @@
  */
 package pacmiage2.vue.eshop;
 
-import pacmiage2.modele.FenetrePrincipale;
+import pacmiage2.vue.menu.FenetrePrincipale;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
@@ -25,7 +25,6 @@ import pacmiage2.vue.bouton.Btn_Objet;
  */
 public class AfficheBarreInformation extends JPanel {
 
-
     public AfficheBarreInformation(FenetrePrincipale fenetre) {
 
         JoueurInfo joueur = JoueurInfo.getInstance();
@@ -39,11 +38,11 @@ public class AfficheBarreInformation extends JPanel {
         graine.setForeground(Color.WHITE);
         this.add(graine, BorderLayout.WEST);
         this.setLayout(new GridLayout(0, 6));
-        
+
         for (Objet objetDispo : joueur.getObjetDispo()) {
             this.add(new Btn_Objet(objetDispo, fenetre));
         }
-        
+
         Btn_RetourMenu bt = new Btn_RetourMenu(fenetre);
         this.add(bt);
     }

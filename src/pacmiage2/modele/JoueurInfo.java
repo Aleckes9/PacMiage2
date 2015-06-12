@@ -10,14 +10,14 @@ import java.lang.reflect.Array;
 
 /**
  *
- * @author Maëlle
+ * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
  */
 public class JoueurInfo implements Serializable {
 
     private static JoueurInfo JOUEUR;
     private int graines;
     private int record;
-    private Objet[] objetDispo;
+    private final Objet[] objetDispo;
     private int nbObjets;
     /*
      * Constructeur JoueurInfo

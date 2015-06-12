@@ -5,7 +5,7 @@
  */
 package pacmiage2.vue.eshop;
 
-import pacmiage2.modele.FenetrePrincipale;
+import pacmiage2.vue.menu.FenetrePrincipale;
 import pacmiage2.modele.Objet;
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -20,8 +20,7 @@ import pacmiage2.utiles.LecteurObjet;
  *
  * @author Maëlle
  */
-public class Eshop_AfficheEshop {
-
+public final class Eshop_AfficheEshop {
 
     //  public Eshop_AfficheEshop(JoueurInfo joueur) {
     public Eshop_AfficheEshop(FenetrePrincipale f) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
@@ -42,7 +41,7 @@ public class Eshop_AfficheEshop {
         JScrollPane scroll = buildListObjet(f);
         f.add(scroll);
         f.add(new AfficheBarreInformation(f), BorderLayout.NORTH);
-        
+
         f.repaint();
         f.setVisible(true);
 
@@ -63,13 +62,10 @@ public class Eshop_AfficheEshop {
         GridLayout layout = new GridLayout(objet.length, 0);
         layout.setVgap(30);
         jPanelObjet.setLayout(layout);
-        for (int n = 0; n < objet.length; n++) {
-
+        for (Objet objet1 : objet) {
             JPanel h = new JPanel();
-
-            new Eshop_AfficheObjet(h, objet[n], true, f);
+            Eshop_AfficheObjet eshop_AfficheObjet = new Eshop_AfficheObjet(h, objet1, true, f);
             jPanelObjet.add(h);
-
         }
 
         JScrollPane scroll = new JScrollPane(jPanelObjet);
