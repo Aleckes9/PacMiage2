@@ -37,7 +37,9 @@ public class Action_Btn_Objet extends AbstractAction {
             f.setBounds(FenetrePrincipale.getTailleEcran().width / 4, FenetrePrincipale.getTailleEcran().height / 4, 4 * FenetrePrincipale.getTailleEcran().width / 8, FenetrePrincipale.getTailleEcran().height / 2);
             f.setBackground(Color.black);
             JPanel panel = new JPanel();
-            Eshop_AfficheObjet eshop_AfficheObjet = new Eshop_AfficheObjet(panel, it, false, eshopFenetre);
+            if(it!=null){
+                Eshop_AfficheObjet eshop_AfficheObjet = new Eshop_AfficheObjet(panel, it, false, eshopFenetre);
+            }
             Component add = f.add(panel);
             f.setVisible(true);
         

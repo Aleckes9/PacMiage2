@@ -70,8 +70,8 @@ public class Fantome {
 
     private Animation loadAnimation(SpriteSheet spriteSheet, int startX, int endX, int y) {
         Animation animation = new Animation();
-        for (int i = startX; endX >= i; i++) {
-            animation.addFrame(spriteSheet.getSprite(i, y), 100);
+        for (int x = startX; x < endX; x++) {
+            animation.addFrame(spriteSheet.getSprite(x, y), 100);
         }
         return animation;
     }
