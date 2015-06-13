@@ -12,6 +12,8 @@ import static org.junit.Assert.*;
  * @author Aleckes9
  */
 public class SauvegardeFichierTest {
+      
+    SauvegardeFichier instance;
             
     public SauvegardeFichierTest() {
     }
@@ -26,6 +28,7 @@ public class SauvegardeFichierTest {
     
     @Before
     public void setUp() {
+        instance = SauvegardeFichier.getInstance();
     }
     
     @After
@@ -40,7 +43,6 @@ public class SauvegardeFichierTest {
         System.out.println("enregistrerFichier");
         Object monObjetSerializable = null;
         String cheminFichier = "";
-        SauvegardeFichier instance = new SauvegardeFichier();
         instance.enregistrerFichier(monObjetSerializable, cheminFichier);
     }
     

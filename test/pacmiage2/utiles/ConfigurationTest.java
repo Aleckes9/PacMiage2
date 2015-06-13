@@ -13,6 +13,8 @@ import static org.junit.Assert.*;
  */
 public class ConfigurationTest {
     
+    Configuration instance;
+    
     public ConfigurationTest() {
     }
     
@@ -26,6 +28,7 @@ public class ConfigurationTest {
     
     @Before
     public void setUp() {
+        instance = Configuration.getInstance();
     }
     
     @After
@@ -39,7 +42,6 @@ public class ConfigurationTest {
     public void testRecupererValeur() {
         System.out.println("recupererValeur");
         String cle = "";
-        Configuration instance = new Configuration();
         String expResult = null;
         String result = instance.recupererValeur(cle);
         assertEquals(expResult, result);
@@ -51,7 +53,7 @@ public class ConfigurationTest {
     @Test
     public void testGetInstance() {
         System.out.println("getInstance");
-        Configuration expResult = new Configuration();
+        Configuration expResult = instance;
         Configuration result = Configuration.getInstance();
         assertEquals(expResult, result);
     }

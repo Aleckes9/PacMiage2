@@ -14,6 +14,7 @@ import static org.junit.Assert.*;
 public class JoueurInfoTest {
     
     Objet[] objetDispo;
+    JoueurInfo instance;
     
     public JoueurInfoTest() {
     }
@@ -28,7 +29,7 @@ public class JoueurInfoTest {
     
     @Before
     public void setUp() {
-        
+        instance = JoueurInfo.getInstance();       
     }
     
     @After
@@ -41,7 +42,6 @@ public class JoueurInfoTest {
     @Test
     public void testGetNbObjet() {
         System.out.println("getNbObjet");
-        JoueurInfo instance = JoueurInfo.getInstance();
         int expResult = 0;
         int result = instance.getNbObjet();
         assertEquals(expResult, result);
@@ -54,7 +54,6 @@ public class JoueurInfoTest {
     public void testAjouterGraines() {
         System.out.println("ajouterGraines");
         int n = 0;
-        JoueurInfo instance = new JoueurInfo();
         instance.ajouterGraines(n);
     }
 
@@ -65,7 +64,6 @@ public class JoueurInfoTest {
     public void testRetirerGraines() {
         System.out.println("retirerGraines");
         int n = 0;
-        JoueurInfo instance = new JoueurInfo();
         instance.retirerGraines(n);
     }
 
@@ -75,7 +73,6 @@ public class JoueurInfoTest {
     @Test
     public void testGetGraines() {
         System.out.println("getGraines");
-        JoueurInfo instance = new JoueurInfo();
         int expResult = 0;
         int result = instance.getGraines();
         assertEquals(expResult, result);
@@ -87,7 +84,6 @@ public class JoueurInfoTest {
     @Test
     public void testGetRecord() {
         System.out.println("getRecord");
-        JoueurInfo instance = new JoueurInfo();
         int expResult = 0;
         int result = instance.getRecord();
         assertEquals(expResult, result);
@@ -99,7 +95,6 @@ public class JoueurInfoTest {
     @Test
     public void testGetObjetDispo() {
         System.out.println("getObjetDispo");
-        JoueurInfo instance = new JoueurInfo();
         Objet[] expResult = null;
         Objet[] result = instance.getObjetDispo();
         assertArrayEquals(expResult, result);
@@ -112,7 +107,6 @@ public class JoueurInfoTest {
     public void testSetRecord() {
         System.out.println("setRecord");
         int record = 0;
-        JoueurInfo instance = new JoueurInfo();
         instance.setRecord(record);
     }
 
@@ -123,7 +117,6 @@ public class JoueurInfoTest {
     public void testAjouterObjet() {
         System.out.println("ajouterObjet");
         Objet o = null;
-        JoueurInfo instance = new JoueurInfo();
         boolean expResult = true;
         boolean result = instance.ajouterObjet(o);
         assertEquals(expResult, result);
@@ -136,7 +129,6 @@ public class JoueurInfoTest {
     public void testRetirerObjet() {
         System.out.println("retirerObjet");
         Objet o = null;
-        JoueurInfo instance = new JoueurInfo();
         instance.retirerObjet(o);
     }
 
@@ -157,7 +149,7 @@ public class JoueurInfoTest {
     @Test
     public void testSetInstance() {
         System.out.println("setInstance");
-        JoueurInfo joueur = new JoueurInfo();
+        JoueurInfo joueur = JoueurInfo.getInstance();
         JoueurInfo.setInstance(joueur);
     }
     

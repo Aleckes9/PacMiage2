@@ -54,7 +54,7 @@ public class PartieControllerTest {
     @Test
     public void testInit() throws Exception {
         System.out.println("init");
-        container = new GameContainer(game);
+        container = null;
         PartieController instance = new PartieController(unNiveau, unCheminCarte);
         instance.init(container);
     }

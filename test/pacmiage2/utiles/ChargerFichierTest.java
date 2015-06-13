@@ -39,7 +39,7 @@ public class ChargerFichierTest {
     public void testLectureFichier() throws Exception {
         System.out.println("lectureFichier");
         String cheminFichier = "";
-        ChargerFichier instance = new ChargerFichier();
+        ChargerFichier instance = ChargerFichier.getInstance();
         Object expResult = null;
         Object result = instance.lectureFichier(cheminFichier);
         assertEquals(expResult, result);

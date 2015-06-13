@@ -15,6 +15,8 @@ import static org.junit.Assert.*;
  */
 public class SessionTest {
     
+    Session instance;
+            
     public SessionTest() {
     }
     
@@ -28,6 +30,7 @@ public class SessionTest {
     
     @Before
     public void setUp() {
+        instance = Session.getInstance();
     }
     
     @After
@@ -41,7 +44,6 @@ public class SessionTest {
     public void testRecupererValeur() {
         System.out.println("recupererValeur");
         String cle = "";
-        Session instance = new Session();
         String expResult = null;
         String result = instance.recupererValeur(cle);
         assertEquals(expResult, result);
@@ -53,7 +55,7 @@ public class SessionTest {
     @Test
     public void testLoad() throws Exception {
         System.out.println("load");
-        String filename = "";
+        String filename = "./src/ressources/properties/pacfr.properties";
         Properties expResult = null;
         Properties result = Session.load(filename);
         assertEquals(expResult, result);
@@ -66,7 +68,6 @@ public class SessionTest {
     public void testSetLocale() {
         System.out.println("setLocale");
         Locale locale = Locale.FRENCH;
-        Session instance = new Session();
         instance.setLocale(locale);
     }
 
