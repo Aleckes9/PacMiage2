@@ -7,12 +7,24 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import pacmiage2.modele.JoueurInfo;
+import pacmiage2.vue.menu.FenetrePrincipale;
 
 /**
  *
  * @author Aleckes9
  */
 public class FenetreMenuListenerTest {
+    
+    FenetrePrincipale fenetre;
+    JoueurInfo joueur;
+    ActionEvent ae;
+    
+    Object source;
+    int id;
+    String command;
+    long when;
+    int modifiers;
     
     public FenetreMenuListenerTest() {
     }
@@ -27,6 +39,7 @@ public class FenetreMenuListenerTest {
     
     @Before
     public void setUp() {
+        fenetre = new FenetrePrincipale(joueur);
     }
     
     @After
@@ -39,11 +52,9 @@ public class FenetreMenuListenerTest {
     @Test
     public void testActionPerformed() {
         System.out.println("actionPerformed");
-        ActionEvent ae = null;
-        FenetreMenuListener instance = null;
+        ActionEvent ae = new ActionEvent(source,  id,  command,  when,  modifiers);
+        FenetreMenuListener instance = new FenetreMenuListener(fenetre);
         instance.actionPerformed(ae);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
     
 }

@@ -9,7 +9,8 @@ import org.newdawn.slick.Music;
  * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
  */
 public class ActionSon extends AbstractAction{
-Music musique;
+
+    Music musique;
 
     public ActionSon(Music musique) {
         this.musique = musique;

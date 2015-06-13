@@ -34,6 +34,7 @@ public class Partie_AffichageMapTest {
 
     /**
      * Test of init method, of class Partie_AffichageMap.
+     * @throws java.lang.Exception
      */
     @Test
     public void testInit() throws Exception {
@@ -41,8 +42,6 @@ public class Partie_AffichageMapTest {
         String cheminCarte = "";
         Partie_AffichageMap instance = new Partie_AffichageMap();
         instance.init(cheminCarte);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -53,8 +52,6 @@ public class Partie_AffichageMapTest {
         System.out.println("renderBackground");
         Partie_AffichageMap instance = new Partie_AffichageMap();
         instance.renderBackground();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**

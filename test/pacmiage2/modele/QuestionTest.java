@@ -15,6 +15,10 @@ import static org.junit.Assert.*;
  */
 public class QuestionTest {
     
+    String choix;
+    String text;
+    boolean veracite;
+    
     public QuestionTest() {
     }
     
@@ -35,20 +39,6 @@ public class QuestionTest {
     }
 
     /**
-     * Test of getChoix method, of class Question.
-     */
-    @Test
-    public void testGetChoix() {
-        System.out.println("getChoix");
-        Question instance = new Question();
-        String expResult = "";
-        String result = instance.getChoix();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
      * Test of setChoix method, of class Question.
      */
     @Test
@@ -57,22 +47,6 @@ public class QuestionTest {
         String choix = "";
         Question instance = new Question();
         instance.setChoix(choix);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getReponse method, of class Question.
-     */
-    @Test
-    public void testGetReponse_0args() {
-        System.out.println("getReponse");
-        Question instance = new Question();
-        ArrayList<Reponse> expResult = null;
-        ArrayList<Reponse> result = instance.getReponse();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -81,25 +55,9 @@ public class QuestionTest {
     @Test
     public void testSetReponse() {
         System.out.println("setReponse");
-        ArrayList<Reponse> reponse = null;
+        ArrayList<Reponse> reponse = new ArrayList<Reponse>();
         Question instance = new Question();
         instance.setReponse(reponse);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getText method, of class Question.
-     */
-    @Test
-    public void testGetText() {
-        System.out.println("getText");
-        Question instance = new Question();
-        String expResult = "";
-        String result = instance.getText();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -111,37 +69,8 @@ public class QuestionTest {
         String text = "";
         Question instance = new Question();
         instance.setText(text);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
-    /**
-     * Test of isEmptyChoix method, of class Question.
-     */
-    @Test
-    public void testIsEmptyChoix() {
-        System.out.println("isEmptyChoix");
-        Question instance = new Question();
-        boolean expResult = false;
-        boolean result = instance.isEmptyChoix();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of isEmptyReponse method, of class Question.
-     */
-    @Test
-    public void testIsEmptyReponse() {
-        System.out.println("isEmptyReponse");
-        Question instance = new Question();
-        boolean expResult = false;
-        boolean result = instance.isEmptyReponse();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
 
     /**
      * Test of getReponse method, of class Question.
@@ -151,11 +80,9 @@ public class QuestionTest {
         System.out.println("getReponse");
         int index = 0;
         Question instance = new Question();
-        Reponse expResult = null;
+        Reponse expResult = new Reponse(text, veracite);
         Reponse result = instance.getReponse(index);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -166,11 +93,9 @@ public class QuestionTest {
         System.out.println("addReponse");
         Reponse e = null;
         Question instance = new Question();
-        boolean expResult = false;
+        boolean expResult = true;
         boolean result = instance.addReponse(e);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -184,8 +109,6 @@ public class QuestionTest {
         Reponse expResult = null;
         Reponse result = instance.removeReponse(index);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -198,8 +121,6 @@ public class QuestionTest {
         Iterator<Reponse> expResult = null;
         Iterator<Reponse> result = instance.iteratorReponse();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -212,8 +133,6 @@ public class QuestionTest {
         int expResult = 0;
         int result = instance.getNiveau();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -225,8 +144,6 @@ public class QuestionTest {
         int niveau = 0;
         Question instance = new Question();
         instance.setNiveau(niveau);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
     
 }

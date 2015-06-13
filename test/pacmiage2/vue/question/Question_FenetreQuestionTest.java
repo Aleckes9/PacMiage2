@@ -18,6 +18,8 @@ import pacmiage2.modele.Question;
  */
 public class Question_FenetreQuestionTest {
     
+    Question question;
+            
     public Question_FenetreQuestionTest() {
     }
     
@@ -31,24 +33,11 @@ public class Question_FenetreQuestionTest {
     
     @Before
     public void setUp() {
+        question = new Question();
     }
     
     @After
     public void tearDown() {
-    }
-
-    /**
-     * Test of getValider method, of class Question_FenetreQuestion.
-     */
-    @Test
-    public void testGetValider() {
-        System.out.println("getValider");
-        Question_FenetreQuestion instance = null;
-        JButton expResult = null;
-        JButton result = instance.getValider();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -58,38 +47,8 @@ public class Question_FenetreQuestionTest {
     public void testSetValider() {
         System.out.println("setValider");
         JButton valider = null;
-        Question_FenetreQuestion instance = null;
+        Question_FenetreQuestion instance = new Question_FenetreQuestion(question);
         instance.setValider(valider);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getQuestion method, of class Question_FenetreQuestion.
-     */
-    @Test
-    public void testGetQuestion() {
-        System.out.println("getQuestion");
-        Question_FenetreQuestion instance = null;
-        Question expResult = null;
-        Question result = instance.getQuestion();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getText method, of class Question_FenetreQuestion.
-     */
-    @Test
-    public void testGetText() {
-        System.out.println("getText");
-        Question_FenetreQuestion instance = null;
-        JTextPane expResult = null;
-        JTextPane result = instance.getText();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -99,10 +58,8 @@ public class Question_FenetreQuestionTest {
     public void testSetText() {
         System.out.println("setText");
         JTextPane text = null;
-        Question_FenetreQuestion instance = null;
+        Question_FenetreQuestion instance = new Question_FenetreQuestion(question);
         instance.setText(text);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -111,25 +68,8 @@ public class Question_FenetreQuestionTest {
     @Test
     public void testSetQuestion() {
         System.out.println("setQuestion");
-        Question question = null;
-        Question_FenetreQuestion instance = null;
+        Question_FenetreQuestion instance = new Question_FenetreQuestion(question);
         instance.setQuestion(question);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getPanelGlobal method, of class Question_FenetreQuestion.
-     */
-    @Test
-    public void testGetPanelGlobal() {
-        System.out.println("getPanelGlobal");
-        Question_FenetreQuestion instance = null;
-        JPanel expResult = null;
-        JPanel result = instance.getPanelGlobal();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -139,24 +79,8 @@ public class Question_FenetreQuestionTest {
     public void testSetPanelGlobal() {
         System.out.println("setPanelGlobal");
         JPanel panelGlobal = null;
-        Question_FenetreQuestion instance = null;
+        Question_FenetreQuestion instance = new Question_FenetreQuestion(question);
         instance.setPanelGlobal(panelGlobal);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getBoutons method, of class Question_FenetreQuestion.
-     */
-    @Test
-    public void testGetBoutons() {
-        System.out.println("getBoutons");
-        Question_FenetreQuestion instance = null;
-        ArrayList<JButton> expResult = null;
-        ArrayList<JButton> result = instance.getBoutons();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -166,24 +90,8 @@ public class Question_FenetreQuestionTest {
     public void testSetBoutons() {
         System.out.println("setBoutons");
         ArrayList<JButton> boutons = null;
-        Question_FenetreQuestion instance = null;
+        Question_FenetreQuestion instance = new Question_FenetreQuestion(question);
         instance.setBoutons(boutons);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getLabel method, of class Question_FenetreQuestion.
-     */
-    @Test
-    public void testGetLabel() {
-        System.out.println("getLabel");
-        Question_FenetreQuestion instance = null;
-        JTextPane expResult = null;
-        JTextPane result = instance.getLabel();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -193,10 +101,8 @@ public class Question_FenetreQuestionTest {
     public void testSetLabel() {
         System.out.println("setLabel");
         JTextPane label = null;
-        Question_FenetreQuestion instance = null;
+        Question_FenetreQuestion instance = new Question_FenetreQuestion(question);
         instance.setLabel(label);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -205,10 +111,8 @@ public class Question_FenetreQuestionTest {
     @Test
     public void testFermer() {
         System.out.println("fermer");
-        Question_FenetreQuestion instance = null;
+        Question_FenetreQuestion instance = new Question_FenetreQuestion(question);
         instance.fermer();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -218,10 +122,8 @@ public class Question_FenetreQuestionTest {
     public void testSetChoix() {
         System.out.println("setChoix");
         boolean unChoix = false;
-        Question_FenetreQuestion instance = null;
+        Question_FenetreQuestion instance = new Question_FenetreQuestion(question);
         instance.setChoix(unChoix);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -230,12 +132,10 @@ public class Question_FenetreQuestionTest {
     @Test
     public void testIsChoix() {
         System.out.println("isChoix");
-        Question_FenetreQuestion instance = null;
+        Question_FenetreQuestion instance = new Question_FenetreQuestion(question);
         boolean expResult = false;
         boolean result = instance.isChoix();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
     
 }

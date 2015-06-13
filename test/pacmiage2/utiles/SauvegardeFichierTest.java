@@ -12,7 +12,7 @@ import static org.junit.Assert.*;
  * @author Aleckes9
  */
 public class SauvegardeFichierTest {
-    
+            
     public SauvegardeFichierTest() {
     }
     
@@ -40,23 +40,8 @@ public class SauvegardeFichierTest {
         System.out.println("enregistrerFichier");
         Object monObjetSerializable = null;
         String cheminFichier = "";
-        SauvegardeFichier instance = null;
+        SauvegardeFichier instance = new SauvegardeFichier();
         instance.enregistrerFichier(monObjetSerializable, cheminFichier);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getInstance method, of class SauvegardeFichier.
-     */
-    @Test
-    public void testGetInstance() {
-        System.out.println("getInstance");
-        SauvegardeFichier expResult = null;
-        SauvegardeFichier result = SauvegardeFichier.getInstance();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
     
 }

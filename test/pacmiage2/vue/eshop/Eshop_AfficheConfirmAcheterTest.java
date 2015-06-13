@@ -7,6 +7,8 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import pacmiage2.modele.Objet;
+import pacmiage2.vue.menu.FenetrePrincipale;
 
 /**
  *
@@ -14,6 +16,9 @@ import static org.junit.Assert.*;
  */
 public class Eshop_AfficheConfirmAcheterTest {
     
+    Objet it;
+    FenetrePrincipale eshopFenetre;
+            
     public Eshop_AfficheConfirmAcheterTest() {
     }
     
@@ -40,10 +45,8 @@ public class Eshop_AfficheConfirmAcheterTest {
     public void testActionPerformed() {
         System.out.println("actionPerformed");
         ActionEvent ae = null;
-        Eshop_AfficheConfirmAcheter instance = null;
+        Eshop_AfficheConfirmAcheter instance = new Eshop_AfficheConfirmAcheter(it, eshopFenetre);
         instance.actionPerformed(ae);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
     
 }

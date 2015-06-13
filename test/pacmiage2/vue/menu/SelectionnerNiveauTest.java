@@ -6,6 +6,8 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import static pacmiage2.controleur.MainPacMiage.joueur;
+import pacmiage2.modele.JoueurInfo;
 
 /**
  *
@@ -13,6 +15,9 @@ import static org.junit.Assert.*;
  */
 public class SelectionnerNiveauTest {
     
+    FenetrePrincipale fenetre1;
+    JoueurInfo JOUEUR;
+            
     public SelectionnerNiveauTest() {
     }
     
@@ -26,6 +31,7 @@ public class SelectionnerNiveauTest {
     
     @Before
     public void setUp() {
+        fenetre1 = new FenetrePrincipale(joueur);
     }
     
     @After
@@ -38,10 +44,8 @@ public class SelectionnerNiveauTest {
     @Test
     public void testInitFenetre() {
         System.out.println("initFenetre");
-        SelectionnerNiveau instance = null;
+        SelectionnerNiveau instance = new SelectionnerNiveau(fenetre1);
         instance.initFenetre();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -50,10 +54,8 @@ public class SelectionnerNiveauTest {
     @Test
     public void testInitBoutons() {
         System.out.println("initBoutons");
-        SelectionnerNiveau instance = null;
+        SelectionnerNiveau instance = new SelectionnerNiveau(fenetre1);
         instance.initBoutons();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
     
 }

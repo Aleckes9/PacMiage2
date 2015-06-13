@@ -6,6 +6,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.newdawn.slick.SlickException;
 import pacmiage2.controleur.partie.PartieController;
 
 /**
@@ -13,6 +14,9 @@ import pacmiage2.controleur.partie.PartieController;
  * @author Aleckes9
  */
 public class BonusTest {
+    
+    int unNiveau;
+    String unCheminCarte;
     
     public BonusTest() {
     }
@@ -37,13 +41,11 @@ public class BonusTest {
      * Test of executerBonus method, of class Bonus.
      */
     @Test
-    public void testExecuterBonus() {
+    public void testExecuterBonus() throws SlickException {
         System.out.println("executerBonus");
-        PartieController partie = null;
+        PartieController partie = new PartieController(unNiveau, unCheminCarte);
         Bonus instance = new BonusImpl();
         instance.executerBonus(partie);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     public class BonusImpl implements Bonus {

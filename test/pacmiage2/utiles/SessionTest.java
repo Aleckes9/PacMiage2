@@ -41,12 +41,10 @@ public class SessionTest {
     public void testRecupererValeur() {
         System.out.println("recupererValeur");
         String cle = "";
-        Session instance = null;
-        String expResult = "";
+        Session instance = new Session();
+        String expResult = null;
         String result = instance.recupererValeur(cle);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -59,22 +57,6 @@ public class SessionTest {
         Properties expResult = null;
         Properties result = Session.load(filename);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getLocale method, of class Session.
-     */
-    @Test
-    public void testGetLocale() {
-        System.out.println("getLocale");
-        Session instance = null;
-        Locale expResult = null;
-        Locale result = instance.getLocale();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -83,24 +65,10 @@ public class SessionTest {
     @Test
     public void testSetLocale() {
         System.out.println("setLocale");
-        Locale locale = null;
-        Session instance = null;
+        Locale locale = Locale.FRENCH;
+        Session instance = new Session();
         instance.setLocale(locale);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
-    /**
-     * Test of getInstance method, of class Session.
-     */
-    @Test
-    public void testGetInstance() {
-        System.out.println("getInstance");
-        Session expResult = null;
-        Session result = Session.getInstance();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
     
 }

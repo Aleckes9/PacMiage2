@@ -1,14 +1,19 @@
 package pacmiage2.vue.partie;
 
 import java.awt.event.ActionEvent;
+import java.io.IOException;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.newdawn.slick.GameContainer;
+import org.newdawn.slick.SlickException;
+import pacmiage2.controleur.partie.PartieController;
 
 /**
  *
@@ -16,6 +21,12 @@ import static org.junit.Assert.*;
  */
 public class Partie_AffichageMenuPartieTest {
     
+    PartieController partie;
+    int unNiveau;
+    String unCheminCarte;
+    JPanel boutons;
+    GameContainer container;
+            
     public Partie_AffichageMenuPartieTest() {
     }
     
@@ -28,7 +39,9 @@ public class Partie_AffichageMenuPartieTest {
     }
     
     @Before
-    public void setUp() {
+    public void setUp() throws SlickException {
+        partie = new PartieController(unNiveau, unCheminCarte);
+        boutons = new JPanel();
     }
     
     @After
@@ -37,66 +50,47 @@ public class Partie_AffichageMenuPartieTest {
 
     /**
      * Test of initFenetre method, of class Partie_AffichageMenuPartie.
+     * @throws java.io.IOException
      */
     @Test
-    public void testInitFenetre() {
+    public void testInitFenetre() throws IOException {
         System.out.println("initFenetre");
-        Partie_AffichageMenuPartie instance = null;
+        Partie_AffichageMenuPartie instance = new Partie_AffichageMenuPartie(partie);
         instance.initFenetre();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
      * Test of initButton method, of class Partie_AffichageMenuPartie.
+     * @throws java.io.IOException
      */
     @Test
-    public void testInitButton() {
+    public void testInitButton() throws IOException {
         System.out.println("initButton");
-        Partie_AffichageMenuPartie instance = null;
+        Partie_AffichageMenuPartie instance = new Partie_AffichageMenuPartie(partie);
         instance.initButton();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
      * Test of configButton method, of class Partie_AffichageMenuPartie.
+     * @throws java.io.IOException
      */
     @Test
-    public void testConfigButton() {
+    public void testConfigButton() throws IOException {
         System.out.println("configButton");
         JButton button = null;
-        Partie_AffichageMenuPartie instance = null;
+        Partie_AffichageMenuPartie instance = new Partie_AffichageMenuPartie(partie);
         instance.configButton(button);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
      * Test of actionPerformed method, of class Partie_AffichageMenuPartie.
+     * @throws java.io.IOException
      */
     @Test
-    public void testActionPerformed() {
+    public void testActionPerformed() throws IOException {
         System.out.println("actionPerformed");
         ActionEvent ae = null;
-        Partie_AffichageMenuPartie instance = null;
+        Partie_AffichageMenuPartie instance = new Partie_AffichageMenuPartie(partie);
         instance.actionPerformed(ae);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
-
-    /**
-     * Test of getFenetre method, of class Partie_AffichageMenuPartie.
-     */
-    @Test
-    public void testGetFenetre() {
-        System.out.println("getFenetre");
-        Partie_AffichageMenuPartie instance = null;
-        JFrame expResult = null;
-        JFrame result = instance.getFenetre();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-    
 }

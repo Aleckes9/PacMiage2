@@ -1,11 +1,13 @@
 package pacmiage2.utiles;
 
+import java.util.List;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.w3c.dom.Element;
 import pacmiage2.modele.Question;
 
 /**
@@ -13,6 +15,9 @@ import pacmiage2.modele.Question;
  * @author Aleckes9
  */
 public class QuestionBuilderTest {
+    
+    Element racine;
+    List<Question> questions;
     
     public QuestionBuilderTest() {
     }
@@ -39,13 +44,11 @@ public class QuestionBuilderTest {
     @Test
     public void testGetQuestion() {
         System.out.println("getQuestion");
-        int niveau = 0;
-        QuestionBuilder instance = null;
+        int niveau = 1;
+        QuestionBuilder instance = new QuestionBuilder(racine);
         Question expResult = null;
         Question result = instance.getQuestion(niveau);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
     
 }

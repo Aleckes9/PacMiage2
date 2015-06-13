@@ -8,12 +8,16 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
+import org.newdawn.slick.Image;
+import org.newdawn.slick.SlickException;
 
 /**
  *
  * @author Aleckes9
  */
 public class Partie_AffichageImageFonduTest {
+    
+    Image img;
     
     public Partie_AffichageImageFonduTest() {
     }
@@ -28,6 +32,7 @@ public class Partie_AffichageImageFonduTest {
     
     @Before
     public void setUp() {
+        
     }
     
     @After
@@ -42,24 +47,20 @@ public class Partie_AffichageImageFonduTest {
         System.out.println("render");
         Graphics g = null;
         GameContainer container = null;
-        Partie_AffichageImageFondu instance = null;
+        Partie_AffichageImageFondu instance = new Partie_AffichageImageFondu(img);
         instance.render(g, container);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
      * Test of isInvisible method, of class Partie_AffichageImageFondu.
      */
     @Test
-    public void testIsInvisible() {
+    public void testIsInvisible() throws SlickException {
         System.out.println("isInvisible");
-        Partie_AffichageImageFondu instance = null;
+        Partie_AffichageImageFondu instance = new Partie_AffichageImageFondu(img);
         boolean expResult = false;
         boolean result = instance.isInvisible();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
     
 }

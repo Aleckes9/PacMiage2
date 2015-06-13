@@ -7,6 +7,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import org.newdawn.slick.Input;
+import pacmiage2.modele.PacMiage;
 
 /**
  *
@@ -14,6 +15,9 @@ import org.newdawn.slick.Input;
  */
 public class PacMiageControllerTest {
     
+    PacMiage player;
+    PartieController partie;
+            
     public PacMiageControllerTest() {
     }
     
@@ -33,18 +37,6 @@ public class PacMiageControllerTest {
     public void tearDown() {
     }
 
-    /**
-     * Test of setInput method, of class PacMiageController.
-     */
-    @Test
-    public void testSetInput() {
-        System.out.println("setInput");
-        Input input = null;
-        PacMiageController instance = null;
-        instance.setInput(input);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
 
     /**
      * Test of isAcceptingInput method, of class PacMiageController.
@@ -52,12 +44,10 @@ public class PacMiageControllerTest {
     @Test
     public void testIsAcceptingInput() {
         System.out.println("isAcceptingInput");
-        PacMiageController instance = null;
-        boolean expResult = false;
+        PacMiageController instance = new PacMiageController(player,  partie);
+        boolean expResult = true;
         boolean result = instance.isAcceptingInput();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -66,10 +56,8 @@ public class PacMiageControllerTest {
     @Test
     public void testInputEnded() {
         System.out.println("inputEnded");
-        PacMiageController instance = null;
+        PacMiageController instance = new PacMiageController(player,  partie);
         instance.inputEnded();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -78,10 +66,8 @@ public class PacMiageControllerTest {
     @Test
     public void testInputStarted() {
         System.out.println("inputStarted");
-        PacMiageController instance = null;
+        PacMiageController instance = new PacMiageController(player,  partie);
         instance.inputStarted();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -92,10 +78,8 @@ public class PacMiageControllerTest {
         System.out.println("keyPressed");
         int key = 0;
         char c = ' ';
-        PacMiageController instance = null;
+        PacMiageController instance = new PacMiageController(player,  partie);
         instance.keyPressed(key, c);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -106,10 +90,8 @@ public class PacMiageControllerTest {
         System.out.println("keyReleased");
         int key = 0;
         char c = ' ';
-        PacMiageController instance = null;
+        PacMiageController instance = new PacMiageController(player,  partie);
         instance.keyReleased(key, c);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
     
 }

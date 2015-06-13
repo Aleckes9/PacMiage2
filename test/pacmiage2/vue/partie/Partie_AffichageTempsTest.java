@@ -42,8 +42,6 @@ public class Partie_AffichageTempsTest {
         Graphics g = null;
         Partie_AffichageTemps instance = new Partie_AffichageTemps();
         instance.render(g);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -56,8 +54,6 @@ public class Partie_AffichageTempsTest {
         int Ypos = 0;
         Partie_AffichageTemps instance = new Partie_AffichageTemps();
         instance.initPos(xPos, Ypos);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -69,35 +65,6 @@ public class Partie_AffichageTempsTest {
         int delta = 0;
         Partie_AffichageTemps instance = new Partie_AffichageTemps();
         instance.update(delta);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getTemps method, of class Partie_AffichageTemps.
-     */
-    @Test
-    public void testGetTemps() {
-        System.out.println("getTemps");
-        Partie_AffichageTemps instance = new Partie_AffichageTemps();
-        int expResult = 0;
-        int result = instance.getTemps();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of setTemps method, of class Partie_AffichageTemps.
-     */
-    @Test
-    public void testSetTemps() {
-        System.out.println("setTemps");
-        int temps = 0;
-        Partie_AffichageTemps instance = new Partie_AffichageTemps();
-        instance.setTemps(temps);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
     
 }

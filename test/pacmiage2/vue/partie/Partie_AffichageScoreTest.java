@@ -42,8 +42,6 @@ public class Partie_AffichageScoreTest {
         Graphics g = null;
         Partie_AffichageScore instance = new Partie_AffichageScore();
         instance.render(g);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -56,8 +54,6 @@ public class Partie_AffichageScoreTest {
         int Ypos = 0;
         Partie_AffichageScore instance = new Partie_AffichageScore();
         instance.initPos(xPos, Ypos);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -69,62 +65,6 @@ public class Partie_AffichageScoreTest {
         int delta = 0;
         Partie_AffichageScore instance = new Partie_AffichageScore();
         instance.update(delta);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getScore method, of class Partie_AffichageScore.
-     */
-    @Test
-    public void testGetScore() {
-        System.out.println("getScore");
-        Partie_AffichageScore instance = new Partie_AffichageScore();
-        int expResult = 0;
-        int result = instance.getScore();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of setScore method, of class Partie_AffichageScore.
-     */
-    @Test
-    public void testSetScore() {
-        System.out.println("setScore");
-        int score = 0;
-        Partie_AffichageScore instance = new Partie_AffichageScore();
-        instance.setScore(score);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getFutureScore method, of class Partie_AffichageScore.
-     */
-    @Test
-    public void testGetFutureScore() {
-        System.out.println("getFutureScore");
-        Partie_AffichageScore instance = new Partie_AffichageScore();
-        int expResult = 0;
-        int result = instance.getFutureScore();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of setFutureScore method, of class Partie_AffichageScore.
-     */
-    @Test
-    public void testSetFutureScore() {
-        System.out.println("setFutureScore");
-        int futureScore = 0;
-        Partie_AffichageScore instance = new Partie_AffichageScore();
-        instance.setFutureScore(futureScore);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
     
 }

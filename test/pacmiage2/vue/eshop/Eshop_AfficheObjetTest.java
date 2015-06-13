@@ -1,11 +1,14 @@
 package pacmiage2.vue.eshop;
 
+import javax.swing.JPanel;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import pacmiage2.modele.Objet;
+import pacmiage2.vue.menu.FenetrePrincipale;
 
 /**
  *
@@ -13,6 +16,11 @@ import static org.junit.Assert.*;
  */
 public class Eshop_AfficheObjetTest {
     
+    JPanel panel;
+    Objet objet;
+    boolean affBtnAchat;
+    FenetrePrincipale eshopFenetre;
+            
     public Eshop_AfficheObjetTest() {
     }
     
@@ -38,10 +46,8 @@ public class Eshop_AfficheObjetTest {
     @Test
     public void testAfficher() {
         System.out.println("afficher");
-        Eshop_AfficheObjet instance = null;
+        Eshop_AfficheObjet instance = new Eshop_AfficheObjet(panel, objet, affBtnAchat, eshopFenetre);
         instance.afficher();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
     
 }

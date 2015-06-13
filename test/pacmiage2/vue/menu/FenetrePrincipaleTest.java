@@ -17,6 +17,8 @@ import pacmiage2.modele.JoueurInfo;
  */
 public class FenetrePrincipaleTest {
     
+    JoueurInfo joueur;
+    
     public FenetrePrincipaleTest() {
     }
     
@@ -42,10 +44,8 @@ public class FenetrePrincipaleTest {
     @Test
     public void testInitFenetre() {
         System.out.println("initFenetre");
-        FenetrePrincipale instance = null;
+        FenetrePrincipale instance = new FenetrePrincipale(joueur);
         instance.initFenetre();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**

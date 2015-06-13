@@ -7,12 +7,17 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import pacmiage2.modele.JoueurInfo;
+import pacmiage2.vue.menu.FenetrePrincipale;
 
 /**
  *
  * @author Aleckes9
  */
 public class RetourMenuTest {
+    
+    FenetrePrincipale f;
+    JoueurInfo joueur;
     
     public RetourMenuTest() {
     }
@@ -27,6 +32,7 @@ public class RetourMenuTest {
     
     @Before
     public void setUp() {
+        f = new FenetrePrincipale(joueur);
     }
     
     @After
@@ -40,10 +46,8 @@ public class RetourMenuTest {
     public void testActionPerformed() {
         System.out.println("actionPerformed");
         ActionEvent ae = null;
-        RetourMenu instance = null;
+        RetourMenu instance = new RetourMenu(f);
         instance.actionPerformed(ae);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
     
 }

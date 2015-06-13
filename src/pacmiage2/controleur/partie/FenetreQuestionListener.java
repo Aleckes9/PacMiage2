@@ -16,7 +16,7 @@ import pacmiage2.vue.question.Question_FenetreQuestion;
  *
  * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
  */
-public class FenetreQuestionListener  implements ActionListener {
+public class FenetreQuestionListener implements ActionListener {
 
         Question_FenetreQuestion f;
 

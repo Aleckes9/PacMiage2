@@ -33,20 +33,6 @@ public class ReponseTest {
     }
 
     /**
-     * Test of getText method, of class Reponse.
-     */
-    @Test
-    public void testGetText() {
-        System.out.println("getText");
-        Reponse instance = new Reponse();
-        String expResult = "";
-        String result = instance.getText();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
      * Test of setText method, of class Reponse.
      */
     @Test
@@ -55,8 +41,6 @@ public class ReponseTest {
         String text = "";
         Reponse instance = new Reponse();
         instance.setText(text);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -69,8 +53,6 @@ public class ReponseTest {
         boolean expResult = false;
         boolean result = instance.isVeracite();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -82,8 +64,6 @@ public class ReponseTest {
         boolean veracite = false;
         Reponse instance = new Reponse();
         instance.setVeracite(veracite);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
     
 }

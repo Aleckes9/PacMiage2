@@ -16,6 +16,12 @@ import static org.junit.Assert.*;
  */
 public class CarteIconTest {
     
+    int width;
+    int height;
+    int imageType;
+    String chemin;
+    BufferedImage image;
+            
     public CarteIconTest() {
     }
     
@@ -36,30 +42,14 @@ public class CarteIconTest {
     }
 
     /**
-     * Test of getImage method, of class CarteIcon.
-     */
-    @Test
-    public void testGetImage() {
-        System.out.println("getImage");
-        CarteIcon instance = null;
-        BufferedImage expResult = null;
-        BufferedImage result = instance.getImage();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
      * Test of setImage method, of class CarteIcon.
      */
     @Test
     public void testSetImage() {
         System.out.println("setImage");
-        BufferedImage image = null;
-        CarteIcon instance = null;
+        BufferedImage image = new BufferedImage(width, height, imageType);
+        CarteIcon instance = new CarteIcon(chemin);
         instance.setImage(image);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -72,10 +62,8 @@ public class CarteIconTest {
         Graphics g = null;
         int x = 0;
         int y = 0;
-        CarteIcon instance = null;
+        CarteIcon instance = new CarteIcon(chemin);
         instance.paintIcon(c, g, x, y);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -84,12 +72,10 @@ public class CarteIconTest {
     @Test
     public void testGetIconWidth() {
         System.out.println("getIconWidth");
-        CarteIcon instance = null;
+        CarteIcon instance = new CarteIcon(chemin);
         int expResult = 0;
         int result = instance.getIconWidth();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -98,12 +84,10 @@ public class CarteIconTest {
     @Test
     public void testGetIconHeight() {
         System.out.println("getIconHeight");
-        CarteIcon instance = null;
+        CarteIcon instance = new CarteIcon(chemin);
         int expResult = 0;
         int result = instance.getIconHeight();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
     
 }

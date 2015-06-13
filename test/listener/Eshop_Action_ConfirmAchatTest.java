@@ -7,12 +7,18 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import pacmiage2.modele.JoueurInfo;
+import pacmiage2.modele.Objet;
 
 /**
  *
  * @author Aleckes9
  */
 public class Eshop_Action_ConfirmAchatTest {
+    
+    JoueurInfo j;
+    Objet it;
+    String message;
     
     public Eshop_Action_ConfirmAchatTest() {
     }
@@ -40,10 +46,8 @@ public class Eshop_Action_ConfirmAchatTest {
     public void testActionPerformed() {
         System.out.println("actionPerformed");
         ActionEvent ae = null;
-        Eshop_Action_ConfirmAchat instance = null;
+        Eshop_Action_ConfirmAchat instance = new Eshop_Action_ConfirmAchat(j, it);
         instance.actionPerformed(ae);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
     
 }

@@ -39,12 +39,10 @@ public class ConfigurationTest {
     public void testRecupererValeur() {
         System.out.println("recupererValeur");
         String cle = "";
-        Configuration instance = null;
-        String expResult = "";
+        Configuration instance = new Configuration();
+        String expResult = null;
         String result = instance.recupererValeur(cle);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -53,11 +51,9 @@ public class ConfigurationTest {
     @Test
     public void testGetInstance() {
         System.out.println("getInstance");
-        Configuration expResult = null;
+        Configuration expResult = new Configuration();
         Configuration result = Configuration.getInstance();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
     
 }

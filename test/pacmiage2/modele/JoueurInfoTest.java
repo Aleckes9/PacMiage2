@@ -13,6 +13,8 @@ import static org.junit.Assert.*;
  */
 public class JoueurInfoTest {
     
+    Objet[] objetDispo;
+    
     public JoueurInfoTest() {
     }
     
@@ -26,6 +28,7 @@ public class JoueurInfoTest {
     
     @Before
     public void setUp() {
+        
     }
     
     @After
@@ -38,12 +41,10 @@ public class JoueurInfoTest {
     @Test
     public void testGetNbObjet() {
         System.out.println("getNbObjet");
-        JoueurInfo instance = null;
+        JoueurInfo instance = JoueurInfo.getInstance();
         int expResult = 0;
         int result = instance.getNbObjet();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -53,10 +54,8 @@ public class JoueurInfoTest {
     public void testAjouterGraines() {
         System.out.println("ajouterGraines");
         int n = 0;
-        JoueurInfo instance = null;
+        JoueurInfo instance = new JoueurInfo();
         instance.ajouterGraines(n);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -66,10 +65,8 @@ public class JoueurInfoTest {
     public void testRetirerGraines() {
         System.out.println("retirerGraines");
         int n = 0;
-        JoueurInfo instance = null;
+        JoueurInfo instance = new JoueurInfo();
         instance.retirerGraines(n);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -78,12 +75,10 @@ public class JoueurInfoTest {
     @Test
     public void testGetGraines() {
         System.out.println("getGraines");
-        JoueurInfo instance = null;
+        JoueurInfo instance = new JoueurInfo();
         int expResult = 0;
         int result = instance.getGraines();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -92,12 +87,10 @@ public class JoueurInfoTest {
     @Test
     public void testGetRecord() {
         System.out.println("getRecord");
-        JoueurInfo instance = null;
+        JoueurInfo instance = new JoueurInfo();
         int expResult = 0;
         int result = instance.getRecord();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -106,12 +99,10 @@ public class JoueurInfoTest {
     @Test
     public void testGetObjetDispo() {
         System.out.println("getObjetDispo");
-        JoueurInfo instance = null;
+        JoueurInfo instance = new JoueurInfo();
         Objet[] expResult = null;
         Objet[] result = instance.getObjetDispo();
         assertArrayEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -121,10 +112,8 @@ public class JoueurInfoTest {
     public void testSetRecord() {
         System.out.println("setRecord");
         int record = 0;
-        JoueurInfo instance = null;
+        JoueurInfo instance = new JoueurInfo();
         instance.setRecord(record);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -134,12 +123,10 @@ public class JoueurInfoTest {
     public void testAjouterObjet() {
         System.out.println("ajouterObjet");
         Objet o = null;
-        JoueurInfo instance = null;
-        boolean expResult = false;
+        JoueurInfo instance = new JoueurInfo();
+        boolean expResult = true;
         boolean result = instance.ajouterObjet(o);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -149,10 +136,8 @@ public class JoueurInfoTest {
     public void testRetirerObjet() {
         System.out.println("retirerObjet");
         Objet o = null;
-        JoueurInfo instance = null;
+        JoueurInfo instance = new JoueurInfo();
         instance.retirerObjet(o);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -164,8 +149,6 @@ public class JoueurInfoTest {
         JoueurInfo expResult = null;
         JoueurInfo result = JoueurInfo.getInstance();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -174,10 +157,8 @@ public class JoueurInfoTest {
     @Test
     public void testSetInstance() {
         System.out.println("setInstance");
-        JoueurInfo joueur = null;
+        JoueurInfo joueur = new JoueurInfo();
         JoueurInfo.setInstance(joueur);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
     
 }

@@ -14,13 +14,14 @@ import pacmiage2.vue.menu.FenetrePrincipale;
 public class SelectionNiveauListener implements ActionListener {
 
     private final FenetrePrincipale fenetre;
+    
     public SelectionNiveauListener(FenetrePrincipale fenetre) {
         this.fenetre = fenetre;
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-                try {
+        try {
             JButton tp = (JButton) e.getSource();
 
             switch (tp.getText()) {

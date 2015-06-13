@@ -7,6 +7,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import pacmiage2.modele.JoueurInfo;
 import pacmiage2.vue.menu.FenetrePrincipale;
 
 /**
@@ -14,6 +15,8 @@ import pacmiage2.vue.menu.FenetrePrincipale;
  * @author Aleckes9
  */
 public class Eshop_AfficheEshopTest {
+    
+    JoueurInfo joueur;
     
     public Eshop_AfficheEshopTest() {
     }
@@ -40,13 +43,11 @@ public class Eshop_AfficheEshopTest {
     @Test
     public void testBuildListObjet() throws Exception {
         System.out.println("buildListObjet");
-        FenetrePrincipale f = null;
-        Eshop_AfficheEshop instance = null;
+        FenetrePrincipale f = new FenetrePrincipale(joueur);
+        Eshop_AfficheEshop instance = new Eshop_AfficheEshop(f);
         JScrollPane expResult = null;
         JScrollPane result = instance.buildListObjet(f);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
     
 }

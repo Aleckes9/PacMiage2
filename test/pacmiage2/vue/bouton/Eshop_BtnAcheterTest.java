@@ -6,6 +6,8 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import pacmiage2.modele.Objet;
+import pacmiage2.vue.menu.FenetrePrincipale;
 
 /**
  *
@@ -13,6 +15,9 @@ import static org.junit.Assert.*;
  */
 public class Eshop_BtnAcheterTest {
     
+    Objet it;
+    FenetrePrincipale eshopFenetre;
+            
     public Eshop_BtnAcheterTest() {
     }
     
@@ -38,10 +43,8 @@ public class Eshop_BtnAcheterTest {
     @Test
     public void testInitButton() {
         System.out.println("initButton");
-        Eshop_BtnAcheter instance = null;
+        Eshop_BtnAcheter instance = new Eshop_BtnAcheter(it, eshopFenetre);
         instance.initButton();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
     
 }
