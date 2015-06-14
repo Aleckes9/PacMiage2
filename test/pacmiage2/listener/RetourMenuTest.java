@@ -12,7 +12,7 @@ import pacmiage.vue.menu.FenetrePrincipale;
 
 /**
  *
- * @author Aleckes9
+ * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
  */
 public class RetourMenuTest {
     

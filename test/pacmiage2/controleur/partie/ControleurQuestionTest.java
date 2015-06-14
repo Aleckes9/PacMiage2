@@ -13,7 +13,7 @@ import pacmiage.vue.question.QuestionFenetreQuestion;
 
 /**
  *
- * @author Aleckes9
+ * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
  */
 public class ControleurQuestionTest {
     

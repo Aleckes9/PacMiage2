@@ -15,7 +15,7 @@ import pacmiage.utiles.Session;
 /**
  * Bouton pour annuler un achat et revenir à l'eshop
  *
- * @author Maëlle
+ * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
  */
 public class EshopBtnRetourEshop extends JButton {
 

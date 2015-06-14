@@ -6,7 +6,7 @@ import pacmiage.utiles.Configuration;
 
 /**
  *
- * @author Maëlle
+ * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
  */
 public class ObjetHelloKitty implements Bonus {
 

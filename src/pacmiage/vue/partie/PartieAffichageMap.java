@@ -11,7 +11,7 @@ import org.newdawn.slick.tiled.TiledMap;
 
 /**
  *
- * @author Alexandre
+ * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
  */
 public class PartieAffichageMap {
 

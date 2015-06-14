@@ -5,7 +5,7 @@ import pacmiage.modele.Bonus;
 
 /**
  *
- * @author Maëlle
+ * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
  */
 public class ObjetClock implements Bonus {
 

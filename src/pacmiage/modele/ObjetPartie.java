@@ -6,7 +6,7 @@ import org.newdawn.slick.SlickException;
 
 /**
  *
- * @author Aleckes9
+ * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
  */
 public class ObjetPartie {
 

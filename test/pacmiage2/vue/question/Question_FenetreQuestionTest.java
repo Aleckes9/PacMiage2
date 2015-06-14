@@ -15,7 +15,7 @@ import pacmiage.modele.Question;
 
 /**
  *
- * @author Aleckes9
+ * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
  */
 public class Question_FenetreQuestionTest {
     

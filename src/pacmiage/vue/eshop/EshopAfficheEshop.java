@@ -20,7 +20,7 @@ import pacmiage.utiles.LecteurObjet;
 /**
  * Affichage de l'eshop
  *
- * @author Maëlle
+ * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
  */
 public final class EshopAfficheEshop {
 

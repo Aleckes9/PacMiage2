@@ -14,7 +14,7 @@ import pacmiage.utiles.Session;
 
 /**
  *
- * @author Maëlle
+ * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
  */
 public class BtnRetourMenu extends JButton {
 

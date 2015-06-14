@@ -17,8 +17,10 @@ import pacmiage.vue.question.QuestionFenetreQuestion;
 import pacmiage.utiles.QuestionBuilder;
 
 /**
- *
+ * 
  * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
+ * 
+ * 
  */
 public final class ControleurQuestion {
 

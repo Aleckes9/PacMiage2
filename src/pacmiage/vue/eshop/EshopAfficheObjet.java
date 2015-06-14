@@ -19,7 +19,7 @@ import javax.swing.JPanel;
 /**
  * Affiche un objet donné avec son nom, son image, sa description et son prix
  *
- * @author Maëlle
+ * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
  */
 public final class EshopAfficheObjet {
     

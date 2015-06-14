@@ -6,7 +6,7 @@ import pacmiage.modele.ObjetPartie;
 
 /**
  *
- * @author Aleckes9
+ * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
  */
 public class PartieAffichageObjetBonus extends ObjetPartie{
 

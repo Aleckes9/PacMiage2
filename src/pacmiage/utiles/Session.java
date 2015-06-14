@@ -16,7 +16,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author Axel
+ * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
  */
 public final class Session {
 

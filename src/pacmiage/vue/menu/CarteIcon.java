@@ -14,7 +14,7 @@ import javax.swing.Icon;
 
 /**
  *
- * @author Aleckes9
+ * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
  */
 public class CarteIcon implements Icon {
 

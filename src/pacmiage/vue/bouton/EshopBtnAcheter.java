@@ -15,7 +15,7 @@ import pacmiage.vue.eshop.EshopAfficheConfirmAcheter;
 /**
  * Bouton pour sélectionner un objet à acheter
  *
- * @author Maëlle
+ * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
  */
 public final class EshopBtnAcheter extends JButton {
     

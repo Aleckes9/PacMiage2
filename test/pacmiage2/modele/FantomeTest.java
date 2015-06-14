@@ -16,7 +16,7 @@ import pacmiage.vue.partie.PartieAffichageMap;
 
 /**
  *
- * @author Aleckes9
+ * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
  */
 public class FantomeTest {
     

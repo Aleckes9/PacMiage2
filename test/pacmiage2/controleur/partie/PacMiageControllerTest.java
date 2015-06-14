@@ -13,7 +13,7 @@ import pacmiage.modele.PacMiage;
 
 /**
  *
- * @author Aleckes9
+ * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
  */
 public class PacMiageControllerTest {
     

@@ -21,7 +21,7 @@ import pacmiage.utiles.Session;
 /**
  * Ouvre un message de confirmation pour l'achat d'un objet
  *
- * @author Maëlle
+ * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
  */
 public class EshopAfficheConfirmAcheter extends AbstractAction {
 

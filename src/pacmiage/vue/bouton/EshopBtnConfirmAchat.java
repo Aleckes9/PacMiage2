@@ -12,7 +12,7 @@ import pacmiage.utiles.Session;
 /**
  * Bouton pour confirmer l'achat d'un objet
  *
- * @author Maëlle
+ * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
  */
 public class EshopBtnConfirmAchat extends JButton {
 

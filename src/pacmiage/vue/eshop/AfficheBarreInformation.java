@@ -21,7 +21,7 @@ import pacmiage.vue.bouton.BtnObjet;
  * Affiche la barre d'information située en haut de l'écran comprenant les
  * informations du joueur
  *
- * @author Maëlle
+ * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
  */
 public class AfficheBarreInformation extends JPanel {
 

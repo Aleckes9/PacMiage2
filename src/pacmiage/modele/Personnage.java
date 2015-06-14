@@ -7,7 +7,7 @@ import org.newdawn.slick.SpriteSheet;
 
 /**
  *
- * @author Aleckes9
+ * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
  */
 public interface Personnage {
 

@@ -18,7 +18,7 @@ import pacmiage.utiles.Session;
 
 /**
  *
- * @author Axel Nini
+ * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
  */
 public final class FenetreMenu {
 

@@ -14,7 +14,7 @@ import javax.swing.JButton;
 
 /**
  *
- * @author Maëlle
+ * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
  */
 public class BtnObjet extends JButton {
 
