@@ -5,6 +5,7 @@
  */
 package pacmiage.controleur.partie;
 
+import pacmiage.listener.PacMiageController;
 import pacmiage.modele.ControleurTemps;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -16,7 +17,6 @@ import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
 import org.newdawn.slick.Music;
 import org.newdawn.slick.SlickException;
-import org.newdawn.slick.Sound;
 import pacmiage.vue.partie.PartieAffichageScore;
 import pacmiage.vue.partie.PartieAffichageTemps;
 import pacmiage.vue.partie.PartieAffichageImageFondu;
@@ -31,7 +31,7 @@ import pacmiage.utiles.SauvegardeFichier;
 import pacmiage.vue.partie.PartieAffichageObjetBonus;
 
 /**
- *
+ * Controleur de la partie PacMiage, gère la mise à jour et l'affichage des différents éléments de la partie.
  * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
  */
 public class PartieController extends BasicGame {
@@ -40,7 +40,7 @@ public class PartieController extends BasicGame {
     private int multiplicateur;
     private boolean collision;
     private boolean fantomeMove;
-    private final int niveau;
+    private int niveau;
     private AppGameContainer game;
     private GameContainer container;
     private Music background;
@@ -49,7 +49,7 @@ public class PartieController extends BasicGame {
     private ControleurTemps tempsBonus;
 
     private final PartieAffichageMap map;
-    private final PartieAffichageScore score;
+    private PartieAffichageScore score;
     private final PartieAffichageTemps temps;
     private PartieAffichageImageFondu imageVeracite;
 
@@ -62,7 +62,7 @@ public class PartieController extends BasicGame {
     private final ControleurQuestion ctrlQuestion;
 
     /**
-     *
+     * Constructeur de PartieController 
      * @param unNiveau
      * @param unCheminCarte
      * @throws SlickException
@@ -86,7 +86,7 @@ public class PartieController extends BasicGame {
         score = new PartieAffichageScore();
         temps = new PartieAffichageTemps();
 
-        timer = new ControleurTemps(50);
+        timer = new ControleurTemps(120);
         affichageBonus = new PartieAffichageObjetBonus[4];
         ctrlQuestion = new ControleurQuestion();
 
@@ -123,7 +123,7 @@ public class PartieController extends BasicGame {
         List<Integer> idObjetsBonus = new ArrayList<>();
         for (int objectID = 0; objectID < map.getObjectCount(); objectID++) {
 
-            if ("graine".equals(map.getObjectType(objectID))) {
+            if ("graine".equals(map.getObjectType(objectID))) {  
                 grainesMap.put(objectID, new ObjetPartie(map.getObjectX(objectID), map.getObjectY(objectID), Configuration.getInstance().recupererValeur("graine")));
             }
             if ("objet".equals(map.getObjectType(objectID))) {
@@ -233,7 +233,7 @@ public class PartieController extends BasicGame {
     }
 
     /**
-     *
+     * Méthode update 
      * @param container
      * @param delta
      * @throws SlickException
@@ -273,10 +273,12 @@ public class PartieController extends BasicGame {
                 grainesMap.remove(graineRemove);
                 this.score.setFutureScore(this.score.getFutureScore() + 10 * multiplicateur);
                 if (grainesMap.isEmpty()) {
-                    ouvertureQuestion();
+                    boolean choix = ouvertureQuestion();
                     JoueurInfo.getInstance().setRecord(score.getFutureScore());
                     JoueurInfo.getInstance().ajouterGraines(score.getFutureScore());
-                    gameOver = true;
+                    if(choix){
+                        container.exit();
+                    }
                 }
             }
 
@@ -320,7 +322,7 @@ public class PartieController extends BasicGame {
 
     }
 
-    private void ouvertureQuestion() throws SlickException {
+    private boolean ouvertureQuestion() throws SlickException {
         timer.stop();
         container.pause();
         this.game.setFullscreen(false);
@@ -345,6 +347,7 @@ public class PartieController extends BasicGame {
         }
         container.sleep(2000);
         timer.start();
+        return choix;
     }
 
     /**
@@ -466,5 +469,32 @@ public class PartieController extends BasicGame {
     public void setFantomeMove(boolean fantomeMove) {
         this.fantomeMove = fantomeMove;
     }
+
+    public boolean isGameOver() {
+        return gameOver;
+    }
+
+    public void setGameOver(boolean gameOver) {
+        this.gameOver = gameOver;
+    }
+
+    public int getNiveau() {
+        return niveau;
+    }
+
+    public void setNiveau(int niveau) {
+        this.niveau = niveau;
+    }
+
+    public PartieAffichageScore getScore() {
+        return score;
+    }
+
+    public void setScore(PartieAffichageScore score) {
+        this.score = score;
+    }
+    
+    
+    
 
 }

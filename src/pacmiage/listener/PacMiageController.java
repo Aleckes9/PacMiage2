@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pacmiage.controleur.partie;
+package pacmiage.listener;
 
 import java.io.IOException;
 import java.util.logging.Level;
@@ -11,6 +11,7 @@ import java.util.logging.Logger;
 import org.newdawn.slick.Input;
 import org.newdawn.slick.KeyListener;
 import org.newdawn.slick.SlickException;
+import pacmiage.controleur.partie.PartieController;
 import pacmiage.vue.partie.PartieAffichageMenuPartie;
 import pacmiage.modele.JoueurInfo;
 import pacmiage.modele.PacMiage;

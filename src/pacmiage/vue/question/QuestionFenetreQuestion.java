@@ -5,7 +5,7 @@
  */
 package pacmiage.vue.question;
 
-import pacmiage.controleur.partie.FenetreQuestionListener;
+import pacmiage.listener.FenetreQuestionListener;
 import pacmiage.modele.Reponse;
 import pacmiage.modele.Question;
 import java.awt.BorderLayout;

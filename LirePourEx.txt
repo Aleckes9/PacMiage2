@@ -1,2 +1,6 @@
 dist/allInOneJar.jar
 a ajouter dans splicejar
+
+
+pacmiage.controleur.MainPacMiage
+-Djava.library.path=lib/natives/

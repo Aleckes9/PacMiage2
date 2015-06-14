@@ -1,7 +1,7 @@
 package pacmiage2.controleur.partie;
 
 import pacmiage.controleur.partie.PartieController;
-import pacmiage.controleur.partie.PacMiageController;
+import pacmiage.listener.PacMiageController;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;

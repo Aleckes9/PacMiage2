@@ -74,13 +74,20 @@ public class MainPacMiage {
                     //Supprime les images déjà enregistré en mémoire
                     InternalTextureLoader.get().clear();
                     SoundStore.get().clear();
-                    mainFenetre.setPartieController(null);
+                    
+                    if(partieController.isGameOver()){
+                                            mainFenetre.setPartieController(null);
                     mainFenetre.initFenetre();
                     mainFenetre.initFenetreMenu();
-
+                    }else{
+                        int niveau = partieController.getNiveau() == 5 ? 1 : partieController.getNiveau()+1 ;
+                        PartieController partie = new PartieController(niveau,Configuration.getInstance().recupererValeur("carte"+niveau));
+                        
+                        partie.getScore().setFutureScore(partieController.getScore().getFutureScore());
+                        mainFenetre.setPartieController(partie);
+                    }
                 }
             }
-
         } catch (IOException | SlickException ex) {
             Logger.getLogger(MainPacMiage.class.getName()).log(Level.SEVERE, null, ex);
         }

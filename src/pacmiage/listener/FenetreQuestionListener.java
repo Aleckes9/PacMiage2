@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pacmiage.controleur.partie;
+package pacmiage.listener;
 
 import pacmiage.modele.Reponse;
 import java.awt.event.ActionEvent;

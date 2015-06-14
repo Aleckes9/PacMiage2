@@ -45,8 +45,6 @@ public final class ControleurQuestion {
      */
     public void initQuestion() {
 
-       
-            //On crée une nouvelle instance de notre FenetreBoutons
             factory = DocumentBuilderFactory.newInstance();
         try {
             builder = factory.newDocumentBuilder();
@@ -60,8 +58,6 @@ public final class ControleurQuestion {
         }
             racine = document.getDocumentElement();
             qBuilder = new QuestionBuilder(racine);
-
-    
 
     }
 
