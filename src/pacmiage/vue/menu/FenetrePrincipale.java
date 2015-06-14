@@ -68,7 +68,7 @@ public class FenetrePrincipale extends JFrame {
      */
     public void initFenetreShop() {
         try {
-            EshopAfficheEshop eshop_AfficheEshop = new EshopAfficheEshop(this);
+            EshopAfficheEshop eshopAfficheEshop = new EshopAfficheEshop(this);
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException ex) {
             Logger.getLogger(FenetrePrincipale.class.getName()).log(Level.SEVERE, null, ex);
         }

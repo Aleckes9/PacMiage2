@@ -38,10 +38,9 @@ public class SauvegardeFichier implements Serializable {
             FileOutputStream fos = null;
             File f = new File(cheminFichier);
             if (!f.exists()) {
-                
                 f.createNewFile();
-                
-            }   fos = new FileOutputStream(f);
+            }
+            fos = new FileOutputStream(f);
             out = new ObjectOutputStream(fos);
             out.writeObject(monObjetSerializable);
             fos.close();
@@ -57,12 +56,11 @@ public class SauvegardeFichier implements Serializable {
 
     }
 
-
-/**
- *
- * @return
- */
-public static SauvegardeFichier getInstance() {
+    /**
+     *
+     * @return
+     */
+    public static SauvegardeFichier getInstance() {
         return SAUVEGARDE;
     }
 }

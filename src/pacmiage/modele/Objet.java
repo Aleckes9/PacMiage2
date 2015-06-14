@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package pacmiage.modele;
 
 import java.io.Serializable;
@@ -39,7 +35,6 @@ public class Objet  implements Serializable {
         this.description = description;
         this.prix = prix;
         this.miniImage=miniImage;
-        //Class classe = Class.forName("java.lang.String");
         Class classe = Class.forName("pacmiage2.utiles.objetBonus.Objet"+nom.replaceAll(" ", ""));
         this.bonus = (Bonus)classe.newInstance();
     }

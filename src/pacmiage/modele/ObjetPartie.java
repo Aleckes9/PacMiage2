@@ -10,22 +10,8 @@ import org.newdawn.slick.SlickException;
  */
 public class ObjetPartie {
 
-    protected int x, 
-
-    /**
-     *
-     */
-    y;
-    protected int width, 
-
-    /**
-     *
-     */
-    height;
-
-    /**
-     *
-     */
+    protected int x,y;
+    protected int width,height;
     protected Image image;
 
     /**
@@ -41,16 +27,9 @@ public class ObjetPartie {
         this.image = new Image(image);
         this.width = this.image.getWidth();
         this.height = this.image.getHeight();
-        
-    }
-    
-    /**
-     *
-     * @throws SlickException
-     */
-    public void initObjetPartie() throws SlickException {
 
     }
+
 
     /**
      *
@@ -60,13 +39,6 @@ public class ObjetPartie {
         g.drawImage(image, x, y);
     }
 
-    /**
-     *
-     * @param delta
-     */
-    public void updateObjetPartie(int delta) {
-
-    }
 
     /**
      *

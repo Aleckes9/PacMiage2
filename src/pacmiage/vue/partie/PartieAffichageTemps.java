@@ -39,11 +39,11 @@ public class PartieAffichageTemps {
     /**
      *
      * @param xPos
-     * @param Ypos
+     * @param yPos
      */
-    public void initPosAffichageTemps(int xPos, int Ypos) {
+    public void initPosAffichageTemps(int xPos, int yPos) {
         x = xPos;
-        y = Ypos;
+        y = yPos;
     }
 
     /**

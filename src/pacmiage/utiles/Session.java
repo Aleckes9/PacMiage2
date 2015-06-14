@@ -9,6 +9,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Locale;
+import java.util.Map;
 import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -22,7 +23,7 @@ public final class Session {
     private static final Session session = new Session();
     private Locale locale = Locale.FRENCH;
     private Properties prop;
-    private final HashMap<Locale, String> ficProp = new HashMap();
+    private final Map<Locale, String> ficProp = new HashMap();
 
     private Session() {
         ficProp.put(Locale.FRENCH, "./src/ressources/properties/pacfr.properties");
@@ -36,8 +37,7 @@ public final class Session {
      * @return
      */
     public String recupererValeur(String cle) {
-        String valeur = prop.getProperty(cle);
-        return valeur;
+        return prop.getProperty(cle);
     }
 
     /**

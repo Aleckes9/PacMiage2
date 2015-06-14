@@ -1,8 +1,6 @@
 package pacmiage.listener;
 
 import java.awt.event.ActionEvent;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.AbstractAction;
 import pacmiage.vue.menu.FenetrePrincipale;
 
@@ -13,7 +11,7 @@ import pacmiage.vue.menu.FenetrePrincipale;
  */
 public class BtnRetourEshop extends AbstractAction {
 
-    private FenetrePrincipale fenetre;
+    private final FenetrePrincipale fenetre;
 
     /**
      *
@@ -25,14 +23,7 @@ public class BtnRetourEshop extends AbstractAction {
 
     @Override
     public void actionPerformed(ActionEvent ae) {
-        try {
-            fenetre.initFenetreShop();
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(RetourMenu.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (InstantiationException | IllegalAccessException ex) {
-            Logger.getLogger(BtnRetourEshop.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
+        fenetre.initFenetreShop();
     }
 
 }

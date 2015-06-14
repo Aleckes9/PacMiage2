@@ -2,7 +2,6 @@ package pacmiage.utiles;
 
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.Locale;
 import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -47,8 +46,7 @@ public final class Configuration {
      * @return
      */
     public String recupererValeur(String cle) {
-        String valeur = properties.getProperty(cle);
-        return valeur;
+        return properties.getProperty(cle);
     }
 
     private static Properties load(String filename) throws IOException {

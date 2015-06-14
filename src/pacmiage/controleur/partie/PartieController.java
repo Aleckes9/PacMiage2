@@ -283,7 +283,7 @@ public class PartieController extends BasicGame {
                 }
             }
 
-            this.player.updatePac(delta);
+            this.player.updatePac();
             for (Fantome fantome : listFantome) {
                 if (collision) {
                     if (fantome.estEnCollisionCible(this.player.getCenterX(), this.player.getCenterY())) {

@@ -64,14 +64,14 @@ public final class EshopAfficheEshop {
             jPanelObjet.setPreferredSize(new Dimension(f.getWidth(), 2500));
             //On affiche les objets
             LecteurObjet lecteur = new LecteurObjet();
-            Objet objet[] = lecteur.getObjet();
+            Objet[] objet = lecteur.getObjet();
             
             GridLayout layout = new GridLayout(objet.length, 0);
             layout.setVgap(30);
             jPanelObjet.setLayout(layout);
             for (Objet objet1 : objet) {
                 JPanel h = new JPanel();
-                EshopAfficheObjet eshop_AfficheObjet = new EshopAfficheObjet(h, objet1, true, f);
+                EshopAfficheObjet eshopAfficheObjet = new EshopAfficheObjet(h, objet1, true, f);
                 jPanelObjet.add(h);
             }
             

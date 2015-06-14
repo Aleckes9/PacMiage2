@@ -8,7 +8,6 @@ package pacmiage.controleur.partie;
 import pacmiage.modele.Reponse;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.image.BufferedImage;
 import javax.swing.JButton;
 import pacmiage.vue.question.QuestionFenetreQuestion;
 
@@ -18,47 +17,47 @@ import pacmiage.vue.question.QuestionFenetreQuestion;
  */
 public class FenetreQuestionListener implements ActionListener {
 
-        QuestionFenetreQuestion f;
+        private QuestionFenetreQuestion fenetreQuestion;
 
     /**
      *
-     * @param f
+     * @param fenetre
      */
-    public FenetreQuestionListener(QuestionFenetreQuestion f) {
-        this.f = f;
+    public FenetreQuestionListener(QuestionFenetreQuestion fenetre) {
+        this.fenetreQuestion = fenetre;
     }
 
 
     @Override
     public void actionPerformed(ActionEvent e) {
 
-        if (e.getSource() == f.getValider()) {
+        if (e.getSource() == fenetreQuestion.getValider()) {
 
-            for (Reponse reponse : f.getQuestion().getReponse()) {
-                if (reponse.getText().equals(f.getLabel().getText()) && reponse.isVeracite() == true) {
-                        f.setChoix(true);
+            for (Reponse reponse : fenetreQuestion.getQuestion().getReponse()) {
+                if (reponse.getText().equals(fenetreQuestion.getLabel().getText()) && reponse.isVeracite()) {
+                        fenetreQuestion.setChoix(true);
                     break;
                 }else{
-                   f.setChoix(false);
+                   fenetreQuestion.setChoix(false);
                 }
                 }
-                f.getValider().setEnabled(false);
+                fenetreQuestion.getValider().setEnabled(false);
                 
-                f.dispose();
+                fenetreQuestion.dispose();
             
 
         } else {
-            for (JButton bouton : f.getBoutons()) {
+            for (JButton bouton : fenetreQuestion.getBoutons()) {
                 if (e.getSource() == bouton) {
-                    f.getLabel().setText(bouton.getText());
-                    f.getText().setText(f.getQuestion().getText().replace("???", bouton.getText()));
+                    fenetreQuestion.getLabel().setText(bouton.getText());
+                    fenetreQuestion.getText().setText(fenetreQuestion.getQuestion().getText().replace("???", bouton.getText()));
 
   
                 }
             }
         }
 
-        f.repaint();
+        fenetreQuestion.repaint();
 
     }
 

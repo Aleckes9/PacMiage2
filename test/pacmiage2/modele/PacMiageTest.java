@@ -9,7 +9,6 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import org.newdawn.slick.Graphics;
 import org.newdawn.slick.SlickException;
 import pacmiage.utiles.Configuration;
 import pacmiage.vue.partie.PartieAffichageMap;
@@ -81,7 +80,7 @@ public class PacMiageTest {
     public void testUpdate() {
         System.out.println("update");
         int delta = 0;
-        instance.updatePac(delta);
+        instance.updatePac();
     }
 
 

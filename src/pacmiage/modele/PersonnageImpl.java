@@ -25,11 +25,10 @@ public class PersonnageImpl implements Personnage {
      */
     protected final Animation[] animations = new Animation[8];
     protected float x,
-
-    /**
-     *
-     */
-    y;
+            /**
+             *
+             */
+            y;
 
     /**
      *
@@ -182,6 +181,8 @@ public class PersonnageImpl implements Personnage {
             case 0:
                 futurX = this.x + 2 * delta;
                 break;
+            default:
+                break;
         }
         return futurX;
     }
@@ -201,6 +202,8 @@ public class PersonnageImpl implements Personnage {
                 break;
             case 3:
                 futurY = this.y + 2 * delta;
+                break;
+            default:
                 break;
         }
         return futurY;

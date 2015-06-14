@@ -104,7 +104,7 @@ public class PacMiageController implements KeyListener {
                 System.exit(0);
                 break;
             case Input.KEY_ENTER:
-                CaseEnter();
+                caseEnter();
                 break;
             default:
                 break;
@@ -132,7 +132,7 @@ public class PacMiageController implements KeyListener {
         }
     }
 
-    private void CaseEnter() {
+    private void caseEnter() {
         try {
 
             partie.getContainer().pause();

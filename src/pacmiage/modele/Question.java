@@ -7,6 +7,7 @@ package pacmiage.modele;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 /**
  *
@@ -16,7 +17,7 @@ public class Question {
 
     private int niveau;
     private String choix;
-    private ArrayList<Reponse> reponse;
+    private List<Reponse> reponse;
     private String text;
 
     /**
@@ -46,7 +47,7 @@ public class Question {
      *
      * @return
      */
-    public ArrayList<Reponse> getReponse() {
+    public List<Reponse> getReponse() {
         return reponse;
     }
 
@@ -54,7 +55,7 @@ public class Question {
      *
      * @param reponse
      */
-    public void setReponse(ArrayList<Reponse> reponse) {
+    public void setReponse(List<Reponse> reponse) {
         this.reponse = reponse;
     }
 

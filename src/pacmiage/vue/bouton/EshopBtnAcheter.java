@@ -17,27 +17,32 @@ import pacmiage.vue.eshop.EshopAfficheConfirmAcheter;
  *
  * @author Maëlle
  */
-public class EshopBtnAcheter extends JButton {
-
+public final class EshopBtnAcheter extends JButton {
+    
+    private final Objet it;
+    private final FenetrePrincipale eshopFenetre;
+    
+    
     /**
      *
      * @param it
      * @param eshopFenetre
      */
     public EshopBtnAcheter(Objet it, FenetrePrincipale eshopFenetre) {
+        this.it = it;
+        this.eshopFenetre = eshopFenetre;
+        initButton();
+    }
+
+    /**
+     *
+     */
+    public void initButton() {
         this.setAction(new EshopAfficheConfirmAcheter(it, eshopFenetre));
         ImageIcon icon = new ImageIcon("./src/ressources/image/eshop/Caddy.png");
         this.setIcon(icon);
         this.setBackground(Color.black);
         this.setBorderPainted(false);
-
-    }
-    
-    /**
-     *
-     */
-    public void initButton(){
-        
     }
 
 }

@@ -41,7 +41,7 @@ public class ActionBtnObjet extends AbstractAction {
             f.setBackground(Color.black);
             JPanel panel = new JPanel();
             if(it!=null){
-                EshopAfficheObjet eshop_AfficheObjet = new EshopAfficheObjet(panel, it, false, eshopFenetre);
+                EshopAfficheObjet eshopAfficheObjet = new EshopAfficheObjet(panel, it, false, eshopFenetre);
             }
             f.add(panel);
             f.setVisible(true);

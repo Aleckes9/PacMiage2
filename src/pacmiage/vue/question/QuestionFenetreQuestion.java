@@ -40,6 +40,7 @@ public class QuestionFenetreQuestion extends JFrame {
     private JTextPane label;
     private JPanel panelGlobal;
     private boolean choix;
+    private static final Font KRISTEN = new Font("Kristen ITC", Font.PLAIN, 25);
 
     /**
      *
@@ -107,7 +108,7 @@ public class QuestionFenetreQuestion extends JFrame {
             unBouton.setBackground(Color.black);
             unBouton.setBorderPainted(false);
             unBouton.setFocusPainted(false);
-            unBouton.setFont(new Font("Kristen ITC", Font.PLAIN, 25));
+            unBouton.setFont(KRISTEN);
 
             unBouton.setCursor(new Cursor(Cursor.HAND_CURSOR));
             unBouton.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -139,9 +140,9 @@ public class QuestionFenetreQuestion extends JFrame {
         panel.setSize(this.getWidth() / 2, this.getHeight());
         panel.setLayout(new GridLayout(2, 1));
         text.setBackground(Color.BLACK);
-        text.setFont(new Font("Kristen ITC", Font.PLAIN, 25));
+        text.setFont(KRISTEN);
         label.setBackground(Color.BLACK);
-        label.setFont(new Font("Kristen ITC", Font.PLAIN, 25));
+        label.setFont(KRISTEN);
         appendToPane(text, question.getText(), Color.ORANGE);
         appendToPane(label, question.getChoix(), Color.RED);
         panel.add(text);
@@ -163,7 +164,7 @@ public class QuestionFenetreQuestion extends JFrame {
         valider.setBackground(Color.black);
         valider.setBorderPainted(false);
         valider.setFocusPainted(false);
-        valider.setFont(new Font("Kristen ITC", Font.PLAIN, 25));
+        valider.setFont(KRISTEN);
 
         valider.setCursor(new Cursor(Cursor.HAND_CURSOR));
         valider.setAlignmentX(Component.CENTER_ALIGNMENT);

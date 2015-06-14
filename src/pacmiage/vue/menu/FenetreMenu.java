@@ -28,7 +28,7 @@ public final class FenetreMenu {
     private final JPanel boutons = new JPanel();
 
     private final JLabel logo = new JLabel(new ImageIcon("./src/ressources/image/logo/logo.png"));
-    private final JLabel record = new JLabel("Record : " + String.valueOf(JoueurInfo.getInstance().getRecord()));
+    private final JLabel record = new JLabel("Record : " + JoueurInfo.getInstance().getRecord());
 
     private final JButton nouvellepartie = new JButton();
     private final JButton store = new JButton();

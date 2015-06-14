@@ -28,9 +28,8 @@ public class PacMiage extends PersonnageImpl {
 
     /**
      *
-     * @param delta
      */
-    public void updatePac(int delta) {
+    public void updatePac() {
         if (this.moving) {
             float futurX = getFuturX(vitesse, this.direction);
             float futurY = getFuturY(vitesse, this.direction);

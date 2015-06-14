@@ -58,7 +58,7 @@ public class EshopActionAchat extends AbstractAction {
             picture = it.getImage();
             eshopFenetre.dispose();
             try {
-                EshopAfficheEshop eshop_AfficheEshop = new EshopAfficheEshop(eshopFenetre);
+                EshopAfficheEshop eshopAfficheEshop = new EshopAfficheEshop(eshopFenetre);
             } catch (ClassNotFoundException | InstantiationException | IllegalAccessException ex) {
                 Logger.getLogger(EshopActionAchat.class.getName()).log(Level.SEVERE, null, ex);
             }

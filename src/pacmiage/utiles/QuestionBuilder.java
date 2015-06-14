@@ -67,7 +67,7 @@ public class QuestionBuilder {
                     Reponse reponse = new Reponse();
                     final Element reponseNoeud = (Element) reponses.item(j);
                     reponse.setText(reponseNoeud.getTextContent().trim());
-                    reponse.setVeracite(reponseNoeud.getAttribute("rep").trim().equals("true"));
+                    reponse.setVeracite("true".equals(reponseNoeud.getAttribute("rep").trim()));
                     question.addReponse(reponse);
                 }
                 questions.add(question);

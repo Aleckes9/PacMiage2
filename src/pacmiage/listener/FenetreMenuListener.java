@@ -50,10 +50,8 @@ public class FenetreMenuListener implements ActionListener {
                     break;
 
             }
-        } catch (IOException | ClassNotFoundException ex) {
+        } catch (IOException ex) {
             Logger.getLogger(FenetreMenu.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (InstantiationException | IllegalAccessException ex) {
-            Logger.getLogger(FenetreMenuListener.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
