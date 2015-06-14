@@ -7,6 +7,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.newdawn.slick.AppGameContainer;
 import org.newdawn.slick.SlickException;
+import org.newdawn.slick.openal.SoundStore;
 import org.newdawn.slick.opengl.InternalTextureLoader;
 import pacmiage.utiles.Configuration;
 import pacmiage.modele.JoueurInfo;
@@ -72,6 +73,7 @@ public class MainPacMiage {
                     
                     //Supprime les images déjà enregistré en mémoire
                     InternalTextureLoader.get().clear();
+                    SoundStore.get().clear();
                     mainFenetre.setPartieController(null);
                     mainFenetre.initFenetre();
                     mainFenetre.initFenetreMenu();

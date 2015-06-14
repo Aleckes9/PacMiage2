@@ -35,7 +35,7 @@ public class Objet  implements Serializable {
         this.description = description;
         this.prix = prix;
         this.miniImage=miniImage;
-        Class classe = Class.forName("pacmiage2.utiles.objetBonus.Objet"+nom.replaceAll(" ", ""));
+        Class classe = Class.forName("pacmiage.utiles.objetbonus.Objet"+nom.replaceAll(" ", ""));
         this.bonus = (Bonus)classe.newInstance();
     }
 
