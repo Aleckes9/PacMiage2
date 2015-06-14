@@ -20,7 +20,7 @@ import pacmiage.utiles.QuestionBuilder;
  * 
  * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
  * 
- * 
+ * Classe contenant le controleur de la question
  */
 public final class ControleurQuestion {
 
@@ -34,14 +34,14 @@ public final class ControleurQuestion {
             .getLocalGraphicsEnvironment().getScreenDevices()[0];
 
     /**
-     *
+     * Constructeur de la classe ControleurQuestion
      */
     public ControleurQuestion() {
 
     }
 
     /**
-     *
+     * Initialisation d'une question
      */
     public void initQuestion() {
 
@@ -62,15 +62,15 @@ public final class ControleurQuestion {
     }
 
     /**
-     *
-     * @return
+     * Méthode renvoyant la fenêtre
+     * @return la fenêtre
      */
     public QuestionFenetreQuestion getFenetre() {
         return fenetre;
     }
 
     /**
-     *
+     * Méthode permettant de setter la fenêtre
      * @param fenetre
      */
     public void setFenetre(QuestionFenetreQuestion fenetre) {
@@ -78,8 +78,8 @@ public final class ControleurQuestion {
     }
 
     /**
-     *
-     * @param niveau
+     * Méthode permettant d'afficher la question selon le niveau sélectionné
+     * @param niveau le niveau sélectionné par l'utilisateur
      */
     public void afficherQuestion(int niveau) {
         fenetre = new QuestionFenetreQuestion(qBuilder.getQuestion(niveau));
@@ -88,15 +88,15 @@ public final class ControleurQuestion {
     }
 
     /**
-     *
-     * @return
+     * Méthode permettant de renvoyer le Factory qui permet de créer l'arborescence XML
+     * @return le Factory
      */
     public DocumentBuilderFactory getFactory() {
         return factory;
     }
 
     /**
-     *
+     * Méthode permettant de setter le Factory
      * @param factory
      */
     public void setFactory(DocumentBuilderFactory factory) {
@@ -104,15 +104,15 @@ public final class ControleurQuestion {
     }
 
     /**
-     *
-     * @return
+     * Méthode renvoyant le builder du document
+     * @return le builder
      */
     public DocumentBuilder getBuilder() {
         return builder;
     }
 
     /**
-     *
+     * Méthode permettant de setter le builder
      * @param builder
      */
     public void setBuilder(DocumentBuilder builder) {
@@ -120,15 +120,15 @@ public final class ControleurQuestion {
     }
 
     /**
-     *
-     * @return
+     * Méthode renvoyant le document
+     * @return le document
      */
     public Document getDocument() {
         return document;
     }
 
     /**
-     *
+     * Méthode permettant de setter le document
      * @param document
      */
     public void setDocument(Document document) {
@@ -136,15 +136,15 @@ public final class ControleurQuestion {
     }
 
     /**
-     *
-     * @return
+     * Méthode renvoyant la racine de l'élément
+     * @return la racine de l'élement
      */
     public Element getRacine() {
         return racine;
     }
 
     /**
-     *
+     * Méthode permettant de setter la racine de l'élément
      * @param racine
      */
     public void setRacine(Element racine) {
@@ -152,15 +152,15 @@ public final class ControleurQuestion {
     }
 
     /**
-     *
-     * @return
+     * Méthode renvoyant le builder de la question
+     * @return le builder de la question
      */
     public QuestionBuilder getqBuilder() {
         return qBuilder;
     }
 
     /**
-     *
+     * Méthode permettant de setter le builder de la question
      * @param qBuilder
      */
     public void setqBuilder(QuestionBuilder qBuilder) {
@@ -168,15 +168,15 @@ public final class ControleurQuestion {
     }
 
     /**
-     *
-     * @return
+     * Méthode renvoyant l'écran
+     * @return l'écran
      */
     public static GraphicsDevice getDevice() {
         return device;
     }
 
     /**
-     *
+     * Méthode permettant de setter l'écran
      * @param device
      */
     public static void setDevice(GraphicsDevice device) {

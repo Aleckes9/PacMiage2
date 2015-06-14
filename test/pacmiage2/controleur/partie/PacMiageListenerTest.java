@@ -1,21 +1,20 @@
 package pacmiage2.controleur.partie;
 
 import pacmiage.controleur.partie.PartieController;
-import pacmiage.listener.PacMiageController;
+import pacmiage.listener.PacMiageListener;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import org.newdawn.slick.Input;
 import pacmiage.modele.PacMiage;
 
 /**
  *
  * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
  */
-public class PacMiageControllerTest {
+public class PacMiageListenerTest {
     
     PacMiage player;
     PartieController partie;
@@ -23,7 +22,7 @@ public class PacMiageControllerTest {
     /**
      *
      */
-    public PacMiageControllerTest() {
+    public PacMiageListenerTest() {
     }
     
     /**
@@ -56,34 +55,34 @@ public class PacMiageControllerTest {
 
 
     /**
-     * Test of isAcceptingInput method, of class PacMiageController.
+     * Test of isAcceptingInput method, of class PacMiageListener.
      */
     @Test
     public void testIsAcceptingInput() {
         System.out.println("isAcceptingInput");
-        PacMiageController instance = new PacMiageController(player,  partie);
+        PacMiageListener instance = new PacMiageListener(player,  partie);
         boolean expResult = true;
         boolean result = instance.isAcceptingInput();
         assertEquals(expResult, result);
     }
 
     /**
-     * Test of inputEnded method, of class PacMiageController.
+     * Test of inputEnded method, of class PacMiageListener.
      */
     @Test
     public void testInputEnded() {
         System.out.println("inputEnded");
-        PacMiageController instance = new PacMiageController(player,  partie);
+        PacMiageListener instance = new PacMiageListener(player,  partie);
         instance.inputEnded();
     }
 
     /**
-     * Test of inputStarted method, of class PacMiageController.
+     * Test of inputStarted method, of class PacMiageListener.
      */
     @Test
     public void testInputStarted() {
         System.out.println("inputStarted");
-        PacMiageController instance = new PacMiageController(player,  partie);
+        PacMiageListener instance = new PacMiageListener(player,  partie);
         instance.inputStarted();
     }
 

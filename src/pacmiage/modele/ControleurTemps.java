@@ -10,19 +10,11 @@ import javax.swing.Timer;
  */
 public final class ControleurTemps {
 
-    /**
-     * timer : timer servant à décrémenter le chronometre
-     */
+
     private Timer timer;
 
-    /**
-     * tempsRestant : temps restant
-     */
     private int tempsRestant;
 
-    /**
-     * temps : temps initial
-     */
     private int temps;
 
     /**

@@ -14,20 +14,25 @@ import pacmiage.vue.question.QuestionFenetreQuestion;
 /**
  *
  * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
+ * 
+ * Classe qui permet de gérer les actions de l'utilisateur dans la fenêtre de question
  */
 public class FenetreQuestionListener implements ActionListener {
 
         private QuestionFenetreQuestion fenetreQuestion;
 
     /**
-     *
+     * Constructeur de la classe FenetreQuestionListener
      * @param fenetre
      */
     public FenetreQuestionListener(QuestionFenetreQuestion fenetre) {
         this.fenetreQuestion = fenetre;
     }
 
-
+    /**
+     * Méthode permettant de valider la réponse de l'utilisateur et de vérifier si elle est bonne ou fausse
+     * @param e est un event indiquant qu'une action a lieue
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
 

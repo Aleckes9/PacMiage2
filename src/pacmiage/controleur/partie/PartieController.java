@@ -5,7 +5,7 @@
  */
 package pacmiage.controleur.partie;
 
-import pacmiage.listener.PacMiageController;
+import pacmiage.listener.PacMiageListener;
 import pacmiage.modele.ControleurTemps;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -31,8 +31,10 @@ import pacmiage.utiles.SauvegardeFichier;
 import pacmiage.vue.partie.PartieAffichageObjetBonus;
 
 /**
- * Controleur de la partie PacMiage, gère la mise à jour et l'affichage des différents éléments de la partie.
+ * 
  * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
+ * 
+ * Controleur de la partie PacMiage, gère la mise à jour et l'affichage des différents éléments de la partie.
  */
 public class PartieController extends BasicGame {
 
@@ -94,15 +96,15 @@ public class PartieController extends BasicGame {
     }
 
     /**
-     *
-     * @return
+     * Méthode renvoyant le joueur
+     * @return le joueur
      */
     public PacMiage getPlayer() {
         return player;
     }
 
     /**
-     *
+     * Méthode renvoyant la liste de fantômes
      * @return
      */
     public List<Fantome> getListFantome() {
@@ -110,7 +112,7 @@ public class PartieController extends BasicGame {
     }
 
     /**
-     *
+     * Initialisation de la partie
      * @param container
      * @throws SlickException
      */
@@ -165,7 +167,7 @@ public class PartieController extends BasicGame {
 
         }
 
-        PacMiageController controller = new PacMiageController(this.player, this);
+        PacMiageListener controller = new PacMiageListener(this.player, this);
         container.getInput().addKeyListener(controller);
         background = new Music(Configuration.getInstance().recupererValeur("musique" + niveau));
         background.setVolume(0.5f);
@@ -174,7 +176,7 @@ public class PartieController extends BasicGame {
     }
 
     /**
-     *
+     * Méthode renvoyant le timer
      * @return
      */
     public ControleurTemps getTimer() {
@@ -182,7 +184,7 @@ public class PartieController extends BasicGame {
     }
 
     /**
-     *
+     * Méthode renvoyant le rendu
      * @param container
      * @param g
      * @throws SlickException
@@ -201,7 +203,7 @@ public class PartieController extends BasicGame {
     }
 
     /**
-     *
+     * Méthode renvoyant le rendu du jeu
      * @param container
      * @param g
      * @throws SlickException
@@ -233,7 +235,7 @@ public class PartieController extends BasicGame {
     }
 
     /**
-     * Méthode update 
+     * Méthode update du jeu
      * @param container
      * @param delta
      * @throws SlickException
@@ -322,6 +324,11 @@ public class PartieController extends BasicGame {
 
     }
 
+    /**
+     * Méthode renvoyant un booléen si la personne a bien répondu ou non
+     * @return true si bien répondu, sinon false
+     * @throws SlickException 
+     */
     private boolean ouvertureQuestion() throws SlickException {
         timer.stop();
         container.pause();
@@ -351,31 +358,31 @@ public class PartieController extends BasicGame {
     }
 
     /**
-     *
-     * @return
+     * Méthode renvoyant le conteneur
+     * @return le conteneur
      */
     public GameContainer getContainer() {
         return container;
     }
 
     /**
-     *
-     * @return
+     * Méthode renvoyant le fond d'écran
+     * @return le fond d'écran
      */
     public Music getBackground() {
         return background;
     }
 
     /**
-     *
-     * @return
+     * Méthode renvoyant le jeu
+     * @return le jeu
      */
     public AppGameContainer getGame() {
         return game;
     }
 
     /**
-     *
+     * Méthode permettant de setter le jeu
      * @param game
      */
     public void setGame(AppGameContainer game) {
@@ -383,15 +390,15 @@ public class PartieController extends BasicGame {
     }
 
     /**
-     *
-     * @return
+     * Méthode renvoyant l'affichage des objets bonus
+     * @return l'affichage des objets bonus
      */
     public PartieAffichageObjetBonus[] getAffichageBonus() {
         return affichageBonus;
     }
 
     /**
-     *
+     * Méthode permettant de setter l'affichage des objets bonus
      * @param affichageBonus
      */
     public void setAffichageBonus(PartieAffichageObjetBonus[] affichageBonus) {
@@ -399,7 +406,7 @@ public class PartieController extends BasicGame {
     }
 
     /**
-     *
+     * Méthode permettant de setter le multiplicateur
      * @param multiplicateur
      */
     public void setMultiplicateur(int multiplicateur) {
@@ -407,15 +414,15 @@ public class PartieController extends BasicGame {
     }
 
     /**
-     *
-     * @return
+     * Méthode renvoyant la véracité de l'image
+     * @return la véracité de l'image
      */
     public PartieAffichageImageFondu getImageVeracite() {
         return imageVeracite;
     }
 
     /**
-     *
+     * Méthode permettant de setter la véracité de l'image
      * @param imageVeracite
      */
     public void setImageVeracite(PartieAffichageImageFondu imageVeracite) {
@@ -423,15 +430,15 @@ public class PartieController extends BasicGame {
     }
 
     /**
-     *
-     * @return
+     * Méthode renvoyant un booléen indiquant si il y a collision
+     * @return true si collision, sinon false
      */
     public boolean isCollision() {
         return collision;
     }
 
     /**
-     *
+     * Méthode permettant de setter la collision
      * @param collision
      */
     public void setCollision(boolean collision) {
@@ -439,15 +446,15 @@ public class PartieController extends BasicGame {
     }
 
     /**
-     *
-     * @return
+     * Méthode renovoyant le temps bonus
+     * @return temps bonus
      */
     public ControleurTemps getTempsBonus() {
         return tempsBonus;
     }
 
     /**
-     *
+     * Méthode permettant de setter le temps bonus
      * @param tempsBonus
      */
     public void setTempsBonus(ControleurTemps tempsBonus) {
@@ -455,41 +462,65 @@ public class PartieController extends BasicGame {
     }
 
     /**
-     *
-     * @return
+     * Méthode renvoyant un booléen indiquant si le fantôme est en mouvement
+     * @return true si fantome bouge sinon false
      */
     public boolean isFantomeMove() {
         return fantomeMove;
     }
 
     /**
-     *
+     * Méthode permettant de setter le mouvement d'un fantôme
      * @param fantomeMove
      */
     public void setFantomeMove(boolean fantomeMove) {
         this.fantomeMove = fantomeMove;
     }
 
+    /**
+     * Méthode renvoyant un booléen indiquant si il y a Game Over ou non
+     * @return true si Game Over sinon false
+     */
     public boolean isGameOver() {
         return gameOver;
     }
 
+    /**
+     * Méthode permettant de setter le Game Over
+     * @param gameOver 
+     */
     public void setGameOver(boolean gameOver) {
         this.gameOver = gameOver;
     }
 
+    /**
+     * Méthode renvoyant le niveau
+     * @return le niveau
+     */
     public int getNiveau() {
         return niveau;
     }
 
+    /**
+     * Méthode permettant de setter le niveau
+     * @param niveau 
+     */
     public void setNiveau(int niveau) {
         this.niveau = niveau;
     }
 
+    /**
+     * Méthode renvoyant le score
+     * @return le score
+     */
     public PartieAffichageScore getScore() {
         return score;
     }
 
+    /**
+     * Méthode permettant de setter le score
+     * @param score 
+     */
     public void setScore(PartieAffichageScore score) {
         this.score = score;
     }

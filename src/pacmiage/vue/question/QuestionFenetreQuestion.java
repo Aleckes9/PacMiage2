@@ -30,6 +30,8 @@ import javax.swing.text.StyleContext;
 /**
  *
  * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
+ * 
+ * Classe permettant d'afficher la fenêtre de question
  */
 public class QuestionFenetreQuestion extends JFrame {
 
@@ -43,8 +45,8 @@ public class QuestionFenetreQuestion extends JFrame {
     private static final Font KRISTEN = new Font("Kristen ITC", Font.PLAIN, 25);
 
     /**
-     *
-     * @param question
+     * Constructeur de la classe QuestionFenetreQuestion
+     * @param question la question
      */
     public QuestionFenetreQuestion(Question question) {
         this.question = question;
@@ -59,7 +61,7 @@ public class QuestionFenetreQuestion extends JFrame {
     }
 
     /**
-     *
+     * Builder de la fenêtre
      */
     private void build() {
         Dimension tailleEcran = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
@@ -77,8 +79,8 @@ public class QuestionFenetreQuestion extends JFrame {
     }
 
     /**
-     *
-     * @return
+     * Méthode permettant de construire le panel global
+     * @return le panel global
      */
     private JPanel buildContentPaneGlobal() {
 
@@ -93,8 +95,8 @@ public class QuestionFenetreQuestion extends JFrame {
     }
 
     /**
-     *
-     * @return
+     * Méthode permettant de construire le panel de droite
+     * @return le panel de droite
      */
     private JPanel buildContentPaneDroite() {
 
@@ -131,8 +133,8 @@ public class QuestionFenetreQuestion extends JFrame {
     }
 
     /**
-     *
-     * @return
+     * Méthode permettant de construire le panel de gauche
+     * @return le panel de gauche
      */
     private JPanel buildContentPaneGauche() {
 
@@ -151,8 +153,8 @@ public class QuestionFenetreQuestion extends JFrame {
     }
 
     /**
-     *
-     * @return
+     * Méthode permettant de construire le pied du panel
+     * @return le pied du panel
      */
     private JPanel buildContentPanePied() {
 
@@ -199,15 +201,15 @@ public class QuestionFenetreQuestion extends JFrame {
     }
 
     /**
-     *
-     * @return
+     * Méthode renvoyant le bouton valider
+     * @return le bouton valider
      */
     public JButton getValider() {
         return valider;
     }
 
     /**
-     *
+     * Méthode permettant de setter le bouton valider
      * @param valider
      */
     public void setValider(JButton valider) {
@@ -215,23 +217,23 @@ public class QuestionFenetreQuestion extends JFrame {
     }
 
     /**
-     *
-     * @return
+     * Méthode renvoyant la question
+     * @return la question
      */
     public Question getQuestion() {
         return question;
     }
 
     /**
-     *
-     * @return
+     * Méthode renvoyant le texte
+     * @return le texte de la question
      */
     public JTextPane getText() {
         return text;
     }
 
     /**
-     *
+     * Méthode permettant de setter le texte
      * @param text
      */
     public void setText(JTextPane text) {
@@ -239,7 +241,7 @@ public class QuestionFenetreQuestion extends JFrame {
     }
 
     /**
-     *
+     * Méthode permettant de setter la question
      * @param question
      */
     public void setQuestion(Question question) {
@@ -247,15 +249,15 @@ public class QuestionFenetreQuestion extends JFrame {
     }
 
     /**
-     *
-     * @return
+     * Méthode renvoyant le panel global
+     * @return le panel global
      */
     public JPanel getPanelGlobal() {
         return panelGlobal;
     }
 
     /**
-     *
+     * Méthode permettant de setter le panel global
      * @param panelGlobal
      */
     public void setPanelGlobal(JPanel panelGlobal) {
@@ -263,15 +265,15 @@ public class QuestionFenetreQuestion extends JFrame {
     }
 
     /**
-     *
-     * @return
+     * Méthode renvoyant la liste de boutons
+     * @return la liste de boutons
      */
     public List<JButton> getBoutons() {
         return boutons;
     }
 
     /**
-     *
+     * Méthode permettant de setter la liste de boutons
      * @param boutons
      */
     public void setBoutons(List<JButton> boutons) {
@@ -279,15 +281,15 @@ public class QuestionFenetreQuestion extends JFrame {
     }
 
     /**
-     *
-     * @return
+     * Méthode renvoyant le label
+     * @return le label
      */
     public JTextPane getLabel() {
         return label;
     }
 
     /**
-     *
+     * Méthode permettant de setter le label
      * @param label
      */
     public void setLabel(JTextPane label) {
@@ -295,7 +297,7 @@ public class QuestionFenetreQuestion extends JFrame {
     }
 
     /**
-     *
+     * Méthode permettant de fermer la frame
      */
     public void fermer() {
 
@@ -304,7 +306,7 @@ public class QuestionFenetreQuestion extends JFrame {
     }
 
     /**
-     *
+     * Méthode permettant de setter un choix
      * @param unChoix
      */
     public void setChoix(boolean unChoix) {
@@ -312,8 +314,8 @@ public class QuestionFenetreQuestion extends JFrame {
     }
 
     /**
-     *
-     * @return
+     * Méthode d'afficher si le choix est bon ou mauvais
+     * @return true si le choix est bon, sinon false
      */
     public boolean isChoix() {
         return choix;

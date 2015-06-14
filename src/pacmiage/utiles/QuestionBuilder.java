@@ -16,7 +16,7 @@ import org.w3c.dom.NodeList;
 /**
  *
  * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
- * méthode permettant de builder la liste des questions
+ * Classe permettant de builder la liste des questions
  */
 public class QuestionBuilder {
 
