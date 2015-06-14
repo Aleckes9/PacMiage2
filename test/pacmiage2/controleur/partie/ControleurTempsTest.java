@@ -1,5 +1,6 @@
 package pacmiage2.controleur.partie;
 
+import pacmiage2.modele.ControleurTemps;
 import javax.swing.Timer;
 import org.junit.After;
 import org.junit.AfterClass;

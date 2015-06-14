@@ -10,6 +10,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.SlickException;
+import pacmiage2.utiles.Configuration;
 import pacmiage2.vue.partie.Partie_AffichageMap;
 
 /**
@@ -35,7 +36,7 @@ public class PacMiageTest {
     @Before
     public void setUp() {
         try {
-            instance = new PacMiage(map);
+            instance = new PacMiage(map, Configuration.getInstance().recupererValeur("pacNormal"));
         } catch (SlickException ex) {
             Logger.getLogger(PacMiageTest.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -92,7 +93,7 @@ public class PacMiageTest {
     public void testUpdate() {
         System.out.println("update");
         int delta = 0;
-        instance.update(delta);
+        instance.updatePac(delta);
     }
 
     /**

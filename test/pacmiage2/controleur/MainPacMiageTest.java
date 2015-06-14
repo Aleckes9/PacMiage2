@@ -40,6 +40,7 @@ public class MainPacMiageTest {
         System.out.println("main");
         String[] args = null;
         MainPacMiage.main(args);
+        System.exit(0);
     }
     
 }

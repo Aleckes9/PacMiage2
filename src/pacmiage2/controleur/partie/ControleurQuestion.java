@@ -26,14 +26,14 @@ public final class ControleurQuestion {
     private Document document;
     private Element racine;
     private QuestionBuilder qBuilder;
-    static GraphicsDevice device = GraphicsEnvironment
+    private static GraphicsDevice device = GraphicsEnvironment
             .getLocalGraphicsEnvironment().getScreenDevices()[0];
 
     public ControleurQuestion() {
 
     }
 
-    public void init() {
+    public void initQuestion() {
 
         try {
             //On crée une nouvelle instance de notre FenetreBoutons
@@ -58,7 +58,7 @@ public final class ControleurQuestion {
         this.fenetre = fenetre;
     }
 
-    void afficherQuestion(int niveau) {
+    public void afficherQuestion(int niveau) {
         fenetre = new Question_FenetreQuestion(qBuilder.getQuestion(niveau));
         device.setFullScreenWindow(fenetre);
         fenetre.setVisible(true);//On la rend visible

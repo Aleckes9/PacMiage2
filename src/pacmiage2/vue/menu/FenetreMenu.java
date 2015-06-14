@@ -12,7 +12,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import listener.FenetreMenuListener;
+import pacmiage2.listener.FenetreMenuListener;
 import pacmiage2.modele.JoueurInfo;
 import pacmiage2.utiles.Session;
 

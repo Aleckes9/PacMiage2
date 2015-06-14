@@ -7,11 +7,8 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.SlickException;
-import pacmiage2.controleur.partie.PartieController;
-import pacmiage2.modele.Bonus;
 import pacmiage2.modele.Objet;
 
 /**
@@ -62,7 +59,7 @@ public class Partie_AffichageObjetBonusTest {
         System.out.println("render");
         Graphics g = null;
         Partie_AffichageObjetBonus instance = new Partie_AffichageObjetBonus(objet, x, y);
-        instance.render(g);
+        instance.renderObjetPartie(g);
     }
 
     /**
@@ -73,6 +70,6 @@ public class Partie_AffichageObjetBonusTest {
         System.out.println("update");
         int delta = 0;
         Partie_AffichageObjetBonus instance = new Partie_AffichageObjetBonus(objet, x, y);
-        instance.update(delta);
+        instance.updateObjetPartie(delta);
     }
 }

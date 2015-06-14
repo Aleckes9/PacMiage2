@@ -1,6 +1,6 @@
 package pacmiage2.utiles.objetBonus;
 
-import pacmiage2.controleur.partie.ControleurTemps;
+import pacmiage2.modele.ControleurTemps;
 import pacmiage2.controleur.partie.PartieController;
 import pacmiage2.modele.Bonus;
 import pacmiage2.modele.Fantome;

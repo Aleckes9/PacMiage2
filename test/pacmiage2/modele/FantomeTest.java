@@ -36,8 +36,8 @@ public class FantomeTest {
     @Before
     public void setUp() {
         map = new Partie_AffichageMap();
-        instance = new Fantome(map);
         try {
+            instance = new Fantome(map, Configuration.getInstance().recupererValeur("carteFantome" + String.valueOf(1)));
             map.init(Configuration.getInstance().recupererValeur("carte1"));
         } catch (SlickException ex) {
             Logger.getLogger(FantomeTest.class.getName()).log(Level.SEVERE, null, ex);
@@ -55,7 +55,7 @@ public class FantomeTest {
     public void testInit() throws Exception {
         System.out.println("init");
         int niveau = 1;
-        instance.init(niveau);
+        instance.initAnimation();
     }
 
     /**
@@ -98,7 +98,7 @@ public class FantomeTest {
         System.out.println("update");
         float newXPac = 0.0F;
         float newYPac = 0.0F;
-        instance.update(newXPac, newYPac);
+        instance.updateFantome(newXPac, newYPac);
     }
 
     /**

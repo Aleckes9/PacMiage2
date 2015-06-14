@@ -12,12 +12,8 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
 import pacmiage2.modele.Question;
 import pacmiage2.modele.Reponse;
-import pacmiage2.utiles.QuestionBuilder;
 import pacmiage2.vue.question.Question_FenetreQuestion;
 
 /**
@@ -59,7 +55,7 @@ public class ControleurQuestionTest {
     public void testInit() {
         System.out.println("init");
         ControleurQuestion instance = new ControleurQuestion();
-        instance.init();
+        instance.initQuestion();
     }
 
 

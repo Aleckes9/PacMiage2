@@ -11,7 +11,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import listener.SelectionNiveauListener;
+import pacmiage2.listener.SelectionNiveauListener;
 import pacmiage2.utiles.Session;
 import pacmiage2.utiles.Configuration;
 import pacmiage2.vue.bouton.Btn_RetourMenu;

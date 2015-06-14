@@ -5,6 +5,7 @@
  */
 package pacmiage2.controleur.partie;
 
+import pacmiage2.modele.ControleurTemps;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -23,10 +24,10 @@ import pacmiage2.vue.partie.Partie_AffichageScore;
 import pacmiage2.vue.partie.Partie_AffichageTemps;
 import pacmiage2.vue.partie.Partie_AffichageImageFondu;
 import pacmiage2.modele.Fantome;
-import pacmiage2.modele.Graine;
 import pacmiage2.modele.JoueurInfo;
 import pacmiage2.vue.partie.Partie_AffichageMap;
 import pacmiage2.modele.Objet;
+import pacmiage2.modele.ObjetPartie;
 import pacmiage2.modele.PacMiage;
 import pacmiage2.utiles.Configuration;
 import pacmiage2.utiles.SauvegardeFichier;
@@ -57,7 +58,7 @@ public class PartieController extends BasicGame {
     private Partie_AffichageImageFondu imageVeracite;
 
     private final PacMiage player;
-    private final java.util.Map<Integer, Graine> grainesMap;
+    private final java.util.Map<Integer, ObjetPartie> grainesMap;
     private final List<Fantome> listFantome;
     private final ControleurTemps timer;
     private Partie_AffichageObjetBonus[] affichageBonus;
@@ -78,7 +79,7 @@ public class PartieController extends BasicGame {
         
         map = new Partie_AffichageMap();
         
-        player = new PacMiage(map);
+        player = new PacMiage(map, Configuration.getInstance().recupererValeur("pacNormal"));
         grainesMap = new HashMap<>();
         listFantome = new ArrayList<>();
         
@@ -89,7 +90,7 @@ public class PartieController extends BasicGame {
         affichageBonus = new Partie_AffichageObjetBonus[4];
         ctrlQuestion = new ControleurQuestion();
         
-        ctrlQuestion.init();
+        ctrlQuestion.initQuestion();
     }
 
     public PacMiage getPlayer() {
@@ -110,7 +111,7 @@ public class PartieController extends BasicGame {
         for (int objectID = 0; objectID < map.getObjectCount(); objectID++) {
 
             if ("graine".equals(map.getObjectType(objectID))) {
-                grainesMap.put(objectID, new Graine(map.getObjectX(objectID), map.getObjectY(objectID)));
+                grainesMap.put(objectID, new ObjetPartie(map.getObjectX(objectID), map.getObjectY(objectID), Configuration.getInstance().recupererValeur("graine")));
             }
             if ("objet".equals(map.getObjectType(objectID))) {
                 idObjetsBonus.add(objectID);
@@ -119,9 +120,9 @@ public class PartieController extends BasicGame {
                 this.player.init(map.getObjectX(objectID), map.getObjectY(objectID));
             }
             if ("origineFantome".equals(map.getObjectType(objectID))) {
-                Fantome fantome = new Fantome(map);
+                Fantome fantome = new Fantome(map, Configuration.getInstance().recupererValeur("carteFantome" + String.valueOf(niveau)));
                 listFantome.add(fantome);
-                fantome.init(niveau);
+                fantome.initAnimation();
                 fantome.initEtat(map.getObjectX(objectID), map.getObjectY(objectID));
 
             }
@@ -172,7 +173,7 @@ public class PartieController extends BasicGame {
             if (!grainesMap.isEmpty()) {
                 this.map.renderBackground();
                 for (Integer graine : grainesMap.keySet()) {
-                    grainesMap.get(graine).render(g);
+                    grainesMap.get(graine).renderObjetPartie(g);
                 }
                 this.player.render(g);
 
@@ -185,7 +186,7 @@ public class PartieController extends BasicGame {
 
                 for (Partie_AffichageObjetBonus bonus : this.affichageBonus) {
                     if (bonus != null) {
-                        bonus.render(g);
+                        bonus.renderObjetPartie(g);
                     }
                 }
 
@@ -223,9 +224,9 @@ public class PartieController extends BasicGame {
             int graineRemove = -1;
 
             for (Integer uneGraine : grainesMap.keySet()) {
-                Graine graine = grainesMap.get(uneGraine);
+                ObjetPartie graine = grainesMap.get(uneGraine);
                 if (graine != null) {
-                    if (player.estEnCollisionObjet(graine.getX(), graine.getY())) {
+                    if (player.estEnCollisionObjet(graine.getXObjetPartie(), graine.getYObjetPartie())) {
                         graineRemove = uneGraine;
                     }
                 }
@@ -243,7 +244,7 @@ public class PartieController extends BasicGame {
                 }
             }
 
-            this.player.update(delta);
+            this.player.updatePac(delta);
             for (Fantome fantome : listFantome) {
                 if (collision) {
                     if (fantome.estEnCollisionCible(this.player.getCenterX(), this.player.getCenterY())) {
@@ -257,7 +258,7 @@ public class PartieController extends BasicGame {
                     }
                 }
 
-                fantome.update(this.player.getX(), this.player.getY());
+                fantome.updateFantome(this.player.getX(), this.player.getY());
             }
 
             if (timer.getTempsRestant() == 0) {
