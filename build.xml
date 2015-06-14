@@ -10,124 +10,44 @@
 <project name="PacMiage2" default="default" basedir=".">
     <description>Builds, tests, and runs the project PacMiage2.</description>
     <import file="nbproject/build-impl.xml"/>
-    
-    
-    
-    <target name="clean">
-        <delete dir="build"/>
-    </target>
-    
-    
-    
-
-    
-    <target name="-pre-init">
-   <property name="project.name" value="My Library" />
-   <property name="version.num" value="1.4.1" />
-   <tstamp>
-      <format property="NOW" pattern="yyyy-MM-dd HH:mm:ss z" />
-   </tstamp>
-   
-   
-
-   <!--
-   <exec outputproperty="svna.version" executable="svnversion">
-       <arg value="-c" />
-       <redirector>
-           <outputfilterchain>
-               <tokenfilter>
-                   <replaceregex pattern="^[0-9]*:?" replace="" flags="g"/>
-                   <replaceregex pattern="M" replace="" flags="g"/>
-               </tokenfilter>
-           </outputfilterchain>
-       </redirector>
-   </exec>
-   -->
 
 
-   <manifest file="MANIFEST.MF">
-      <attribute name="Bundle-Name" value="${project.name}" />           
-      <!--<attribute name="Bundle-Revision" value="${svna.version}" />-->
-      <attribute name="Implementation-Title" value="${project.name}" />
-      <!--<attribute name="Class-Path" value="./lib/StyleButton.jar; ./lib/ibxm.jar; ./lib/jdom-2.0.6/jdom-2.0.6-contrib.jar; ./lib/jdom-2.0.6/jdom-2.0.6-javadoc.jar; ./lib/jdom-2.0.6/jdom-2.0.6-junit.jar; ./lib/jdom-2.0.6/jdom-2.0.6-sources.jar; ./lib/jdom-2.0.6/jdom-2.0.6.jar; ./lib/jdom-2.0.6/lib/jaxen-1.1.6.jar; ./lib/jdom-2.0.6/lib/xalan/serializer-2.7.2.jar; ./lib/jdom-2.0.6/lib/xalan/xalan-2.7.2.jar; ./lib/jdom-2.0.6/lib/xercesImpl.jar; ./lib/jdom-2.0.6/lib/xml-apis.jar; lib/jinput.jar; ./lib/jnlp.jar; ./lib/jogg-0.0.7.jar; ./lib/jorbis-0.0.15.jar; ./lib/lwjgl.jar; ./lib/lwjgl_util.jar; ./lib/lwjgl_util_applet.jar; ./lib/natives-linux.jar; ./lib/natives-mac.jar; ./lib/natives-windows.jar; ./lib/natives/Pack200Task.jar; ./lib/slick-examples.jar; ./lib/slick.jar; ./lib/tinylinepp.jar" />
-      -->
-        <attribute name="built-by" value="${user.name}" />      
-      <attribute name="Main-Class" value="pacmiage.controleur.MainPacMiage" />   
-   </manifest>
+<target name="post-jar">
 
-</target>
-
-<path id="dep.runtime">
-    <fileset dir="./lib">
-        <include name="**/*.jar" />
-    </fileset>
-</path>
-<property name="dep_cp" value="${toString:dep.runtime}" />
-
-<target name="default">
-    <manifestclasspath property="manifest_cp" jarfile="myjar.jar">
-        <classpath refid="dep.runtime" />
-    </manifestclasspath>
-    <echo message="Build Classpath: ${dep_cp}" />
-    <echo message="Manifest Classpath: ${manifest_cp}" />
-</target>
-
-
-    <target name="package-for-store" depends="jar">
-
-        <!-- Change the value of this property to be the name of your JAR,
-             minus the .jar extension. It should not have spaces.
-             <property name="store.jar.name" value="MyJarName"/>
-        -->
-        <property name="store.jar.name" value="SCHEDULAR"/>
-
-
-        <!-- don't edit below this line -->
-
-        <property name="store.dir" value="store"/>
-        <property name="store.jar" value="${store.dir}/${store.jar.name}.jar"/>
-
-        <echo message="Packaging ${application.title} into a single JAR at ${store.jar}"/>
-
-        <delete dir="${store.dir}"/>
-        <mkdir dir="${store.dir}"/>
-
-        <jar destfile="${store.dir}/temp_final.jar" filesetmanifest="skip">
-            <zipgroupfileset dir="dist" includes="*.jar"/>
-            <zipgroupfileset dir="dist/lib" includes="*.jar"/>
-
-            <manifest>
-                <attribute name="Main-Class" value="${main.class}"/>
-            </manifest>
-        </jar>
-
-        <zip destfile="${store.jar}">
-            <zipfileset src="${store.dir}/temp_final.jar"
-            excludes="META-INF/*.SF, META-INF/*.DSA, META-INF/*.RSA"/>
-        </zip>
-
-        <delete file="${store.dir}/temp_final.jar"/>
-
-    </target>
-    
-    <target name="-post-jar">
     <property name="store.jar.name" value="AllInOneJar"/>
+
     <property name="store.dir" value="dist"/>
+
     <property name="store.jar" value="${store.dir}/${store.jar.name}.jar"/>
+
     <echo message="Packaging ${application.title} into a single JAR at ${store.jar}"/>
+
     <jar destfile="${store.dir}/temp_final.jar" filesetmanifest="skip">
+
         <zipgroupfileset dir="dist" includes="*.jar"/>
         <zipgroupfileset dir="dist/lib" includes="*.jar"/>
         <manifest>
+
             <attribute name="Main-Class" value="${main.class}"/>
+
         </manifest>
+
     </jar>
+
     <zip destfile="${store.jar}">
+
         <zipfileset src="${store.dir}/temp_final.jar"
+
         excludes="META-INF/*.SF, META-INF/*.DSA, META-INF/*.RSA"/>
-    </zip>
+ </zip>
+
     <delete file="${store.dir}/temp_final.jar"/>
+
 </target>
+
     
 
 </project>
+
+
+

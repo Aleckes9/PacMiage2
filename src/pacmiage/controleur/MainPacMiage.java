@@ -15,8 +15,9 @@ import pacmiage.utiles.ChargerFichier;
 import pacmiage.utiles.SauvegardeFichier;
 
 /**
- *
- * @author @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
+ * Classe principale du PacMiage
+ * @author @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël
+ * Senand
  */
 public class MainPacMiage {
 
@@ -27,13 +28,12 @@ public class MainPacMiage {
 
     private MainPacMiage() {
     }
-    
+
     /**
      *
      * @param args
      */
     public static void main(String[] args) {
-        
 
         try {
 
@@ -42,7 +42,7 @@ public class MainPacMiage {
             joueur = (JoueurInfo) ChargerFichier.getInstance().lectureFichier(Configuration.getInstance().recupererValeur("pathSauvegarde"));
             if (joueur == null) {
                 SauvegardeFichier.getInstance().enregistrerFichier(JoueurInfo.getInstance(), Configuration.getInstance().recupererValeur("pathSauvegarde"));
-            }else{
+            } else {
                 JoueurInfo.setInstance(joueur);
             }
 
@@ -58,33 +58,35 @@ public class MainPacMiage {
                     game = new AppGameContainer(partieController, 1024, 768, true);
                     partieController.setGame(game);
                     mainFenetre.dispose();
-                       
+
                     game.setShowFPS(false);
-                    
+
                     //limite le framerate pour garder la même vitesse de jeu sur tout les appariels
                     game.setTargetFrameRate(30);
 
                     //démarre la partie 
                     game.start();
-                    
+
                     //ferme la partie en cours sans fermer l'application
                     game.setForceExit(false);
                     game.exit();
-                    
+
                     //Supprime les images déjà enregistré en mémoire
                     InternalTextureLoader.get().clear();
                     SoundStore.get().clear();
-                    
-                    if(partieController.isGameOver()){
-                                            mainFenetre.setPartieController(null);
-                    mainFenetre.initFenetre();
-                    mainFenetre.initFenetreMenu();
-                    }else{
-                        int niveau = partieController.getNiveau() == 5 ? 1 : partieController.getNiveau()+1 ;
-                        PartieController partie = new PartieController(niveau,Configuration.getInstance().recupererValeur("carte"+niveau));
-                        
+
+                    if (partieController.isWin()) {
+
+                        int niveau = partieController.getNiveau() == 5 ? 1 : partieController.getNiveau() + 1;
+                        PartieController partie = new PartieController(niveau, Configuration.getInstance().recupererValeur("carte" + niveau));
+
                         partie.getScore().setFutureScore(partieController.getScore().getFutureScore());
                         mainFenetre.setPartieController(partie);
+
+                    } else {
+                        mainFenetre.setPartieController(null);
+                        mainFenetre.initFenetre();
+                        mainFenetre.initFenetreMenu();
                     }
                 }
             }

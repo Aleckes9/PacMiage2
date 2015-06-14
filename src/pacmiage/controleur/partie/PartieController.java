@@ -43,6 +43,7 @@ public class PartieController extends BasicGame {
     private boolean collision;
     private boolean fantomeMove;
     private int niveau;
+    private boolean win;
     private AppGameContainer game;
     private GameContainer container;
     private Music background;
@@ -78,7 +79,7 @@ public class PartieController extends BasicGame {
         gameOver = false;
         niveau = unNiveau;
         cheminCarte = unCheminCarte;
-
+        win = false;
         map = new PartieAffichageMap();
 
         player = new PacMiage(map, Configuration.getInstance().recupererValeur("pacNormal"));
@@ -280,6 +281,9 @@ public class PartieController extends BasicGame {
                     JoueurInfo.getInstance().ajouterGraines(score.getFutureScore());
                     if(choix){
                         container.exit();
+                        win = true;
+                    }else{
+                        gameOver = true;
                     }
                 }
             }
@@ -524,6 +528,23 @@ public class PartieController extends BasicGame {
     public void setScore(PartieAffichageScore score) {
         this.score = score;
     }
+
+    /**
+     * Méthode qui retourne win
+     * @return 
+     */
+    public boolean isWin() {
+        return win;
+    }
+
+    /**
+     * Méthode permettant setter win
+     * @param win 
+     */
+    public void setWin(boolean win) {
+        this.win = win;
+    }
+    
     
     
     
