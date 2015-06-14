@@ -2,6 +2,8 @@ package pacmiage2.listener;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JButton;
 import org.newdawn.slick.SlickException;
 import pacmiage2.utiles.Configuration;
@@ -21,6 +23,7 @@ public class SelectionNiveauListener implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+    
         try {
             JButton tp = (JButton) e.getSource();
 
@@ -42,8 +45,9 @@ public class SelectionNiveauListener implements ActionListener {
                     break;
             }
         } catch (SlickException ex) {
-            System.exit(0);
+            Logger.getLogger(SelectionNiveauListener.class.getName()).log(Level.SEVERE, null, ex);
         }
+
     }
     
 }

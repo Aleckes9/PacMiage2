@@ -4,6 +4,8 @@ import java.awt.GraphicsDevice;
 import java.awt.GraphicsEnvironment;
 import java.io.File;
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -35,18 +37,23 @@ public final class ControleurQuestion {
 
     public void initQuestion() {
 
-        try {
+       
             //On crée une nouvelle instance de notre FenetreBoutons
             factory = DocumentBuilderFactory.newInstance();
+        try {
             builder = factory.newDocumentBuilder();
+        } catch (ParserConfigurationException ex) {
+            Logger.getLogger(ControleurQuestion.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
             document = builder.parse(new File(Configuration.getInstance().recupererValeur("questions")));
-
+        } catch (SAXException | IOException ex) {
+            Logger.getLogger(ControleurQuestion.class.getName()).log(Level.SEVERE, null, ex);
+        }
             racine = document.getDocumentElement();
             qBuilder = new QuestionBuilder(racine);
 
-        } catch (ParserConfigurationException | SAXException | IOException ex) {
-            System.exit(0);
-        }
+    
 
     }
 

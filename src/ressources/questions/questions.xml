@@ -52,7 +52,7 @@
 <question niveau="1">
     <text>
     	L'accès dans le pire des cas à une donnée dans une table de hachage 
-	a une complexité de<choix></choix>
+a une complexité de<choix></choix>
 
     </text>
     <reponse rep="false">
@@ -170,7 +170,7 @@ un algorithme émergeant
 <question niveau="2">
     <text>
    	On a un ensemble de valeurs suivant une loi uniforme discrète. 
-   	Le tri le plus efficace sera:<choix></choix>
+Le tri le plus efficace sera:<choix></choix>
 
     </text>
     <reponse rep="false">
@@ -188,7 +188,7 @@ le tri par comptage
 <question niveau="2">
     <text>
    	On veut écrire un algorithme qui vérifie qu'un document est bien parenthèsé. 
-	Pour cela, on utilisera<choix></choix>
+Pour cela, on utilisera<choix></choix>
 
     </text>
     <reponse rep="true">
@@ -223,7 +223,7 @@ f(x)=x[m], avec m un entier premier
 <question niveau="2">
     <text>
  	On ajoute dans l'ordre a,b,c,d,e,f,g à une pile. On dépile esuite deux fois. 
-	Quel sera le prochain caractère à être dépilé?<choix></choix>
+Quel sera le prochain caractère à être dépilé?<choix></choix>
 
     </text>
     <reponse rep="false">
@@ -242,8 +242,8 @@ f
 <question niveau="2">
     <text>
  	On ajoute dans l'ordre a,b,c,d,e,f,g à une file. 
-	On dépile esuite deux fois. 
-	Quel sera le prochain caractère à être dépilé?<choix></choix>
+On dépile esuite deux fois. 
+Quel sera le prochain caractère à être dépilé?<choix></choix>
 
     </text>
     <reponse rep="true">
@@ -263,8 +263,8 @@ f
 <question niveau="2">
     <text>
  	On ajoute dans l'ordre a, b, c, d, f. 
-	On dépile 2 fois et on obtient c. 
-	La structure de donnée est<choix></choix>
+On dépile 2 fois et on obtient c. 
+La structure de donnée est<choix></choix>
 
     </text>
     <reponse rep="false">
@@ -283,7 +283,7 @@ on ne sait pas
 <question niveau="2">
     <text>
  	On ajoute dans l'ordre à un arbre binaire 4,1,5,7,6,2,3. 
-	L'arbre est-il équilibré?<choix></choix>
+L'arbre est-il équilibré?<choix></choix>
 
     </text>
     <reponse rep="false">
@@ -302,7 +302,7 @@ on ne sait pas
 <question niveau="2">
     <text>
  	On ajoute dans l'ordre à un arbre binaire 4,1,5,7,6,2,3,9,10,11. 
-	Qu'elle est la hauteur de l'arbre?<choix></choix>
+Qu'elle est la hauteur de l'arbre?<choix></choix>
 
     </text>
     <reponse rep="true">
@@ -321,7 +321,7 @@ on ne sait pas
 <question niveau="2">
     <text>
 	On enfile a,b,v,c,s,d dans une file. 
-	Quel sera le premier défilé?<choix></choix>
+Quel sera le premier défilé?<choix></choix>
 
     </text>
     <reponse rep="true">
@@ -340,7 +340,7 @@ on ne sait pas
 <question niveau="3">
     <text>
 	On ajoute dans dans une table de hachage les couples(1;clou) et (2;masse). 
-	On parcours la table: Quelle sera la première valeur parcourue?<choix></choix>
+On parcours la table: Quelle sera la première valeur parcourue?<choix></choix>
 
     </text>
     <reponse rep="true">
@@ -394,7 +394,7 @@ on ne sait pas
 <question niveau="3">
     <text>
     	Comment se définit la complexité en temps d'un algorithme 
-	calculant un résultat à partir d'un paramètre fourni ?
+calculant un résultat à partir d'un paramètre fourni ?
     </text>
     <reponse rep="false">
     	Elle est en général indépendante de la taille de son paramètre d'entrée
@@ -564,7 +564,7 @@ on ne sait pas
 <question niveau="4">
     <text>
     	Quelle est la prochaine étape d'un tri par 
-	séléction pour la suite suivante : 2-4-3-1 ?
+séléction pour la suite suivante : 2-4-3-1 ?
     </text>
     <reponse rep="false">
     	1-2-4-3
@@ -583,7 +583,7 @@ on ne sait pas
 <question niveau="4">
     <text>
     	Quelle est la prochaine étape d'un tri par 
-	insertion pour la suite suivante : 2-4-3-1 ?
+insertion pour la suite suivante : 2-4-3-1 ?
     </text>
     <reponse rep="true">
     	1-2-4-3
@@ -602,7 +602,7 @@ on ne sait pas
 <question niveau="4">
     <text>
     	Quelle est la prochaine étape d'un tri à bulle 
-	pour la suite suivante : 1-4-5-2-8 ?
+pour la suite suivante : 1-4-5-2-8 ?
     </text>
     <reponse rep="false">
     	1-4-5-8-2
@@ -720,7 +720,7 @@ on ne sait pas
 <question niveau="5">
     <text>
     	Quelle méthode ne permet pas de résoudre 
-	des collisions dans une table de chainage :
+des collisions dans une table de chainage :
     </text>
     <reponse rep="false">
     	l'adressage ouvert

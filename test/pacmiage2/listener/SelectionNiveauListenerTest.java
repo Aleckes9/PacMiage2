@@ -1,6 +1,5 @@
 package pacmiage2.listener;
 
-import pacmiage2.listener.SelectionNiveauListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JButton;
 import org.junit.After;
@@ -8,7 +7,6 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
 import pacmiage2.modele.JoueurInfo;
 import pacmiage2.vue.menu.FenetrePrincipale;
 
@@ -35,7 +33,7 @@ public class SelectionNiveauListenerTest {
     
     @Before
     public void setUp() {
-        fenetre = new FenetrePrincipale(joueur);
+        fenetre = new FenetrePrincipale();
     }
     
     @After

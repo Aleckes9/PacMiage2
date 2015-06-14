@@ -46,7 +46,7 @@ public class Eshop_Action_AchatTest {
     public void setUp() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
         graines = 0;
         prix = 0;
-        eshopFenetre = new FenetrePrincipale(joueur);
+        eshopFenetre = new FenetrePrincipale();
         it = new Objet( nom, image, description, prix, miniImage);
     }
     

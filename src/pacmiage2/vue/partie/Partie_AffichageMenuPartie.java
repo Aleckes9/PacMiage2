@@ -13,7 +13,6 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import pacmiage2.utiles.Session;
 
-
 /**
  *
  * @author Maëlle
@@ -37,19 +36,19 @@ public final class Partie_AffichageMenuPartie implements ActionListener {
         fenetre.repaint();
 
     }
-    
-     public void initFenetre() {
+
+    public void initFenetre() {
         fenetre.setLocationRelativeTo(null);
         fenetre.setUndecorated(true);
-        fenetre.setBounds(0, 0,partie.getGame().getScreenWidth() , partie.getGame().getScreenHeight());
+        fenetre.setBounds(0, 0, partie.getGame().getScreenWidth(), partie.getGame().getScreenHeight());
         fenetre.setVisible(true);
         fenetre.setContentPane(j);
         fenetre.setAlwaysOnTop(true);
         fenetre.toFront();
         fenetre.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-     }
-     
-     public void initButton() {
+    }
+
+    public void initButton() {
         j.setBackground(java.awt.Color.black);
         boutons.setBackground(java.awt.Color.black);
 
@@ -71,7 +70,7 @@ public final class Partie_AffichageMenuPartie implements ActionListener {
         boutons.add(son);
         boutons.add(quitter);
         boutons.add(reprendre);
-     }
+    }
 
     public void configButton(final JButton button) {
         button.setForeground(Color.white);
@@ -104,25 +103,18 @@ public final class Partie_AffichageMenuPartie implements ActionListener {
         Session.getInstance();
         switch (tp.getName()) {
             case "son":
-                if (partie.getBackground().getVolume() != 0) {
-                    partie.getBackground().setVolume(0);
-                } else {
-                    partie.getBackground().setVolume(0.5f);
-                }
+                caseSon();
                 break;
             case "quitter":
-                partie.getContainer().exit();
-                this.fenetre.dispose();
-                
+                caseQuitter();
                 break;
-                
-                case "retour":
-                partie.getContainer().exit();
-                
+            case "retour":
+                caseRetour();
                 break;
             case "reprendre":
-                fenetre.dispose();
+                caseReprendre();
                 break;
+            default:
 
         }
     }
@@ -130,7 +122,26 @@ public final class Partie_AffichageMenuPartie implements ActionListener {
     public JFrame getFenetre() {
         return fenetre;
     }
-    
-    
-    
+
+    private void caseSon() {
+        if (partie.getBackground().getVolume() != 0) {
+            partie.getBackground().setVolume(0);
+        } else {
+            partie.getBackground().setVolume(0.5f);
+        }
+    }
+
+    private void caseQuitter() {
+        partie.getContainer().exit();
+        this.fenetre.dispose();
+    }
+
+    private void caseRetour() {
+        partie.getContainer().exit();
+    }
+
+    private void caseReprendre() {
+        fenetre.dispose();
+    }
+
 }

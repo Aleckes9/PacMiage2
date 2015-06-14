@@ -1,12 +1,13 @@
 package pacmiage2.vue.menu;
 
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
-import static pacmiage2.controleur.MainPacMiage.joueur;
 import pacmiage2.modele.JoueurInfo;
 
 /**
@@ -31,7 +32,7 @@ public class SelectionnerNiveauTest {
     
     @Before
     public void setUp() {
-        fenetre1 = new FenetrePrincipale(joueur);
+        fenetre1 = new FenetrePrincipale();
     }
     
     @After
@@ -43,9 +44,13 @@ public class SelectionnerNiveauTest {
      */
     @Test
     public void testInitFenetre() {
-        System.out.println("initFenetre");
-        SelectionnerNiveau instance = new SelectionnerNiveau(fenetre1);
-        instance.initFenetre();
+        try {
+            System.out.println("initFenetre");
+            SelectionnerNiveau instance = new SelectionnerNiveau(fenetre1);
+            instance.initFenetre();
+        } catch (IOException ex) {
+            Logger.getLogger(SelectionnerNiveauTest.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -53,9 +58,13 @@ public class SelectionnerNiveauTest {
      */
     @Test
     public void testInitBoutons() {
-        System.out.println("initBoutons");
-        SelectionnerNiveau instance = new SelectionnerNiveau(fenetre1);
-        instance.initBoutons();
+        try {
+            System.out.println("initBoutons");
+            SelectionnerNiveau instance = new SelectionnerNiveau(fenetre1);
+            instance.initBoutons();
+        } catch (IOException ex) {
+            Logger.getLogger(SelectionnerNiveauTest.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
 }

@@ -6,12 +6,9 @@
 package pacmiage2.controleur.partie;
 
 import pacmiage2.modele.ControleurTemps;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import org.newdawn.slick.AppGameContainer;
 import org.newdawn.slick.BasicGame;
 import org.newdawn.slick.GameContainer;
@@ -37,7 +34,7 @@ import pacmiage2.vue.partie.Partie_AffichageObjetBonus;
  *
  * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
  */
-public class PartieController extends BasicGame {
+public class PartieController extends BasicGame{
 
     private boolean gameOver;
     private int multiplicateur;
@@ -133,7 +130,7 @@ public class PartieController extends BasicGame {
                 idDepartFant = objectID;
             }
             if ("temps".equals(map.getObjectType(objectID))) {
-                temps.initPos(map.getObjectX(objectID), map.getObjectY(objectID));
+                temps.initPosAffichageTemps(map.getObjectX(objectID), map.getObjectY(objectID));
             }
         }
 
@@ -182,7 +179,7 @@ public class PartieController extends BasicGame {
                 }
                 this.map.renderForeground();
                 this.score.render(g);
-                this.temps.render(g);
+                this.temps.renderAffichageTemps(g);
 
                 for (Partie_AffichageObjetBonus bonus : this.affichageBonus) {
                     if (bonus != null) {
@@ -216,7 +213,7 @@ public class PartieController extends BasicGame {
                 if (this.imageVeracite.isInvisible()) {
                     this.imageVeracite = null;
                     for (Fantome fantomevit : listFantome) {
-                        fantomevit.setVitesse(4);
+                        fantomevit.setVitesse(2);
                     }
                 }
             }
@@ -264,12 +261,7 @@ public class PartieController extends BasicGame {
             if (timer.getTempsRestant() == 0) {
                 JoueurInfo.getInstance().setRecord(score.getFutureScore());
                 JoueurInfo.getInstance().ajouterGraines(score.getFutureScore());
-                try {
-                    SauvegardeFichier.getInstance().enregistrerFichier(JoueurInfo.getInstance(), Configuration.getInstance().recupererValeur("pathSauvegarde"));
-
-                } catch (IOException ex) {
-                    Logger.getLogger(PartieController.class.getName()).log(Level.SEVERE, null, ex);
-                }
+                SauvegardeFichier.getInstance().enregistrerFichier(JoueurInfo.getInstance(), Configuration.getInstance().recupererValeur("pathSauvegarde"));
                 imageVeracite = new Partie_AffichageImageFondu(new Image(Configuration.getInstance().recupererValeur("gameOver")));
                 gameOver = true;
 
@@ -282,7 +274,7 @@ public class PartieController extends BasicGame {
 
         if (tempsBonus != null && tempsBonus.getTempsRestant() == 0) {
             for (Fantome fantome : listFantome) {
-                fantome.setVitesse(4);
+                fantome.setVitesse(2);
             }
             player.setVitesse(2);
         }

@@ -43,7 +43,7 @@ public class Eshop_AfficheEshopTest {
     @Test
     public void testBuildListObjet() throws Exception {
         System.out.println("buildListObjet");
-        FenetrePrincipale f = new FenetrePrincipale(joueur);
+        FenetrePrincipale f = new FenetrePrincipale();
         Eshop_AfficheEshop instance = new Eshop_AfficheEshop(f);
         JScrollPane expResult = null;
         JScrollPane result = instance.buildListObjet(f);

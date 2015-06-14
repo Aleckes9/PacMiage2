@@ -40,7 +40,7 @@ public class FenetreMenuListenerTest {
     
     @Before
     public void setUp() {
-        fenetre = new FenetrePrincipale(joueur);
+        fenetre = new FenetrePrincipale();
     }
     
     @After

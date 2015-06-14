@@ -5,6 +5,8 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -23,17 +25,27 @@ public class ChargerFichier {
      *
      * @param cheminFichier
      * @return les infomations du joueur enregistrées dans le fichier
-     * @throws FileNotFoundException
-     * @throws IOException
-     * @throws ClassNotFoundException
      */
-    public Object lectureFichier(String cheminFichier) throws FileNotFoundException, IOException, ClassNotFoundException {
+    public Object lectureFichier(String cheminFichier){
         File f = new File(cheminFichier);
         Object o = null;
         if (f.exists()) {
-            FileInputStream fin = new FileInputStream(f);
-            ObjectInputStream in = new ObjectInputStream(fin);
-            o = in.readObject();
+            FileInputStream fin = null;
+            try {
+                fin = new FileInputStream(f);
+                ObjectInputStream in = new ObjectInputStream(fin);
+                o = in.readObject();
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(ChargerFichier.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IOException | ClassNotFoundException ex) {
+                Logger.getLogger(ChargerFichier.class.getName()).log(Level.SEVERE, null, ex);
+            } finally {
+                try {
+                    fin.close();
+                } catch (IOException ex) {
+                    Logger.getLogger(ChargerFichier.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
         }
         return o;
     }

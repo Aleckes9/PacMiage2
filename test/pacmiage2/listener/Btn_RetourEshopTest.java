@@ -33,7 +33,7 @@ public class Btn_RetourEshopTest {
     
     @Before
     public void setUp() {
-        fenetre = new FenetrePrincipale(joueur);
+        fenetre = new FenetrePrincipale();
     }
     
     @After

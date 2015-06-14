@@ -3,6 +3,9 @@ package pacmiage2.vue.menu;
 import java.awt.Component;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -46,10 +49,14 @@ public class CarteIconTest {
      */
     @Test
     public void testSetImage() {
-        System.out.println("setImage");
-        BufferedImage image = new BufferedImage(width, height, imageType);
-        CarteIcon instance = new CarteIcon(chemin);
-        instance.setImage(image);
+        try {
+            System.out.println("setImage");
+            BufferedImage image = new BufferedImage(width, height, imageType);
+            CarteIcon instance = new CarteIcon(chemin);
+            instance.setImage(image);
+        } catch (IOException ex) {
+            Logger.getLogger(CarteIconTest.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -57,13 +64,17 @@ public class CarteIconTest {
      */
     @Test
     public void testPaintIcon() {
-        System.out.println("paintIcon");
-        Component c = null;
-        Graphics g = null;
-        int x = 0;
-        int y = 0;
-        CarteIcon instance = new CarteIcon(chemin);
-        instance.paintIcon(c, g, x, y);
+        try {
+            System.out.println("paintIcon");
+            Component c = null;
+            Graphics g = null;
+            int x = 0;
+            int y = 0;
+            CarteIcon instance = new CarteIcon(chemin);
+            instance.paintIcon(c, g, x, y);
+        } catch (IOException ex) {
+            Logger.getLogger(CarteIconTest.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -71,11 +82,15 @@ public class CarteIconTest {
      */
     @Test
     public void testGetIconWidth() {
-        System.out.println("getIconWidth");
-        CarteIcon instance = new CarteIcon(chemin);
-        int expResult = 0;
-        int result = instance.getIconWidth();
-        assertEquals(expResult, result);
+        try {
+            System.out.println("getIconWidth");
+            CarteIcon instance = new CarteIcon(chemin);
+            int expResult = 0;
+            int result = instance.getIconWidth();
+            assertEquals(expResult, result);
+        } catch (IOException ex) {
+            Logger.getLogger(CarteIconTest.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -83,11 +98,15 @@ public class CarteIconTest {
      */
     @Test
     public void testGetIconHeight() {
-        System.out.println("getIconHeight");
-        CarteIcon instance = new CarteIcon(chemin);
-        int expResult = 0;
-        int result = instance.getIconHeight();
-        assertEquals(expResult, result);
+        try {
+            System.out.println("getIconHeight");
+            CarteIcon instance = new CarteIcon(chemin);
+            int expResult = 0;
+            int result = instance.getIconHeight();
+            assertEquals(expResult, result);
+        } catch (IOException ex) {
+            Logger.getLogger(CarteIconTest.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
 }

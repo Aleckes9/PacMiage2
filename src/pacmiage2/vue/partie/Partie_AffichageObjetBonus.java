@@ -17,11 +17,10 @@ public class Partie_AffichageObjetBonus extends ObjetPartie{
      * @param objet
      * @param x
      * @param y
-     * @param image
      * @throws SlickException
      */
     public Partie_AffichageObjetBonus(Objet objet, int x, int y) throws SlickException {
-        super(x, y ,objet.getImage());
+        super(x, y ,objet.getMiniImage());
         this.objet = objet;
     }
 

@@ -9,7 +9,6 @@ import javax.swing.JFrame;
 import org.newdawn.slick.SlickException;
 import pacmiage2.controleur.partie.PartieController;
 import pacmiage2.vue.eshop.Eshop_AfficheEshop;
-import pacmiage2.modele.JoueurInfo;
 import pacmiage2.utiles.Session;
 
 /**
@@ -19,12 +18,10 @@ import pacmiage2.utiles.Session;
 public class FenetrePrincipale extends JFrame {
 
     private JPanel jpanel;
-    private final JoueurInfo joueur;
     private static final Dimension tailleEcran = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
     private PartieController partieController;
 
-    public FenetrePrincipale(JoueurInfo joueur) {
-        this.joueur = joueur;
+    public FenetrePrincipale() {
 
     }
 
@@ -43,15 +40,15 @@ public class FenetrePrincipale extends JFrame {
         this.setVisible(true);
     }
 
-    public void initFenetreMenu() throws IOException, FileNotFoundException, ClassNotFoundException {
+    public void initFenetreMenu() throws IOException {
         FenetreMenu fenetreMenu = new FenetreMenu(this);
     }
 
-    public void initFenetreNiveau() throws IOException, FileNotFoundException, ClassNotFoundException {
+    public void initFenetreNiveau() throws IOException{
         SelectionnerNiveau selectionnerNiveau = new SelectionnerNiveau(this);
     }
 
-    public void initFenetreShop() throws IOException, FileNotFoundException, ClassNotFoundException, InstantiationException, IllegalAccessException {
+    public void initFenetreShop() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
         Eshop_AfficheEshop eshop_AfficheEshop = new Eshop_AfficheEshop(this);
     }
 
@@ -69,9 +66,6 @@ public class FenetrePrincipale extends JFrame {
         this.jpanel = jpanel;
     }
 
-    public JoueurInfo getJoueur() {
-        return joueur;
-    }
 
     public PartieController getPartieController() {
         return partieController;

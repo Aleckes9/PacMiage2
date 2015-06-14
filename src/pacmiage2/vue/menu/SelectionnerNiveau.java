@@ -6,6 +6,7 @@ import java.awt.Component;
 import java.awt.Cursor;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.io.IOException;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -26,7 +27,7 @@ public final class SelectionnerNiveau {
     private final JPanel jpanel = new JPanel();
     private final JPanel niveaux = new JPanel();
 
-    public SelectionnerNiveau(FenetrePrincipale fenetre1) {
+    public SelectionnerNiveau(FenetrePrincipale fenetre1) throws IOException {
         this.fenetre = fenetre1;
         initFenetre();
         initBoutons();
@@ -58,7 +59,7 @@ public final class SelectionnerNiveau {
         jpanel.add(new Btn_RetourMenu(fenetre), BorderLayout.SOUTH);
     }
 
-    public void initBoutons() {
+    public void initBoutons() throws IOException {
         Font f1 = new Font("Kristen ITC", Font.PLAIN, 50);
         for (int i = 1; i <= 5; i++) {
 

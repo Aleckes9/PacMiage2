@@ -44,7 +44,7 @@ public class FenetrePrincipaleTest {
     @Test
     public void testInitFenetre() {
         System.out.println("initFenetre");
-        FenetrePrincipale instance = new FenetrePrincipale(joueur);
+        FenetrePrincipale instance = new FenetrePrincipale();
         instance.initFenetre();
     }
 
@@ -125,19 +125,7 @@ public class FenetrePrincipaleTest {
         fail("The test case is a prototype.");
     }
 
-    /**
-     * Test of getJoueur method, of class FenetrePrincipale.
-     */
-    @Test
-    public void testGetJoueur() {
-        System.out.println("getJoueur");
-        FenetrePrincipale instance = null;
-        JoueurInfo expResult = null;
-        JoueurInfo result = instance.getJoueur();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+
 
     /**
      * Test of getPartieController method, of class FenetrePrincipale.

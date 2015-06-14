@@ -19,10 +19,18 @@ import pacmiage2.utiles.SauvegardeFichier;
  */
 public class MainPacMiage {
 
+    /**
+     *
+     */
+    private static JoueurInfo joueur;
 
-    public static JoueurInfo joueur;
+    private MainPacMiage() {
+    }
+    
+    
 
     public static void main(String[] args) {
+        
 
         try {
 
@@ -35,7 +43,7 @@ public class MainPacMiage {
                 JoueurInfo.setInstance(joueur);
             }
 
-            FenetrePrincipale mainFenetre = new FenetrePrincipale(JoueurInfo.getInstance());
+            FenetrePrincipale mainFenetre = new FenetrePrincipale();
             mainFenetre.initFenetre();
             mainFenetre.initFenetreMenu();
 
@@ -70,11 +78,7 @@ public class MainPacMiage {
                 }
             }
 
-        } catch (IOException ex) {
-            Logger.getLogger(MainPacMiage.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(MainPacMiage.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SlickException ex) {
+        } catch (IOException | SlickException ex) {
             Logger.getLogger(MainPacMiage.class.getName()).log(Level.SEVERE, null, ex);
         }
 

@@ -16,12 +16,10 @@ public class CarteIcon implements Icon {
 
     private BufferedImage image;
 
-    public CarteIcon(String chemin) {
-        try {
+    public CarteIcon(String chemin) throws IOException {
+
             image = ImageIO.read(new File(chemin));
-        } catch (IOException ex) {
-            // handle exception...
-        }
+
     }
 
     public BufferedImage getImage() {

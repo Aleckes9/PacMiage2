@@ -16,7 +16,7 @@ public class Partie_AffichageTemps {
     public Partie_AffichageTemps() {
     }
 
-    public void render(Graphics g) throws SlickException {
+    public void renderAffichageTemps(Graphics g) throws SlickException {
 
         String argentString = String.valueOf(temps);
         float xx = x;
@@ -28,13 +28,9 @@ public class Partie_AffichageTemps {
 
     }
 
-    public void initPos(int xPos, int Ypos) {
+    public void initPosAffichageTemps(int xPos, int Ypos) {
         x = xPos;
         y = Ypos;
-    }
-
-    public void update(int delta) {
-
     }
 
     public int getTemps() {

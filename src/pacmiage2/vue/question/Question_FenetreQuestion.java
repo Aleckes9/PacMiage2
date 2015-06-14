@@ -17,6 +17,7 @@ import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -34,7 +35,7 @@ public class Question_FenetreQuestion extends JFrame {
 
     private Question question;
     private JButton valider;
-    private ArrayList<JButton> boutons;
+    private List<JButton> boutons;
     private JTextPane text;
     private JTextPane label;
     private JPanel panelGlobal;
@@ -248,7 +249,7 @@ public class Question_FenetreQuestion extends JFrame {
      *
      * @return
      */
-    public ArrayList<JButton> getBoutons() {
+    public List<JButton> getBoutons() {
         return boutons;
     }
 
@@ -256,7 +257,7 @@ public class Question_FenetreQuestion extends JFrame {
      *
      * @param boutons
      */
-    public void setBoutons(ArrayList<JButton> boutons) {
+    public void setBoutons(List<JButton> boutons) {
         this.boutons = boutons;
     }
 

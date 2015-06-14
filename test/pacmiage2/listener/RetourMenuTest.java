@@ -1,13 +1,11 @@
 package pacmiage2.listener;
 
-import pacmiage2.listener.RetourMenu;
 import java.awt.event.ActionEvent;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
 import pacmiage2.modele.JoueurInfo;
 import pacmiage2.vue.menu.FenetrePrincipale;
 
@@ -33,7 +31,7 @@ public class RetourMenuTest {
     
     @Before
     public void setUp() {
-        f = new FenetrePrincipale(joueur);
+        f = new FenetrePrincipale();
     }
     
     @After

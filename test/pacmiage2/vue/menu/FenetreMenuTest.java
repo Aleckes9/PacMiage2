@@ -116,7 +116,7 @@ public class FenetreMenuTest {
         System.out.println("initConfigButton");
         JButton button = null;
         FenetreMenu instance = new FenetreMenu(uneFenetre);
-        instance.initConfigButton(button);
+        instance.initConfigButtonMenu(button);
     }
     
 }

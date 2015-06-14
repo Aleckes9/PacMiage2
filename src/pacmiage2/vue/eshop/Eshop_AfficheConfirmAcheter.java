@@ -44,7 +44,7 @@ public class Eshop_AfficheConfirmAcheter extends AbstractAction {
         JLabel texte = new JLabel();
         JPanel d = new JPanel();
         g.setBackground(Color.BLACK);
-        new Eshop_AfficheObjet(d, it, false, eshopFenetre);
+        Eshop_AfficheObjet eshop_AfficheObjet = new Eshop_AfficheObjet(d, it, false, eshopFenetre);
         texte.setText(Session.getInstance().recupererValeur("confirmation"));
 
         texte.setForeground(Color.white);

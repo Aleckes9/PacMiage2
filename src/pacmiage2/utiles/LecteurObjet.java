@@ -10,6 +10,8 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Iterator;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.jdom2.Document;
 import org.jdom2.Element;
 import org.jdom2.JDOMException;
@@ -30,13 +32,15 @@ public class LecteurObjet {
 
         //On crée une instance de SAXBuilder
         SAXBuilder sxb = new SAXBuilder();
+   
         try {
             //On crée un nouveau document JDOM avec en argument le fichier XML
 
             document = sxb.build(new File(Configuration.getInstance().recupererValeur("listeBonus")));
-        } catch (JDOMException | IOException e) {
-            System.out.println("Fichier de la liste d'objet non trouvé");
+        } catch (JDOMException | IOException ex) {
+            Logger.getLogger(LecteurObjet.class.getName()).log(Level.SEVERE, null, ex);
         }
+   
 
         //On initialise un nouvel élément racine avec l'élément racine du document.
         racine = document.getRootElement();

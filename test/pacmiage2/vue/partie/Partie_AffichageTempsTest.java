@@ -41,7 +41,7 @@ public class Partie_AffichageTempsTest {
         System.out.println("render");
         Graphics g = null;
         Partie_AffichageTemps instance = new Partie_AffichageTemps();
-        instance.render(g);
+        instance.renderAffichageTemps(g);
     }
 
     /**
@@ -53,18 +53,9 @@ public class Partie_AffichageTempsTest {
         int xPos = 0;
         int Ypos = 0;
         Partie_AffichageTemps instance = new Partie_AffichageTemps();
-        instance.initPos(xPos, Ypos);
+        instance.initPosAffichageTemps(xPos, Ypos);
     }
 
-    /**
-     * Test of update method, of class Partie_AffichageTemps.
-     */
-    @Test
-    public void testUpdate() {
-        System.out.println("update");
-        int delta = 0;
-        Partie_AffichageTemps instance = new Partie_AffichageTemps();
-        instance.update(delta);
-    }
+
     
 }

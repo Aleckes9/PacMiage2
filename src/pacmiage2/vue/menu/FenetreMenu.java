@@ -96,11 +96,11 @@ public final class FenetreMenu {
     public void initButtonOptions() {
         nouvellepartie.setText(Session.getInstance().recupererValeur("nouvelle"));
         nouvellepartie.setName("nouvelle");
-        initConfigButton(nouvellepartie);
+        initConfigButtonMenu(nouvellepartie);
 
         store.setText(Session.getInstance().recupererValeur("store"));
         store.setName("store");
-        initConfigButton(store);
+        initConfigButtonMenu(store);
 
         quitter.setText(Session.getInstance().recupererValeur("quitter"));
         quitter.setName("quitter");
@@ -109,29 +109,29 @@ public final class FenetreMenu {
         store.setAlignmentX(Component.CENTER_ALIGNMENT);
         quitter.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-        initConfigButton(quitter);
+        initConfigButtonMenu(quitter);
     }
 
-    public void initConfigButton(final JButton button) {
-        button.setForeground(Color.white);
-        button.setBackground(Color.black);
-        button.setBorderPainted(false);
-        button.setFocusPainted(false);
-        button.setFont(new Font("Kristen ITC", Font.PLAIN, 44));
-        button.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        button.addActionListener(new FenetreMenuListener(fenetre));
+    public void initConfigButtonMenu(final JButton buttonMenu) {
+        buttonMenu.setForeground(Color.white);
+        buttonMenu.setBackground(Color.black);
+        buttonMenu.setBorderPainted(false);
+        buttonMenu.setFocusPainted(false);
+        buttonMenu.setFont(new Font("Kristen ITC", Font.PLAIN, 44));
+        buttonMenu.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        buttonMenu.addActionListener(new FenetreMenuListener(fenetre));
 
-        button.addMouseListener(new java.awt.event.MouseAdapter() {
+        buttonMenu.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                button.setBackground(Color.YELLOW);
-                button.setForeground(Color.black);
+                buttonMenu.setBackground(Color.YELLOW);
+                buttonMenu.setForeground(Color.black);
             }
 
             @Override
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                button.setBackground(Color.BLACK);
-                button.setForeground(Color.white);
+                buttonMenu.setBackground(Color.BLACK);
+                buttonMenu.setForeground(Color.white);
             }
         });
     }

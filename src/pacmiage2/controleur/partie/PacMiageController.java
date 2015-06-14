@@ -31,19 +31,32 @@ public class PacMiageController implements KeyListener {
 
     @Override
     public void setInput(Input input) {
+        //Ne fait rien car cette méthode n'est pas utilisée
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public boolean isAcceptingInput() {
         return true;
     }
 
+    /**
+     *
+     */
     @Override
     public void inputEnded() {
+        //Ne fait rien car cette méthode n'est pas utilisée
     }
 
+    /**
+     *
+     */
     @Override
     public void inputStarted() {
+        //Ne fait rien car cette méthode n'est pas utilisée
     }
 
     @Override
@@ -78,26 +91,13 @@ public class PacMiageController implements KeyListener {
                 break;
 
             case Input.KEY_ENTER: {
-                try {
-
-                    partie.getContainer().pause();
-                    partie.getTimer().stop();
-                    partie.getGame().setFullscreen(false);
-                    Partie_AffichageMenuPartie affMenu = new Partie_AffichageMenuPartie(partie);
-
-                    while (affMenu.getFenetre().isVisible()) {
-                        partie.getContainer().sleep(50);
-                    }
-                    partie.getGame().setFullscreen(true);
-                    partie.getContainer().resume();
-                    partie.getTimer().start();
-
-                } catch (IOException | SlickException ex) {
-                    Logger.getLogger(PacMiageController.class.getName()).log(Level.SEVERE, null, ex);
-                }
+                CaseEnter();
             }
             break;
+            default:
+                break;
         }
+
         this.player.setMoving(true);
     }
 
@@ -110,8 +110,28 @@ public class PacMiageController implements KeyListener {
         if (partie.getAffichageBonus()[choix] != null) {
             partie.getAffichageBonus()[choix].getObjet().getBonus().executerBonus(partie);
             JoueurInfo.getInstance().retirerObjet(partie.getAffichageBonus()[choix].getObjet());
-            partie.getAffichageBonus()[choix]=null;
+            partie.getAffichageBonus()[choix] = null;
 
+        }
+    }
+
+    private void CaseEnter() {
+        try {
+
+            partie.getContainer().pause();
+            partie.getTimer().stop();
+            partie.getGame().setFullscreen(false);
+            Partie_AffichageMenuPartie affMenu = new Partie_AffichageMenuPartie(partie);
+
+            while (affMenu.getFenetre().isVisible()) {
+                partie.getContainer().sleep(50);
+            }
+            partie.getGame().setFullscreen(true);
+            partie.getContainer().resume();
+            partie.getTimer().start();
+
+        } catch (IOException | SlickException ex) {
+            Logger.getLogger(PacMiageController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
