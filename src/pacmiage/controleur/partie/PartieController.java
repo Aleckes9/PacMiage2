@@ -43,7 +43,6 @@ public class PartieController extends BasicGame {
     private final int niveau;
     private AppGameContainer game;
     private GameContainer container;
-    private Sound son;
     private Music background;
 
     private final String cheminCarte;
@@ -171,7 +170,6 @@ public class PartieController extends BasicGame {
         background = new Music(Configuration.getInstance().recupererValeur("musique" + niveau));
         background.setVolume(0.5f);
         background.loop();
-        son = new Sound("./src/ressources/musique/0218.ogg");
         this.timer.start();
     }
 
@@ -274,7 +272,6 @@ public class PartieController extends BasicGame {
             if (graineRemove != -1) {
                 grainesMap.remove(graineRemove);
                 this.score.setFutureScore(this.score.getFutureScore() + 10 * multiplicateur);
-                son.play();
                 if (grainesMap.isEmpty()) {
                     ouvertureQuestion();
                     JoueurInfo.getInstance().setRecord(score.getFutureScore());
@@ -420,22 +417,6 @@ public class PartieController extends BasicGame {
      */
     public void setImageVeracite(PartieAffichageImageFondu imageVeracite) {
         this.imageVeracite = imageVeracite;
-    }
-
-    /**
-     *
-     * @return
-     */
-    public Sound getSon() {
-        return son;
-    }
-
-    /**
-     *
-     * @param son
-     */
-    public void setSon(Sound son) {
-        this.son = son;
     }
 
     /**
