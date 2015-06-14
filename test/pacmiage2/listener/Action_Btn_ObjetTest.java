@@ -1,6 +1,6 @@
 package pacmiage2.listener;
 
-import pacmiage2.listener.Action_Btn_Objet;
+import pacmiage.listener.Action_Btn_Objet;
 import java.awt.event.ActionEvent;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -8,8 +8,8 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import pacmiage2.modele.Objet;
-import pacmiage2.vue.menu.FenetrePrincipale;
+import pacmiage.modele.Objet;
+import pacmiage.vue.menu.FenetrePrincipale;
 
 /**
  *

@@ -1,5 +1,6 @@
 package pacmiage2.modele;
 
+import pacmiage.modele.PacMiage;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.junit.After;
@@ -10,8 +11,8 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.SlickException;
-import pacmiage2.utiles.Configuration;
-import pacmiage2.vue.partie.Partie_AffichageMap;
+import pacmiage.utiles.Configuration;
+import pacmiage.vue.partie.Partie_AffichageMap;
 
 /**
  *
@@ -46,35 +47,7 @@ public class PacMiageTest {
     public void tearDown() {
     }
 
-    /**
-     * Test of init method, of class PacMiage.
-     */
-    @Test
-    public void testInit() throws SlickException {
-        System.out.println("init");
-        int posX = 0;
-        int pasY = 0;
-        instance.init(posX, pasY);
-    }
 
-    /**
-     * Test of initAnimation method, of class PacMiage.
-     */
-    @Test
-    public void testInitAnimation() throws SlickException {
-        System.out.println("initAnimation");
-        instance.initAnimation();
-    }
-
-    /**
-     * Test of render method, of class PacMiage.
-     */
-    @Test
-    public void testRender() throws SlickException {
-        System.out.println("render");
-        Graphics g = null;
-        instance.render(g);
-    }
 
     /**
      * Test of setVitesse method, of class PacMiage.
@@ -96,20 +69,7 @@ public class PacMiageTest {
         instance.updatePac(delta);
     }
 
-    /**
-     * Test of estEnCollisionMur method, of class PacMiage.
-     */
-    @Test
-    public void testEstEnCollisionMur() {
-        System.out.println("estEnCollisionMur");
-        float xObjet = 0.0F;
-        float yObjet = 0.0F;
-        instance.setX(2);
-        instance.setY(2);
-        boolean expResult = true;
-        boolean result = instance.estEnCollisionMur(xObjet, yObjet);
-        assertEquals(expResult, result);
-    }
+
 
     /**
      * Test of estEnCollisionObjet method, of class PacMiage.
@@ -199,14 +159,6 @@ public class PacMiageTest {
         instance.setFuturDirection(futurDirection);
     }
 
-    /**
-     * Test of setImagePac method, of class PacMiage.
-     */
-    @Test
-    public void testSetImagePac() {
-        System.out.println("setImagePac");
-        String imagePac = "";
-        instance.setImagePac(imagePac);
-    }
+
     
 }

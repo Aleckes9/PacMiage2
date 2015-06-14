@@ -1,13 +1,11 @@
 package pacmiage2.controleur.partie;
 
-import pacmiage2.modele.ControleurTemps;
-import javax.swing.Timer;
+import pacmiage.modele.ControleurTemps;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 /**
  *

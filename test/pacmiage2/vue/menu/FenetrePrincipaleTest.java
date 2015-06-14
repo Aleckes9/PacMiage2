@@ -1,5 +1,6 @@
 package pacmiage2.vue.menu;
 
+import pacmiage.vue.menu.FenetrePrincipale;
 import java.awt.Dimension;
 import javax.swing.JPanel;
 import org.junit.After;
@@ -8,8 +9,8 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import pacmiage2.controleur.partie.PartieController;
-import pacmiage2.modele.JoueurInfo;
+import pacmiage.controleur.partie.PartieController;
+import pacmiage.modele.JoueurInfo;
 
 /**
  *
@@ -18,7 +19,7 @@ import pacmiage2.modele.JoueurInfo;
 public class FenetrePrincipaleTest {
     
     JoueurInfo joueur;
-    
+    FenetrePrincipale instance;
     public FenetrePrincipaleTest() {
     }
     
@@ -32,6 +33,7 @@ public class FenetrePrincipaleTest {
     
     @Before
     public void setUp() {
+        instance = new FenetrePrincipale();
     }
     
     @After
@@ -44,7 +46,6 @@ public class FenetrePrincipaleTest {
     @Test
     public void testInitFenetre() {
         System.out.println("initFenetre");
-        FenetrePrincipale instance = new FenetrePrincipale();
         instance.initFenetre();
     }
 
@@ -54,10 +55,7 @@ public class FenetrePrincipaleTest {
     @Test
     public void testInitFenetreMenu() throws Exception {
         System.out.println("initFenetreMenu");
-        FenetrePrincipale instance = null;
         instance.initFenetreMenu();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -66,10 +64,7 @@ public class FenetrePrincipaleTest {
     @Test
     public void testInitFenetreNiveau() throws Exception {
         System.out.println("initFenetreNiveau");
-        FenetrePrincipale instance = null;
         instance.initFenetreNiveau();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -78,10 +73,7 @@ public class FenetrePrincipaleTest {
     @Test
     public void testInitFenetreShop() throws Exception {
         System.out.println("initFenetreShop");
-        FenetrePrincipale instance = null;
         instance.initFenetreShop();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -92,79 +84,12 @@ public class FenetrePrincipaleTest {
         System.out.println("executerPartie");
         int niveau = 0;
         String cheminCarte = "";
-        FenetrePrincipale instance = null;
         instance.executerPartie(niveau, cheminCarte);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getJpanel method, of class FenetrePrincipale.
-     */
-    @Test
-    public void testGetJpanel() {
-        System.out.println("getJpanel");
-        FenetrePrincipale instance = null;
-        JPanel expResult = null;
-        JPanel result = instance.getJpanel();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of setJpanel method, of class FenetrePrincipale.
-     */
-    @Test
-    public void testSetJpanel() {
-        System.out.println("setJpanel");
-        JPanel jpanel = null;
-        FenetrePrincipale instance = null;
-        instance.setJpanel(jpanel);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
 
 
-    /**
-     * Test of getPartieController method, of class FenetrePrincipale.
-     */
-    @Test
-    public void testGetPartieController() {
-        System.out.println("getPartieController");
-        FenetrePrincipale instance = null;
-        PartieController expResult = null;
-        PartieController result = instance.getPartieController();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
 
-    /**
-     * Test of setPartieController method, of class FenetrePrincipale.
-     */
-    @Test
-    public void testSetPartieController() {
-        System.out.println("setPartieController");
-        PartieController partieController = null;
-        FenetrePrincipale instance = null;
-        instance.setPartieController(partieController);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
 
-    /**
-     * Test of getTailleEcran method, of class FenetrePrincipale.
-     */
-    @Test
-    public void testGetTailleEcran() {
-        System.out.println("getTailleEcran");
-        Dimension expResult = null;
-        Dimension result = FenetrePrincipale.getTailleEcran();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
     
 }

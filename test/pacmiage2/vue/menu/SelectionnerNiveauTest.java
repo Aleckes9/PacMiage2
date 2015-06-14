@@ -1,5 +1,7 @@
 package pacmiage2.vue.menu;
 
+import pacmiage.vue.menu.SelectionnerNiveau;
+import pacmiage.vue.menu.FenetrePrincipale;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -8,7 +10,7 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import pacmiage2.modele.JoueurInfo;
+import pacmiage.modele.JoueurInfo;
 
 /**
  *

@@ -1,5 +1,6 @@
 package pacmiage2.modele;
 
+import pacmiage.modele.Reponse;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;

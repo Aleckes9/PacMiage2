@@ -1,5 +1,7 @@
 package pacmiage2.modele;
 
+import pacmiage.modele.Objet;
+import pacmiage.modele.JoueurInfo;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -36,16 +38,6 @@ public class JoueurInfoTest {
     public void tearDown() {
     }
 
-    /**
-     * Test of getNbObjet method, of class JoueurInfo.
-     */
-    @Test
-    public void testGetNbObjet() {
-        System.out.println("getNbObjet");
-        int expResult = 0;
-        int result = instance.getNbObjet();
-        assertEquals(expResult, result);
-    }
 
     /**
      * Test of ajouterGraines method, of class JoueurInfo.
@@ -89,16 +81,6 @@ public class JoueurInfoTest {
         assertEquals(expResult, result);
     }
 
-    /**
-     * Test of getObjetDispo method, of class JoueurInfo.
-     */
-    @Test
-    public void testGetObjetDispo() {
-        System.out.println("getObjetDispo");
-        Objet[] expResult = null;
-        Objet[] result = instance.getObjetDispo();
-        assertArrayEquals(expResult, result);
-    }
 
     /**
      * Test of setRecord method, of class JoueurInfo.
@@ -132,25 +114,7 @@ public class JoueurInfoTest {
         instance.retirerObjet(o);
     }
 
-    /**
-     * Test of getInstance method, of class JoueurInfo.
-     */
-    @Test
-    public void testGetInstance() {
-        System.out.println("getInstance");
-        JoueurInfo expResult = null;
-        JoueurInfo result = JoueurInfo.getInstance();
-        assertEquals(expResult, result);
-    }
+   
 
-    /**
-     * Test of setInstance method, of class JoueurInfo.
-     */
-    @Test
-    public void testSetInstance() {
-        System.out.println("setInstance");
-        JoueurInfo joueur = JoueurInfo.getInstance();
-        JoueurInfo.setInstance(joueur);
-    }
     
 }

@@ -1,13 +1,14 @@
 package pacmiage2.vue.bouton;
 
+import pacmiage.vue.bouton.Eshop_BtnAcheter;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import pacmiage2.modele.Objet;
-import pacmiage2.vue.menu.FenetrePrincipale;
+import pacmiage.modele.Objet;
+import pacmiage.vue.menu.FenetrePrincipale;
 
 /**
  *

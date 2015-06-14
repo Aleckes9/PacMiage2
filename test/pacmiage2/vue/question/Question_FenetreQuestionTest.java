@@ -1,5 +1,6 @@
 package pacmiage2.vue.question;
 
+import pacmiage.vue.question.Question_FenetreQuestion;
 import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JPanel;
@@ -10,7 +11,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import pacmiage2.modele.Question;
+import pacmiage.modele.Question;
 
 /**
  *

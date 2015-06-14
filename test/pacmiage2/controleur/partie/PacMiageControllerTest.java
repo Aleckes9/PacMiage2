@@ -1,5 +1,7 @@
 package pacmiage2.controleur.partie;
 
+import pacmiage.controleur.partie.PartieController;
+import pacmiage.controleur.partie.PacMiageController;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -7,7 +9,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import org.newdawn.slick.Input;
-import pacmiage2.modele.PacMiage;
+import pacmiage.modele.PacMiage;
 
 /**
  *
@@ -70,28 +72,6 @@ public class PacMiageControllerTest {
         instance.inputStarted();
     }
 
-    /**
-     * Test of keyPressed method, of class PacMiageController.
-     */
-    @Test
-    public void testKeyPressed() {
-        System.out.println("keyPressed");
-        int key = 0;
-        char c = ' ';
-        PacMiageController instance = new PacMiageController(player,  partie);
-        instance.keyPressed(key, c);
-    }
 
-    /**
-     * Test of keyReleased method, of class PacMiageController.
-     */
-    @Test
-    public void testKeyReleased() {
-        System.out.println("keyReleased");
-        int key = 0;
-        char c = ' ';
-        PacMiageController instance = new PacMiageController(player,  partie);
-        instance.keyReleased(key, c);
-    }
     
 }

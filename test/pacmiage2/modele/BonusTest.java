@@ -1,5 +1,6 @@
 package pacmiage2.modele;
 
+import pacmiage.modele.Bonus;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -7,7 +8,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import org.newdawn.slick.SlickException;
-import pacmiage2.controleur.partie.PartieController;
+import pacmiage.controleur.partie.PartieController;
 
 /**
  *

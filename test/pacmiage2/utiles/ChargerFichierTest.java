@@ -1,5 +1,6 @@
 package pacmiage2.utiles;
 
+import pacmiage.utiles.ChargerFichier;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;

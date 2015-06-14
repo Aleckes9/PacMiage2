@@ -1,5 +1,6 @@
 package pacmiage2.utiles;
 
+import pacmiage.utiles.Session;
 import java.util.Locale;
 import java.util.Properties;
 import org.junit.After;
@@ -49,17 +50,6 @@ public class SessionTest {
         assertEquals(expResult, result);
     }
 
-    /**
-     * Test of load method, of class Session.
-     */
-    @Test
-    public void testLoad() throws Exception {
-        System.out.println("load");
-        String filename = "./src/ressources/properties/pacfr.properties";
-        Properties expResult = null;
-        Properties result = Session.load(filename);
-        assertEquals(expResult, result);
-    }
 
     /**
      * Test of setLocale method, of class Session.

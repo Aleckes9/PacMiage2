@@ -1,5 +1,7 @@
 package pacmiage2.modele;
 
+import pacmiage.modele.Reponse;
+import pacmiage.modele.Question;
 import java.util.ArrayList;
 import java.util.Iterator;
 import org.junit.After;
@@ -72,18 +74,7 @@ public class QuestionTest {
     }
 
 
-    /**
-     * Test of getReponse method, of class Question.
-     */
-    @Test
-    public void testGetReponse_int() {
-        System.out.println("getReponse");
-        int index = 0;
-        Question instance = new Question();
-        Reponse expResult = new Reponse(text, veracite);
-        Reponse result = instance.getReponse(index);
-        assertEquals(expResult, result);
-    }
+
 
     /**
      * Test of addReponse method, of class Question.
@@ -98,30 +89,9 @@ public class QuestionTest {
         assertEquals(expResult, result);
     }
 
-    /**
-     * Test of removeReponse method, of class Question.
-     */
-    @Test
-    public void testRemoveReponse() {
-        System.out.println("removeReponse");
-        int index = 0;
-        Question instance = new Question();
-        Reponse expResult = null;
-        Reponse result = instance.removeReponse(index);
-        assertEquals(expResult, result);
-    }
 
-    /**
-     * Test of iteratorReponse method, of class Question.
-     */
-    @Test
-    public void testIteratorReponse() {
-        System.out.println("iteratorReponse");
-        Question instance = new Question();
-        Iterator<Reponse> expResult = null;
-        Iterator<Reponse> result = instance.iteratorReponse();
-        assertEquals(expResult, result);
-    }
+
+
 
     /**
      * Test of getNiveau method, of class Question.

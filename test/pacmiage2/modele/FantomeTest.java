@@ -1,5 +1,6 @@
 package pacmiage2.modele;
 
+import pacmiage.modele.Fantome;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.junit.After;
@@ -10,8 +11,8 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.SlickException;
-import pacmiage2.utiles.Configuration;
-import pacmiage2.vue.partie.Partie_AffichageMap;
+import pacmiage.utiles.Configuration;
+import pacmiage.vue.partie.Partie_AffichageMap;
 
 /**
  *
@@ -48,15 +49,6 @@ public class FantomeTest {
     public void tearDown() {
     }
 
-    /**
-     * Test of init method, of class Fantome.
-     */
-    @Test
-    public void testInit() throws Exception {
-        System.out.println("init");
-        int niveau = 1;
-        instance.initAnimation();
-    }
 
     /**
      * Test of initEtat method, of class Fantome.
@@ -80,41 +72,9 @@ public class FantomeTest {
         instance.initDepart(posX, pasY);
     }
 
-    /**
-     * Test of render method, of class Fantome.
-     */
-    @Test
-    public void testRender() throws Exception {
-        System.out.println("render");
-        Graphics g = null;
-        instance.render(g);
-    }
 
-    /**
-     * Test of update method, of class Fantome.
-     */
-    @Test
-    public void testUpdate() {
-        System.out.println("update");
-        float newXPac = 0.0F;
-        float newYPac = 0.0F;
-        instance.updateFantome(newXPac, newYPac);
-    }
 
-    /**
-     * Test of estEnCollisionMur method, of class Fantome.
-     */
-    @Test
-    public void testEstEnCollisionMur() {
-        System.out.println("estEnCollisionMur");
-        float xObjet = 0.0F;
-        float yObjet = 0.0F;
-        instance.setX(2);
-        instance.setY(2);
-        boolean expResult = true;
-        boolean result = instance.estEnCollisionMur(xObjet, yObjet);
-        assertEquals(expResult, result);
-    }
+
 
     /**
      * Test of estEnCollisionCible method, of class Fantome.
