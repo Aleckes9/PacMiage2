@@ -9,5 +9,9 @@ import pacmiage.controleur.partie.PartieController;
  */
 public interface Bonus extends Serializable{
     
+    /**
+     *
+     * @param partie
+     */
     void executerBonus(PartieController partie);
 }

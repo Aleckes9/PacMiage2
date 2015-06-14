@@ -5,8 +5,8 @@
  */
 package pacmiage.vue.eshop;
 
-import pacmiage.vue.bouton.Eshop_BtnConfirmAchat;
-import pacmiage.vue.bouton.Eshop_BtnRetourEshop;
+import pacmiage.vue.bouton.EshopBtnConfirmAchat;
+import pacmiage.vue.bouton.EshopBtnRetourEshop;
 import pacmiage.vue.menu.FenetrePrincipale;
 import pacmiage.modele.Objet;
 import java.awt.Color;
@@ -23,12 +23,17 @@ import pacmiage.utiles.Session;
  *
  * @author Maëlle
  */
-public class Eshop_AfficheConfirmAcheter extends AbstractAction {
+public class EshopAfficheConfirmAcheter extends AbstractAction {
 
     Objet it;
     FenetrePrincipale eshopFenetre;
 
-    public Eshop_AfficheConfirmAcheter(Objet it, FenetrePrincipale eshopFenetre) {
+    /**
+     *
+     * @param it
+     * @param eshopFenetre
+     */
+    public EshopAfficheConfirmAcheter(Objet it, FenetrePrincipale eshopFenetre) {
         this.it = it;
         this.eshopFenetre = eshopFenetre;
     }
@@ -44,13 +49,13 @@ public class Eshop_AfficheConfirmAcheter extends AbstractAction {
         JLabel texte = new JLabel();
         JPanel d = new JPanel();
         g.setBackground(Color.BLACK);
-        Eshop_AfficheObjet eshop_AfficheObjet = new Eshop_AfficheObjet(d, it, false, eshopFenetre);
+        EshopAfficheObjet eshop_AfficheObjet = new EshopAfficheObjet(d, it, false, eshopFenetre);
         texte.setText(Session.getInstance().recupererValeur("confirmation"));
 
         texte.setForeground(Color.white);
         texte.setFont(new Font(null, 40, 40));
-        Eshop_BtnConfirmAchat oui = new Eshop_BtnConfirmAchat(it, eshopFenetre);
-        Eshop_BtnRetourEshop non = new Eshop_BtnRetourEshop(eshopFenetre);
+        EshopBtnConfirmAchat oui = new EshopBtnConfirmAchat(it, eshopFenetre);
+        EshopBtnRetourEshop non = new EshopBtnRetourEshop(eshopFenetre);
         g.add(texte);
         JPanel bt = new JPanel();
         bt.add(oui);

@@ -5,12 +5,10 @@
  */
 package pacmiage.listener;
 
-import pacmiage.modele.JoueurInfo;
-import pacmiage.vue.eshop.Eshop_AfficheObjet;
+import pacmiage.vue.eshop.EshopAfficheObjet;
 import pacmiage.vue.menu.FenetrePrincipale;
 import pacmiage.modele.Objet;
 import java.awt.Color;
-import java.awt.Component;
 import java.awt.event.ActionEvent;
 import javax.swing.AbstractAction;
 import javax.swing.JDialog;
@@ -20,12 +18,17 @@ import javax.swing.JPanel;
  * Classe 
  * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
  */
-public class Action_Btn_Objet extends AbstractAction {
+public class ActionBtnObjet extends AbstractAction {
 
     private final Objet it;
     private final FenetrePrincipale eshopFenetre;
 
-    public Action_Btn_Objet(Objet it, FenetrePrincipale eshopFenetre) {
+    /**
+     *
+     * @param it
+     * @param eshopFenetre
+     */
+    public ActionBtnObjet(Objet it, FenetrePrincipale eshopFenetre) {
         this.it = it;
         this.eshopFenetre = eshopFenetre;
     }
@@ -38,9 +41,9 @@ public class Action_Btn_Objet extends AbstractAction {
             f.setBackground(Color.black);
             JPanel panel = new JPanel();
             if(it!=null){
-                Eshop_AfficheObjet eshop_AfficheObjet = new Eshop_AfficheObjet(panel, it, false, eshopFenetre);
+                EshopAfficheObjet eshop_AfficheObjet = new EshopAfficheObjet(panel, it, false, eshopFenetre);
             }
-            Component add = f.add(panel);
+            f.add(panel);
             f.setVisible(true);
         
     }

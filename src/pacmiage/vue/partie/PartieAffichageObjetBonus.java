@@ -8,7 +8,7 @@ import pacmiage.modele.ObjetPartie;
  *
  * @author Aleckes9
  */
-public class Partie_AffichageObjetBonus extends ObjetPartie{
+public class PartieAffichageObjetBonus extends ObjetPartie{
 
     private Objet objet;
 
@@ -19,7 +19,7 @@ public class Partie_AffichageObjetBonus extends ObjetPartie{
      * @param y
      * @throws SlickException
      */
-    public Partie_AffichageObjetBonus(Objet objet, int x, int y) throws SlickException {
+    public PartieAffichageObjetBonus(Objet objet, int x, int y) throws SlickException {
         super(x, y ,objet.getMiniImage());
         this.objet = objet;
     }

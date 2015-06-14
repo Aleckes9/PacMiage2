@@ -9,6 +9,10 @@ import pacmiage.modele.Bonus;
  */
 public class ObjetDoubleCoins implements Bonus {
 
+    /**
+     *
+     * @param partie
+     */
     @Override
     public void executerBonus(PartieController partie) {
         partie.setMultiplicateur(2);

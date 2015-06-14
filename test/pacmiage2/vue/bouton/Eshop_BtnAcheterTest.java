@@ -1,6 +1,6 @@
 package pacmiage2.vue.bouton;
 
-import pacmiage.vue.bouton.Eshop_BtnAcheter;
+import pacmiage.vue.bouton.EshopBtnAcheter;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -19,21 +19,36 @@ public class Eshop_BtnAcheterTest {
     Objet it;
     FenetrePrincipale eshopFenetre;
             
+    /**
+     *
+     */
     public Eshop_BtnAcheterTest() {
     }
     
+    /**
+     *
+     */
     @BeforeClass
     public static void setUpClass() {
     }
     
+    /**
+     *
+     */
     @AfterClass
     public static void tearDownClass() {
     }
     
+    /**
+     *
+     */
     @Before
     public void setUp() {
     }
     
+    /**
+     *
+     */
     @After
     public void tearDown() {
     }
@@ -44,7 +59,7 @@ public class Eshop_BtnAcheterTest {
     @Test
     public void testInitButton() {
         System.out.println("initButton");
-        Eshop_BtnAcheter instance = new Eshop_BtnAcheter(it, eshopFenetre);
+        EshopBtnAcheter instance = new EshopBtnAcheter(it, eshopFenetre);
         instance.initButton();
     }
     

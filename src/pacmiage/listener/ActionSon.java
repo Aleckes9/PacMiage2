@@ -12,6 +12,10 @@ public class ActionSon extends AbstractAction{
 
     private final Music musique;
 
+    /**
+     *
+     * @param musique
+     */
     public ActionSon(Music musique) {
         this.musique = musique;
     }

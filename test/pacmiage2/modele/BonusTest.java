@@ -19,21 +19,36 @@ public class BonusTest {
     int unNiveau;
     String unCheminCarte;
     
+    /**
+     *
+     */
     public BonusTest() {
     }
     
+    /**
+     *
+     */
     @BeforeClass
     public static void setUpClass() {
     }
     
+    /**
+     *
+     */
     @AfterClass
     public static void tearDownClass() {
     }
     
+    /**
+     *
+     */
     @Before
     public void setUp() {
     }
     
+    /**
+     *
+     */
     @After
     public void tearDown() {
     }
@@ -49,8 +64,16 @@ public class BonusTest {
         instance.executerBonus(partie);
     }
 
+    /**
+     *
+     */
     public class BonusImpl implements Bonus {
 
+        /**
+         *
+         * @param partie
+         */
+        @Override
         public void executerBonus(PartieController partie) {
         }
     }

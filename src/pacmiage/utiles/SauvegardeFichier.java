@@ -6,7 +6,6 @@
 package pacmiage.utiles;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
@@ -34,38 +33,36 @@ public class SauvegardeFichier implements Serializable {
      */
     public void enregistrerFichier(Object monObjetSerializable, String cheminFichier) {
 
-        FileOutputStream fos = null;
+        ObjectOutputStream out = null;
         try {
+            FileOutputStream fos = null;
             File f = new File(cheminFichier);
             if (!f.exists()) {
-                try {
-                    f.createNewFile();
-                } catch (IOException ex) {
-                    Logger.getLogger(SauvegardeFichier.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-            fos = new FileOutputStream(f);
-            try (ObjectOutputStream out = new ObjectOutputStream(fos)) {
-                try {
-                    out.writeObject(monObjetSerializable);
-                } catch (IOException ex) {
-                    Logger.getLogger(SauvegardeFichier.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            } catch (IOException ex) {
-                Logger.getLogger(SauvegardeFichier.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        } catch (FileNotFoundException ex) {
+                
+                f.createNewFile();
+                
+            }   fos = new FileOutputStream(f);
+            out = new ObjectOutputStream(fos);
+            out.writeObject(monObjetSerializable);
+            fos.close();
+        } catch (IOException ex) {
             Logger.getLogger(SauvegardeFichier.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
             try {
-                fos.close();
+                out.close();
             } catch (IOException ex) {
                 Logger.getLogger(SauvegardeFichier.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
+
     }
 
-    public static SauvegardeFichier getInstance() {
+
+/**
+ *
+ * @return
+ */
+public static SauvegardeFichier getInstance() {
         return SAUVEGARDE;
     }
 }

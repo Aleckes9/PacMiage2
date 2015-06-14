@@ -22,6 +22,17 @@ public class Objet  implements Serializable {
     private Bonus bonus;
     private final int prix;
 
+    /**
+     *
+     * @param nom
+     * @param image
+     * @param description
+     * @param prix
+     * @param miniImage
+     * @throws ClassNotFoundException
+     * @throws InstantiationException
+     * @throws IllegalAccessException
+     */
     public Objet(String nom, String image, String description, int prix,String miniImage) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
         this.nom = nom;
         this.image = image;
@@ -33,30 +44,58 @@ public class Objet  implements Serializable {
         this.bonus = (Bonus)classe.newInstance();
     }
 
+    /**
+     *
+     * @return
+     */
     public String getMiniImage() {
         return miniImage;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getNom() {
         return nom;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getImage() {
         return image;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getDescription() {
         return description;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getPrix() {
         return prix;
     }
 
+    /**
+     *
+     * @return
+     */
     public Bonus getBonus() {
         return bonus;
     }
 
+    /**
+     *
+     * @param bonus
+     */
     public void setBonus(Bonus bonus) {
         this.bonus = bonus;
     }

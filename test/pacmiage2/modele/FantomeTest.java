@@ -12,7 +12,7 @@ import static org.junit.Assert.*;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.SlickException;
 import pacmiage.utiles.Configuration;
-import pacmiage.vue.partie.Partie_AffichageMap;
+import pacmiage.vue.partie.PartieAffichageMap;
 
 /**
  *
@@ -20,23 +20,35 @@ import pacmiage.vue.partie.Partie_AffichageMap;
  */
 public class FantomeTest {
     
-    Partie_AffichageMap map;
+    PartieAffichageMap map;
     Fantome instance;
     
+    /**
+     *
+     */
     public FantomeTest() {
     }
     
+    /**
+     *
+     */
     @BeforeClass
     public static void setUpClass() {
     }
     
+    /**
+     *
+     */
     @AfterClass
     public static void tearDownClass() {
     }
     
+    /**
+     *
+     */
     @Before
     public void setUp() {
-        map = new Partie_AffichageMap();
+        map = new PartieAffichageMap();
         try {
             instance = new Fantome(map, Configuration.getInstance().recupererValeur("carteFantome" + String.valueOf(1)));
             map.init(Configuration.getInstance().recupererValeur("carte1"));
@@ -45,6 +57,9 @@ public class FantomeTest {
         }
     }
     
+    /**
+     *
+     */
     @After
     public void tearDown() {
     }

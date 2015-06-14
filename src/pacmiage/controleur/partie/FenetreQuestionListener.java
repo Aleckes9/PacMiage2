@@ -10,7 +10,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import javax.swing.JButton;
-import pacmiage.vue.question.Question_FenetreQuestion;
+import pacmiage.vue.question.QuestionFenetreQuestion;
 
 /**
  *
@@ -18,9 +18,13 @@ import pacmiage.vue.question.Question_FenetreQuestion;
  */
 public class FenetreQuestionListener implements ActionListener {
 
-        Question_FenetreQuestion f;
+        QuestionFenetreQuestion f;
 
-    public FenetreQuestionListener(Question_FenetreQuestion f) {
+    /**
+     *
+     * @param f
+     */
+    public FenetreQuestionListener(QuestionFenetreQuestion f) {
         this.f = f;
     }
 

@@ -6,7 +6,7 @@
 package pacmiage.listener;
 
 import pacmiage.modele.JoueurInfo;
-import pacmiage.vue.eshop.Eshop_AfficheEshop;
+import pacmiage.vue.eshop.EshopAfficheEshop;
 import pacmiage.vue.menu.FenetrePrincipale;
 import pacmiage.modele.Objet;
 import java.awt.BorderLayout;
@@ -27,13 +27,18 @@ import pacmiage.utiles.Configuration;
  *
  * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
  */
-public class Eshop_Action_Achat extends AbstractAction {
+public class EshopActionAchat extends AbstractAction {
 
     private Objet it;
     private String message;
     private FenetrePrincipale eshopFenetre;
 
-    public Eshop_Action_Achat(Objet it, FenetrePrincipale eshopFenetre) {
+    /**
+     *
+     * @param it
+     * @param eshopFenetre
+     */
+    public EshopActionAchat(Objet it, FenetrePrincipale eshopFenetre) {
         this.it = it;
         this.eshopFenetre = eshopFenetre;
     }
@@ -53,9 +58,9 @@ public class Eshop_Action_Achat extends AbstractAction {
             picture = it.getImage();
             eshopFenetre.dispose();
             try {
-                Eshop_AfficheEshop eshop_AfficheEshop = new Eshop_AfficheEshop(eshopFenetre);
+                EshopAfficheEshop eshop_AfficheEshop = new EshopAfficheEshop(eshopFenetre);
             } catch (ClassNotFoundException | InstantiationException | IllegalAccessException ex) {
-                Logger.getLogger(Eshop_Action_Achat.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(EshopActionAchat.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
         

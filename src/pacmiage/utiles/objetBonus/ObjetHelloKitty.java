@@ -10,6 +10,10 @@ import pacmiage.utiles.Configuration;
  */
 public class ObjetHelloKitty implements Bonus {
 
+    /**
+     *
+     * @param partie
+     */
     @Override
     public void executerBonus(PartieController partie) {
         partie.getPlayer().setImagePac(Configuration.getInstance().recupererValeur("helloK"));

@@ -12,7 +12,7 @@ import static org.junit.Assert.*;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.SlickException;
 import pacmiage.utiles.Configuration;
-import pacmiage.vue.partie.Partie_AffichageMap;
+import pacmiage.vue.partie.PartieAffichageMap;
 
 /**
  *
@@ -20,20 +20,32 @@ import pacmiage.vue.partie.Partie_AffichageMap;
  */
 public class PacMiageTest {
     
-    Partie_AffichageMap map;
+    PartieAffichageMap map;
     PacMiage instance;
             
+    /**
+     *
+     */
     public PacMiageTest() {
     }
     
+    /**
+     *
+     */
     @BeforeClass
     public static void setUpClass() {
     }
     
+    /**
+     *
+     */
     @AfterClass
     public static void tearDownClass() {
     }
     
+    /**
+     *
+     */
     @Before
     public void setUp() {
         try {
@@ -43,6 +55,9 @@ public class PacMiageTest {
         }
     }
     
+    /**
+     *
+     */
     @After
     public void tearDown() {
     }

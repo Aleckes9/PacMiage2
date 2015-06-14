@@ -5,7 +5,7 @@
  */
 package pacmiage.vue.bouton;
 
-import pacmiage.listener.Action_Btn_Objet;
+import pacmiage.listener.ActionBtnObjet;
 import pacmiage.vue.menu.FenetrePrincipale;
 import pacmiage.modele.Objet;
 import java.awt.Color;
@@ -16,11 +16,16 @@ import javax.swing.JButton;
  *
  * @author Maëlle
  */
-public class Btn_Objet extends JButton {
+public class BtnObjet extends JButton {
 
-    public Btn_Objet(Objet it,FenetrePrincipale eshopFenetre) {
+    /**
+     *
+     * @param it
+     * @param eshopFenetre
+     */
+    public BtnObjet(Objet it,FenetrePrincipale eshopFenetre) {
        
-  this.setAction(new Action_Btn_Objet(it,eshopFenetre));
+  this.setAction(new ActionBtnObjet(it,eshopFenetre));
         if(it!=null){
             ImageIcon icon = new ImageIcon(it.getMiniImage());
         this.setIcon(icon);

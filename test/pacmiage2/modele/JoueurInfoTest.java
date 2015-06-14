@@ -18,22 +18,37 @@ public class JoueurInfoTest {
     Objet[] objetDispo;
     JoueurInfo instance;
     
+    /**
+     *
+     */
     public JoueurInfoTest() {
     }
     
+    /**
+     *
+     */
     @BeforeClass
     public static void setUpClass() {
     }
     
+    /**
+     *
+     */
     @AfterClass
     public static void tearDownClass() {
     }
     
+    /**
+     *
+     */
     @Before
     public void setUp() {
         instance = JoueurInfo.getInstance();       
     }
     
+    /**
+     *
+     */
     @After
     public void tearDown() {
     }

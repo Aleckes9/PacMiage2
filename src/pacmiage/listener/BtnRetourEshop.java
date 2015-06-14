@@ -11,11 +11,15 @@ import pacmiage.vue.menu.FenetrePrincipale;
  *
  * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
  */
-public class Btn_RetourEshop extends AbstractAction {
+public class BtnRetourEshop extends AbstractAction {
 
     private FenetrePrincipale fenetre;
 
-    public Btn_RetourEshop(FenetrePrincipale fenetre) {
+    /**
+     *
+     * @param fenetre
+     */
+    public BtnRetourEshop(FenetrePrincipale fenetre) {
         this.fenetre = fenetre;
     }
 
@@ -26,7 +30,7 @@ public class Btn_RetourEshop extends AbstractAction {
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(RetourMenu.class.getName()).log(Level.SEVERE, null, ex);
         } catch (InstantiationException | IllegalAccessException ex) {
-            Logger.getLogger(Btn_RetourEshop.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(BtnRetourEshop.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }

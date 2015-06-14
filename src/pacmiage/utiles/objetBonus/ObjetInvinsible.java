@@ -11,10 +11,17 @@ import pacmiage.utiles.Configuration;
  */
 public class ObjetInvinsible implements Bonus {
 
+    /**
+     *
+     */
     public ObjetInvinsible() {
 
     }
 
+    /**
+     *
+     * @param partie
+     */
     @Override
     public void executerBonus(PartieController partie) {
         partie.setCollision(false);

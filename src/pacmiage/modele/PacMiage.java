@@ -6,7 +6,7 @@
 package pacmiage.modele;
 
 
-import pacmiage.vue.partie.Partie_AffichageMap;
+import pacmiage.vue.partie.PartieAffichageMap;
 import org.newdawn.slick.SlickException;
 
 /**
@@ -15,12 +15,21 @@ import org.newdawn.slick.SlickException;
  */
 public class PacMiage extends PersonnageImpl {
 
-
-    public PacMiage(Partie_AffichageMap map, String cheminImage) throws SlickException {
+    /**
+     *
+     * @param map
+     * @param cheminImage
+     * @throws SlickException
+     */
+    public PacMiage(PartieAffichageMap map, String cheminImage) throws SlickException {
         super(map, cheminImage);
         vitesse = 2;
     }
 
+    /**
+     *
+     * @param delta
+     */
     public void updatePac(int delta) {
         if (this.moving) {
             float futurX = getFuturX(vitesse, this.direction);
@@ -52,6 +61,12 @@ public class PacMiage extends PersonnageImpl {
         }
     }
 
+    /**
+     *
+     * @param xObjet
+     * @param yObjet
+     * @return
+     */
     public boolean estEnCollisionObjet(float xObjet, float yObjet) {
 
         return xObjet > this.x && xObjet < this.x + 33 && yObjet > this.y && yObjet < this.y + 33;

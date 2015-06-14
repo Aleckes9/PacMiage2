@@ -13,7 +13,7 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.xml.sax.SAXException;
 import pacmiage.utiles.Configuration;
-import pacmiage.vue.question.Question_FenetreQuestion;
+import pacmiage.vue.question.QuestionFenetreQuestion;
 import pacmiage.utiles.QuestionBuilder;
 
 /**
@@ -22,7 +22,7 @@ import pacmiage.utiles.QuestionBuilder;
  */
 public final class ControleurQuestion {
 
-    private Question_FenetreQuestion fenetre;
+    private QuestionFenetreQuestion fenetre;
     private DocumentBuilderFactory factory;
     private DocumentBuilder builder;
     private Document document;
@@ -31,10 +31,16 @@ public final class ControleurQuestion {
     private static GraphicsDevice device = GraphicsEnvironment
             .getLocalGraphicsEnvironment().getScreenDevices()[0];
 
+    /**
+     *
+     */
     public ControleurQuestion() {
 
     }
 
+    /**
+     *
+     */
     public void initQuestion() {
 
        
@@ -57,64 +63,124 @@ public final class ControleurQuestion {
 
     }
 
-    public Question_FenetreQuestion getFenetre() {
+    /**
+     *
+     * @return
+     */
+    public QuestionFenetreQuestion getFenetre() {
         return fenetre;
     }
 
-    public void setFenetre(Question_FenetreQuestion fenetre) {
+    /**
+     *
+     * @param fenetre
+     */
+    public void setFenetre(QuestionFenetreQuestion fenetre) {
         this.fenetre = fenetre;
     }
 
+    /**
+     *
+     * @param niveau
+     */
     public void afficherQuestion(int niveau) {
-        fenetre = new Question_FenetreQuestion(qBuilder.getQuestion(niveau));
+        fenetre = new QuestionFenetreQuestion(qBuilder.getQuestion(niveau));
         device.setFullScreenWindow(fenetre);
         fenetre.setVisible(true);//On la rend visible
     }
 
+    /**
+     *
+     * @return
+     */
     public DocumentBuilderFactory getFactory() {
         return factory;
     }
 
+    /**
+     *
+     * @param factory
+     */
     public void setFactory(DocumentBuilderFactory factory) {
         this.factory = factory;
     }
 
+    /**
+     *
+     * @return
+     */
     public DocumentBuilder getBuilder() {
         return builder;
     }
 
+    /**
+     *
+     * @param builder
+     */
     public void setBuilder(DocumentBuilder builder) {
         this.builder = builder;
     }
 
+    /**
+     *
+     * @return
+     */
     public Document getDocument() {
         return document;
     }
 
+    /**
+     *
+     * @param document
+     */
     public void setDocument(Document document) {
         this.document = document;
     }
 
+    /**
+     *
+     * @return
+     */
     public Element getRacine() {
         return racine;
     }
 
+    /**
+     *
+     * @param racine
+     */
     public void setRacine(Element racine) {
         this.racine = racine;
     }
 
+    /**
+     *
+     * @return
+     */
     public QuestionBuilder getqBuilder() {
         return qBuilder;
     }
 
+    /**
+     *
+     * @param qBuilder
+     */
     public void setqBuilder(QuestionBuilder qBuilder) {
         this.qBuilder = qBuilder;
     }
 
+    /**
+     *
+     * @return
+     */
     public static GraphicsDevice getDevice() {
         return device;
     }
 
+    /**
+     *
+     * @param device
+     */
     public static void setDevice(GraphicsDevice device) {
         ControleurQuestion.device = device;
     }

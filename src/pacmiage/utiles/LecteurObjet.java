@@ -28,6 +28,12 @@ public class LecteurObjet {
     private static Element racine;
     private final Objet[] objet;
 
+    /**
+     *
+     * @throws ClassNotFoundException
+     * @throws InstantiationException
+     * @throws IllegalAccessException
+     */
     public LecteurObjet() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 
         //On crée une instance de SAXBuilder

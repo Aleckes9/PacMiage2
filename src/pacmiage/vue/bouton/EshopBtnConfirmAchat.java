@@ -1,7 +1,7 @@
 
 package pacmiage.vue.bouton;
 
-import pacmiage.listener.Eshop_Action_Achat;
+import pacmiage.listener.EshopActionAchat;
 import pacmiage.vue.menu.FenetrePrincipale;
 import pacmiage.modele.Objet;
 import java.awt.Color;
@@ -14,10 +14,15 @@ import pacmiage.utiles.Session;
  *
  * @author Maëlle
  */
-public class Eshop_BtnConfirmAchat extends JButton {
+public class EshopBtnConfirmAchat extends JButton {
 
-    public Eshop_BtnConfirmAchat(Objet it,FenetrePrincipale eshopFenetre) {
-        this.setAction(new Eshop_Action_Achat(it,eshopFenetre));
+    /**
+     *
+     * @param it
+     * @param eshopFenetre
+     */
+    public EshopBtnConfirmAchat(Objet it,FenetrePrincipale eshopFenetre) {
+        this.setAction(new EshopActionAchat(it,eshopFenetre));
         this.setText(Session.getInstance().recupererValeur("oui"));
         this.setFont(new Font(null, 30, 30 ));
         this.setBorderPainted(false);

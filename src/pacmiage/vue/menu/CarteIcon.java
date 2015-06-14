@@ -12,20 +12,37 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.Icon;
 
+/**
+ *
+ * @author Aleckes9
+ */
 public class CarteIcon implements Icon {
 
     private BufferedImage image;
 
+    /**
+     *
+     * @param chemin
+     * @throws IOException
+     */
     public CarteIcon(String chemin) throws IOException {
 
             image = ImageIO.read(new File(chemin));
 
     }
 
+    /**
+     *
+     * @return
+     */
     public BufferedImage getImage() {
         return image;
     }
 
+    /**
+     *
+     * @param image
+     */
     public void setImage(BufferedImage image) {
         this.image = image;
     }

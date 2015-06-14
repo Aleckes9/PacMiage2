@@ -9,7 +9,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import pacmiage.modele.Question;
 import pacmiage.modele.Reponse;
-import pacmiage.vue.question.Question_FenetreQuestion;
+import pacmiage.vue.question.QuestionFenetreQuestion;
 
 /**
  *
@@ -17,25 +17,37 @@ import pacmiage.vue.question.Question_FenetreQuestion;
  */
 public class ControleurQuestionTest {
     
-
-    
-    
+    /**
+     *
+     */
     public ControleurQuestionTest() {
     }
     
+    /**
+     *
+     */
     @BeforeClass
     public static void setUpClass() {
     }
     
+    /**
+     *
+     */
     @AfterClass
     public static void tearDownClass() {
     }
     
+    /**
+     *
+     */
     @Before
     public void setUp() {
 
     }
     
+    /**
+     *
+     */
     @After
     public void tearDown() {
     }

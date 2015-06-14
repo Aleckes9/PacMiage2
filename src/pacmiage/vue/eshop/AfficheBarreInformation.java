@@ -14,8 +14,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import pacmiage.modele.JoueurInfo;
 import pacmiage.modele.Objet;
-import pacmiage.vue.bouton.Btn_RetourMenu;
-import pacmiage.vue.bouton.Btn_Objet;
+import pacmiage.vue.bouton.BtnRetourMenu;
+import pacmiage.vue.bouton.BtnObjet;
 
 /**
  * Affiche la barre d'information située en haut de l'écran comprenant les
@@ -25,6 +25,10 @@ import pacmiage.vue.bouton.Btn_Objet;
  */
 public class AfficheBarreInformation extends JPanel {
 
+    /**
+     *
+     * @param fenetre
+     */
     public AfficheBarreInformation(FenetrePrincipale fenetre) {
 
         JoueurInfo joueur = JoueurInfo.getInstance();
@@ -40,10 +44,10 @@ public class AfficheBarreInformation extends JPanel {
         this.setLayout(new GridLayout(0, 6));
 
         for (Objet objetDispo : joueur.getObjetDispo()) {
-            this.add(new Btn_Objet(objetDispo, fenetre));
+            this.add(new BtnObjet(objetDispo, fenetre));
         }
 
-        Btn_RetourMenu bt = new Btn_RetourMenu(fenetre);
+        BtnRetourMenu bt = new BtnRetourMenu(fenetre);
         this.add(bt);
     }
 }

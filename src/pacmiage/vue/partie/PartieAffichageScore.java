@@ -13,15 +13,23 @@ import org.newdawn.slick.SlickException;
  *
  * @author Aleckes9
  */
-public class Partie_AffichageScore {
+public class PartieAffichageScore {
 
     private float x, y;
     private int score;
     private int futureScore;
 
-    public Partie_AffichageScore() {
+    /**
+     *
+     */
+    public PartieAffichageScore() {
     }
 
+    /**
+     *
+     * @param g
+     * @throws SlickException
+     */
     public void render(Graphics g) throws SlickException {
 
         if (score < futureScore) {
@@ -38,27 +46,44 @@ public class Partie_AffichageScore {
 
     }
 
-    public void initPos(int xPos, int Ypos) {
+    /**
+     *
+     * @param xPos
+     * @param yPos
+     */
+    public void initPos(int xPos, int yPos) {
         x = xPos;
-        y = Ypos;
+        y = yPos;
     }
 
-    public void update(int delta) {
-
-    }
-
+    /**
+     *
+     * @return
+     */
     public int getScore() {
         return score;
     }
 
+    /**
+     *
+     * @param score
+     */
     public void setScore(int score) {
         this.score = score;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getFutureScore() {
         return futureScore;
     }
 
+    /**
+     *
+     * @param futureScore
+     */
     public void setFutureScore(int futureScore) {
         this.futureScore = futureScore;
     }

@@ -2,13 +2,14 @@ package pacmiage.vue.menu;
 
 import java.awt.Color;
 import java.awt.Dimension;
-import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JPanel;
 import javax.swing.JFrame;
 import org.newdawn.slick.SlickException;
 import pacmiage.controleur.partie.PartieController;
-import pacmiage.vue.eshop.Eshop_AfficheEshop;
+import pacmiage.vue.eshop.EshopAfficheEshop;
 import pacmiage.utiles.Session;
 
 /**
@@ -21,10 +22,16 @@ public class FenetrePrincipale extends JFrame {
     private static final Dimension tailleEcran = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
     private PartieController partieController;
 
+    /**
+     *
+     */
     public FenetrePrincipale() {
 
     }
 
+    /**
+     *
+     */
     public void initFenetre() {
         Session.getInstance();
         this.setTitle("pacmiage");
@@ -40,41 +47,81 @@ public class FenetrePrincipale extends JFrame {
         this.setVisible(true);
     }
 
+    /**
+     *
+     * @throws IOException
+     */
     public void initFenetreMenu() throws IOException {
         FenetreMenu fenetreMenu = new FenetreMenu(this);
     }
 
+    /**
+     *
+     * @throws IOException
+     */
     public void initFenetreNiveau() throws IOException{
         SelectionnerNiveau selectionnerNiveau = new SelectionnerNiveau(this);
     }
 
-    public void initFenetreShop() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
-        Eshop_AfficheEshop eshop_AfficheEshop = new Eshop_AfficheEshop(this);
+    /**
+     *
+     */
+    public void initFenetreShop() {
+        try {
+            EshopAfficheEshop eshop_AfficheEshop = new EshopAfficheEshop(this);
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException ex) {
+            Logger.getLogger(FenetrePrincipale.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
+    /**
+     *
+     * @param niveau
+     * @param cheminCarte
+     * @throws SlickException
+     */
     public void executerPartie(int niveau, String cheminCarte) throws SlickException {
 
         partieController = new PartieController(niveau, cheminCarte);
 
     }
 
+    /**
+     *
+     * @return
+     */
     public JPanel getJpanel() {
         return jpanel;
     }
 
+    /**
+     *
+     * @param jpanel
+     */
     public void setJpanel(JPanel jpanel) {
         this.jpanel = jpanel;
     }
 
-
+    /**
+     *
+     * @return
+     */
     public PartieController getPartieController() {
         return partieController;
     }
 
+    /**
+     *
+     * @param partieController
+     */
     public void setPartieController(PartieController partieController) {
         this.partieController = partieController;
     }
 
+    /**
+     *
+     * @return
+     */
     public static Dimension getTailleEcran() {
         return tailleEcran;
     }

@@ -10,10 +10,17 @@ import pacmiage.utiles.Configuration;
  */
 public class ObjetBlue implements Bonus {
 
+    /**
+     *
+     */
     public ObjetBlue() {
 
     }
 
+    /**
+     *
+     * @param partie
+     */
     @Override
     public void executerBonus(PartieController partie) {
         partie.getPlayer().setImagePac(Configuration.getInstance().recupererValeur("pacBleu"));

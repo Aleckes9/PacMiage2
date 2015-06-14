@@ -2,7 +2,6 @@ package pacmiage.listener;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Locale;
 import java.util.logging.Level;
@@ -16,15 +15,17 @@ import pacmiage.vue.menu.FenetreMenu;
  *
  * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
  */
-public class FenetreMenuListener implements ActionListener{
+public class FenetreMenuListener implements ActionListener {
 
     FenetrePrincipale fenetre;
-    
 
+    /**
+     *
+     * @param fenetre
+     */
     public FenetreMenuListener(FenetrePrincipale fenetre) {
         this.fenetre = fenetre;
     }
-
 
     @Override
     public void actionPerformed(ActionEvent ae) {
@@ -32,37 +33,36 @@ public class FenetreMenuListener implements ActionListener{
         try {
             JButton tp = (JButton) ae.getSource();
             Session.getInstance();
-            //todo refresh
             switch (tp.getName()) {
                 case "nouvelle":
                     fenetre.initFenetreNiveau();
                     break;
                 case "store":
-                    
                     fenetre.initFenetreShop();
                     break;
                 case "quitter":
                     System.exit(0);
                     break;
                 case "langue":
-
-                    if (Session.getInstance().getLocale().equals(Locale.FRENCH)) {
-                        Session.getInstance().setLocale(Locale.ENGLISH);
-                    } else {
-                        Session.getInstance().setLocale(Locale.FRENCH);
-                    }
-                    fenetre.initFenetreMenu();
+                    caseLangue();
+                    break;
+                default:
                     break;
 
             }
-        } catch (IOException ex) {
+        } catch (IOException | ClassNotFoundException ex) {
             Logger.getLogger(FenetreMenu.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(FenetreMenu.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            Logger.getLogger(FenetreMenuListener.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
+        } catch (InstantiationException | IllegalAccessException ex) {
             Logger.getLogger(FenetreMenuListener.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+
+    public void caseLangue() throws IOException {
+        if (Session.getInstance().getLocale().equals(Locale.FRENCH)) {
+            Session.getInstance().setLocale(Locale.ENGLISH);
+        } else {
+            Session.getInstance().setLocale(Locale.FRENCH);
+        }
+        fenetre.initFenetreMenu();
     }
 }

@@ -10,17 +10,22 @@ import pacmiage.modele.Objet;
 import java.awt.Color;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import pacmiage.vue.eshop.Eshop_AfficheConfirmAcheter;
+import pacmiage.vue.eshop.EshopAfficheConfirmAcheter;
 
 /**
  * Bouton pour sélectionner un objet à acheter
  *
  * @author Maëlle
  */
-public class Eshop_BtnAcheter extends JButton {
+public class EshopBtnAcheter extends JButton {
 
-    public Eshop_BtnAcheter(Objet it, FenetrePrincipale eshopFenetre) {
-        this.setAction(new Eshop_AfficheConfirmAcheter(it, eshopFenetre));
+    /**
+     *
+     * @param it
+     * @param eshopFenetre
+     */
+    public EshopBtnAcheter(Objet it, FenetrePrincipale eshopFenetre) {
+        this.setAction(new EshopAfficheConfirmAcheter(it, eshopFenetre));
         ImageIcon icon = new ImageIcon("./src/ressources/image/eshop/Caddy.png");
         this.setIcon(icon);
         this.setBackground(Color.black);
@@ -28,6 +33,9 @@ public class Eshop_BtnAcheter extends JButton {
 
     }
     
+    /**
+     *
+     */
     public void initButton(){
         
     }

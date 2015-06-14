@@ -11,11 +11,17 @@ import pacmiage.modele.Fantome;
  */
 public class ObjetSlow implements Bonus {
 
-
+    /**
+     *
+     */
     public ObjetSlow() {
 
     }
 
+    /**
+     *
+     * @param partie
+     */
     @Override
     public void executerBonus(PartieController partie) {
         for (Fantome f : partie.getListFantome()) {

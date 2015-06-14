@@ -50,6 +50,10 @@ public class ChargerFichier {
         return o;
     }
 
+    /**
+     *
+     * @return
+     */
     public static ChargerFichier getInstance() {
         return CHARGER;
     }

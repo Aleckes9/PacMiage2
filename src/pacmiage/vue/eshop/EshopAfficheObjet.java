@@ -5,7 +5,7 @@
  */
 package pacmiage.vue.eshop;
 
-import pacmiage.vue.bouton.Eshop_BtnAcheter;
+import pacmiage.vue.bouton.EshopBtnAcheter;
 import pacmiage.vue.menu.FenetrePrincipale;
 import pacmiage.modele.Objet;
 import java.awt.BorderLayout;
@@ -21,10 +21,29 @@ import javax.swing.JPanel;
  *
  * @author Maëlle
  */
-public class Eshop_AfficheObjet {
+public final class EshopAfficheObjet {
+    
+    private final Objet objet;
+    private final JPanel panel;
+    private final boolean affBtnAchat;
+    private final FenetrePrincipale eshopFenetre;
 
-    public Eshop_AfficheObjet(JPanel panel, Objet objet, boolean affBtnAchat, FenetrePrincipale eshopFenetre) {
-
+    /**
+     *
+     * @param panel
+     * @param objet
+     * @param affBtnAchat
+     * @param eshopFenetre
+     */
+    public EshopAfficheObjet(JPanel panel, Objet objet, boolean affBtnAchat, FenetrePrincipale eshopFenetre) {
+        this.objet = objet;
+        this.panel = panel;
+        this.affBtnAchat = affBtnAchat;
+        this.eshopFenetre = eshopFenetre;
+        initAffObjet();
+    }
+    
+    public void initAffObjet(){
         /**
          * Paramètres de l'affichage du nom
          */
@@ -69,8 +88,8 @@ public class Eshop_AfficheObjet {
         layout1.setVgap(5);
         k.setLayout(layout2);
         k.add(prix);
-        if (affBtnAchat == true) {
-            k.add(new Eshop_BtnAcheter(objet, eshopFenetre));
+        if (affBtnAchat) {
+            k.add(new EshopBtnAcheter(objet, eshopFenetre));
         }
         /**
          * Ajout des éléments à la fenêtre
@@ -85,10 +104,7 @@ public class Eshop_AfficheObjet {
         panel.add(k);
 
         panel.setBackground(Color.black);
-
     }
 
-    public void afficher() {
 
-    }
 }

@@ -1,6 +1,6 @@
 package pacmiage2.vue.question;
 
-import pacmiage.vue.question.Question_FenetreQuestion;
+import pacmiage.vue.question.QuestionFenetreQuestion;
 import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JPanel;
@@ -21,22 +21,37 @@ public class Question_FenetreQuestionTest {
     
     Question question;
             
+    /**
+     *
+     */
     public Question_FenetreQuestionTest() {
     }
     
+    /**
+     *
+     */
     @BeforeClass
     public static void setUpClass() {
     }
     
+    /**
+     *
+     */
     @AfterClass
     public static void tearDownClass() {
     }
     
+    /**
+     *
+     */
     @Before
     public void setUp() {
         question = new Question();
     }
     
+    /**
+     *
+     */
     @After
     public void tearDown() {
     }
@@ -48,7 +63,7 @@ public class Question_FenetreQuestionTest {
     public void testSetValider() {
         System.out.println("setValider");
         JButton valider = null;
-        Question_FenetreQuestion instance = new Question_FenetreQuestion(question);
+        QuestionFenetreQuestion instance = new QuestionFenetreQuestion(question);
         instance.setValider(valider);
     }
 
@@ -59,7 +74,7 @@ public class Question_FenetreQuestionTest {
     public void testSetText() {
         System.out.println("setText");
         JTextPane text = null;
-        Question_FenetreQuestion instance = new Question_FenetreQuestion(question);
+        QuestionFenetreQuestion instance = new QuestionFenetreQuestion(question);
         instance.setText(text);
     }
 
@@ -69,7 +84,7 @@ public class Question_FenetreQuestionTest {
     @Test
     public void testSetQuestion() {
         System.out.println("setQuestion");
-        Question_FenetreQuestion instance = new Question_FenetreQuestion(question);
+        QuestionFenetreQuestion instance = new QuestionFenetreQuestion(question);
         instance.setQuestion(question);
     }
 
@@ -80,7 +95,7 @@ public class Question_FenetreQuestionTest {
     public void testSetPanelGlobal() {
         System.out.println("setPanelGlobal");
         JPanel panelGlobal = null;
-        Question_FenetreQuestion instance = new Question_FenetreQuestion(question);
+        QuestionFenetreQuestion instance = new QuestionFenetreQuestion(question);
         instance.setPanelGlobal(panelGlobal);
     }
 
@@ -91,7 +106,7 @@ public class Question_FenetreQuestionTest {
     public void testSetBoutons() {
         System.out.println("setBoutons");
         ArrayList<JButton> boutons = null;
-        Question_FenetreQuestion instance = new Question_FenetreQuestion(question);
+        QuestionFenetreQuestion instance = new QuestionFenetreQuestion(question);
         instance.setBoutons(boutons);
     }
 
@@ -102,7 +117,7 @@ public class Question_FenetreQuestionTest {
     public void testSetLabel() {
         System.out.println("setLabel");
         JTextPane label = null;
-        Question_FenetreQuestion instance = new Question_FenetreQuestion(question);
+        QuestionFenetreQuestion instance = new QuestionFenetreQuestion(question);
         instance.setLabel(label);
     }
 
@@ -112,7 +127,7 @@ public class Question_FenetreQuestionTest {
     @Test
     public void testFermer() {
         System.out.println("fermer");
-        Question_FenetreQuestion instance = new Question_FenetreQuestion(question);
+        QuestionFenetreQuestion instance = new QuestionFenetreQuestion(question);
         instance.fermer();
     }
 
@@ -123,7 +138,7 @@ public class Question_FenetreQuestionTest {
     public void testSetChoix() {
         System.out.println("setChoix");
         boolean unChoix = false;
-        Question_FenetreQuestion instance = new Question_FenetreQuestion(question);
+        QuestionFenetreQuestion instance = new QuestionFenetreQuestion(question);
         instance.setChoix(unChoix);
     }
 
@@ -133,7 +148,7 @@ public class Question_FenetreQuestionTest {
     @Test
     public void testIsChoix() {
         System.out.println("isChoix");
-        Question_FenetreQuestion instance = new Question_FenetreQuestion(question);
+        QuestionFenetreQuestion instance = new QuestionFenetreQuestion(question);
         boolean expResult = false;
         boolean result = instance.isChoix();
         assertEquals(expResult, result);

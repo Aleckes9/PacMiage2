@@ -27,8 +27,10 @@ public class MainPacMiage {
     private MainPacMiage() {
     }
     
-    
-
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         
 
@@ -49,7 +51,6 @@ public class MainPacMiage {
 
             while (true) {
                 System.out.print("");
-                //
                 if (mainFenetre.getPartieController() != null) {
                     PartieController partieController;
                     partieController = mainFenetre.getPartieController();

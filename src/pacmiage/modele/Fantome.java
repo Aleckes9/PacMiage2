@@ -5,7 +5,7 @@
  */
 package pacmiage.modele;
 
-import pacmiage.vue.partie.Partie_AffichageMap;
+import pacmiage.vue.partie.PartieAffichageMap;
 import org.newdawn.slick.SlickException;
 
 /**
@@ -19,29 +19,53 @@ public class Fantome extends PersonnageImpl {
     private int frequence = 0;
     private int topDepart;
 
-    public Fantome(Partie_AffichageMap map, String cheminImage) throws SlickException {
+    /**
+     *
+     * @param map
+     * @param cheminImage
+     * @throws SlickException
+     */
+    public Fantome(PartieAffichageMap map, String cheminImage) throws SlickException {
         super(map, cheminImage);
         vitesse = 2;
         topDepart = 0;
     }
 
+    /**
+     *
+     */
     public void resetPos() {
         x = xOrg;
         y = yOrg;
         moving = false;
     }
 
+    /**
+     *
+     * @param posX
+     * @param pasY
+     */
     public void initEtat(int posX, int pasY) {
         x = xOrg = posX;
         y = yOrg = pasY;
         moving = false;
     }
 
+    /**
+     *
+     * @param posX
+     * @param pasY
+     */
     public void initDepart(int posX, int pasY) {
         xDepart = posX;
         yDepart = pasY;
     }
 
+    /**
+     *
+     * @param newXPac
+     * @param newYPac
+     */
     public void updateFantome(float newXPac, float newYPac) {
         if (topDepart == 150) {
             this.depart();
@@ -125,13 +149,21 @@ public class Fantome extends PersonnageImpl {
 
     }
 
+    /**
+     *
+     * @param xObjet
+     * @param yObjet
+     * @return
+     */
     public boolean estEnCollisionCible(float xObjet, float yObjet) {
 
         return xObjet > this.x && xObjet < this.x + 33 && yObjet > this.y && yObjet < this.y + 33;
 
     }
 
-
+    /**
+     *
+     */
     public void depart() {
         this.moving = true;
         x = xDepart;

@@ -1,6 +1,6 @@
 package pacmiage2.listener;
 
-import pacmiage.listener.Btn_RetourEshop;
+import pacmiage.listener.BtnRetourEshop;
 import java.awt.event.ActionEvent;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -20,22 +20,37 @@ public class Btn_RetourEshopTest {
     FenetrePrincipale fenetre;
     JoueurInfo joueur;
     
+    /**
+     *
+     */
     public Btn_RetourEshopTest() {
     }
     
+    /**
+     *
+     */
     @BeforeClass
     public static void setUpClass() {
     }
     
+    /**
+     *
+     */
     @AfterClass
     public static void tearDownClass() {
     }
     
+    /**
+     *
+     */
     @Before
     public void setUp() {
         fenetre = new FenetrePrincipale();
     }
     
+    /**
+     *
+     */
     @After
     public void tearDown() {
     }
@@ -47,7 +62,7 @@ public class Btn_RetourEshopTest {
     public void testActionPerformed() {
         System.out.println("actionPerformed");
         ActionEvent ae = null;
-        Btn_RetourEshop instance = new Btn_RetourEshop(fenetre);
+        BtnRetourEshop instance = new BtnRetourEshop(fenetre);
         instance.actionPerformed(ae);
     }
     

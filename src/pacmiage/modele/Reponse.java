@@ -15,10 +15,18 @@ public class Reponse {
     private String text;
     private boolean veracite;
 
+    /**
+     *
+     */
     public Reponse() {
 
     }
 
+    /**
+     *
+     * @param text
+     * @param veracite
+     */
     public Reponse(String text, boolean veracite) {
 
         this.text = text;
@@ -26,18 +34,34 @@ public class Reponse {
 
     }
 
+    /**
+     *
+     * @return
+     */
     public String getText() {
         return text;
     }
 
+    /**
+     *
+     * @param text
+     */
     public void setText(String text) {
         this.text = text;
     }
 
+    /**
+     *
+     * @return
+     */
     public boolean isVeracite() {
         return veracite;
     }
 
+    /**
+     *
+     * @param veracite
+     */
     public void setVeracite(boolean veracite) {
         this.veracite = veracite;
     }

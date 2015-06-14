@@ -10,10 +10,17 @@ import pacmiage.modele.Bonus;
  */
 public class ObjetSpeed implements Bonus {
 
+    /**
+     *
+     */
     public ObjetSpeed() {
 
     }
 
+    /**
+     *
+     * @param partie
+     */
     @Override
     public void executerBonus(PartieController partie) {
         partie.getPlayer().setVitesse(4);

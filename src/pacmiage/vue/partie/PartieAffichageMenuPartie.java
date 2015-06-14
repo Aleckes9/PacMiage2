@@ -17,7 +17,7 @@ import pacmiage.utiles.Session;
  *
  * @author Maëlle
  */
-public final class Partie_AffichageMenuPartie implements ActionListener {
+public final class PartieAffichageMenuPartie implements ActionListener {
 
     private final JFrame fenetre = new JFrame();
     private final PartieController partie;
@@ -27,7 +27,12 @@ public final class Partie_AffichageMenuPartie implements ActionListener {
     private final JButton quitter = new JButton();
     private final JButton reprendre = new JButton();
 
-    public Partie_AffichageMenuPartie(PartieController partie) throws IOException {
+    /**
+     *
+     * @param partie
+     * @throws IOException
+     */
+    public PartieAffichageMenuPartie(PartieController partie) throws IOException {
         partie.getContainer().pause();
         this.partie = partie;
         initFenetre();
@@ -37,6 +42,9 @@ public final class Partie_AffichageMenuPartie implements ActionListener {
 
     }
 
+    /**
+     *
+     */
     public void initFenetre() {
         fenetre.setLocationRelativeTo(null);
         fenetre.setUndecorated(true);
@@ -48,6 +56,9 @@ public final class Partie_AffichageMenuPartie implements ActionListener {
         fenetre.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
+    /**
+     *
+     */
     public void initButton() {
         j.setBackground(java.awt.Color.black);
         boutons.setBackground(java.awt.Color.black);
@@ -72,6 +83,10 @@ public final class Partie_AffichageMenuPartie implements ActionListener {
         boutons.add(reprendre);
     }
 
+    /**
+     *
+     * @param button
+     */
     public void configButton(final JButton button) {
         button.setForeground(Color.white);
         button.setBackground(Color.black);
@@ -119,6 +134,10 @@ public final class Partie_AffichageMenuPartie implements ActionListener {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     public JFrame getFenetre() {
         return fenetre;
     }

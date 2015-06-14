@@ -9,10 +9,17 @@ import pacmiage.modele.Bonus;
  */
 public class ObjetClock implements Bonus {
 
+    /**
+     *
+     */
     public ObjetClock() {
 
     }
 
+    /**
+     *
+     * @param partie
+     */
     @Override
     public void executerBonus(PartieController partie) {
         partie.getTimer().setTempsRestant(partie.getTimer().getTempsRestant()+20);

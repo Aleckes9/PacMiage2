@@ -15,7 +15,7 @@ import javax.swing.JPanel;
 import pacmiage.listener.SelectionNiveauListener;
 import pacmiage.utiles.Session;
 import pacmiage.utiles.Configuration;
-import pacmiage.vue.bouton.Btn_RetourMenu;
+import pacmiage.vue.bouton.BtnRetourMenu;
 
 /**
  *
@@ -27,6 +27,11 @@ public final class SelectionnerNiveau {
     private final JPanel jpanel = new JPanel();
     private final JPanel niveaux = new JPanel();
 
+    /**
+     *
+     * @param fenetre1
+     * @throws IOException
+     */
     public SelectionnerNiveau(FenetrePrincipale fenetre1) throws IOException {
         this.fenetre = fenetre1;
         initFenetre();
@@ -37,6 +42,9 @@ public final class SelectionnerNiveau {
         fenetre.setVisible(true);
     }
 
+    /**
+     *
+     */
     public void initFenetre() {
 
         JLabel titre = new JLabel(Session.getInstance().recupererValeur("niveaux"), JLabel.CENTER);
@@ -56,14 +64,18 @@ public final class SelectionnerNiveau {
         titre.setForeground(Color.white);
 
         jpanel.add(titre, BorderLayout.NORTH);
-        jpanel.add(new Btn_RetourMenu(fenetre), BorderLayout.SOUTH);
+        jpanel.add(new BtnRetourMenu(fenetre), BorderLayout.SOUTH);
     }
 
+    /**
+     *
+     * @throws IOException
+     */
     public void initBoutons() throws IOException {
         Font f1 = new Font("Kristen ITC", Font.PLAIN, 50);
         for (int i = 1; i <= 5; i++) {
 
-            final CarteIcon carteLevel = new CarteIcon(Configuration.getInstance().recupererValeur("carteMini" + String.valueOf(i)));
+            final CarteIcon carteLevel = new CarteIcon(Configuration.getInstance().recupererValeur("carteMini" + i));
             final JButton level = new JButton(carteLevel);
             level.setText(String.valueOf(i));
             level.setForeground(Color.white);
@@ -89,10 +101,9 @@ public final class SelectionnerNiveau {
                 }
             });
 
-            //level.setPreferredSize(new Dimension(level.getImage().getWidth(), level.getImage().getHeight()*3));
             niveaux.add(level);
 
-            jpanel.add((niveaux), BorderLayout.CENTER);
+            jpanel.add(niveaux);
 
         }
 

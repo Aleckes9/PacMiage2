@@ -30,11 +30,22 @@ public final class Session {
         setLocale(Locale.FRENCH);
     }
 
+    /**
+     *
+     * @param cle
+     * @return
+     */
     public String recupererValeur(String cle) {
         String valeur = prop.getProperty(cle);
         return valeur;
     }
 
+    /**
+     *
+     * @param filename
+     * @return
+     * @throws IOException
+     */
     public static Properties load(String filename) throws IOException {
         Properties properties = new Properties();
 
@@ -44,10 +55,18 @@ public final class Session {
 
     }
 
+    /**
+     *
+     * @return
+     */
     public Locale getLocale() {
         return locale;
     }
 
+    /**
+     *
+     * @param locale
+     */
     public void setLocale(Locale locale) {
         this.locale = locale;
         String chemin = ficProp.get(locale);
@@ -58,6 +77,10 @@ public final class Session {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     public static Session getInstance() {
         return session;
     }

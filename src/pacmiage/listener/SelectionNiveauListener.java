@@ -16,14 +16,18 @@ import pacmiage.vue.menu.FenetrePrincipale;
 public class SelectionNiveauListener implements ActionListener {
 
     private final FenetrePrincipale fenetre;
-    
+
+    /**
+     *
+     * @param fenetre
+     */
     public SelectionNiveauListener(FenetrePrincipale fenetre) {
         this.fenetre = fenetre;
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-    
+
         try {
             JButton tp = (JButton) e.getSource();
 
@@ -43,11 +47,13 @@ public class SelectionNiveauListener implements ActionListener {
                 case "5":
                     fenetre.executerPartie(5, Configuration.getInstance().recupererValeur("carte5"));
                     break;
+                default:
+                    break;
             }
         } catch (SlickException ex) {
             Logger.getLogger(SelectionNiveauListener.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }
-    
+
 }

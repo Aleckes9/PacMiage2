@@ -69,18 +69,34 @@ public final class ControleurTemps {
         return new Timer(1000, action);
     }
 
+    /**
+     *
+     * @return
+     */
     public Timer getTimer() {
         return timer;
     }
 
+    /**
+     *
+     * @param timer
+     */
     public void setTimer(Timer timer) {
         this.timer = timer;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getTempsRestant() {
         return tempsRestant;
     }
 
+    /**
+     *
+     * @param tempsRestant
+     */
     public void setTempsRestant(int tempsRestant) {
         if (tempsRestant < 0) {
             this.tempsRestant = 0;
@@ -89,10 +105,18 @@ public final class ControleurTemps {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     public int getTemps() {
         return temps;
     }
 
+    /**
+     *
+     * @param temps
+     */
     public void setTemps(int temps) {
         this.temps = temps;
     }

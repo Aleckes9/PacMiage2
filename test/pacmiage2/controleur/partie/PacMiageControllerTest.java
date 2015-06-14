@@ -20,21 +20,36 @@ public class PacMiageControllerTest {
     PacMiage player;
     PartieController partie;
             
+    /**
+     *
+     */
     public PacMiageControllerTest() {
     }
     
+    /**
+     *
+     */
     @BeforeClass
     public static void setUpClass() {
     }
     
+    /**
+     *
+     */
     @AfterClass
     public static void tearDownClass() {
     }
     
+    /**
+     *
+     */
     @Before
     public void setUp() {
     }
     
+    /**
+     *
+     */
     @After
     public void tearDown() {
     }

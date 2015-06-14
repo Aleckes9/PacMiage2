@@ -11,7 +11,7 @@ import java.util.logging.Logger;
 import org.newdawn.slick.Input;
 import org.newdawn.slick.KeyListener;
 import org.newdawn.slick.SlickException;
-import pacmiage.vue.partie.Partie_AffichageMenuPartie;
+import pacmiage.vue.partie.PartieAffichageMenuPartie;
 import pacmiage.modele.JoueurInfo;
 import pacmiage.modele.PacMiage;
 
@@ -24,11 +24,20 @@ public class PacMiageController implements KeyListener {
     private final PacMiage player;
     private final PartieController partie;
 
+    /**
+     *
+     * @param player
+     * @param partie
+     */
     public PacMiageController(PacMiage player, PartieController partie) {
         this.player = player;
         this.partie = partie;
     }
 
+    /**
+     *
+     * @param input
+     */
     @Override
     public void setInput(Input input) {
         //Ne fait rien car cette méthode n'est pas utilisée
@@ -59,6 +68,11 @@ public class PacMiageController implements KeyListener {
         //Ne fait rien car cette méthode n'est pas utilisée
     }
 
+    /**
+     *
+     * @param key
+     * @param c
+     */
     @Override
     public void keyPressed(int key, char c) {
         switch (key) {
@@ -89,11 +103,9 @@ public class PacMiageController implements KeyListener {
             case Input.KEY_ESCAPE:
                 System.exit(0);
                 break;
-
-            case Input.KEY_ENTER: {
+            case Input.KEY_ENTER:
                 CaseEnter();
-            }
-            break;
+                break;
             default:
                 break;
         }
@@ -101,6 +113,11 @@ public class PacMiageController implements KeyListener {
         this.player.setMoving(true);
     }
 
+    /**
+     *
+     * @param key
+     * @param c
+     */
     @Override
     public void keyReleased(int key, char c) {
         this.player.setMoving(true);
@@ -121,7 +138,7 @@ public class PacMiageController implements KeyListener {
             partie.getContainer().pause();
             partie.getTimer().stop();
             partie.getGame().setFullscreen(false);
-            Partie_AffichageMenuPartie affMenu = new Partie_AffichageMenuPartie(partie);
+            PartieAffichageMenuPartie affMenu = new PartieAffichageMenuPartie(partie);
 
             while (affMenu.getFenetre().isVisible()) {
                 partie.getContainer().sleep(50);

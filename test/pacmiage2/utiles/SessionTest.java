@@ -18,22 +18,37 @@ public class SessionTest {
     
     Session instance;
             
+    /**
+     *
+     */
     public SessionTest() {
     }
     
+    /**
+     *
+     */
     @BeforeClass
     public static void setUpClass() {
     }
     
+    /**
+     *
+     */
     @AfterClass
     public static void tearDownClass() {
     }
     
+    /**
+     *
+     */
     @Before
     public void setUp() {
         instance = Session.getInstance();
     }
     
+    /**
+     *
+     */
     @After
     public void tearDown() {
     }

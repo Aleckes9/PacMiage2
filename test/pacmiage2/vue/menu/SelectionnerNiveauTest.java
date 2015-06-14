@@ -21,22 +21,37 @@ public class SelectionnerNiveauTest {
     FenetrePrincipale fenetre1;
     JoueurInfo JOUEUR;
             
+    /**
+     *
+     */
     public SelectionnerNiveauTest() {
     }
     
+    /**
+     *
+     */
     @BeforeClass
     public static void setUpClass() {
     }
     
+    /**
+     *
+     */
     @AfterClass
     public static void tearDownClass() {
     }
     
+    /**
+     *
+     */
     @Before
     public void setUp() {
         fenetre1 = new FenetrePrincipale();
     }
     
+    /**
+     *
+     */
     @After
     public void tearDown() {
     }

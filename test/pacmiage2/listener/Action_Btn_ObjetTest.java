@@ -1,6 +1,6 @@
 package pacmiage2.listener;
 
-import pacmiage.listener.Action_Btn_Objet;
+import pacmiage.listener.ActionBtnObjet;
 import java.awt.event.ActionEvent;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -20,22 +20,37 @@ public class Action_Btn_ObjetTest {
     FenetrePrincipale eshopFenetre;
     Objet it;
     
+    /**
+     *
+     */
     public Action_Btn_ObjetTest() {
     }
     
+    /**
+     *
+     */
     @BeforeClass
     public static void setUpClass() {
     }
     
+    /**
+     *
+     */
     @AfterClass
     public static void tearDownClass() {
     }
     
+    /**
+     *
+     */
     @Before
     public void setUp() {
         
     }
     
+    /**
+     *
+     */
     @After
     public void tearDown() {
     }
@@ -47,7 +62,7 @@ public class Action_Btn_ObjetTest {
     public void testActionPerformed() {
         System.out.println("actionPerformed");
         ActionEvent ae = null;
-        Action_Btn_Objet instance = new Action_Btn_Objet(it, eshopFenetre);
+        ActionBtnObjet instance = new ActionBtnObjet(it, eshopFenetre);
         instance.actionPerformed(ae);
     }
     

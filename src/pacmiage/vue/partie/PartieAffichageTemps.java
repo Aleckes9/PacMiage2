@@ -8,14 +8,22 @@ import org.newdawn.slick.SlickException;
  *
  * @author Aleckes9
  */
-public class Partie_AffichageTemps {
+public class PartieAffichageTemps {
 
     private float x, y;
     private int temps;
 
-    public Partie_AffichageTemps() {
+    /**
+     *
+     */
+    public PartieAffichageTemps() {
     }
 
+    /**
+     *
+     * @param g
+     * @throws SlickException
+     */
     public void renderAffichageTemps(Graphics g) throws SlickException {
 
         String argentString = String.valueOf(temps);
@@ -28,15 +36,28 @@ public class Partie_AffichageTemps {
 
     }
 
+    /**
+     *
+     * @param xPos
+     * @param Ypos
+     */
     public void initPosAffichageTemps(int xPos, int Ypos) {
         x = xPos;
         y = Ypos;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getTemps() {
         return temps;
     }
 
+    /**
+     *
+     * @param temps
+     */
     public void setTemps(int temps) {
         this.temps = temps;
     }

@@ -41,6 +41,11 @@ public final class Configuration {
         }
     }
 
+    /**
+     *
+     * @param cle
+     * @return
+     */
     public String recupererValeur(String cle) {
         String valeur = properties.getProperty(cle);
         return valeur;
@@ -55,6 +60,10 @@ public final class Configuration {
 
     }
 
+    /**
+     *
+     * @return
+     */
     public static Configuration getInstance() {
         return config;
 

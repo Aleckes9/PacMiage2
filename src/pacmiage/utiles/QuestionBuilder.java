@@ -22,12 +22,21 @@ public class QuestionBuilder {
     private final List<Question> questions;
     private final Element racine;
 
+    /**
+     *
+     * @param racine
+     */
     public QuestionBuilder(Element racine) {
         this.racine = racine;
         questions = new ArrayList<>();
         fabriquerQuestion();
     }
 
+    /**
+     *
+     * @param niveau
+     * @return
+     */
     public Question getQuestion(int niveau) {
         List<Question> listQuestionNv = new ArrayList<>();
         for (Question qestion : questions) {

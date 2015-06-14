@@ -31,7 +31,7 @@ import javax.swing.text.StyleContext;
  *
  * @author Aleckes9
  */
-public class Question_FenetreQuestion extends JFrame {
+public class QuestionFenetreQuestion extends JFrame {
 
     private Question question;
     private JButton valider;
@@ -45,7 +45,7 @@ public class Question_FenetreQuestion extends JFrame {
      *
      * @param question
      */
-    public Question_FenetreQuestion(Question question) {
+    public QuestionFenetreQuestion(Question question) {
         this.question = question;
         boutons = new ArrayList<>();
 
@@ -221,10 +221,18 @@ public class Question_FenetreQuestion extends JFrame {
         return question;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextPane getText() {
         return text;
     }
 
+    /**
+     *
+     * @param text
+     */
     public void setText(JTextPane text) {
         this.text = text;
     }
@@ -237,10 +245,18 @@ public class Question_FenetreQuestion extends JFrame {
         this.question = question;
     }
 
+    /**
+     *
+     * @return
+     */
     public JPanel getPanelGlobal() {
         return panelGlobal;
     }
 
+    /**
+     *
+     * @param panelGlobal
+     */
     public void setPanelGlobal(JPanel panelGlobal) {
         this.panelGlobal = panelGlobal;
     }
@@ -277,16 +293,27 @@ public class Question_FenetreQuestion extends JFrame {
         this.label = label;
     }
 
+    /**
+     *
+     */
     public void fermer() {
 
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
     }
 
+    /**
+     *
+     * @param unChoix
+     */
     public void setChoix(boolean unChoix) {
         this.choix = unChoix;
     }
 
+    /**
+     *
+     * @return
+     */
     public boolean isChoix() {
         return choix;
     }

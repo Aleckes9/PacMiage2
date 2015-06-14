@@ -11,11 +11,17 @@ import pacmiage.modele.Fantome;
  */
 public class ObjetFreezer implements Bonus {
 
-
+    /**
+     *
+     */
     public ObjetFreezer() {
 
     }
 
+    /**
+     *
+     * @param partie
+     */
     @Override
     public void executerBonus(PartieController partie) {
         for (Fantome f : partie.getListFantome()) {

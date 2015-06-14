@@ -133,6 +133,10 @@ public class JoueurInfo implements Serializable {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     public static JoueurInfo getInstance() {
         if (JOUEUR == null) {
             JOUEUR = new JoueurInfo();
@@ -140,6 +144,10 @@ public class JoueurInfo implements Serializable {
         return JOUEUR;
     }
     
+    /**
+     *
+     * @param joueur
+     */
     public static void setInstance(JoueurInfo joueur) {
             JOUEUR = joueur;
     }

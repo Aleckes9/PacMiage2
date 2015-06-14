@@ -19,22 +19,37 @@ public class RetourMenuTest {
     FenetrePrincipale f;
     JoueurInfo joueur;
     
+    /**
+     *
+     */
     public RetourMenuTest() {
     }
     
+    /**
+     *
+     */
     @BeforeClass
     public static void setUpClass() {
     }
     
+    /**
+     *
+     */
     @AfterClass
     public static void tearDownClass() {
     }
     
+    /**
+     *
+     */
     @Before
     public void setUp() {
         f = new FenetrePrincipale();
     }
     
+    /**
+     *
+     */
     @After
     public void tearDown() {
     }

@@ -35,11 +35,19 @@ public final class FenetreMenu {
     private final JButton quitter = new JButton();
     private final JButton changerLangue = new JButton(new ImageIcon("./src/ressources/image/drapeau/enfr.png"));
 
+    /**
+     *
+     * @param uneFenetre
+     * @throws IOException
+     */
     public FenetreMenu(FenetrePrincipale uneFenetre) throws IOException {
         this.fenetre = uneFenetre;
         this.init();
     }
 
+    /**
+     *
+     */
     public void init() {
         jPanel.setLayout(null);
         this.initFenetre();
@@ -69,11 +77,17 @@ public final class FenetreMenu {
         fenetre.repaint();
     }
 
+    /**
+     *
+     */
     public void initFenetre() {
         fenetre.setVisible(true);
         fenetre.setContentPane(jPanel);
     }
 
+    /**
+     *
+     */
     public void initRecord() {
         record.setBackground(Color.black);
         record.setFont(new Font("Kristen ITC", Font.PLAIN, 44));
@@ -81,6 +95,9 @@ public final class FenetreMenu {
 
     }
 
+    /**
+     *
+     */
     public void initButtonLangue() {
         changerLangue.setBackground(Color.black);
         changerLangue.setBorderPainted(false);
@@ -93,6 +110,9 @@ public final class FenetreMenu {
         changerLangue.setSize(fenetre.getWidth(), fenetre.getHeight() / 8);
     }
 
+    /**
+     *
+     */
     public void initButtonOptions() {
         nouvellepartie.setText(Session.getInstance().recupererValeur("nouvelle"));
         nouvellepartie.setName("nouvelle");
@@ -112,6 +132,10 @@ public final class FenetreMenu {
         initConfigButtonMenu(quitter);
     }
 
+    /**
+     *
+     * @param buttonMenu
+     */
     public void initConfigButtonMenu(final JButton buttonMenu) {
         buttonMenu.setForeground(Color.white);
         buttonMenu.setBackground(Color.black);

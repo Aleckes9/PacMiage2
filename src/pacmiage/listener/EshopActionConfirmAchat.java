@@ -23,13 +23,18 @@ import javax.swing.JPanel;
  *
  * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
  */
-public class Eshop_Action_ConfirmAchat extends AbstractAction {
+public class EshopActionConfirmAchat extends AbstractAction {
 
     JoueurInfo j;
     Objet it;
     String message;
 
-    public Eshop_Action_ConfirmAchat(JoueurInfo j, Objet it) {
+    /**
+     *
+     * @param j
+     * @param it
+     */
+    public EshopActionConfirmAchat(JoueurInfo j, Objet it) {
         this.j = j;
         this.it = it;
 
@@ -48,7 +53,6 @@ public class Eshop_Action_ConfirmAchat extends AbstractAction {
 
         JPanel p = new JPanel();
         p.setBackground(Color.black);
-        //f.setBounds(largeur / 3, hauteur / 4, 4 * largeur / 11, hauteur / 2);
         ImageIcon icon = new ImageIcon("./src/ressources/image/eshop/ghost.png");
         JLabel image = new JLabel(icon);
         JLabel texte = new JLabel();

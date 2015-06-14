@@ -17,18 +17,18 @@ import org.newdawn.slick.Image;
 import org.newdawn.slick.Music;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.Sound;
-import pacmiage.vue.partie.Partie_AffichageScore;
-import pacmiage.vue.partie.Partie_AffichageTemps;
-import pacmiage.vue.partie.Partie_AffichageImageFondu;
+import pacmiage.vue.partie.PartieAffichageScore;
+import pacmiage.vue.partie.PartieAffichageTemps;
+import pacmiage.vue.partie.PartieAffichageImageFondu;
 import pacmiage.modele.Fantome;
 import pacmiage.modele.JoueurInfo;
-import pacmiage.vue.partie.Partie_AffichageMap;
+import pacmiage.vue.partie.PartieAffichageMap;
 import pacmiage.modele.Objet;
 import pacmiage.modele.ObjetPartie;
 import pacmiage.modele.PacMiage;
 import pacmiage.utiles.Configuration;
 import pacmiage.utiles.SauvegardeFichier;
-import pacmiage.vue.partie.Partie_AffichageObjetBonus;
+import pacmiage.vue.partie.PartieAffichageObjetBonus;
 
 /**
  *
@@ -49,19 +49,25 @@ public class PartieController extends BasicGame {
     private final String cheminCarte;
     private ControleurTemps tempsBonus;
 
-    private final Partie_AffichageMap map;
-    private final Partie_AffichageScore score;
-    private final Partie_AffichageTemps temps;
-    private Partie_AffichageImageFondu imageVeracite;
+    private final PartieAffichageMap map;
+    private final PartieAffichageScore score;
+    private final PartieAffichageTemps temps;
+    private PartieAffichageImageFondu imageVeracite;
 
     private final PacMiage player;
     private final java.util.Map<Integer, ObjetPartie> grainesMap;
     private final List<Fantome> listFantome;
     private final ControleurTemps timer;
-    private Partie_AffichageObjetBonus[] affichageBonus;
+    private PartieAffichageObjetBonus[] affichageBonus;
 
     private final ControleurQuestion ctrlQuestion;
 
+    /**
+     *
+     * @param unNiveau
+     * @param unCheminCarte
+     * @throws SlickException
+     */
     public PartieController(int unNiveau, String unCheminCarte) throws SlickException {
         super("PacMiage");
 
@@ -72,30 +78,43 @@ public class PartieController extends BasicGame {
         niveau = unNiveau;
         cheminCarte = unCheminCarte;
 
-        map = new Partie_AffichageMap();
+        map = new PartieAffichageMap();
 
         player = new PacMiage(map, Configuration.getInstance().recupererValeur("pacNormal"));
         grainesMap = new HashMap<>();
         listFantome = new ArrayList<>();
 
-        score = new Partie_AffichageScore();
-        temps = new Partie_AffichageTemps();
+        score = new PartieAffichageScore();
+        temps = new PartieAffichageTemps();
 
         timer = new ControleurTemps(50);
-        affichageBonus = new Partie_AffichageObjetBonus[4];
+        affichageBonus = new PartieAffichageObjetBonus[4];
         ctrlQuestion = new ControleurQuestion();
 
         ctrlQuestion.initQuestion();
     }
 
+    /**
+     *
+     * @return
+     */
     public PacMiage getPlayer() {
         return player;
     }
 
+    /**
+     *
+     * @return
+     */
     public List<Fantome> getListFantome() {
         return listFantome;
     }
 
+    /**
+     *
+     * @param container
+     * @throws SlickException
+     */
     @Override
     public void init(GameContainer container) throws SlickException {
         container.setForceExit(false);
@@ -139,7 +158,7 @@ public class PartieController extends BasicGame {
         int compteurobjet = 0;
         for (Objet objetBonus : JoueurInfo.getInstance().getObjetDispo()) {
             if (objetBonus != null) {
-                affichageBonus[compteurobjet] = new Partie_AffichageObjetBonus(objetBonus, map.getObjectX(idObjetsBonus.get(compteurobjet)), map.getObjectY(idObjetsBonus.get(compteurobjet)));
+                affichageBonus[compteurobjet] = new PartieAffichageObjetBonus(objetBonus, map.getObjectX(idObjetsBonus.get(compteurobjet)), map.getObjectY(idObjetsBonus.get(compteurobjet)));
                 compteurobjet++;
             } else {
                 affichageBonus[compteurobjet] = null;
@@ -156,10 +175,20 @@ public class PartieController extends BasicGame {
         this.timer.start();
     }
 
+    /**
+     *
+     * @return
+     */
     public ControleurTemps getTimer() {
         return timer;
     }
 
+    /**
+     *
+     * @param container
+     * @param g
+     * @throws SlickException
+     */
     @Override
     public void render(GameContainer container, Graphics g) throws SlickException {
 
@@ -173,6 +202,12 @@ public class PartieController extends BasicGame {
 
     }
 
+    /**
+     *
+     * @param container
+     * @param g
+     * @throws SlickException
+     */
     public void renderGame(GameContainer container, Graphics g) throws SlickException {
         if (!grainesMap.isEmpty()) {
             this.map.renderBackground();
@@ -184,11 +219,10 @@ public class PartieController extends BasicGame {
             for (Fantome fantome : listFantome) {
                 fantome.render(g);
             }
-            this.map.renderForeground();
             this.score.render(g);
             this.temps.renderAffichageTemps(g);
 
-            for (Partie_AffichageObjetBonus bonus : this.affichageBonus) {
+            for (PartieAffichageObjetBonus bonus : this.affichageBonus) {
                 if (bonus != null) {
                     bonus.renderObjetPartie(g);
                 }
@@ -200,6 +234,12 @@ public class PartieController extends BasicGame {
         }
     }
 
+    /**
+     *
+     * @param container
+     * @param delta
+     * @throws SlickException
+     */
     @Override
     public void update(GameContainer container, int delta) throws SlickException {
 
@@ -264,7 +304,7 @@ public class PartieController extends BasicGame {
                 JoueurInfo.getInstance().setRecord(score.getFutureScore());
                 JoueurInfo.getInstance().ajouterGraines(score.getFutureScore());
                 SauvegardeFichier.getInstance().enregistrerFichier(JoueurInfo.getInstance(), Configuration.getInstance().recupererValeur("pathSauvegarde"));
-                imageVeracite = new Partie_AffichageImageFondu(new Image(Configuration.getInstance().recupererValeur("gameOver")));
+                imageVeracite = new PartieAffichageImageFondu(new Image(Configuration.getInstance().recupererValeur("gameOver")));
                 gameOver = true;
 
             }
@@ -299,81 +339,149 @@ public class PartieController extends BasicGame {
         boolean choix = ctrlQuestion.getFenetre().isChoix();
 
         if (choix) {
-            imageVeracite = new Partie_AffichageImageFondu(new Image(Configuration.getInstance().recupererValeur("repValide")));
+            imageVeracite = new PartieAffichageImageFondu(new Image(Configuration.getInstance().recupererValeur("repValide")));
             this.score.setFutureScore(this.score.getFutureScore() + 100);
 
         } else {
-            imageVeracite = new Partie_AffichageImageFondu(new Image(Configuration.getInstance().recupererValeur("repFausse")));
+            imageVeracite = new PartieAffichageImageFondu(new Image(Configuration.getInstance().recupererValeur("repFausse")));
             timer.setTempsRestant(timer.getTempsRestant() - 10);
         }
         container.sleep(2000);
         timer.start();
     }
 
+    /**
+     *
+     * @return
+     */
     public GameContainer getContainer() {
         return container;
     }
 
+    /**
+     *
+     * @return
+     */
     public Music getBackground() {
         return background;
     }
 
+    /**
+     *
+     * @return
+     */
     public AppGameContainer getGame() {
         return game;
     }
 
+    /**
+     *
+     * @param game
+     */
     public void setGame(AppGameContainer game) {
         this.game = game;
     }
 
-    public Partie_AffichageObjetBonus[] getAffichageBonus() {
+    /**
+     *
+     * @return
+     */
+    public PartieAffichageObjetBonus[] getAffichageBonus() {
         return affichageBonus;
     }
 
-    public void setAffichageBonus(Partie_AffichageObjetBonus[] affichageBonus) {
+    /**
+     *
+     * @param affichageBonus
+     */
+    public void setAffichageBonus(PartieAffichageObjetBonus[] affichageBonus) {
         this.affichageBonus = affichageBonus;
     }
 
+    /**
+     *
+     * @param multiplicateur
+     */
     public void setMultiplicateur(int multiplicateur) {
         this.multiplicateur = multiplicateur;
     }
 
-    public Partie_AffichageImageFondu getImageVeracite() {
+    /**
+     *
+     * @return
+     */
+    public PartieAffichageImageFondu getImageVeracite() {
         return imageVeracite;
     }
 
-    public void setImageVeracite(Partie_AffichageImageFondu imageVeracite) {
+    /**
+     *
+     * @param imageVeracite
+     */
+    public void setImageVeracite(PartieAffichageImageFondu imageVeracite) {
         this.imageVeracite = imageVeracite;
     }
 
+    /**
+     *
+     * @return
+     */
     public Sound getSon() {
         return son;
     }
 
+    /**
+     *
+     * @param son
+     */
     public void setSon(Sound son) {
         this.son = son;
     }
 
+    /**
+     *
+     * @return
+     */
     public boolean isCollision() {
         return collision;
     }
 
+    /**
+     *
+     * @param collision
+     */
     public void setCollision(boolean collision) {
         this.collision = collision;
     }
 
+    /**
+     *
+     * @return
+     */
     public ControleurTemps getTempsBonus() {
         return tempsBonus;
     }
 
+    /**
+     *
+     * @param tempsBonus
+     */
     public void setTempsBonus(ControleurTemps tempsBonus) {
         this.tempsBonus = tempsBonus;
     }
 
+    /**
+     *
+     * @return
+     */
     public boolean isFantomeMove() {
         return fantomeMove;
     }
 
+    /**
+     *
+     * @param fantomeMove
+     */
     public void setFantomeMove(boolean fantomeMove) {
         this.fantomeMove = fantomeMove;
     }

@@ -8,24 +8,28 @@ package pacmiage.vue.bouton;
 import java.awt.Color;
 import java.awt.Font;
 import javax.swing.JButton;
-import pacmiage.listener.RetourMenu;
+import pacmiage.listener.BtnRetourEshop;
 import pacmiage.vue.menu.FenetrePrincipale;
 import pacmiage.utiles.Session;
 
 /**
+ * Bouton pour annuler un achat et revenir à l'eshop
  *
  * @author Maëlle
  */
-public class Btn_RetourMenu extends JButton {
+public class EshopBtnRetourEshop extends JButton {
 
-    public Btn_RetourMenu(FenetrePrincipale f) {
-        this.setAction(new RetourMenu(f));
-        this.setFont(new Font("Kristen ITC", Font.PLAIN, 25));
-        this.setText(Session.getInstance().recupererValeur("retour"));
-        this.setBackground(Color.black);
+    /**
+     *
+     * @param f
+     */
+    public EshopBtnRetourEshop(FenetrePrincipale f) {
+        this.setAction(new BtnRetourEshop(f));
+        this.setText(Session.getInstance().recupererValeur("non"));
+        this.setFont(new Font(null, 30, 30 ));
         this.setBorderPainted(false);
         this.setForeground(Color.white);
-
+        this.setBackground(Color.black);
     }
 
 }
