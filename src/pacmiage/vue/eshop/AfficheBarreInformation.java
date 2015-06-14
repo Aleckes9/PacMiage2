@@ -18,16 +18,18 @@ import pacmiage.vue.bouton.BtnRetourMenu;
 import pacmiage.vue.bouton.BtnObjet;
 
 /**
- * Affiche la barre d'information située en haut de l'écran comprenant les
- * informations du joueur
+ * 
  *
  * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
+ * 
+ * Affiche la barre d'information située en haut de l'écran comprenant les informations du joueur
+ * 
  */
 public class AfficheBarreInformation extends JPanel {
 
     /**
-     *
-     * @param fenetre
+     * Constructeur de la classe AfficheBarreInformation
+     * @param fenetre la fenêtre principale
      */
     public AfficheBarreInformation(FenetrePrincipale fenetre) {
 

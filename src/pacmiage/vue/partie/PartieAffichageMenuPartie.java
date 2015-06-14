@@ -16,6 +16,8 @@ import pacmiage.utiles.Session;
 /**
  *
  * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
+ * 
+ * Classe permettant d'afficher le menu pause
  */
 public final class PartieAffichageMenuPartie implements ActionListener {
 
@@ -28,8 +30,8 @@ public final class PartieAffichageMenuPartie implements ActionListener {
     private final JButton reprendre = new JButton();
 
     /**
-     *
-     * @param partie
+     * Constructeur de la classe PartieAffichageMenuPartie
+     * @param partie la partie
      * @throws IOException
      */
     public PartieAffichageMenuPartie(PartieController partie) throws IOException {
@@ -43,7 +45,7 @@ public final class PartieAffichageMenuPartie implements ActionListener {
     }
 
     /**
-     *
+     * Initialisation de la fenêtre
      */
     public void initFenetre() {
         fenetre.setLocationRelativeTo(null);
@@ -57,7 +59,7 @@ public final class PartieAffichageMenuPartie implements ActionListener {
     }
 
     /**
-     *
+     * Initialisation des boutons
      */
     public void initButton() {
         j.setBackground(java.awt.Color.black);
@@ -84,8 +86,8 @@ public final class PartieAffichageMenuPartie implements ActionListener {
     }
 
     /**
-     *
-     * @param button
+     * Configuration des boutons du menu de pause
+     * @param button le bouton
      */
     public void configButton(final JButton button) {
         button.setForeground(Color.white);
@@ -112,6 +114,10 @@ public final class PartieAffichageMenuPartie implements ActionListener {
 
     }
 
+    /**
+     * Méthode permettant d'associer un bouton à une action à son clic
+     * @param ae est un event indiquant qu'une action a lieue
+     */
     @Override
     public void actionPerformed(ActionEvent ae) {
         JButton tp = (JButton) ae.getSource();
@@ -135,13 +141,16 @@ public final class PartieAffichageMenuPartie implements ActionListener {
     }
 
     /**
-     *
-     * @return
+     * Méthode renvoyant une fenêtre
+     * @return une fenêtre
      */
     public JFrame getFenetre() {
         return fenetre;
     }
 
+    /**
+     * Méthode permettant de gérer l'action du bouton de son
+     */
     private void caseSon() {
         if (partie.getBackground().getVolume() != 0) {
             partie.getBackground().setVolume(0);
@@ -150,15 +159,24 @@ public final class PartieAffichageMenuPartie implements ActionListener {
         }
     }
 
+    /**
+     * Méthode permettant de gérer l'action du bouton quitter
+     */
     private void caseQuitter() {
         partie.getContainer().exit();
         this.fenetre.dispose();
     }
 
+    /**
+     * Méthode permettant de gérer l'action du bouton retour
+     */
     private void caseRetour() {
         partie.getContainer().exit();
     }
 
+    /**
+     * Méthode permettant de gérer l'action du bouton reprendre
+     */
     private void caseReprendre() {
         fenetre.dispose();
     }

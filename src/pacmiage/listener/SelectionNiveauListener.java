@@ -12,19 +12,25 @@ import pacmiage.vue.menu.FenetrePrincipale;
 /**
  *
  * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
+ * 
+ * Classe permettant de renvoyer l'utilisateur à la partie sélectionnée à la fenêtre de sélection de niveau
  */
 public class SelectionNiveauListener implements ActionListener {
 
     private final FenetrePrincipale fenetre;
 
     /**
-     *
-     * @param fenetre
+     * Constructeur de la classe SelectionNiveauListener
+     * @param fenetre la fenêtre principale
      */
     public SelectionNiveauListener(FenetrePrincipale fenetre) {
         this.fenetre = fenetre;
     }
 
+    /**
+     * Méthode permettant d'associer le bouton de niveau sélectionné au lancement du dit niveau
+     * @param e est un event indiquant qu'une action a lieue
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
 

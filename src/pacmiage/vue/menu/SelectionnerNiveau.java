@@ -20,6 +20,8 @@ import pacmiage.vue.bouton.BtnRetourMenu;
 /**
  *
  * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
+ * 
+ * méthode permettant d'afficher la fenêtre de sélection de niveaux
  */
 public final class SelectionnerNiveau {
 
@@ -28,8 +30,8 @@ public final class SelectionnerNiveau {
     private final JPanel niveaux = new JPanel();
 
     /**
-     *
-     * @param fenetre1
+     * Constructeur de la classe SelectionnerNiveau
+     * @param fenetre1 la fenêtre principale
      * @throws IOException
      */
     public SelectionnerNiveau(FenetrePrincipale fenetre1) throws IOException {
@@ -43,7 +45,7 @@ public final class SelectionnerNiveau {
     }
 
     /**
-     *
+     * Initialisation de la fenêtre
      */
     public void initFenetre() {
 
@@ -68,7 +70,7 @@ public final class SelectionnerNiveau {
     }
 
     /**
-     *
+     * Initialisation des boutons
      * @throws IOException
      */
     public void initBoutons() throws IOException {

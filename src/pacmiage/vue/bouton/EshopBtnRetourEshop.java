@@ -13,15 +13,17 @@ import pacmiage.vue.menu.FenetrePrincipale;
 import pacmiage.utiles.Session;
 
 /**
- * Bouton pour annuler un achat et revenir à l'eshop
+ * 
  *
  * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
+ * 
+ * Bouton pour annuler un achat et revenir à l'eshop
  */
 public class EshopBtnRetourEshop extends JButton {
 
     /**
-     *
-     * @param f
+     * Constructeur de la classe EshopBtnRetourEshop
+     * @param f la fenêtre principale
      */
     public EshopBtnRetourEshop(FenetrePrincipale f) {
         this.setAction(new BtnRetourEshop(f));

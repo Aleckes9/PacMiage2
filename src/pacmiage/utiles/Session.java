@@ -17,6 +17,8 @@ import java.util.logging.Logger;
 /**
  *
  * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
+ * 
+ * Classe permettant le chargement d'un fichier properties
  */
 public final class Session {
 
@@ -32,18 +34,18 @@ public final class Session {
     }
 
     /**
-     *
-     * @param cle
-     * @return
+     * Méthode permettant de récupérer la valeur d'une clé dans le fichier properties
+     * @param cle, la cle dont on recherche la valeur
+     * @return la valeur de la clé
      */
     public String recupererValeur(String cle) {
         return prop.getProperty(cle);
     }
 
     /**
-     *
-     * @param filename
-     * @return
+     * Méthode permettant de charger le fichier
+     * @param filename le nom du fichier
+     * @return le fichier properties
      * @throws IOException
      */
     public static Properties load(String filename) throws IOException {
@@ -56,15 +58,15 @@ public final class Session {
     }
 
     /**
-     *
-     * @return
+     * méthode renvoyant la locale
+     * @return la locale actuellement utilisée
      */
     public Locale getLocale() {
         return locale;
     }
 
     /**
-     *
+     * Méthode permettant de setter la locale
      * @param locale
      */
     public void setLocale(Locale locale) {

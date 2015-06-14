@@ -7,16 +7,18 @@ import pacmiage.modele.ObjetPartie;
 /**
  *
  * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
+ * 
+ * Méthode permettant d'afficher les objets bonus dans la partie
  */
 public class PartieAffichageObjetBonus extends ObjetPartie{
 
     private Objet objet;
 
     /**
-     *
-     * @param objet
-     * @param x
-     * @param y
+     * Constructeur de la classe PartieAffichageObjetBonus
+     * @param objet l'objet
+     * @param x l'abscisse
+     * @param y l'ordonnée
      * @throws SlickException
      */
     public PartieAffichageObjetBonus(Objet objet, int x, int y) throws SlickException {
@@ -25,15 +27,15 @@ public class PartieAffichageObjetBonus extends ObjetPartie{
     }
 
     /**
-     *
-     * @return
+     * Méthode renvoyant l'objet bonus
+     * @return l'objet bonus
      */
     public Objet getObjet() {
         return objet;
     }
 
     /**
-     *
+     * Méthode permettant de setter l'objet bonus
      * @param objet
      */
     public void setBonus(Objet objet) {

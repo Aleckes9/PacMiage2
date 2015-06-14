@@ -17,9 +17,11 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 /**
- * Affiche un objet donné avec son nom, son image, sa description et son prix
+ * 
  *
  * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
+ * 
+ * Affiche un objet donné avec son nom, son image, sa description et son prix
  */
 public final class EshopAfficheObjet {
     
@@ -29,11 +31,11 @@ public final class EshopAfficheObjet {
     private final FenetrePrincipale eshopFenetre;
 
     /**
-     *
-     * @param panel
-     * @param objet
-     * @param affBtnAchat
-     * @param eshopFenetre
+     * Constructeur de la classe EshopAfficheObjet
+     * @param panel le panel
+     * @param objet l'objet
+     * @param affBtnAchat le bouton d'achat
+     * @param eshopFenetre la fenêtre de l'eshop
      */
     public EshopAfficheObjet(JPanel panel, Objet objet, boolean affBtnAchat, FenetrePrincipale eshopFenetre) {
         this.objet = objet;
@@ -43,30 +45,19 @@ public final class EshopAfficheObjet {
         initAffObjet();
     }
     
+    /**
+     * Méthode permettant d'initialiser Affichage d'un objet
+     */
     public void initAffObjet(){
-        /**
-         * Paramètres de l'affichage du nom
-         */
         JLabel nom = new JLabel(objet.getNom());
         nom.setForeground(Color.white);
         nom.setFont(new Font(null, 40, 40));
-
-        /**
-         * Paramètres de l'affichage du prix
-         */
         JLabel prix = new JLabel("" + objet.getPrix());
         prix.setForeground(Color.white);
         prix.setFont(new Font(null, 10, 40));
-        /**
-         * Paramètres de l'affichage de la description
-         */
         JLabel description = new JLabel(objet.getDescription());
         description.setForeground(Color.white);
         description.setFont(new Font(null, 20, 20));
-
-        /**
-         * Paramètre de l'affichage de l'image
-         */
         ImageIcon icon = new ImageIcon(objet.getImage());
         JLabel image = new JLabel(icon);
 
@@ -91,9 +82,7 @@ public final class EshopAfficheObjet {
         if (affBtnAchat) {
             k.add(new EshopBtnAcheter(objet, eshopFenetre));
         }
-        /**
-         * Ajout des éléments à la fenêtre
-         */
+
         GridLayout layout = new GridLayout(1, 0);
 
         panel.setLayout(layout);

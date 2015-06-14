@@ -132,27 +132,6 @@ public class PacMiageTest {
     }
 
     /**
-     * Test of isOnStair method, of class PacMiage.
-     */
-    @Test
-    public void testIsOnStair() {
-        System.out.println("isOnStair");
-        boolean expResult = false;
-        boolean result = instance.isOnStair();
-        assertEquals(expResult, result);
-    }
-
-    /**
-     * Test of setOnStair method, of class PacMiage.
-     */
-    @Test
-    public void testSetOnStair() {
-        System.out.println("setOnStair");
-        boolean onStair = false;
-        instance.setOnStair(onStair);
-    }
-
-    /**
      * Test of getFuturDirection method, of class PacMiage.
      */
     @Test

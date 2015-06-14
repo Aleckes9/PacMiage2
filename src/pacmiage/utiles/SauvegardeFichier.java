@@ -16,6 +16,8 @@ import java.util.logging.Logger;
 /**
  *
  * @author Maëlle Cloitre / Alexandre Dupuis / Axel Nini / Raphaël Senand
+ * 
+ * Classe permettant de sauvegarder des informations dans un fichier
  */
 public class SauvegardeFichier implements Serializable {
 

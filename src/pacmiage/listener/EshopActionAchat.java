@@ -23,9 +23,11 @@ import javax.swing.JPanel;
 import pacmiage.utiles.Configuration;
 
 /**
- * Achat confirmFenetre'un objet
+ * 
  *
  * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
+ * 
+ * Classe permettant d'afficher le message résultant de la confirmation d'un achat
  */
 public class EshopActionAchat extends AbstractAction {
 
@@ -34,15 +36,19 @@ public class EshopActionAchat extends AbstractAction {
     private FenetrePrincipale eshopFenetre;
 
     /**
-     *
-     * @param it
-     * @param eshopFenetre
+     * Constructeur de la classe EshopActionAchat
+     * @param it est un objet
+     * @param eshopFenetre est la fenêtre de l'eshop
      */
     public EshopActionAchat(Objet it, FenetrePrincipale eshopFenetre) {
         this.it = it;
         this.eshopFenetre = eshopFenetre;
     }
 
+    /**
+     * Méthode permettant de renvoyer un message de validation ou infirmation d'achat lorsque l'utilisateur clique sur le bouton de confirmation d'achat
+     * @param ae est un event indiquant qu'une action a lieue
+     */
     @Override
     public void actionPerformed(ActionEvent ae) {
         JoueurInfo joueur = JoueurInfo.getInstance();

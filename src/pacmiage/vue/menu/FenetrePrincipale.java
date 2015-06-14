@@ -15,6 +15,8 @@ import pacmiage.utiles.Session;
 /**
  *
  * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
+ * 
+ * Méthode permettant d'afficher la fenêtre principale
  */
 public class FenetrePrincipale extends JFrame {
 
@@ -23,14 +25,14 @@ public class FenetrePrincipale extends JFrame {
     private PartieController partieController;
 
     /**
-     *
+     * Constructeur de la classe FenetrePrincipale
      */
     public FenetrePrincipale() {
 
     }
 
     /**
-     *
+     * Initialisation de la fenêtre
      */
     public void initFenetre() {
         Session.getInstance();
@@ -48,7 +50,7 @@ public class FenetrePrincipale extends JFrame {
     }
 
     /**
-     *
+     * Initialisation de la fenêtre de Menu
      * @throws IOException
      */
     public void initFenetreMenu() throws IOException {
@@ -56,7 +58,7 @@ public class FenetrePrincipale extends JFrame {
     }
 
     /**
-     *
+     * Initialisation de la fenêtre de niveaux
      * @throws IOException
      */
     public void initFenetreNiveau() throws IOException{
@@ -64,7 +66,7 @@ public class FenetrePrincipale extends JFrame {
     }
 
     /**
-     *
+     * Initialisation de la fenêtre de l'Eshop
      */
     public void initFenetreShop() {
         try {
@@ -75,9 +77,9 @@ public class FenetrePrincipale extends JFrame {
     }
 
     /**
-     *
-     * @param niveau
-     * @param cheminCarte
+     * Execution de la partie
+     * @param niveau le niveau sélectionné
+     * @param cheminCarte le chemin du fichier contenant la carte
      * @throws SlickException
      */
     public void executerPartie(int niveau, String cheminCarte) throws SlickException {
@@ -87,15 +89,15 @@ public class FenetrePrincipale extends JFrame {
     }
 
     /**
-     *
-     * @return
+     * Méthode renvoyant le panel
+     * @return le panel
      */
     public JPanel getJpanel() {
         return jpanel;
     }
 
     /**
-     *
+     * Méthode permettant de setter le panel
      * @param jpanel
      */
     public void setJpanel(JPanel jpanel) {
@@ -103,15 +105,15 @@ public class FenetrePrincipale extends JFrame {
     }
 
     /**
-     *
-     * @return
+     * Méthode renvoyant le controlleur de la partie
+     * @return le controlleur
      */
     public PartieController getPartieController() {
         return partieController;
     }
 
     /**
-     *
+     * Méthode permettant de setter le controlleur de la partie
      * @param partieController
      */
     public void setPartieController(PartieController partieController) {
@@ -119,8 +121,8 @@ public class FenetrePrincipale extends JFrame {
     }
 
     /**
-     *
-     * @return
+     * Méthode renvoyant la taille de l'écran
+     * @return la taille de l'écran
      */
     public static Dimension getTailleEcran() {
         return tailleEcran;

@@ -12,6 +12,8 @@ import org.newdawn.slick.SlickException;
 /**
  *
  * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
+ * 
+ * Méthode permettant d'afficher le score au cours d'une partie
  */
 public class PartieAffichageScore {
 
@@ -20,14 +22,14 @@ public class PartieAffichageScore {
     private int futureScore;
 
     /**
-     *
+     * Constructeur de la classe PartieAffichageScore
      */
     public PartieAffichageScore() {
     }
 
     /**
-     *
-     * @param g
+     * Méthode permettant d'afficher le rendu de l'affichage du score
+     * @param g le rendu
      * @throws SlickException
      */
     public void render(Graphics g) throws SlickException {
@@ -47,7 +49,7 @@ public class PartieAffichageScore {
     }
 
     /**
-     *
+     * Initialisation de la position 
      * @param xPos
      * @param yPos
      */
@@ -57,7 +59,7 @@ public class PartieAffichageScore {
     }
 
     /**
-     *
+     * Méthode renvoyant le score
      * @return
      */
     public int getScore() {
@@ -65,7 +67,7 @@ public class PartieAffichageScore {
     }
 
     /**
-     *
+     * Méthode permettant de setter le score
      * @param score
      */
     public void setScore(int score) {
@@ -73,7 +75,7 @@ public class PartieAffichageScore {
     }
 
     /**
-     *
+     * Méthode renvoyant le futur score
      * @return
      */
     public int getFutureScore() {
@@ -81,7 +83,7 @@ public class PartieAffichageScore {
     }
 
     /**
-     *
+     * Méthode permettant de setter le score futur
      * @param futureScore
      */
     public void setFutureScore(int futureScore) {

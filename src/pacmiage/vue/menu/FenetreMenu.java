@@ -19,6 +19,8 @@ import pacmiage.utiles.Session;
 /**
  *
  * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
+ * 
+ * Méthode permettant d'afficher la fenêtre de menu
  */
 public final class FenetreMenu {
 
@@ -36,8 +38,8 @@ public final class FenetreMenu {
     private final JButton changerLangue = new JButton(new ImageIcon("./src/ressources/image/drapeau/enfr.png"));
 
     /**
-     *
-     * @param uneFenetre
+     * Constructeur de la classe FenetreMenu
+     * @param uneFenetre principale
      * @throws IOException
      */
     public FenetreMenu(FenetrePrincipale uneFenetre) throws IOException {
@@ -46,7 +48,7 @@ public final class FenetreMenu {
     }
 
     /**
-     *
+     * Méthode permettant l'initialisation des boutons, du logo et du fond
      */
     public void init() {
         jPanel.setLayout(null);
@@ -78,7 +80,7 @@ public final class FenetreMenu {
     }
 
     /**
-     *
+     * Initialisation de la fenêtre
      */
     public void initFenetre() {
         fenetre.setVisible(true);
@@ -86,7 +88,7 @@ public final class FenetreMenu {
     }
 
     /**
-     *
+     * Initialisation du record
      */
     public void initRecord() {
         record.setBackground(Color.black);
@@ -96,7 +98,7 @@ public final class FenetreMenu {
     }
 
     /**
-     *
+     * Initialisation du bouton de changement de langue
      */
     public void initButtonLangue() {
         changerLangue.setBackground(Color.black);
@@ -111,7 +113,7 @@ public final class FenetreMenu {
     }
 
     /**
-     *
+     * Initialisation des boutons d'option
      */
     public void initButtonOptions() {
         nouvellepartie.setText(Session.getInstance().recupererValeur("nouvelle"));
@@ -133,8 +135,8 @@ public final class FenetreMenu {
     }
 
     /**
-     *
-     * @param buttonMenu
+     * Initialisation de la configuration des boutons du menu
+     * @param buttonMenu les boutons du menu
      */
     public void initConfigButtonMenu(final JButton buttonMenu) {
         buttonMenu.setForeground(Color.white);

@@ -51,7 +51,7 @@
         <prix>100</prix>
     </objet>
     <objet>
-        <nom>Invinsible</nom>
+        <nom>Invincible</nom>
         <description> 
         <fr>Rend le pac-man invincible</fr>
         <en>Invincible Pac-man</en>

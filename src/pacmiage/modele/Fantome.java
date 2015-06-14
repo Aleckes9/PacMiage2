@@ -11,6 +11,8 @@ import org.newdawn.slick.SlickException;
 /**
  *
  * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
+ * 
+ * Classe correspondant au modèle du Fantome
  */
 public class Fantome extends PersonnageImpl {
 
@@ -20,9 +22,9 @@ public class Fantome extends PersonnageImpl {
     private int topDepart;
 
     /**
-     *
-     * @param map
-     * @param cheminImage
+     * Constructeur de la classe Fantome
+     * @param map la carte du jeu
+     * @param cheminImage le chemin du fichier contenant l'image
      * @throws SlickException
      */
     public Fantome(PartieAffichageMap map, String cheminImage) throws SlickException {
@@ -32,7 +34,7 @@ public class Fantome extends PersonnageImpl {
     }
 
     /**
-     *
+     * Méthode permettant de remettre les positions à zéro
      */
     public void resetPos() {
         x = xOrg;
@@ -41,9 +43,9 @@ public class Fantome extends PersonnageImpl {
     }
 
     /**
-     *
-     * @param posX
-     * @param pasY
+     * Méthode permettant d'initialiser l'état du fantôme
+     * @param posX l'abscisse du fantôme
+     * @param pasY l'ordonnée du fantôme
      */
     public void initEtat(int posX, int pasY) {
         x = xOrg = posX;
@@ -52,9 +54,9 @@ public class Fantome extends PersonnageImpl {
     }
 
     /**
-     *
-     * @param posX
-     * @param pasY
+     * Méthode permettant d'initialiser la position de départ du fantôme
+     * @param posX l'abscisse de la position
+     * @param pasY l'ordonnée de la position
      */
     public void initDepart(int posX, int pasY) {
         xDepart = posX;
@@ -62,9 +64,9 @@ public class Fantome extends PersonnageImpl {
     }
 
     /**
-     *
-     * @param newXPac
-     * @param newYPac
+     * Mise à jour de la position du fantôme
+     * @param newXPac la nouvelle position en abscisse
+     * @param newYPac la nouvelle position en ordonnée
      */
     public void updateFantome(float newXPac, float newYPac) {
         if (topDepart == 150) {
@@ -150,10 +152,10 @@ public class Fantome extends PersonnageImpl {
     }
 
     /**
-     *
-     * @param xObjet
-     * @param yObjet
-     * @return
+     * Méthode renvoyant si le fantôme est entré en collision avec le Pac-man
+     * @param xObjet l'abscisse de la cible
+     * @param yObjet l'ordonnée de la cible
+     * @return true si le fantôme est en collision avec la cible, sinon false
      */
     public boolean estEnCollisionCible(float xObjet, float yObjet) {
 
@@ -162,7 +164,7 @@ public class Fantome extends PersonnageImpl {
     }
 
     /**
-     *
+     * Méthode permettant de démarrer le mouvenement des fantômes
      */
     public void depart() {
         this.moving = true;

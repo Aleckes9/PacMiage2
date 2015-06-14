@@ -12,13 +12,15 @@ import org.newdawn.slick.SlickException;
 /**
  *
  * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
+ * 
+ * Classe correspondant au modèle du jeu
  */
 public class PacMiage extends PersonnageImpl {
 
     /**
-     *
-     * @param map
-     * @param cheminImage
+     * Constructeur de la classe PacMiage
+     * @param map la carte du jeu
+     * @param cheminImage le chemin du fichier contenant l'image
      * @throws SlickException
      */
     public PacMiage(PartieAffichageMap map, String cheminImage) throws SlickException {
@@ -27,7 +29,7 @@ public class PacMiage extends PersonnageImpl {
     }
 
     /**
-     *
+     * Méthode permettant de mettre à jour la position du Pac-Man
      */
     public void updatePac() {
         if (this.moving) {
@@ -61,10 +63,10 @@ public class PacMiage extends PersonnageImpl {
     }
 
     /**
-     *
-     * @param xObjet
-     * @param yObjet
-     * @return
+     * Méthode renvoyant un booléen indiquant si le Pac-man est en collision avec un objet
+     * @param xObjet l'absciesse de l'objet
+     * @param yObjet l'ordonnée de l'objet
+     * @return true si le Pac-man est en collision avec un objet, sinon false
      */
     public boolean estEnCollisionObjet(float xObjet, float yObjet) {
 

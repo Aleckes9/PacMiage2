@@ -11,11 +11,16 @@ import java.util.logging.Logger;
 /**
  *
  * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
+ * 
+ * Classe permettant de charger le fichier contenant les données du joueur
  */
 public class ChargerFichier {
 
     private static final ChargerFichier CHARGER = new ChargerFichier();
 
+    /**
+     * Constructeur de la classe ChargerFichier
+     */
     private ChargerFichier() {
 
     }

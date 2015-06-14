@@ -13,19 +13,25 @@ import pacmiage.utiles.SauvegardeFichier;
 /**
  *
  * @author @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
+ * 
+ * Classe permettant de gérer le retour au Menu Principal
  */
 public class RetourMenu extends AbstractAction {
 
     private FenetrePrincipale f;
 
     /**
-     *
-     * @param f
+     * Constructeur de la classe RetourMenu
+     * @param f est la fenêtre principale
      */
     public RetourMenu(FenetrePrincipale f) {
         this.f = f;
     }
 
+    /**
+     * Méthode permettant de renvoyer au menu principal lorsque l'utilisateur clique 
+     * @param ae est un event indiquant qu'une action a lieue
+     */
     @Override
     public void actionPerformed(ActionEvent ae) {
         try {

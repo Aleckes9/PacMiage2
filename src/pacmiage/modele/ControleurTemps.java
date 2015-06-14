@@ -70,15 +70,15 @@ public final class ControleurTemps {
     }
 
     /**
-     *
-     * @return
+     * Méthode renvoyant le timer
+     * @return le timer
      */
     public Timer getTimer() {
         return timer;
     }
 
     /**
-     *
+     * Méthode permettant de setter le timer
      * @param timer
      */
     public void setTimer(Timer timer) {
@@ -86,15 +86,15 @@ public final class ControleurTemps {
     }
 
     /**
-     *
-     * @return
+     * méthode renvoyant le temps restant
+     * @return le temps restant
      */
     public int getTempsRestant() {
         return tempsRestant;
     }
 
     /**
-     *
+     * Méthode permettant de setter le temps restant
      * @param tempsRestant
      */
     public void setTempsRestant(int tempsRestant) {
@@ -106,15 +106,15 @@ public final class ControleurTemps {
     }
 
     /**
-     *
-     * @return
+     * Méthode permettant de récupérer le temps
+     * @return temps
      */
     public int getTemps() {
         return temps;
     }
 
     /**
-     *
+     * Méthode permettant de setter le temps
      * @param temps
      */
     public void setTemps(int temps) {

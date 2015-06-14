@@ -18,9 +18,11 @@ import org.jdom2.JDOMException;
 import org.jdom2.input.SAXBuilder;
 
 /**
- * Lecture du fichier contenant les objets et création d'un tableau d'objet
+ * 
  *
  * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
+ * 
+ * Lecture du fichier contenant les objets et création d'un tableau d'objet
  */
 public class LecteurObjet {
 
@@ -29,7 +31,7 @@ public class LecteurObjet {
     private final Objet[] objet;
 
     /**
-     *
+     * Constructeur de la classe LecteurObjet
      * @throws ClassNotFoundException
      * @throws InstantiationException
      * @throws IllegalAccessException
@@ -68,7 +70,7 @@ public class LecteurObjet {
     }
 
     /**
-     * On récupère le tableau d'objets
+     * Méthode renvoyant le tableau d'objets
      *
      * @return le tableau d'objets
      */

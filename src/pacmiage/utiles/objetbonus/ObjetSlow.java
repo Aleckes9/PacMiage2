@@ -8,20 +8,18 @@ import pacmiage.modele.Fantome;
 /**
  *
  * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
+ * 
+ * Classe permettant de générer l'objet bonus slow
  */
 public class ObjetSlow implements Bonus {
 
     /**
-     *
+     * Constructeur de la classe ObjetSlow
      */
     public ObjetSlow() {
 
     }
 
-    /**
-     *
-     * @param partie
-     */
     @Override
     public void executerBonus(PartieController partie) {
         for (Fantome f : partie.getListFantome()) {

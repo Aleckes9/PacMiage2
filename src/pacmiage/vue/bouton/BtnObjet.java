@@ -15,13 +15,15 @@ import javax.swing.JButton;
 /**
  *
  * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
+ * 
+ * Bouton d'un objet
  */
 public class BtnObjet extends JButton {
 
     /**
-     *
-     * @param it
-     * @param eshopFenetre
+     * Constructeur de la classe BtnObjet
+     * @param it l'objet
+     * @param eshopFenetre la fenêtre de l'eshop
      */
     public BtnObjet(Objet it,FenetrePrincipale eshopFenetre) {
        

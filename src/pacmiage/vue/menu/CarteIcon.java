@@ -15,14 +15,16 @@ import javax.swing.Icon;
 /**
  *
  * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
+ * 
+ * Classe permettant d'afficher l'icone de la carte
  */
 public class CarteIcon implements Icon {
 
     private BufferedImage image;
 
     /**
-     *
-     * @param chemin
+     * Constructeur de la classe CarteIcon
+     * @param chemin du fichier contenant l'image
      * @throws IOException
      */
     public CarteIcon(String chemin) throws IOException {
@@ -32,15 +34,15 @@ public class CarteIcon implements Icon {
     }
 
     /**
-     *
-     * @return
+     * Méthode renvoyant l'image
+     * @return une image
      */
     public BufferedImage getImage() {
         return image;
     }
 
     /**
-     *
+     * 
      * @param image
      */
     public void setImage(BufferedImage image) {
@@ -52,11 +54,19 @@ public class CarteIcon implements Icon {
         g.drawImage(image, 0, 0, null);
     }
 
+    /**
+     * Méthode renvoyant la largeur de l'icone
+     * @return la largeur de l'icone
+     */
     @Override
     public int getIconWidth() {
         return image.getWidth();
     }
 
+    /**
+     * Méthode renvoyant la longueur de l'icone
+     * @return la longueur de l'icone
+     */
     @Override
     public int getIconHeight() {
         return image.getHeight();

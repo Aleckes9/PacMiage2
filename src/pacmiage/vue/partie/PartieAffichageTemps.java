@@ -7,6 +7,8 @@ import org.newdawn.slick.SlickException;
 /**
  *
  * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
+ * 
+ * Classe permettant d'afficher le temps
  */
 public class PartieAffichageTemps {
 
@@ -14,14 +16,14 @@ public class PartieAffichageTemps {
     private int temps;
 
     /**
-     *
+     * Constructeur de la classe PartieAffichageTemps
      */
     public PartieAffichageTemps() {
     }
 
     /**
-     *
-     * @param g
+     * Rendu de l'affichage du temps
+     * @param g le rendu
      * @throws SlickException
      */
     public void renderAffichageTemps(Graphics g) throws SlickException {
@@ -37,9 +39,9 @@ public class PartieAffichageTemps {
     }
 
     /**
-     *
-     * @param xPos
-     * @param yPos
+     * Initialisation de la position de l'affichage du temps
+     * @param xPos l'abscisse
+     * @param yPos l'ordonnée
      */
     public void initPosAffichageTemps(int xPos, int yPos) {
         x = xPos;
@@ -47,15 +49,15 @@ public class PartieAffichageTemps {
     }
 
     /**
-     *
-     * @return
+     * Méthode renvoyant le temps
+     * @return le temps
      */
     public int getTemps() {
         return temps;
     }
 
     /**
-     *
+     * Méthode permettant de setter le temps
      * @param temps
      */
     public void setTemps(int temps) {

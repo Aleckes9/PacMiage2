@@ -15,12 +15,14 @@ import pacmiage.utiles.Session;
 /**
  *
  * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
+ * 
+ * Bouton pour revenir au bouton menu
  */
 public class BtnRetourMenu extends JButton {
 
     /**
-     *
-     * @param f
+     * Constructeur de la classe BtnRetourMenu
+     * @param f la fenêtre principale
      */
     public BtnRetourMenu(FenetrePrincipale f) {
         this.setAction(new RetourMenu(f));

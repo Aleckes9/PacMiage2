@@ -18,16 +18,18 @@ import javax.swing.JScrollPane;
 import pacmiage.utiles.LecteurObjet;
 
 /**
- * Affichage de l'eshop
+ * 
  *
  * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
+ * 
+ * Affichage de l'eshop
  */
 public final class EshopAfficheEshop {
 
 
     /**
-     *
-     * @param f
+     * Constructeur de la classe EshopAfficheEshop
+     * @param f la fenêtre principale
      * @throws ClassNotFoundException
      * @throws InstantiationException
      * @throws IllegalAccessException
@@ -52,9 +54,9 @@ public final class EshopAfficheEshop {
     }
 
     /**
-     *
-     * @param f
-     * @return
+     * méthode permettant de builder la liste d'objets
+     * @param f la fenêtre principale
+     * @return la liste d'objets
      */
     public JScrollPane buildListObjet(FenetrePrincipale f) {
 

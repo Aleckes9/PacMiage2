@@ -13,9 +13,11 @@ import javax.swing.JButton;
 import pacmiage.vue.eshop.EshopAfficheConfirmAcheter;
 
 /**
- * Bouton pour sélectionner un objet à acheter
+ * 
  *
  * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
+ * 
+ * Bouton pour sélectionner un objet à acheter
  */
 public final class EshopBtnAcheter extends JButton {
     
@@ -24,9 +26,9 @@ public final class EshopBtnAcheter extends JButton {
     
     
     /**
-     *
-     * @param it
-     * @param eshopFenetre
+     * Constructeur de la classe EshopBtnAcheter
+     * @param it l'objet
+     * @param eshopFenetre la fenêtre de l'eshop
      */
     public EshopBtnAcheter(Objet it, FenetrePrincipale eshopFenetre) {
         this.it = it;
@@ -35,7 +37,7 @@ public final class EshopBtnAcheter extends JButton {
     }
 
     /**
-     *
+     * Méthode permettant d'initialiser le bouton
      */
     public void initButton() {
         this.setAction(new EshopAfficheConfirmAcheter(it, eshopFenetre));

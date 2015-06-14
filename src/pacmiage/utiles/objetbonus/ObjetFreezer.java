@@ -8,20 +8,18 @@ import pacmiage.modele.Fantome;
 /**
  *
  * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
+ * 
+ * Classe permettant de générer l'objet bonus freezer
  */
 public class ObjetFreezer implements Bonus {
 
     /**
-     *
+     * Constructeur de la classe ObjetFreezer
      */
     public ObjetFreezer() {
 
     }
 
-    /**
-     *
-     * @param partie
-     */
     @Override
     public void executerBonus(PartieController partie) {
         for (Fantome f : partie.getListFantome()) {

@@ -8,13 +8,15 @@ import pacmiage.utiles.Configuration;
 /**
  *
  * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
+ * 
+ * Classe permettant de générer l'objet bonus invincible
  */
-public class ObjetInvinsible implements Bonus {
+public class ObjetInvincible implements Bonus {
 
     /**
-     *
+     * Constructeur de la classe Objet
      */
-    public ObjetInvinsible() {
+    public ObjetInvincible() {
 
     }
 

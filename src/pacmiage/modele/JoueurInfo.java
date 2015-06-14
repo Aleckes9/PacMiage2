@@ -11,6 +11,7 @@ import java.lang.reflect.Array;
 /**
  *
  * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
+ * Méthode correspondant au modèle du joueur
  */
 public class JoueurInfo implements Serializable {
 

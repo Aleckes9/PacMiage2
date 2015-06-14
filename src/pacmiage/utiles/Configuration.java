@@ -7,30 +7,20 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * <b>Importation_Config est la class utilisée pour récuperer nôtre fichiers de
- * configuration et retourner un properties utilisable.</b>
+ * 
  *
  * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
- * @version 1.0
+ * 
+ * Classe permettant de récuperer notre fichier de configuration et retourner un properties utilisable
  */
 public final class Configuration {
 
-    /**
-     * Properties est une class utilisée pour récupérer des valeurs dans un
-     * fichiers spécifique. Chaque paramètre est stocké comme une paire composée
-     * d'un pointeur de référence ('key') donnant le nom du paramètre, suivi de
-     * la valeur désirée de ce paramètre.
-     */
     private Properties properties;
-
-    /**
-     * Chemin d'accès au fichier de configuration
-     */
     private String cheminConfig = "./src/ressources/parametres/config.txt";
     private static final Configuration config = new Configuration();
 
     /**
-     * Constructeur vide de la class Importation_Config
+     * Constructeur de la classe Configuration
      */
     private Configuration() {
         try {
@@ -41,14 +31,20 @@ public final class Configuration {
     }
 
     /**
-     *
-     * @param cle
-     * @return
+     * Méthode permettant de récupérer la valeur d'une clé dans le fichier properties
+     * @param cle, la cle dont on recherche la valeur
+     * @return la valeur de la clé
      */
     public String recupererValeur(String cle) {
         return properties.getProperty(cle);
     }
 
+    /**
+     * Méthode permettant de charger le fichier
+     * @param filename le nom du fichier
+     * @return le fichier properties
+     * @throws IOException
+     */
     private static Properties load(String filename) throws IOException {
         Properties properties = new Properties();
 

@@ -10,16 +10,18 @@ import javax.swing.JButton;
 import pacmiage.utiles.Session;
 
 /**
- * Bouton pour confirmer l'achat d'un objet
+ * 
  *
  * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
+ * 
+ * Bouton pour confirmer l'achat d'un objet
  */
 public class EshopBtnConfirmAchat extends JButton {
 
     /**
-     *
-     * @param it
-     * @param eshopFenetre
+     * Constructeur de la classe EshopBtnConfirmAchat
+     * @param it l'objet
+     * @param eshopFenetre la fenêtre de l'eshop
      */
     public EshopBtnConfirmAchat(Objet it,FenetrePrincipale eshopFenetre) {
         this.setAction(new EshopActionAchat(it,eshopFenetre));

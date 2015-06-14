@@ -14,19 +14,25 @@ import pacmiage.vue.menu.FenetreMenu;
 /**
  *
  * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
+ * 
+ * Classe permettant d'associer les boutons du menu aux fenêtre à afficher correspondantes
  */
 public class FenetreMenuListener implements ActionListener {
 
     FenetrePrincipale fenetre;
 
     /**
-     *
-     * @param fenetre
+     * Constructeur de la classe FenetreMenuListener
+     * @param fenetre est la fenêtre principale
      */
     public FenetreMenuListener(FenetrePrincipale fenetre) {
         this.fenetre = fenetre;
     }
 
+    /**
+     * Méthode permettant de lancer la fenêtre correspondant au bouton cliqué par l'utilisateur sur le menu
+     * @param ae est un event indiquant qu'une action a lieue
+     */
     @Override
     public void actionPerformed(ActionEvent ae) {
 
@@ -55,6 +61,10 @@ public class FenetreMenuListener implements ActionListener {
         }
     }
 
+    /**
+     * Méthode permettant de changer la Locale lors du clic sur le bouton de changement de langue
+     * @throws IOException 
+     */
     public void caseLangue() throws IOException {
         if (Session.getInstance().getLocale().equals(Locale.FRENCH)) {
             Session.getInstance().setLocale(Locale.ENGLISH);

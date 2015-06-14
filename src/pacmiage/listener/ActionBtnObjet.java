@@ -15,8 +15,10 @@ import javax.swing.JDialog;
 import javax.swing.JPanel;
 
 /**
- * Classe 
+ * 
  * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
+ * 
+ * Classe permettant d'écouter l'utilisation du bouton objet par l'utilisateur
  */
 public class ActionBtnObjet extends AbstractAction {
 
@@ -24,7 +26,7 @@ public class ActionBtnObjet extends AbstractAction {
     private final FenetrePrincipale eshopFenetre;
 
     /**
-     *
+     * Constructeur de la classe ActionBtnObjet
      * @param it
      * @param eshopFenetre
      */
@@ -33,6 +35,10 @@ public class ActionBtnObjet extends AbstractAction {
         this.eshopFenetre = eshopFenetre;
     }
 
+    /**
+     * Méthode permettant de créer la fenêtre de l'eshop et reçoit en paramètre un ActionEvent
+     * @param ae est un event indiquant qu'une action a lieue
+     */
     @Override
     public void actionPerformed(ActionEvent ae) {
 

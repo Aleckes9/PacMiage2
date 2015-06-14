@@ -7,8 +7,10 @@ package pacmiage.modele;
 
 /**
  *
- * @author @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël
- * Senand
+ * @author @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
+ * 
+ * Classe correspondant au modèle d'une réponse
+ * 
  */
 public class Reponse {
 
@@ -16,16 +18,16 @@ public class Reponse {
     private boolean veracite;
 
     /**
-     *
+     * Constructeur de la classe Reponse
      */
     public Reponse() {
 
     }
 
     /**
-     *
-     * @param text
-     * @param veracite
+     * Constructeur de la classe réponse
+     * @param text le texte associé à la réponse
+     * @param veracite est un booléen indiquant si la réponse est bonne ou non
      */
     public Reponse(String text, boolean veracite) {
 
@@ -35,15 +37,15 @@ public class Reponse {
     }
 
     /**
-     *
-     * @return
+     * Méthode permettant de renvoyer le texte
+     * @return le texte de la réponse
      */
     public String getText() {
         return text;
     }
 
     /**
-     *
+     * Méthode permettant de setter le texte
      * @param text
      */
     public void setText(String text) {
@@ -51,7 +53,7 @@ public class Reponse {
     }
 
     /**
-     *
+     * Méthode renvoyant un booléen indiquant si la réponse est juste ou non
      * @return
      */
     public boolean isVeracite() {
@@ -59,7 +61,7 @@ public class Reponse {
     }
 
     /**
-     *
+     * Méthode permettant de setter la véracité d'une réponse
      * @param veracite
      */
     public void setVeracite(boolean veracite) {

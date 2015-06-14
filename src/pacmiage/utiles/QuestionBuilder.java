@@ -16,6 +16,7 @@ import org.w3c.dom.NodeList;
 /**
  *
  * @author Maëlle Cloitre / Dupuis Alexandre / Axel Nini / Raphaël Senand
+ * méthode permettant de builder la liste des questions
  */
 public class QuestionBuilder {
 
@@ -23,7 +24,7 @@ public class QuestionBuilder {
     private final Element racine;
 
     /**
-     *
+     * Constructeur de la classe QuestionBuilder
      * @param racine
      */
     public QuestionBuilder(Element racine) {
@@ -33,9 +34,9 @@ public class QuestionBuilder {
     }
 
     /**
-     *
-     * @param niveau
-     * @return
+     * Méthode renvoyant les questions selon le niveau choisi
+     * @param niveau choisi par l'utilisateur
+     * @return la liste de questions
      */
     public Question getQuestion(int niveau) {
         List<Question> listQuestionNv = new ArrayList<>();
